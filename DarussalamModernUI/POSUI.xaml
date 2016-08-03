@@ -86,10 +86,10 @@
 
                 <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="600" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="300" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -117,6 +117,19 @@
                     <TextBox Grid.Row="3" Grid.Column="3" Margin="0,0,10,0" Name="receiveTextBox" TextChanged="receiveTextBox_TextChanged"/>
                     <TextBlock Grid.Row="4" Grid.Column="2" Text="Due  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
                     <TextBox Grid.Row="4" Grid.Column="3" Margin="0,0,10,0" Name="dueTextBox" />
+                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="5">
+                        <DataGrid  Name="discountDatagrid"  AutoGenerateColumns="False" IsReadOnly="True">
+                            <DataGrid.Columns>
+
+                                <DataGridTextColumn Header="Publisher" Binding="{Binding Path=PublisherName}" Width="200"/>
+                                <DataGridTextColumn Header="Total" Binding="{Binding Path=TotalAmount}" Width="150"/>
+                                <DataGridTextColumn Header="Discount %" Binding="{Binding Path=Discount}" Width="120"/>
+                                <DataGridTextColumn Header="Discount Amount" Binding="{Binding Path=DiscountAmount}" Width="150"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </Grid>
+
                 </Grid>
 
                 <StackPanel Grid.Row="8" Grid.Column="3" Orientation="Horizontal">
