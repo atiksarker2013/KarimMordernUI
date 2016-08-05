@@ -104,8 +104,8 @@
                     <RadioButton GroupName="PaymentType" Name="cashPaytype" Content="Cash" Grid.Row="1" Grid.Column="0"/>
                     <RadioButton GroupName="PaymentType" Name="bikshPaytype" Content="Bikash" Grid.Row="2" Grid.Column="0"/>
                     <RadioButton GroupName="PaymentType" Name="chequePaytype" Content="Cheque" Grid.Row="3" Grid.Column="0"/>
-                    <TextBox Grid.Row="2" Grid.Column="0" Name="bikashNoTextBox" Margin="74,0,0,0"/>
-                    <TextBox Grid.Row="3" Grid.Column="0" Name="chequeNoTextBox" Margin="74,0,0,0"/>
+                    <TextBox Grid.Row="2" Grid.Column="0" Name="bikashNoTextBox" Margin="74,0,10,0"/>
+                    <TextBox Grid.Row="3" Grid.Column="0" Name="chequeNoTextBox" Margin="74,0,10,0"/>
                     <TextBlock Grid.Row="0" Grid.Column="2" Text="Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Text="Discount % " TextAlignment="Right" Style="{StaticResource Heading2}"/>
                     <TextBlock Grid.Row="2" Grid.Column="2" Text="Grand Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
@@ -121,9 +121,24 @@
                         <DataGrid  Name="discountDatagrid"  AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="Publisher" Binding="{Binding Path=PublisherName}" Width="200"/>
-                                <DataGridTextColumn Header="Total" Binding="{Binding Path=TotalAmount}" Width="150"/>
-                                <DataGridTextColumn Header="Discount %" Binding="{Binding Path=Discount}" Width="120"/>
+                                <DataGridTextColumn Header="Publisher" Binding="{Binding Path=PublisherName}" Width="150"/>
+                                <DataGridTextColumn Header="Total" Binding="{Binding Path=TotalAmount}" Width="150" />
+                                <!--<DataGridTextColumn Header="Discount %" Binding="{Binding Path=DiscountPercentage}" Width="110"/>-->
+                                <DataGridTemplateColumn Header="Order Qty"  Width="110">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border x:Name="brdBroder" VerticalAlignment="Stretch" Margin="1">
+                                                <TextBox  Margin="3,1" x:Name="discountTextBox" Width="50"  TextChanged="discountTextBox_TextChanged_1"  Text="{Binding Path=DiscountPercentage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   />
+                                            </Border>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green"/>
+                                                    <Setter TargetName="discountTextBox" Property="Foreground" Value="White"/>
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Discount Amount" Binding="{Binding Path=DiscountAmount}" Width="150"/>
                             </DataGrid.Columns>
                         </DataGrid>

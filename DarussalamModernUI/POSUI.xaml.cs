@@ -194,5 +194,21 @@ namespace DarussalamModernUI
 
 
         }
+
+        private void discountTextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            Discounts obj = new Discounts();
+            obj = discountDatagrid.SelectedItem as Discounts;// get selected item  
+            if (obj!=null)
+            {
+                decimal finalDiscount = 0;
+                decimal orginalPrice = Convert.ToDecimal(obj.TotalAmount);
+                decimal discount = Convert.ToDecimal(obj.DiscountPercentage);
+                var calculateDiscount = Convert.ToDecimal(orginalPrice / 100);
+                finalDiscount = calculateDiscount * discount;
+                obj.DiscountAmount = finalDiscount;
+            }
+            
+        }
     }
 }

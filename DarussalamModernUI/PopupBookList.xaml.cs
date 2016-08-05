@@ -75,11 +75,19 @@ namespace DarussalamModernUI
                     GlobalVar.TempOrderBookList.Add(obj);
                 }
 
-                // TGBP += Convert.ToDecimal(obj.FeesAmount); // getting cell value   
             }
-            //DarusSalamBook obj = new DarusSalamBook();
-            //obj = bookGrid.SelectedItem as DarusSalamBook;
-            //GlobalVar.TempOrderBookList.Add(obj);
+            
+
+            GlobalVar.DiscountsList = new List<Discounts>();
+            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList
+            .GroupBy(l => l.Publisher)
+            .Select(cl => new Discounts
+            {
+                PublisherName = cl.First().Publisher,
+       
+                TotalAmount = cl.Sum(c => c.Price)
+            }).ToList();
+
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
@@ -108,6 +116,13 @@ namespace DarussalamModernUI
                         {
                             item.TotalUnitPrice = (item.Price * item.OrderQty);
                             obj.posDatagrid.Items.Add(item);
+                        }
+
+                        // Publisher Info
+                        obj.discountDatagrid.Items.Clear();
+                        foreach (Discounts item in GlobalVar.DiscountsList)
+                        {
+                            obj.discountDatagrid.Items.Add(item);
                         }
                         break;
                     }
