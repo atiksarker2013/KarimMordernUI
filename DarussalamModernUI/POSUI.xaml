@@ -88,8 +88,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250" />
                         <ColumnDefinition Width="600" />
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="300" />
+                        <ColumnDefinition Width="123" />
+                        <ColumnDefinition Width="277" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -107,24 +107,24 @@
                     <TextBox Grid.Row="2" Grid.Column="0" Name="bikashNoTextBox" Margin="74,0,10,0"/>
                     <TextBox Grid.Row="3" Grid.Column="0" Name="chequeNoTextBox" Margin="74,0,10,0"/>
                     <TextBlock Grid.Row="0" Grid.Column="2" Text="Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Discount % " TextAlignment="Right" Style="{StaticResource Heading2}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Total Discount  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
                     <TextBlock Grid.Row="2" Grid.Column="2" Text="Grand Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
                     <TextBlock Grid.Row="3" Grid.Column="2" Text="Receive  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBox Grid.Row="0" Grid.Column="3" Name="totalTextBox" Margin="0,0,10,0"/>
-                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountTextBox" TextChanged="discountTextBox_TextChanged" Margin="0,0,210,0"/>
-                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountAmountTextBox"  TextChanged="discountAmountTextBox_TextChanged" Margin="83,0,10,0"/>
-                    <TextBox Grid.Row="2" Grid.Column="3" Name="grandTotalTextBox" Margin="0,0,10,0"/>
-                    <TextBox Grid.Row="3" Grid.Column="3" Margin="0,0,10,0" Name="receiveTextBox" TextChanged="receiveTextBox_TextChanged"/>
+                    <TextBox Grid.Row="0" Grid.Column="3" Name="totalTextBox" Margin="0,0,76,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountTextBox"   Margin="0,0,194,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountAmountTextBox"  TextChanged="discountAmountTextBox_TextChanged" Margin="83,0,76,0"/>
+                    <TextBox Grid.Row="2" Grid.Column="3" Name="grandTotalTextBox" Margin="0,0,76,0"/>
+                    <TextBox Grid.Row="3" Grid.Column="3" Margin="0,0,76,0" Name="receiveTextBox" TextChanged="receiveTextBox_TextChanged"/>
                     <TextBlock Grid.Row="4" Grid.Column="2" Text="Due  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBox Grid.Row="4" Grid.Column="3" Margin="0,0,10,0" Name="dueTextBox" />
+                    <TextBox Grid.Row="4" Grid.Column="3" Margin="0,0,76,0" Name="dueTextBox" />
                     <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="5">
-                        <DataGrid  Name="discountDatagrid"  AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid  Name="discountDatagrid"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,10,0">
                             <DataGrid.Columns>
 
                                 <DataGridTextColumn Header="Publisher" Binding="{Binding Path=PublisherName}" Width="150"/>
                                 <DataGridTextColumn Header="Total" Binding="{Binding Path=TotalAmount}" Width="150" />
                                 <!--<DataGridTextColumn Header="Discount %" Binding="{Binding Path=DiscountPercentage}" Width="110"/>-->
-                                <DataGridTemplateColumn Header="Order Qty"  Width="110">
+                                <DataGridTemplateColumn Header="Discount %"  Width="110">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Border x:Name="brdBroder" VerticalAlignment="Stretch" Margin="1">

@@ -1,4 +1,6 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
+using Models;
+using System.Collections.Generic;
 
 namespace DarussalamModernUI
 {
@@ -12,9 +14,9 @@ namespace DarussalamModernUI
             InitializeComponent();
         }
 
-        private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            List<Sales> salesList = new List<Sales>();
         }
     }
 }

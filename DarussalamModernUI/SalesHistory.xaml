@@ -49,33 +49,25 @@
 
 
 
-                        <Button Content="Book Search" Grid.Row="0" Grid.Column="3" Margin="0,0,131,0"   />
+                        <Button Content="Search" Grid.Row="0" Grid.Column="3" Margin="0,0,131,0" Click="Button_Click"  />
                     </Grid>
                     <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
                         <DataGrid  Name="posDatagrid"  AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" Width="420"/>
-                                <DataGridTextColumn Header="Writer" Binding="{Binding Path=Writer}" Width="200"/>
-                                <DataGridTextColumn Header="Publisher" Binding="{Binding Path=Publisher}" Width="100"/>
-                                <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" Width="70"/>
-                                <DataGridTextColumn Header="Stock Qty" Binding="{Binding Path=Qty}" Width="70"/>
-                                <DataGridTemplateColumn Header="Order Qty"  Width="150">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Border x:Name="brdBroder" VerticalAlignment="Stretch" Margin="1">
-                                                <TextBox  Margin="3,1" x:Name="textBox" Width="50" TextChanged="textBox_TextChanged"  Text="{Binding Path=OrderQty,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   />
-                                            </Border>
-                                            <DataTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green"/>
-                                                    <Setter TargetName="textBox" Property="Foreground" Value="White"/>
-                                                </DataTrigger>
-                                            </DataTemplate.Triggers>
+                                <DataGridTextColumn Header="In.No" Binding="{Binding Path=Name}" Width="70"/>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" Width="100"/>
+                                <DataGridTextColumn Header="Mobile" Binding="{Binding Path=Mobile}" Width="100"/>
+                                <!--<DataGridTextColumn Header="Address" Binding="{Binding Path=Address}" Width="100"/>-->
+                                <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}" Width="70"/>
+                                <DataGridTextColumn Header="Pay Type" Binding="{Binding Path=PayType}" Width="100"/>
+                                <DataGridTextColumn Header="Pay No" Binding="{Binding Path=PayNo}" Width="100"/>
+                                <DataGridTextColumn Header="Total" Binding="{Binding Path=Total}" Width="100"/>
 
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Total Unit Price" Binding="{Binding Path=TotalUnitPrice}" Width="200"/>
+                                <DataGridTextColumn Header="Discount" Binding="{Binding Path=Discount}" Width="100"/>
+                                <DataGridTextColumn Header="OtherDiscount" Binding="{Binding Path=OtherDiscount}" Width="120"/>
+                                <DataGridTextColumn Header="Grand Total" Binding="{Binding Path=GrandTotal}" Width="110"/>
+                                <DataGridTextColumn Header="Receive" Binding="{Binding Path=Receive}" Width="100"/>
+                                <DataGridTextColumn Header="Due" Binding="{Binding Path=Due}" Width="80"/>
                             </DataGrid.Columns>
                         </DataGrid>
 

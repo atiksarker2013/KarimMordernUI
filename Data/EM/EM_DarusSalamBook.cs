@@ -13,6 +13,7 @@ namespace Data
             model.Title = entity.Title.TrimWithNull();
             model.Writer = entity.Writer.TrimWithNull();
             model.Publisher = entity.Publisher.TrimWithNull();
+            model.Barcode = entity.Barcode.TrimWithNull();
             model.Qty = entity.Qty ?? 0;
             model.Price = entity.Price ?? 0;
             model.OutOfStock = entity.OutOfStock ?? 0;
@@ -31,6 +32,7 @@ namespace Data
             entity.Publisher = model.Publisher;
             entity.Qty = model.Qty;
             entity.Price = model.Price;
+            entity.Barcode = model.Barcode;
             entity.OutOfStock = model.OutOfStock;
             entity.InStock = model.InStock;
 

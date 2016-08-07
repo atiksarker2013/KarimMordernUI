@@ -19,6 +19,8 @@
                 <Button   Content="POS" Width="150" x:Name="posButton" Click="button_Click_1"  />
                 <Button   Content="Sales History" Width="150" x:Name="salesHistoryButton"  Click="salesHistoryButton_Click"  />
                 <Button   Content="New Inventory" Width="150" x:Name="receiveBookButton"    />
+                <Button   Content="Update Book Bacode" Width="150" x:Name="updateBookButton"  Click="updateBookButton_Click"  />
+                <Button   Content="Update Book Price" Width="150" x:Name="updateBookPriceButton"  Click="updateBookPriceButton_Click"  />
                 <Button   Content="Reports" Width="150" x:Name="reportsButton"    />
             </StackPanel>
             

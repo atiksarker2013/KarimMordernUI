@@ -71,14 +71,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DarussalamModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DC\BookPriceUpdateContext.cs" />
     <Compile Include="DC\DarussalamBookContext.cs" />
+    <Compile Include="DC\DiscountContext.cs" />
     <Compile Include="DC\SalesContext.cs" />
     <Compile Include="DC\SalesDetailsContext.cs" />
+    <Compile Include="EM\EM_BookPriceUpdate.cs" />
     <Compile Include="EM\EM_DarusSalamBook.cs" />
+    <Compile Include="EM\EM_Discount.cs" />
     <Compile Include="EM\EM_Sales.cs" />
     <Compile Include="EM\EM_SalesDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tbl_BookPriceUpdate.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_DarusSalamBook.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Discount.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_Sales.cs">

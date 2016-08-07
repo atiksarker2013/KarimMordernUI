@@ -23,6 +23,7 @@ namespace Data
         public string PayNo { get; set; }
         public Nullable<decimal> Total { get; set; }
         public Nullable<decimal> Discount { get; set; }
+        public Nullable<decimal> OtherDiscount { get; set; }
         public Nullable<decimal> GrandTotal { get; set; }
         public Nullable<decimal> Receive { get; set; }
         public Nullable<decimal> Due { get; set; }

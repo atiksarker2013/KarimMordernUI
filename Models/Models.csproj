@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookPriceUpdate.cs" />
     <Compile Include="DarusSalamBook.cs" />
     <Compile Include="Discounts.cs" />
     <Compile Include="ModelBase.cs" />

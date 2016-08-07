@@ -12,16 +12,13 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class tbl_DarusSalamBook
+    public partial class tbl_Discount
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Writer { get; set; }
-        public string Publisher { get; set; }
-        public Nullable<int> Qty { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<int> OutOfStock { get; set; }
-        public Nullable<int> InStock { get; set; }
-        public string Barcode { get; set; }
+        public Nullable<int> InvoiceId { get; set; }
+        public string PublisherName { get; set; }
+        public Nullable<decimal> TotalAmount { get; set; }
+        public Nullable<int> DiscountPercentage { get; set; }
+        public Nullable<decimal> DiscountAmount { get; set; }
     }
 }

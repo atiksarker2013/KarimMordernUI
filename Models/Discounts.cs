@@ -69,5 +69,16 @@
             }
         }
 
+        private decimal _totalDiscountAmount;
+        public decimal TotalDiscountAmount
+        {
+            get { return _totalDiscountAmount; }
+            set
+            {
+                _totalDiscountAmount = value;
+                RaisePropertyChanged("TotalDiscountAmount");
+            }
+        }
+
     }
 }

@@ -1,9 +1,4 @@
 ﻿using Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Data.EM
 {
     public static class EM_Sales
@@ -42,6 +37,7 @@ namespace Data.EM
             entity.PayNo = model.PayNo;
             entity.Total = model.Total;
             entity.Discount = model.Discount;
+            entity.OtherDiscount = model.OtherDiscount;
             entity.GrandTotal = model.GrandTotal;
             entity.Receive = model.Receive;
             entity.Due = model.Due;

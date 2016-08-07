@@ -1,18 +1,5 @@
 ﻿using FirstFloor.ModernUI.Windows.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DarussalamModernUI
 {
@@ -41,6 +28,18 @@ namespace DarussalamModernUI
         private void salesHistoryButton_Click(object sender, RoutedEventArgs e)
         {
             SalesHistory obj = new SalesHistory();
+            obj.Show();
+        }
+
+        private void updateBookButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateBookInfo obj = new UpdateBookInfo();
+            obj.Show();
+        }
+
+        private void updateBookPriceButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateBookPrice obj = new UpdateBookPrice();
             obj.Show();
         }
     }

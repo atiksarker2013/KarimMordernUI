@@ -142,6 +142,21 @@ namespace Models
             }
         }
 
+        private decimal _otherDiscount;
+        public decimal OtherDiscount
+        {
+            get { return _otherDiscount; }
+            set
+            {
+                _otherDiscount = value;
+                RaisePropertyChanged("OtherDiscount");
+                //if (Discount == 0)
+                //AddErrorForProperty("Discount","Iscount cannot be empty");
+                //else
+                //RemoveError("Discount");
+            }
+        }
+
         private decimal _GrandTotal;
         public decimal GrandTotal
         {

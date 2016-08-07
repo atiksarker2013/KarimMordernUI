@@ -128,6 +128,23 @@ namespace Models
             }
         }
 
+        private decimal? _newPrice;
+        public decimal? NewPrice
+        {
+            get { return _newPrice; }
+            set
+            {
+                _newPrice = value;
+                RaisePropertyChanged("NewPrice");
+                //if (Price == 0)
+                //AddErrorForProperty("Price","Rice cannot be empty");
+                //else
+                //RemoveError("Price");
+            }
+        }
+
+        
+
         private int? _OutOfStock;
         public int? OutOfStock
         {
@@ -158,6 +175,7 @@ namespace Models
             }
         }
 
+        public string Barcode { get; set; }
 
         public bool CheckValidation()
         {

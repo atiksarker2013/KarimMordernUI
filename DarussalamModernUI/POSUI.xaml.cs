@@ -6,7 +6,6 @@ using Models;
 using ReportApp;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,6 +19,8 @@ namespace DarussalamModernUI
         SalesContext salesManagerObj = new SalesContext();
         SalesDetailsContext salesDetailsManagerObj = new SalesDetailsContext();
         DarussalamBookContext bookContext = new DarussalamBookContext();
+        DiscountContext discountContext = new DiscountContext();
+
         List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
         public POSUI()
         {
@@ -49,18 +50,18 @@ namespace DarussalamModernUI
             grandTotalTextBox.Text = TGBP.ToString("F");
         }
 
-        private void discountTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(discountTextBox.Text))
-            {
-                decimal finalDiscount = 0;
-                decimal orginalPrice = Convert.ToDecimal(totalTextBox.Text);
-                decimal discount = Convert.ToDecimal(discountTextBox.Text);
-                var calculateDiscount = Convert.ToDecimal(orginalPrice / 100);
-                finalDiscount = calculateDiscount * discount;
-                discountAmountTextBox.Text = finalDiscount.ToString("F");
-            }
-        }
+        //private void discountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(discountTextBox.Text))
+        //    {
+        //        decimal finalDiscount = 0;
+        //        decimal orginalPrice = Convert.ToDecimal(totalTextBox.Text);
+        //        decimal discount = Convert.ToDecimal(discountTextBox.Text);
+        //        var calculateDiscount = Convert.ToDecimal(orginalPrice / 100);
+        //        finalDiscount = calculateDiscount * discount;
+        //        discountAmountTextBox.Text = finalDiscount.ToString("F");
+        //    }
+        //}
 
         private void discountAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -68,8 +69,9 @@ namespace DarussalamModernUI
             {
                 decimal finalDiscount = 0;
                 decimal orginalPrice = Convert.ToDecimal(totalTextBox.Text);
-                decimal discount = Convert.ToDecimal(discountAmountTextBox.Text);
-                var calculateGrandTotal = Convert.ToDecimal(orginalPrice- discount);
+                decimal  discount = Convert.ToDecimal(discountTextBox.Text);
+                decimal otherdiscount = Convert.ToDecimal(discountAmountTextBox.Text);
+                var calculateGrandTotal = Convert.ToDecimal(orginalPrice- (otherdiscount+ discount));
 
                 grandTotalTextBox.Text = calculateGrandTotal.ToString("F");
             }
@@ -118,13 +120,16 @@ namespace DarussalamModernUI
             }
                      
             salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
-            salesObj.Discount = Convert.ToDecimal(discountAmountTextBox.Text);
+            salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+            salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
             salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
             salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
             salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
 
             int pk = 0;
             pk=salesManagerObj.Insert(salesObj);
+
+            // Insert Book Details
 
             for (int i = 0; i < posDatagrid.Items.Count; i++)
             {
@@ -137,6 +142,22 @@ namespace DarussalamModernUI
                 salesDetails.SalesId = pk;
                 salesDetailsManagerObj.Insert(salesDetails);
             }
+
+            // Discount Insert
+
+            for (int i = 0; i < discountDatagrid.Items.Count; i++)
+            {
+                Discounts obj = discountDatagrid.Items[i] as Discounts;
+
+                Discounts discountObj = new Discounts();
+                discountObj.InvoiceId = pk;
+                discountObj.PublisherName =  obj.PublisherName;
+                discountObj.TotalAmount = obj.TotalAmount;
+                discountObj.DiscountPercentage = obj.DiscountPercentage;
+                discountObj.DiscountAmount = obj.DiscountAmount;
+                discountContext.Insert(discountObj);
+            }
+
 
             // Update Stock
 
@@ -190,6 +211,7 @@ namespace DarussalamModernUI
             receiveTextBox.Text = "";
             dueTextBox.Text = "";
             posDatagrid.Items.Clear();
+            discountDatagrid.Items.Clear();
 
 
 
@@ -208,7 +230,26 @@ namespace DarussalamModernUI
                 finalDiscount = calculateDiscount * discount;
                 obj.DiscountAmount = finalDiscount;
             }
+
+
+            // Total Discount
+
+            if (discountDatagrid.Items.Count>0)
+            {
+                decimal TGBP = 0;
+                decimal GT = 0;
+                for (int i = 0; i < discountDatagrid.Items.Count; i++)
+                {
+                    Discounts discountobj = discountDatagrid.Items[i] as Discounts;
+                    //obj.TotalDiscountAmount = obj.Price * obj.OrderQty;
+                    TGBP += Convert.ToDecimal(discountobj.DiscountAmount); // getting cell value   
+                }
+                GT = Convert.ToDecimal(totalTextBox.Text)- TGBP;
+                discountTextBox.Text = TGBP.ToString("F");
+                grandTotalTextBox.Text = GT.ToString("F");
+            }
             
+
         }
     }
 }

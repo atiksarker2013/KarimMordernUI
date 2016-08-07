@@ -98,6 +98,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UpdateBookPrice.xaml.cs">
+      <DependentUpon>UpdateBookPrice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBookInfo.xaml.cs">
+      <DependentUpon>UpdateBookInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Report\Crystal\salesInvoiceCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +130,14 @@
       <DependentUpon>POSUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="UpdateBookPrice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpdateBookInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PopupBookList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
