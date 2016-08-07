@@ -98,6 +98,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NewBookInventory.xaml.cs">
+      <DependentUpon>NewBookInventory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateBookPrice.xaml.cs">
       <DependentUpon>UpdateBookPrice.xaml</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
       <DependentUpon>POSUI.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="NewBookInventory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UpdateBookPrice.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
