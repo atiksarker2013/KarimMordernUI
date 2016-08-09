@@ -11,6 +11,10 @@ namespace DarussalamModernUI
         public static List<DarusSalamBook> UpdateBookPriceList = new List<DarusSalamBook>();
         public static List<BookPriceUpdate> BookPriceUpdateList = new List<BookPriceUpdate>();
 
-        
+
+        public static List<DarusSalamBook> TempNewBookEntryList = new List<DarusSalamBook>();
+         
+
+
     }
 }

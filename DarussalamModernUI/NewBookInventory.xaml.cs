@@ -1,6 +1,7 @@
 ﻿using DarussalamModernUI.Report.Model;
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
+using Models;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -24,8 +25,9 @@ namespace DarussalamModernUI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PopupBookList obj = new PopupBookList();
+            PopupNewBookEntryList obj = new PopupNewBookEntryList();
             obj.Show();
+
         }
 
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -94,64 +96,23 @@ namespace DarussalamModernUI
         {
             //Sales salesObj = new Sales();
 
-            //salesObj.Name = customerNameTextBox.Text;
-            //salesObj.Mobile = MobileTextBox.Text;
-            //salesObj.Address = addressTextBox.Text;
-            //salesObj.Date = salesDateDatepicker.SelectedDate;
 
-            //if (cashPaytype.IsChecked==true)
-            //{
-            //    salesObj.PayType = "Cash";
-            //}
-            //if (bikshPaytype.IsChecked == true)
-            //{
-            //    salesObj.PayType = "Bikas";
-            //    salesObj.PayNo=bikashNoTextBox.Text;
-            //}
-            //if (chequePaytype.IsChecked == true)
-            //{
-            //    salesObj.PayType = "Cheque";
-            //    salesObj.PayNo = chequeNoTextBox.Text;
-            //}
-                     
-            //salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
-            //salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
-            //salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
-            //salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
-            //salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-            //salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
-
-            //int pk = 0;
-            //pk=salesManagerObj.Insert(salesObj);
 
             //// Insert Book Details
 
-            //for (int i = 0; i < posDatagrid.Items.Count; i++)
-            //{
-            //    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
 
-            //    SalesDetails salesDetails = new SalesDetails();
-            //    salesDetails.BookId = obj.Id;
-            //    salesDetails.Price = (decimal)obj.Price;
-            //    salesDetails.OrderQty = obj.OrderQty;
-            //    salesDetails.SalesId = pk;
-            //    salesDetailsManagerObj.Insert(salesDetails);
-            //}
+                NewBookStockUpdate salesDetails = new NewBookStockUpdate();
+                //salesDetails.BookId = obj.Id;
+                //salesDetails.Price = (decimal)obj.Price;
+                //salesDetails.OrderQty = obj.OrderQty;
+                //salesDetails.SalesId = pk;
+                //salesDetailsManagerObj.Insert(salesDetails);
+            }
 
-            //// Discount Insert
 
-            //for (int i = 0; i < discountDatagrid.Items.Count; i++)
-            //{
-            //    Discounts obj = discountDatagrid.Items[i] as Discounts;
-
-            //    Discounts discountObj = new Discounts();
-            //    discountObj.InvoiceId = pk;
-            //    discountObj.PublisherName =  obj.PublisherName;
-            //    discountObj.TotalAmount = obj.TotalAmount;
-            //    discountObj.DiscountPercentage = obj.DiscountPercentage;
-            //    discountObj.DiscountAmount = obj.DiscountAmount;
-            //    discountContext.Insert(discountObj);
-            //}
 
 
             //// Update Stock
@@ -184,7 +145,7 @@ namespace DarussalamModernUI
             //}
 
 
-           
+
             //if (SalesInfoList.Count > 0)
             //{
             //    salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();

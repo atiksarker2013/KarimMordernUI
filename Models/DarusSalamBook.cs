@@ -97,6 +97,21 @@ namespace Models
             }
         }
 
+        private int _newEntryQty;
+        public int NewEntryQty
+        {
+            get { return _newEntryQty; }
+            set
+            {
+                _newEntryQty = value;
+                RaisePropertyChanged("NewEntryQty");
+                //if (Qty == 0)
+                //AddErrorForProperty("Qty","Ty cannot be empty");
+                //else
+                //RemoveError("Qty");
+            }
+        }
+
 
         private decimal? _totalUnitPrice;
         public decimal? TotalUnitPrice
