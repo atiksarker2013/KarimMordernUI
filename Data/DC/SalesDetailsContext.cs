@@ -1,5 +1,4 @@
-﻿using System;
-using Models;
+﻿using Models;
 using System.Data.Entity.Infrastructure;
 
 namespace Data.DC

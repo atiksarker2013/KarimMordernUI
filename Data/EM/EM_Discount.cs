@@ -1,13 +1,8 @@
 ﻿using Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.EM
 {
-  public static  class EM_Discount
+    public static  class EM_Discount
     {
         public static Discounts ConverToModel(tbl_Discount entity)
         {

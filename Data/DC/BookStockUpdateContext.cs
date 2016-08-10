@@ -1,15 +1,10 @@
 ﻿using Data.EM;
 using Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.DC
 {
-  public  class BookStockUpdateContext
+    public  class BookStockUpdateContext
     {
         KARIM_INT_HOUSTONEEntities _db = new KARIM_INT_HOUSTONEEntities();
 

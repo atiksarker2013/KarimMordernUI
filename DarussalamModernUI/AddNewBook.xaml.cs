@@ -1,13 +1,8 @@
-﻿using DarussalamModernUI.Report.Crystal;
-using DarussalamModernUI.Report.Model;
+﻿using DarussalamModernUI.Report.Model;
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
-using Models;
-using ReportApp;
-using System;
 using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace DarussalamModernUI
 {

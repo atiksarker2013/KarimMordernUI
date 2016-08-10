@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Models;
 using Data.EM;
 using System.Data.Entity.Infrastructure;
 
 namespace Data.DC
 {
-   public class SalesContext
+    public class SalesContext
     {
         KARIM_INT_HOUSTONEEntities _db = new KARIM_INT_HOUSTONEEntities();
 
