@@ -36,8 +36,8 @@ namespace Models
         }
 
 
-        private int _OldStock;
-        public int OldStock
+        private int? _OldStock;
+        public int? OldStock
         {
             get { return _OldStock; }
             set
@@ -67,8 +67,8 @@ namespace Models
             }
         }
 
-        private int _EntryDate;
-        public int EntryDate
+        private DateTime? _EntryDate;
+        public DateTime? EntryDate
         {
             get { return _EntryDate; }
             set

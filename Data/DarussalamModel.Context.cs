@@ -30,5 +30,6 @@ namespace Data
         public virtual DbSet<tbl_Discount> tbl_Discount { get; set; }
         public virtual DbSet<tbl_DarusSalamBook> tbl_DarusSalamBook { get; set; }
         public virtual DbSet<tbl_BookPriceUpdate> tbl_BookPriceUpdate { get; set; }
+        public virtual DbSet<tbl_NewEntryQty> tbl_NewEntryQty { get; set; }
     }
 }

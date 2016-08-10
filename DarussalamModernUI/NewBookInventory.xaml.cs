@@ -2,6 +2,7 @@
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
 using Models;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -16,6 +17,8 @@ namespace DarussalamModernUI
         SalesDetailsContext salesDetailsManagerObj = new SalesDetailsContext();
         DarussalamBookContext bookContext = new DarussalamBookContext();
         DiscountContext discountContext = new DiscountContext();
+
+        BookStockUpdateContext _bookStockContext = new BookStockUpdateContext();
 
         List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
         public NewBookInventory()
@@ -94,82 +97,35 @@ namespace DarussalamModernUI
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //Sales salesObj = new Sales();
 
-
-
-            //// Insert Book Details
+            //// Insert New Book Qty
 
             for (int i = 0; i < posDatagrid.Items.Count; i++)
             {
                 DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
 
                 NewBookStockUpdate salesDetails = new NewBookStockUpdate();
-                //salesDetails.BookId = obj.Id;
-                //salesDetails.Price = (decimal)obj.Price;
-                //salesDetails.OrderQty = obj.OrderQty;
-                //salesDetails.SalesId = pk;
-                //salesDetailsManagerObj.Insert(salesDetails);
+                salesDetails.BookId = obj.Id;
+                salesDetails.OldStock = obj.InStock;
+                salesDetails.NewEntryQty = obj.NewEntryQty;
+                salesDetails.EntryDate = DateTime.Now;
+                _bookStockContext.Insert(salesDetails);
             }
 
 
 
 
-            //// Update Stock
+            // Update Stock
 
-            //for (int i = 0; i < posDatagrid.Items.Count; i++)
-            //{
-            //    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-            //    obj.InStock = obj.InStock - obj.OrderQty;
-            //    obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
-            //    bookContext.Update(obj);
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
+                obj.InStock = obj.InStock + obj.NewEntryQty;
+                obj.Qty = obj.Qty + obj.NewEntryQty;
+                bookContext.Update(obj);
+            }
 
-            //    RDarusSalamBook reportObj = new RDarusSalamBook();
-            //    reportObj.Id = obj.Id;
-            //    reportObj.Title = obj.Title;
-            //    reportObj.OrderQty = obj.OrderQty;
-            //    reportObj.Price = (decimal)obj.Price;
-            //    reportObj.Name = salesObj.Name;
-            //    reportObj.Mobile = salesObj.Mobile;
-            //    reportObj.Address = salesObj.Address;
-            //    reportObj.Date = (DateTime)salesObj.Date;
-            //    reportObj.PayType = salesObj.PayType;
-            //    reportObj.PayNo = salesObj.PayNo;
-            //    reportObj.Total =salesObj.Total  ;
-            //    reportObj.Discount= salesObj.Discount  ;
-            //    reportObj.GrandTotal = salesObj.GrandTotal  ;
-            //    reportObj.Receive = salesObj.Receive ;
-            //    reportObj.Due = salesObj.Due ;
-            //    reportObj.InvoiceNo = pk;
-            //    SalesInfoList.Add(reportObj);
-            //}
-
-
-
-            //if (SalesInfoList.Count > 0)
-            //{
-            //    salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
-            //    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
-            //}
-
-            //totalTextBox.Text = "";
-            //grandTotalTextBox.Text = "";
-            //discountTextBox.Text = "";
-            //discountAmountTextBox.Text = "";
-            //customerNameTextBox.Text = "";
-            //MobileTextBox.Text = "";
-            //addressTextBox.Text = "";
-            //cashPaytype.IsChecked = true;
-            //receiveTextBox.Text = "";
-            //dueTextBox.Text = "";
-            //posDatagrid.Items.Clear();
-            //discountDatagrid.Items.Clear();
-
-
+            posDatagrid.Items.Clear();
 
         }
 

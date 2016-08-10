@@ -40,6 +40,16 @@
           <Property Name="DiscountPercentage" Type="int" />
           <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="tbl_NewEntryQty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookId" Type="int" />
+          <Property Name="OldStock" Type="int" />
+          <Property Name="NewEntryQty" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_Sales">
           <Key>
             <PropertyRef Name="Id" />
@@ -72,6 +82,7 @@
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_NewEntryQty" EntityType="Self.tbl_NewEntryQty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Sales" EntityType="Self.tbl_Sales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_SalesDetails" EntityType="Self.tbl_SalesDetails" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -85,6 +96,7 @@
           <EntitySet Name="tbl_Discount" EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" />
           <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" />
+          <EntitySet Name="tbl_NewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" />
         </EntityContainer>
         <EntityType Name="tbl_SalesDetails">
           <Key>
@@ -148,6 +160,16 @@
           <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_NewEntryQty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="OldStock" Type="Int32" />
+          <Property Name="NewEntryQty" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -218,6 +240,17 @@
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
                 <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_NewEntryQty">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty">
+              <MappingFragment StoreEntitySet="tbl_NewEntryQty">
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="NewEntryQty" ColumnName="NewEntryQty" />
+                <ScalarProperty Name="OldStock" ColumnName="OldStock" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
