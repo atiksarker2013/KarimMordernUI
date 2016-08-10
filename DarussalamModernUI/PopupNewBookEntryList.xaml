@@ -5,7 +5,7 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   mc:Ignorable="d" Width="1082.974"
-                  Title="Book Stock List"
+                  Title="Book Stock List" WindowStartupLocation="CenterScreen" 
                   
                   Style="{StaticResource BlankWindow}" Height="566.117">
     <ScrollViewer>
