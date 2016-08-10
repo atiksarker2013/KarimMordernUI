@@ -2,10 +2,13 @@
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
-                  Title="POS"  WindowStartupLocation="CenterScreen" WindowState="Maximized"
+                  Title="POS"
+                  Width="1181.955"
+                  Height="700.092"
                   LogoData="F1 M 24.9015,43.0378L 25.0963,43.4298C 26.1685,49.5853 31.5377,54.2651 38,54.2651C 44.4623,54.2651 49.8315,49.5854 50.9037,43.4299L 51.0985,43.0379C 51.0985,40.7643 52.6921,39.2955 54.9656,39.2955C 56.9428,39.2955 58.1863,41.1792 58.5833,43.0379C 57.6384,52.7654 47.9756,61.75 38,61.75C 28.0244,61.75 18.3616,52.7654 17.4167,43.0378C 17.8137,41.1792 19.0572,39.2954 21.0344,39.2954C 23.3079,39.2954 24.9015,40.7643 24.9015,43.0378 Z M 26.7727,20.5833C 29.8731,20.5833 32.3864,23.0966 32.3864,26.197C 32.3864,29.2973 29.8731,31.8106 26.7727,31.8106C 23.6724,31.8106 21.1591,29.2973 21.1591,26.197C 21.1591,23.0966 23.6724,20.5833 26.7727,20.5833 Z M 49.2273,20.5833C 52.3276,20.5833 54.8409,23.0966 54.8409,26.197C 54.8409,29.2973 52.3276,31.8106 49.2273,31.8106C 46.127,31.8106 43.6136,29.2973 43.6136,26.197C 43.6136,23.0966 46.127,20.5833 49.2273,20.5833 Z"
-                  Style="{StaticResource BlankWindow}" Height="700.092" Width="1181.955"
-                  >
+                  Style="{StaticResource BlankWindow}"
+                  WindowStartupLocation="CenterScreen"
+                  WindowState="Maximized">
     <ScrollViewer>
         <StackPanel>
             <Grid>
@@ -29,16 +32,42 @@
                     <RowDefinition Height="*" />
 
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" TextAlignment="Right" Text="Customer Name  " Style="{StaticResource Heading2}" />
-                <TextBlock Grid.Row="1" Grid.Column="0" TextAlignment="Right" Text="Mobile  " Style="{StaticResource Heading2}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Text="Date  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" TextAlignment="Right" Text="Customer Address  " Style="{StaticResource Heading2}" />
-                <DatePicker Grid.Row="1" Grid.Column="3" Name="salesDateDatepicker" />
-                <TextBox Grid.Row="0" Grid.Column="1" Name="customerNameTextBox"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Name="MobileTextBox"/>
-                <TextBox Grid.Row="0" Grid.Column="3" Name="addressTextBox"/>
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Style="{StaticResource Heading2}"
+                           Text="Customer Name  "
+                           TextAlignment="Right" />
+                <TextBox Name="customerNameTextBox"
+                         Grid.Row="0"
+                         Grid.Column="1" />
+                <TextBlock Grid.Row="0"
+                           Grid.Column="2"
+                           Style="{StaticResource Heading2}"
+                           Text="Customer Address  "
+                           TextAlignment="Right" />
+                <TextBox Name="addressTextBox"
+                         Grid.Row="0"
+                         Grid.Column="3" />
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Style="{StaticResource Heading2}"
+                           Text="Mobile  "
+                           TextAlignment="Right" />
+                <TextBox Name="MobileTextBox"
+                         Grid.Row="1"
+                         Grid.Column="1" />
+                <TextBlock Grid.Row="1"
+                           Grid.Column="2"
+                           Style="{StaticResource Heading2}"
+                           Text="Date  "
+                           TextAlignment="Right" />
+                <DatePicker Name="salesDateDatepicker"
+                            Grid.Row="1"
+                            Grid.Column="3" />
 
-                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" >
+                <Grid Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="4">
 
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -52,39 +81,69 @@
 
 
 
-                    <Button Content="Book Search" Grid.Row="0" Grid.Column="3" Margin="0,0,131,0" Click="Button_Click" />
+                    <Button Grid.Row="0"
+                            Grid.Column="3"
+                            Margin="0,0,131,0"
+                            Click="Button_Click"
+                            Content="Book Search" />
                 </Grid>
-                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
-                    <DataGrid  Name="posDatagrid"  AutoGenerateColumns="False" IsReadOnly="True">
+                <Grid Grid.Row="4"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="4">
+                    <DataGrid Name="posDatagrid"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Title" Binding="{Binding Path=Title}" Width="420"/>
-                            <DataGridTextColumn Header="Writer" Binding="{Binding Path=Writer}" Width="200"/>
-                            <DataGridTextColumn Header="Publisher" Binding="{Binding Path=Publisher}" Width="100"/>
-                            <DataGridTextColumn Header="Price" Binding="{Binding Path=Price}" Width="70"/>
-                            <DataGridTextColumn Header="Stock Qty" Binding="{Binding Path=Qty}" Width="70"/>
-                            <DataGridTemplateColumn Header="Order Qty"  Width="150">
+                            <DataGridTextColumn Width="420"
+                                                Binding="{Binding Path=Title}"
+                                                Header="Title" />
+                            <DataGridTextColumn Width="200"
+                                                Binding="{Binding Path=Writer}"
+                                                Header="Writer" />
+                            <DataGridTextColumn Width="100"
+                                                Binding="{Binding Path=Publisher}"
+                                                Header="Publisher" />
+                            <DataGridTextColumn Width="70"
+                                                Binding="{Binding Path=Price}"
+                                                Header="Price" />
+                            <DataGridTextColumn Width="70"
+                                                Binding="{Binding Path=Qty}"
+                                                Header="Stock Qty" />
+                            <DataGridTemplateColumn Width="150" Header="Order Qty">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Border x:Name="brdBroder" VerticalAlignment="Stretch" Margin="1">
-                                            <TextBox  Margin="3,1" x:Name="textBox" Width="50" TextChanged="textBox_TextChanged"  Text="{Binding Path=OrderQty,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   />
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox"
+                                                     Width="50"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=OrderQty,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}"
+                                                     TextChanged="textBox_TextChanged" />
                                         </Border>
                                         <DataTemplate.Triggers>
                                             <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                <Setter TargetName="brdBroder" Property="Background" Value="Green"/>
-                                                <Setter TargetName="textBox" Property="Foreground" Value="White"/>
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox" Property="Foreground" Value="White" />
                                             </DataTrigger>
                                         </DataTemplate.Triggers>
 
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Total Unit Price" Binding="{Binding Path=TotalUnitPrice}" Width="200"/>
+                            <DataGridTextColumn Width="200"
+                                                Binding="{Binding Path=TotalUnitPrice}"
+                                                Header="Total Unit Price" />
                         </DataGrid.Columns>
                     </DataGrid>
 
                 </Grid>
 
-                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4">
+                <Grid Grid.Row="7"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="4">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="250" />
                         <ColumnDefinition Width="600" />
@@ -100,57 +159,144 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Payment Type" TextAlignment="Center" Style="{StaticResource Heading2}"/>
-                    <RadioButton GroupName="PaymentType" Name="cashPaytype" Content="Cash" Grid.Row="1" Grid.Column="0"/>
-                    <RadioButton GroupName="PaymentType" Name="bikshPaytype" Content="Bikash" Grid.Row="2" Grid.Column="0"/>
-                    <RadioButton GroupName="PaymentType" Name="chequePaytype" Content="Cheque" Grid.Row="3" Grid.Column="0"/>
-                    <TextBox Grid.Row="2" Grid.Column="0" Name="bikashNoTextBox" Margin="74,0,10,0"/>
-                    <TextBox Grid.Row="3" Grid.Column="0" Name="chequeNoTextBox" Margin="74,0,10,0"/>
-                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="Total Discount  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="2" Text="Grand Total  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="2" Text="Receive  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBox Grid.Row="0" Grid.Column="3" Name="totalTextBox" Margin="0,0,76,0"/>
-                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountTextBox"   Margin="0,0,194,0"/>
-                    <TextBox Grid.Row="1" Grid.Column="3" Name="discountAmountTextBox"  TextChanged="discountAmountTextBox_TextChanged" Margin="83,0,76,0"/>
-                    <TextBox Grid.Row="2" Grid.Column="3" Name="grandTotalTextBox" Margin="0,0,76,0"/>
-                    <TextBox Grid.Row="3" Grid.Column="3" Margin="0,0,76,0" Name="receiveTextBox" TextChanged="receiveTextBox_TextChanged"/>
-                    <TextBlock Grid.Row="4" Grid.Column="2" Text="Due  " TextAlignment="Right" Style="{StaticResource Heading2}"/>
-                    <TextBox Grid.Row="4" Grid.Column="3" Margin="0,0,76,0" Name="dueTextBox" />
-                    <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="5">
-                        <DataGrid  Name="discountDatagrid"  AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,10,0">
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource Heading2}"
+                               Text="Payment Type"
+                               TextAlignment="Center" />
+                    <Grid Grid.Row="0"
+                          Grid.RowSpan="5"
+                          Grid.Column="1">
+                        <DataGrid Name="discountDatagrid"
+                                  Margin="0,0,10,0"
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True">
                             <DataGrid.Columns>
 
-                                <DataGridTextColumn Header="Publisher" Binding="{Binding Path=PublisherName}" Width="150"/>
-                                <DataGridTextColumn Header="Total" Binding="{Binding Path=TotalAmount}" Width="150" />
+                                <DataGridTextColumn Width="150"
+                                                    Binding="{Binding Path=PublisherName}"
+                                                    Header="Publisher" />
+                                <DataGridTextColumn Width="150"
+                                                    Binding="{Binding Path=TotalAmount}"
+                                                    Header="Total" />
                                 <!--<DataGridTextColumn Header="Discount %" Binding="{Binding Path=DiscountPercentage}" Width="110"/>-->
-                                <DataGridTemplateColumn Header="Discount %"  Width="110">
+                                <DataGridTemplateColumn Width="110" Header="Discount %">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Border x:Name="brdBroder" VerticalAlignment="Stretch" Margin="1">
-                                                <TextBox  Margin="3,1" x:Name="discountTextBox" Width="50"  TextChanged="discountTextBox_TextChanged_1"  Text="{Binding Path=DiscountPercentage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"   />
+                                            <Border x:Name="brdBroder"
+                                                    Margin="1"
+                                                    VerticalAlignment="Stretch">
+                                                <TextBox x:Name="discountTextBox"
+                                                         Width="50"
+                                                         Margin="3,1"
+                                                         Text="{Binding Path=DiscountPercentage,
+                                                                        Mode=TwoWay,
+                                                                        UpdateSourceTrigger=PropertyChanged}"
+                                                         TextChanged="discountTextBox_TextChanged_1" />
                                             </Border>
                                             <DataTemplate.Triggers>
                                                 <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green"/>
-                                                    <Setter TargetName="discountTextBox" Property="Foreground" Value="White"/>
+                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                    <Setter TargetName="discountTextBox" Property="Foreground" Value="White" />
                                                 </DataTrigger>
                                             </DataTemplate.Triggers>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Discount Amount" Binding="{Binding Path=DiscountAmount}" Width="150"/>
+                                <DataGridTextColumn Width="150"
+                                                    Binding="{Binding Path=DiscountAmount}"
+                                                    Header="Discount Amount" />
                             </DataGrid.Columns>
                         </DataGrid>
 
                     </Grid>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="2"
+                               Style="{StaticResource Heading2}"
+                               Text="Total  "
+                               TextAlignment="Right" />
+                    <TextBox Name="totalTextBox"
+                             Grid.Row="0"
+                             Grid.Column="3"
+                             Margin="0,0,76,0" />
+                    <RadioButton Name="cashPaytype"
+                                 Grid.Row="1"
+                                 Grid.Column="0"
+                                 Content="Cash"
+                                 GroupName="PaymentType" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="2"
+                               Style="{StaticResource Heading2}"
+                               Text="Total Discount  "
+                               TextAlignment="Right" />
+                    <TextBox Name="discountTextBox"
+                             Grid.Row="1"
+                             Grid.Column="3"
+                             Margin="0,0,194,0" />
+                    <TextBox Name="discountAmountTextBox"
+                             Grid.Row="1"
+                             Grid.Column="3"
+                             Margin="83,0,76,0"
+                             TextChanged="discountAmountTextBox_TextChanged" />
+                    <RadioButton Name="bikshPaytype"
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 Content="Bikash"
+                                 GroupName="PaymentType" />
+                    <TextBox Name="bikashNoTextBox"
+                             Grid.Row="2"
+                             Grid.Column="0"
+                             Margin="74,0,10,0" />
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="2"
+                               Style="{StaticResource Heading2}"
+                               Text="Grand Total  "
+                               TextAlignment="Right" />
+                    <TextBox Name="grandTotalTextBox"
+                             Grid.Row="2"
+                             Grid.Column="3"
+                             Margin="0,0,76,0" />
+                    <RadioButton Name="chequePaytype"
+                                 Grid.Row="3"
+                                 Grid.Column="0"
+                                 Content="Cheque"
+                                 GroupName="PaymentType" />
+                    <TextBox Name="chequeNoTextBox"
+                             Grid.Row="3"
+                             Grid.Column="0"
+                             Margin="74,0,10,0" />
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="2"
+                               Style="{StaticResource Heading2}"
+                               Text="Receive  "
+                               TextAlignment="Right" />
+                    <TextBox Name="receiveTextBox"
+                             Grid.Row="3"
+                             Grid.Column="3"
+                             Margin="0,0,76,0"
+                             TextChanged="receiveTextBox_TextChanged" />
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="2"
+                               Style="{StaticResource Heading2}"
+                               Text="Due  "
+                               TextAlignment="Right" />
+                    <TextBox Name="dueTextBox"
+                             Grid.Row="4"
+                             Grid.Column="3"
+                             Margin="0,0,76,0" />
 
                 </Grid>
 
-                <StackPanel Grid.Row="8" Grid.Column="3" Orientation="Horizontal">
-                    <Button Content="Print"    />
-                    <Button Content="Save" Name="saveButton" Click="saveButton_Click" />
-                    <Button Content="Close"  Name="closeButton" Click="closeButton_Click"/>
+                <StackPanel Grid.Row="8"
+                            Grid.Column="3"
+                            Orientation="Horizontal">
+                    <Button Content="Print" />
+                    <Button Name="saveButton"
+                            Click="saveButton_Click"
+                            Content="Save" />
+                    <Button Name="closeButton"
+                            Click="closeButton_Click"
+                            Content="Close" />
                 </StackPanel>
 
             </Grid>

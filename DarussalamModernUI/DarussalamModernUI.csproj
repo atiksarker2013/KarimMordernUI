@@ -104,6 +104,9 @@
     <Compile Include="PopupNewBookEntryList.xaml.cs">
       <DependentUpon>PopupNewBookEntryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddNewBook.xaml.cs">
+      <DependentUpon>AddNewBook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateBookPrice.xaml.cs">
       <DependentUpon>UpdateBookPrice.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PopupNewBookEntryList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddNewBook.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
