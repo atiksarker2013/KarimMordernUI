@@ -23,5 +23,6 @@ namespace Data
         public Nullable<int> OutOfStock { get; set; }
         public Nullable<int> InStock { get; set; }
         public string Barcode { get; set; }
+        public Nullable<System.DateTime> EntryDate { get; set; }
     }
 }

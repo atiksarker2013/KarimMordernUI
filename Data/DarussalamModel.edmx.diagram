@@ -8,9 +8,9 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" Width="1.5" PointX="0.75" PointY="4.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" Width="1.5" PointX="5.375" PointY="0.75" />
-        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" Width="1.5" PointX="5.375" PointY="3.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" Width="1.5" PointX="3.375" PointY="4.625" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

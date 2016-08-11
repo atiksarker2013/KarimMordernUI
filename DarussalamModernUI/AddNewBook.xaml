@@ -112,21 +112,143 @@
                               AutoGenerateColumns="False"
                               IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="420"
+                            <DataGridTemplateColumn Width="420" Header="Title">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="titletextBox"
+                                                     Width="420"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Title,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="titletextBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+                            <DataGridTemplateColumn Width="200" Header="Wtiter">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="writertextBox"
+                                                     Width="200"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Writer,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="writertextBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="200" Header="Publisher">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="publishertextBox"
+                                                     Width="200"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Writer,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="publishertextBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+                            <DataGridTemplateColumn Width="150" Header="Price">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="pricetextBox"
+                                                     Width="150"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Price,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="pricetextBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="150" Header="Qty">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="qtytextBox"
+                                                     Width="150"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Qty,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="qtytextBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!--<DataGridTextColumn Width="420"
                                                 Binding="{Binding Path=Title}"
-                                                Header="Title" />
-                            <DataGridTextColumn Width="200"
+                                                Header="Title" />-->
+                            <!--<DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Writer}"
-                                                Header="Writer" />
-                            <DataGridTextColumn Width="200"
+                                                Header="Writer" />-->
+                            <!--<DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Publisher}"
-                                                Header="Publisher" />
-                            <DataGridTextColumn Width="150"
+                                                Header="Publisher" />-->
+                            <!--<DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=Price}"
-                                                Header="Price" />
-                            <DataGridTextColumn Width="70"
+                                                Header="Price" />-->
+                            <!--<DataGridTextColumn Width="70"
                                                 Binding="{Binding Path=Qty}"
-                                                Header="Stock Qty" />
+                                                Header="Stock Qty" />-->
 
                         </DataGrid.Columns>
                     </DataGrid>

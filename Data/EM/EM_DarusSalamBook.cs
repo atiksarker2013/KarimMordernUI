@@ -18,6 +18,7 @@ namespace Data
             model.Price = entity.Price ?? 0;
             model.OutOfStock = entity.OutOfStock ?? 0;
             model.InStock = entity.InStock ?? 0;
+            model.EntryDate = entity.EntryDate;
 
             return model;
         }
@@ -35,6 +36,8 @@ namespace Data
             entity.Barcode = model.Barcode;
             entity.OutOfStock = model.OutOfStock;
             entity.InStock = model.InStock;
+            entity.EntryDate = model.EntryDate;
+            
 
             return entity;
         }

@@ -190,6 +190,23 @@ namespace Models
             }
         }
 
+        private DateTime? _entryDate;
+        public DateTime? EntryDate
+        {
+            get { return _entryDate; }
+            set
+            {
+                _entryDate = value;
+                RaisePropertyChanged("EntryDate");
+                //if (InStock == 0)
+                //AddErrorForProperty("InStock","NStock cannot be empty");
+                //else
+                //RemoveError("InStock");
+            }
+        }
+
+
+
         public string Barcode { get; set; }
 
         public bool CheckValidation()

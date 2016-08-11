@@ -28,6 +28,7 @@
           <Property Name="OutOfStock" Type="int" />
           <Property Name="InStock" Type="int" />
           <Property Name="Barcode" Type="varchar(max)" />
+          <Property Name="EntryDate" Type="datetime" />
         </EntityType>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -94,9 +95,9 @@
           <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
           <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <EntitySet Name="tbl_Discount" EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" />
-          <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" />
           <EntitySet Name="tbl_NewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" />
+          <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
         </EntityContainer>
         <EntityType Name="tbl_SalesDetails">
           <Key>
@@ -137,20 +138,6 @@
           <Property Name="DiscountPercentage" Type="Int32" />
           <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="tbl_DarusSalamBook">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Qty" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="OutOfStock" Type="Int32" />
-          <Property Name="InStock" Type="Int32" />
-          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="tbl_BookPriceUpdate">
           <Key>
             <PropertyRef Name="Id" />
@@ -169,6 +156,21 @@
           <Property Name="BookId" Type="Int32" />
           <Property Name="OldStock" Type="Int32" />
           <Property Name="NewEntryQty" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DarusSalamBook">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OutOfStock" Type="Int32" />
+          <Property Name="InStock" Type="Int32" />
+          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
@@ -219,21 +221,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tbl_DarusSalamBook">
-            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
-              <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
-                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-                <ScalarProperty Name="InStock" ColumnName="InStock" />
-                <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-                <ScalarProperty Name="Writer" ColumnName="Writer" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_BookPriceUpdate">
             <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate">
               <MappingFragment StoreEntitySet="tbl_BookPriceUpdate">
@@ -252,6 +239,22 @@
                 <ScalarProperty Name="NewEntryQty" ColumnName="NewEntryQty" />
                 <ScalarProperty Name="OldStock" ColumnName="OldStock" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DarusSalamBook">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
+              <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="InStock" ColumnName="InStock" />
+                <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

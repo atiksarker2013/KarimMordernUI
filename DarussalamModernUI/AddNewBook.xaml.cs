@@ -2,14 +2,13 @@
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
 using Models;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 
 namespace DarussalamModernUI
 {
-    /// <summary>
-    /// Interaction logic for POSUI.xaml
-    /// </summary>
+    
     public partial class AddNewBook : ModernWindow
     {
         SalesContext salesManagerObj = new SalesContext();
@@ -18,9 +17,12 @@ namespace DarussalamModernUI
         DiscountContext discountContext = new DiscountContext();
 
         List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
+        List<DarusSalamBook> newbookList = new List<DarusSalamBook>();
+        
         public AddNewBook()
         {
             InitializeComponent();
+            entryDateDatepicker.SelectedDate = DateTime.Today;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,12 +33,15 @@ namespace DarussalamModernUI
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
+            
             DarusSalamBook obj = new DarusSalamBook();
             obj.Title = bookTitleTextBox.Text;
             obj.Writer = writerTextBox.Text;
             obj.Publisher = publisherTextBox.Text;
-            //obj.Price =  priceTextBox.Text;
-            //obj.InStock = openingQtyTextBox.Text;
+            obj.Price = Convert.ToDecimal(priceTextBox.Text);;
+            obj.InStock = Convert.ToInt32(openingQtyTextBox.Text);
+            obj.EntryDate = entryDateDatepicker.SelectedDate;
+            posDatagrid.Items.Add(obj);
         }
 
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
