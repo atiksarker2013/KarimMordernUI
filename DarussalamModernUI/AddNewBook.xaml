@@ -37,7 +37,7 @@
                            Style="{StaticResource Heading2}"
                            Text="Book Title  "
                            TextAlignment="Right" />
-                <TextBox Name="customerNameTextBox"
+                <TextBox Name="bookTitleTextBox"
                          Grid.Row="0"
                          Grid.Column="1" />
                 <TextBlock Grid.Row="0"
@@ -45,7 +45,7 @@
                            Style="{StaticResource Heading2}"
                            Text="Writer  "
                            TextAlignment="Right" />
-                <TextBox Name="addressTextBox"
+                <TextBox Name="writerTextBox"
                          Grid.Row="0"
                          Grid.Column="3" />
                 <TextBlock Grid.Row="1"
@@ -53,16 +53,16 @@
                            Style="{StaticResource Heading2}"
                            Text="Publisher  "
                            TextAlignment="Right" />
-                <TextBox Name="MobileTextBox"
+                <TextBox Name="publisherTextBox"
                          Grid.Row="1"
                          Grid.Column="1" />
                 <TextBlock Grid.Row="1"
                            Grid.Column="2"
                            Style="{StaticResource Heading2}"
-                           Text="Date  "
+                           Text="Entry Date  "
                            TextAlignment="Right" />
 
-                <DatePicker Name="salesDateDatepicker"
+                <DatePicker Name="entryDateDatepicker"
                             Grid.Row="1"
                             Grid.Column="3" />
                 <TextBlock Grid.Row="2"
@@ -102,6 +102,7 @@
                             Grid.Row="2"
                             Grid.Column="3"
                             Margin="0,0,131,0"
+                            Click="addButton_Click"
                             Content="Add" />
                 </Grid>
                 <Grid Grid.Row="4"
@@ -117,42 +118,16 @@
                             <DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Writer}"
                                                 Header="Writer" />
-                            <DataGridTextColumn Width="100"
+                            <DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Publisher}"
                                                 Header="Publisher" />
-                            <DataGridTextColumn Width="70"
+                            <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=Price}"
                                                 Header="Price" />
                             <DataGridTextColumn Width="70"
                                                 Binding="{Binding Path=Qty}"
                                                 Header="Stock Qty" />
-                            <DataGridTemplateColumn Width="150" Header="Order Qty">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Border x:Name="brdBroder"
-                                                Margin="1"
-                                                VerticalAlignment="Stretch">
-                                            <TextBox x:Name="textBox"
-                                                     Width="50"
-                                                     Margin="3,1"
-                                                     Text="{Binding Path=OrderQty,
-                                                                    Mode=TwoWay,
-                                                                    UpdateSourceTrigger=PropertyChanged}"
-                                                       />
-                                        </Border>
-                                        <DataTemplate.Triggers>
-                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
-                                                <Setter TargetName="textBox" Property="Foreground" Value="White" />
-                                            </DataTrigger>
-                                        </DataTemplate.Triggers>
 
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTextColumn Width="200"
-                                                Binding="{Binding Path=TotalUnitPrice}"
-                                                Header="Total Unit Price" />
                         </DataGrid.Columns>
                     </DataGrid>
 
@@ -164,12 +139,8 @@
                             Grid.Column="3"
                             Orientation="Horizontal">
                     <Button Content="Print" />
-                    <Button Name="saveButton"
-                             
-                            Content="Save" />
-                    <Button Name="closeButton"
-                             
-                            Content="Close" />
+                    <Button Name="saveButton" Content="Save" />
+                    <Button Name="closeButton" Content="Close" />
                 </StackPanel>
 
             </Grid>

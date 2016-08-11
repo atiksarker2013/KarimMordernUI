@@ -1,6 +1,7 @@
 ﻿using DarussalamModernUI.Report.Model;
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
+using Models;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -26,6 +27,16 @@ namespace DarussalamModernUI
         {
             PopupBookList obj = new PopupBookList();
             obj.Show();
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            DarusSalamBook obj = new DarusSalamBook();
+            obj.Title = bookTitleTextBox.Text;
+            obj.Writer = writerTextBox.Text;
+            obj.Publisher = publisherTextBox.Text;
+            //obj.Price =  priceTextBox.Text;
+            //obj.InStock = openingQtyTextBox.Text;
         }
 
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -113,7 +124,7 @@ namespace DarussalamModernUI
         //        salesObj.PayType = "Cheque";
         //        salesObj.PayNo = chequeNoTextBox.Text;
         //    }
-                     
+
         //    salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
         //    salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
         //    salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
@@ -184,7 +195,7 @@ namespace DarussalamModernUI
         //    }
 
 
-           
+
         //    if (SalesInfoList.Count > 0)
         //    {
         //        salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
@@ -243,7 +254,7 @@ namespace DarussalamModernUI
         //        discountTextBox.Text = TGBP.ToString("F");
         //        grandTotalTextBox.Text = GT.ToString("F");
         //    }
-            
+
 
         //}
     }
