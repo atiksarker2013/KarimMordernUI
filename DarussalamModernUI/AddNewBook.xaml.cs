@@ -39,9 +39,33 @@ namespace DarussalamModernUI
             obj.Writer = writerTextBox.Text;
             obj.Publisher = publisherTextBox.Text;
             obj.Price = Convert.ToDecimal(priceTextBox.Text);;
+            obj.Qty = Convert.ToInt32(openingQtyTextBox.Text);
             obj.InStock = Convert.ToInt32(openingQtyTextBox.Text);
             obj.EntryDate = entryDateDatepicker.SelectedDate;
             posDatagrid.Items.Add(obj);
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<DarusSalamBook> _bookList = new List<DarusSalamBook>();
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
+                _bookList.Add(obj);
+            }
+
+            if (_bookList.Count>0)
+            {
+                foreach (DarusSalamBook item in _bookList)
+                {
+                    bookContext.Insert(item);
+                }
+            }
+        }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)

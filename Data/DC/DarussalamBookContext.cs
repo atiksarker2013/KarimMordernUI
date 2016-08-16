@@ -32,5 +32,20 @@ namespace Data.DC
             }
         }
 
+        public void Insert(DarusSalamBook darusSalamBook)
+        {
+            tbl_DarusSalamBook _darussalamBookModel = EM_DarusSalamBook.ConvertToEntity(darusSalamBook);
+            _db.tbl_DarusSalamBook.Add(_darussalamBookModel);
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                // HandleException(ue);
+            }
+
+        }
     }
 }
