@@ -14,7 +14,7 @@ namespace DarussalamModernUI
     /// <summary>
     /// Interaction logic for POSUI.xaml
     /// </summary>
-    public partial class POSUI : ModernWindow
+    public partial class SalesReturn : ModernWindow
     {
         SalesContext salesManagerObj = new SalesContext();
         SalesDetailsContext salesDetailsManagerObj = new SalesDetailsContext();
@@ -22,9 +22,66 @@ namespace DarussalamModernUI
         DiscountContext discountContext = new DiscountContext();
 
         List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
-        public POSUI()
+        private int id;
+        private Sales salesObj;
+
+        public SalesReturn()
         {
             InitializeComponent();
+        }
+
+      
+        public SalesReturn(Sales salesObj) : this()
+        {
+            this.salesObj = salesObj;
+            LoadSalesReturnDetails();
+        }
+
+        private void LoadSalesReturnDetails()
+        {
+            //load Sales Details
+            customerNameTextBox.Text = salesObj.Name;
+            MobileTextBox.Text = salesObj.Mobile;
+             addressTextBox.Text = salesObj.Address;
+             salesDateDatepicker.SelectedDate = salesObj.Date;
+
+            if (salesObj.PayType == "Cash" )
+            {
+                cashPaytype.IsChecked = true;
+            }
+            if (salesObj.PayType == "Bikas")
+            {
+                bikshPaytype.IsChecked = true;
+                 bikashNoTextBox.Text = salesObj.PayNo;
+            }
+            if (salesObj.PayType == "Cheque")
+            {
+                chequePaytype.IsChecked = true;
+                 chequeNoTextBox.Text = salesObj.PayNo;
+            }
+
+            totalTextBox.Text = salesObj.Total.ToString();
+            discountTextBox.Text = salesObj.Discount.ToString();
+            discountAmountTextBox.Text = salesObj.OtherDiscount.ToString();
+            grandTotalTextBox.Text = salesObj.GrandTotal.ToString();
+            receiveTextBox.Text = salesObj.Receive.ToString();
+            dueTextBox.Text = salesObj.Due.ToString();
+
+            // Load Book Details
+
+
+
+
+            // Load Discount Details
+
+            List<Discounts> discountList = new List<Discounts>();
+            discountList = discountContext.GetBookDiscountByInvoiceNo(salesObj.Id);
+            foreach (Discounts item in discountList)
+            {
+                discountDatagrid.Items.Add(item);
+            }
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,7 +107,18 @@ namespace DarussalamModernUI
             grandTotalTextBox.Text = TGBP.ToString("F");
         }
 
-       
+        //private void discountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    if (!string.IsNullOrEmpty(discountTextBox.Text))
+        //    {
+        //        decimal finalDiscount = 0;
+        //        decimal orginalPrice = Convert.ToDecimal(totalTextBox.Text);
+        //        decimal discount = Convert.ToDecimal(discountTextBox.Text);
+        //        var calculateDiscount = Convert.ToDecimal(orginalPrice / 100);
+        //        finalDiscount = calculateDiscount * discount;
+        //        discountAmountTextBox.Text = finalDiscount.ToString("F");
+        //    }
+        //}
 
         private void discountAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

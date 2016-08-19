@@ -91,6 +91,24 @@
                         <DataGrid Name="posDatagrid"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True">
+                            <DataGrid.ContextMenu>
+                                <ContextMenu Name="ZoneIformationList"
+                                             Background="WhiteSmoke"
+                                             StaysOpen="true">
+                                    <ContextMenu.BitmapEffect>
+                                        <BitmapEffectGroup />
+                                    </ContextMenu.BitmapEffect>
+                                    <MenuItem Name="revertContextMenu"
+                                              Click="revertContextMenu_Click"
+                                              Header="Revert" />
+                                    <MenuItem Name="printInfoContextMenu"
+                                              Click="printInfoContextMenu_Click"
+                                              Header="Print Invoice" />
+                                    <MenuItem Name="salesReturnContextMenu"
+                                              Click="salesReturnContextMenu_Click"
+                                              Header="Sales Return" />
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
                             <DataGrid.Columns>
                                 <DataGridTextColumn Width="70"
                                                     Binding="{Binding Path=Id}"

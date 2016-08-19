@@ -12,6 +12,7 @@ namespace DarussalamModernUI
     public partial class SalesHistory : ModernWindow
     {
         SalesContext salesContext = new SalesContext();
+        DarussalamBookContext _bookContext = new DarussalamBookContext();
 
         decimal total = 0;
         decimal totalDiscount = 0;
@@ -33,6 +34,12 @@ namespace DarussalamModernUI
             DateTime toDate = Convert.ToDateTime(toDateDatepicker.SelectedDate);
             List<Sales> salesList = new List<Sales>();
             salesList = salesContext.GetSalesHistoryByDateRange(fromDate, toDate);
+
+            foreach (Sales item in salesList)
+            {
+                // item.SalesDetailsList = new List<SalesDetails>();
+                item.SalesDetailsList = _bookContext.GetBookDetailsByInvoiceNo(item.Id);
+            }
 
             posDatagrid.Items.Clear();
 
@@ -59,6 +66,26 @@ namespace DarussalamModernUI
         private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             this.Close();
+        }
+
+
+
+        private void revertContextMenu_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void printInfoContextMenu_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void salesReturnContextMenu_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Sales chalan = new Sales();
+            chalan = posDatagrid.SelectedItem as Sales;
+            SalesReturn obj = new SalesReturn(chalan);
+            obj.Show();
         }
     }
 }

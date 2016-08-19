@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Models
 {
@@ -333,6 +334,13 @@ namespace Models
             else if (_trueCount < _falseCount)
                 _result = false;
             return _result;
+        }
+
+        private List<SalesDetails> _salesDetailsList = new List<SalesDetails>();
+        public List<SalesDetails> SalesDetailsList
+        {
+            get { return _salesDetailsList; }
+            set { _salesDetailsList = value; }
         }
     }
 }

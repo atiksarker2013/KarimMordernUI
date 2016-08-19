@@ -28,7 +28,7 @@ namespace Data.DC
             }
             catch (DbUpdateException ue)
             {
-              //  HandleException(ue);
+                //  HandleException(ue);
             }
         }
 
@@ -46,6 +46,13 @@ namespace Data.DC
                 // HandleException(ue);
             }
 
+        }
+
+        public List<SalesDetails> GetBookDetailsByInvoiceNo(int id)
+        {
+            List<tbl_SalesDetails> result = (from c in _db.tbl_SalesDetails.Where(t => t.SalesId == id) select c).ToList();
+            List<SalesDetails> list = result.Select(n => EM_SalesDetails.ConverToModel(n)).ToList();
+            return list;
         }
     }
 }

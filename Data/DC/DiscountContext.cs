@@ -1,6 +1,8 @@
 ﻿using Data.EM;
 using Models;
+using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 
 namespace Data.DC
 {
@@ -22,6 +24,13 @@ namespace Data.DC
                 // HandleException(ue);
             }
             return _salesModel.Id;
+        }
+
+        public List<Discounts> GetBookDiscountByInvoiceNo(int id)
+        {
+            List<tbl_Discount> result = (from c in _db.tbl_Discount.Where(t => t.InvoiceId == id) select c).ToList();
+            List<Discounts> list = result.Select(n => EM_Discount.ConverToModel(n)).ToList();
+            return list;
         }
     }
 }
