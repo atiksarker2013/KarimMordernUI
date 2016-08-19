@@ -81,6 +81,10 @@ namespace Models
             }
         }
 
+        public string Writer { get; set; }
+        public string Publisher { get; set; }
+        public string Title { get; set; }
+        public int ReturnQty { get; set; }
 
         public bool CheckValidation()
         {

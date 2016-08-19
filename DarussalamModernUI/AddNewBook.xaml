@@ -169,7 +169,7 @@
                                             <TextBox x:Name="publishertextBox"
                                                      Width="200"
                                                      Margin="3,1"
-                                                     Text="{Binding Path=Writer,
+                                                     Text="{Binding Path=Publisher,
                                                                     Mode=TwoWay,
                                                                     UpdateSourceTrigger=PropertyChanged}" />
                                         </Border>

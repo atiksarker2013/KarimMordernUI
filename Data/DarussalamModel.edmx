@@ -78,6 +78,7 @@
           <Property Name="BookId" Type="int" />
           <Property Name="OrderQty" Type="int" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ReturnQty" Type="int" />
         </EntityType>
         <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
@@ -92,23 +93,13 @@
     <edmx:ConceptualModels>
       <Schema Namespace="KARIM_INT_HOUSTONEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="KARIM_INT_HOUSTONEEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
           <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <EntitySet Name="tbl_Discount" EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" />
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" />
           <EntitySet Name="tbl_NewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" />
           <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
+          <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
         </EntityContainer>
-        <EntityType Name="tbl_SalesDetails">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SalesId" Type="Int32" />
-          <Property Name="BookId" Type="Int32" />
-          <Property Name="OrderQty" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-        </EntityType>
         <EntityType Name="tbl_Sales">
           <Key>
             <PropertyRef Name="Id" />
@@ -173,23 +164,23 @@
           <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="tbl_SalesDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesId" Type="Int32" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ReturnQty" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KARIM_INT_HOUSTONEModelStoreContainer" CdmEntityContainer="KARIM_INT_HOUSTONEEntities">
-          <EntitySetMapping Name="tbl_SalesDetails">
-            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_SalesDetails">
-              <MappingFragment StoreEntitySet="tbl_SalesDetails">
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
-                <ScalarProperty Name="BookId" ColumnName="BookId" />
-                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_Sales">
             <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_Sales">
               <MappingFragment StoreEntitySet="tbl_Sales">
@@ -255,6 +246,18 @@
                 <ScalarProperty Name="Publisher" ColumnName="Publisher" />
                 <ScalarProperty Name="Writer" ColumnName="Writer" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SalesDetails">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_SalesDetails">
+              <MappingFragment StoreEntitySet="tbl_SalesDetails">
+                <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

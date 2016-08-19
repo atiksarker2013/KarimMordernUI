@@ -54,5 +54,12 @@ namespace Data.DC
             List<SalesDetails> list = result.Select(n => EM_SalesDetails.ConverToModel(n)).ToList();
             return list;
         }
+
+        public List<DarusSalamBook> GetBookInfoByBookId(int id)
+        {
+            List<tbl_DarusSalamBook> result = (from c in _db.tbl_DarusSalamBook.Where(t => t.Id == id) select c).ToList();
+            List<DarusSalamBook> list = result.Select(n => EM_DarusSalamBook.ConverToModel(n)).ToList();
+            return list;
+        }
     }
 }

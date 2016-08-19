@@ -12,6 +12,7 @@ namespace Data
             model.SalesId = entity.SalesId ?? 0;
             model.BookId = entity.BookId ?? 0;
             model.OrderQty = entity.OrderQty ?? 0;
+            model.ReturnQty = entity.ReturnQty ?? 0;
             model.Price = entity.Price ?? 0;
 
             return model;
@@ -25,6 +26,7 @@ namespace Data
             entity.SalesId = model.SalesId;
             entity.BookId = model.BookId;
             entity.OrderQty = model.OrderQty;
+            entity.ReturnQty = model.ReturnQty;
             entity.Price = model.Price;
 
             return entity;

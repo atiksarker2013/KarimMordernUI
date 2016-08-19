@@ -61,9 +61,19 @@
                            Style="{StaticResource Heading2}"
                            Text="Date  "
                            TextAlignment="Right" />
+                <!--<TextBlock Grid.Row="2"
+                           Grid.Column="1"
+                           Style="{StaticResource Heading2}"
+                           Text="Mobile  "
+                           TextAlignment="Right" />-->
                 <DatePicker Name="salesDateDatepicker"
                             Grid.Row="1"
                             Grid.Column="3" />
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Style="{StaticResource Heading2}"
+                           Text="Invoice No  "
+                           TextAlignment="Right" />
 
                 <Grid Grid.Row="2"
                       Grid.Column="0"
@@ -78,15 +88,11 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-
-
-
-                    <Button Grid.Row="0"
-                            Grid.Column="3"
-                            Margin="0,0,131,0"
-                            Click="Button_Click"
-                            Content="Book Search" />
                 </Grid>
+
+                <TextBox Name="invoiceNoTextBox"
+                         Grid.Row="2"
+                         Grid.Column="1" />
                 <Grid Grid.Row="4"
                       Grid.Column="0"
                       Grid.ColumnSpan="4">
@@ -107,9 +113,9 @@
                                                 Binding="{Binding Path=Price}"
                                                 Header="Price" />
                             <DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=Qty}"
-                                                Header="Stock Qty" />
-                            <DataGridTemplateColumn Width="150" Header="Order Qty">
+                                                Binding="{Binding Path=OrderQty}"
+                                                Header="Order Qty" />
+                            <DataGridTemplateColumn Width="150" Header="Return Qty">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder"
@@ -118,7 +124,7 @@
                                             <TextBox x:Name="textBox"
                                                      Width="50"
                                                      Margin="3,1"
-                                                     Text="{Binding Path=OrderQty,
+                                                     Text="{Binding Path=ReturnQty,
                                                                     Mode=TwoWay,
                                                                     UpdateSourceTrigger=PropertyChanged}"
                                                      TextChanged="textBox_TextChanged" />
@@ -133,9 +139,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Width="200"
-                                                Binding="{Binding Path=TotalUnitPrice}"
-                                                Header="Total Unit Price" />
+
                         </DataGrid.Columns>
                     </DataGrid>
 

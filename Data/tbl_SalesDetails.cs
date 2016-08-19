@@ -19,5 +19,6 @@ namespace Data
         public Nullable<int> BookId { get; set; }
         public Nullable<int> OrderQty { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<int> ReturnQty { get; set; }
     }
 }

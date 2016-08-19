@@ -25,11 +25,11 @@ namespace Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<tbl_SalesDetails> tbl_SalesDetails { get; set; }
         public virtual DbSet<tbl_Sales> tbl_Sales { get; set; }
         public virtual DbSet<tbl_Discount> tbl_Discount { get; set; }
         public virtual DbSet<tbl_BookPriceUpdate> tbl_BookPriceUpdate { get; set; }
         public virtual DbSet<tbl_NewEntryQty> tbl_NewEntryQty { get; set; }
         public virtual DbSet<tbl_DarusSalamBook> tbl_DarusSalamBook { get; set; }
+        public virtual DbSet<tbl_SalesDetails> tbl_SalesDetails { get; set; }
     }
 }
