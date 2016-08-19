@@ -11,8 +11,6 @@
                   WindowState="Maximized">
 
     <ScrollViewer>
-
-
         <StackPanel>
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/Images/BackGround.jpg" />
@@ -37,37 +35,8 @@
                     </Menu>
                     <!--<TextBox AcceptsReturn="True" />-->
                 </DockPanel>
-                <!--<Button x:Name="posButton"
-                        Width="200"
-                        Click="button_Click_1"
-                        Content="POS" />-->
-                <!--<Button x:Name="salesHistoryButton"
-                        Width="200"
-                        Click="salesHistoryButton_Click"
-                        Content="Sales History" />-->
-                <!--<Button x:Name="receiveBookButton"
-                        Width="200"
-                        Click="receiveBookButton_Click"
-                        Content="Update Inventory" />-->
-                <!--<Button x:Name="updateBookButton"
-                        Width="200"
-                        Click="updateBookButton_Click"
-                        Content="Update Book Bacode" />-->
-                <!--<Button x:Name="updateBookPriceButton"
-                        Width="200"
-                        Click="updateBookPriceButton_Click"
-                        Content="Update Book Price" />-->
 
-                <!--<Button x:Name="addnewBookButto"
-                        Width="200"
-                        Click="addnewBookButto_Click"
-                        Content="Add New Book" />-->
-                <!--<Button x:Name="reportsButton"
-                        Width="200"
-                        Content="Reports" />-->
             </StackPanel>
-
-
         </StackPanel>
     </ScrollViewer>
 </mui:ModernWindow>
