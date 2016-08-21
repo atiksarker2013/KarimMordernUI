@@ -171,5 +171,54 @@ namespace DarussalamModernUI.Report.Model
         public decimal Receive { get; internal set; }
         public decimal Due { get; internal set; }
         public int InvoiceNo { get; internal set; }
+
+
+        private string _publisherName;
+        public string PublisherName
+        {
+            get { return _publisherName; }
+            set
+            {
+                _publisherName = value;
+               // RaisePropertyChanged("PublisherName");
+            }
+        }
+
+        private decimal _totalAmount;
+        public decimal TotalAmount
+        {
+            get { return _totalAmount; }
+            set
+            {
+                _totalAmount = value;
+              //  RaisePropertyChanged("TotalAmount");
+            }
+        }
+
+
+        private int _discountPercentage;
+        public int DiscountPercentage
+        {
+            get { return _discountPercentage; }
+            set
+            {
+                _discountPercentage = value;
+               // RaisePropertyChanged("DiscountPercentage");
+            }
+        }
+
+        private decimal _discountAmount;
+        public decimal DiscountAmount
+        {
+            get { return _discountAmount; }
+            set
+            {
+                _discountAmount = value;
+               // RaisePropertyChanged("DiscountAmount");
+            }
+        }
+
+        public decimal CuriarCharg { get; internal set; }
+        public decimal OtherDiscount { get; internal set; }
     }
 }

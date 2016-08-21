@@ -342,6 +342,8 @@ namespace Models
             get { return _salesDetailsList; }
             set { _salesDetailsList = value; }
         }
+
+        public decimal CuriarCharg { get; set; }
     }
 }
 

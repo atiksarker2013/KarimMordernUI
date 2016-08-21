@@ -27,5 +27,6 @@ namespace Data
         public Nullable<decimal> GrandTotal { get; set; }
         public Nullable<decimal> Receive { get; set; }
         public Nullable<decimal> Due { get; set; }
+        public Nullable<decimal> CuriarCharg { get; set; }
     }
 }

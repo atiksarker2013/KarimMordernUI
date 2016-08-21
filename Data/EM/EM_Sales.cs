@@ -20,6 +20,7 @@ namespace Data.EM
             model.GrandTotal = entity.GrandTotal ?? 0;
             model.Receive = entity.Receive ?? 0;
             model.Due = entity.Due ?? 0;
+            model.CuriarCharg = entity.CuriarCharg ?? 0;
 
             return model;
         }
@@ -41,6 +42,7 @@ namespace Data.EM
             entity.GrandTotal = model.GrandTotal;
             entity.Receive = model.Receive;
             entity.Due = model.Due;
+            entity.CuriarCharg = model.CuriarCharg;
 
             return entity;
         }

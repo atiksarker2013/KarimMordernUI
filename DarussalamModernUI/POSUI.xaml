@@ -261,6 +261,7 @@
                                  Grid.Column="0"
                                  Content="Cheque"
                                  GroupName="PaymentType" />
+
                     <TextBox Name="chequeNoTextBox"
                              Grid.Row="3"
                              Grid.Column="0"
@@ -275,6 +276,17 @@
                              Grid.Column="3"
                              Margin="0,0,76,0"
                              TextChanged="receiveTextBox_TextChanged" />
+
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="0"
+                               Margin="0,0,140,0"
+                               Style="{StaticResource Heading2}"
+                               Text="Curiar"
+                               TextAlignment="Left" />
+                    <TextBox Name="curiarTextBox"
+                             Grid.Row="4"
+                             Grid.Column="0"
+                             Margin="74,0,10,0" />
                     <TextBlock Grid.Row="4"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
@@ -285,15 +297,19 @@
                              Grid.Column="3"
                              Margin="0,0,76,0" />
 
+
                 </Grid>
 
                 <StackPanel Grid.Row="8"
-                            Grid.Column="3"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2"
                             Orientation="Horizontal">
-                    <Button Content="Print" />
+                    <Button Name="quatationButton"
+                            Click="quatationButton_Click"
+                            Content="Generate Quotation" />
                     <Button Name="saveButton"
                             Click="saveButton_Click"
-                            Content="Save" />
+                            Content="Generate Invoice" />
                     <Button Name="closeButton"
                             Click="closeButton_Click"
                             Content="Close" />
