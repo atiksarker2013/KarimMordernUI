@@ -417,10 +417,10 @@ namespace DarussalamModernUI
 
             if (SalesInfoList.Count > 0)
             {
-              //  priceQuatationCrystalReport employeeInfoCrystalReport = new priceQuatationCrystalReport();
+                 priceQuotationCrystalReport employeeInfoCrystalReport = new priceQuotationCrystalReport();
                 //salesInvoiceCrystalReport discountReport = new salesInvoiceCrystalReport();
                 // employeeInfoCrystalReport.Subreports["salesInvoiceCrystalReport.rpt"].SetDataSource(SalesDiscountInfoList);
-               // ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                 ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
 
 
                 //  ReportUtility.Display_report(discountReport, SalesDiscountInfoList, this);

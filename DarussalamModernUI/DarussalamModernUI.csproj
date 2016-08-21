@@ -107,6 +107,12 @@
     <Compile Include="AddNewBook.xaml.cs">
       <DependentUpon>AddNewBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\Crystal\priceQuotationCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>priceQuotationCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\salesDiscountCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,6 +232,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>priceQuotationCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\salesDiscountCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesDiscountCrystalReport.cs</LastGenOutput>
