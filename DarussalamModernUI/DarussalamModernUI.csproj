@@ -125,6 +125,12 @@
       <DependentUpon>priceQuotationCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Crystal\priceUpdateCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>priceUpdateCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\salesDiscountCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +145,9 @@
     </Compile>
     <Compile Include="Report\Model\RDarussalamSalesDiscount.cs" />
     <Compile Include="Report\Model\RNewBookStockUpdate.cs" />
+    <Compile Include="PriceUpdateReport.xaml.cs">
+      <DependentUpon>PriceUpdateReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StockUpdateReport.xaml.cs">
       <DependentUpon>StockUpdateReport.xaml</DependentUpon>
     </Compile>
@@ -186,6 +195,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="AddNewBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriceUpdateReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -270,6 +283,10 @@
     <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceQuotationCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\priceUpdateCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>priceUpdateCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\salesDiscountCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

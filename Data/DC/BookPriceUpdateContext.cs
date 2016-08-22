@@ -1,6 +1,9 @@
 ﻿using Data.EM;
 using Models;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 
 namespace Data.DC
 {
@@ -25,21 +28,13 @@ namespace Data.DC
             return _salesModel.Id;
         }
 
-        //public void Update(BookPriceUpdate drugupdateoptionsModel)
-        //{
-        //    tbl_BookPriceUpdate drugupdateoptionsEntity = EM_BookPriceUpdate.ConvertToEntity(drugupdateoptionsModel);
-        //    var originalEntity = _db.tbl_BookPriceUpdate.FirstOrDefault(x => x.Id == drugupdateoptionsEntity.Id);
-        //    if (originalEntity != null) { _db.Entry(originalEntity).CurrentValues.SetValues(drugupdateoptionsEntity); }
 
-        //    try
-        //    {
-        //        _db.SaveChanges();
-        //    }
-        //    catch (DbUpdateException ue)
-        //    {
-        //        //  HandleException(ue);
-        //    }
-        //}
 
+        public List<BookPriceUpdate> GetBookPriceUpdateListByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_BookPriceUpdate> result = (from c in _db.tbl_BookPriceUpdate.Where(t => t.UpdateDate > fromDate && t.UpdateDate < toDate) select c).ToList();
+            List<BookPriceUpdate> list = result.Select(n => EM_BookPriceUpdate.ConverToModel(n)).ToList();
+            return list;
+        }
     }
 }

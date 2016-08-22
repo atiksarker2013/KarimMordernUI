@@ -92,5 +92,7 @@ namespace DarussalamModernUI.Report.Model
         public DateTime FromDate { get; set; }
 
         public DateTime ToDate { get; set; }
+        public int OldPrice { get; internal set; }
+        public decimal NewPrice { get; internal set; }
     }
 }

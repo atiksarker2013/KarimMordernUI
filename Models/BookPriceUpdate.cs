@@ -80,6 +80,9 @@ namespace Models
                 //RemoveError("Qty");
             }
         }
- 
+
+        public string Title { get; set; }
+        public string Publisher { get; set; }
+        public string Writer { get; set; }
     }
 }
