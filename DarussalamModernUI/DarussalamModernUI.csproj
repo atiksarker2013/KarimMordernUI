@@ -113,6 +113,12 @@
       <DependentUpon>bookSalesSummaryCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Crystal\newStockUpdateReportCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newStockUpdateReportCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\priceQuotationCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +138,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\Model\RDarussalamSalesDiscount.cs" />
+    <Compile Include="Report\Model\RNewBookStockUpdate.cs" />
     <Compile Include="StockUpdateReport.xaml.cs">
       <DependentUpon>StockUpdateReport.xaml</DependentUpon>
     </Compile>
@@ -255,6 +262,10 @@
     <EmbeddedResource Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookSalesSummaryCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>newStockUpdateReportCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

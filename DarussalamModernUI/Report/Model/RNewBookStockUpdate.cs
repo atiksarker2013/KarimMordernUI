@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Models
+namespace DarussalamModernUI.Report.Model
 {
-    [Serializable]
-   public class NewBookStockUpdate : ModelBase
+  public  class RNewBookStockUpdate
     {
         private int _Id;
         public int Id
@@ -12,7 +15,7 @@ namespace Models
             set
             {
                 _Id = value;
-                RaisePropertyChanged("Id");
+            //    RaisePropertyChanged("Id");
                 //if (Id == 0)
                 //AddErrorForProperty("Id","D cannot be empty");
                 //else
@@ -27,7 +30,7 @@ namespace Models
             set
             {
                 _BookId = value;
-                RaisePropertyChanged("BookId");
+               // RaisePropertyChanged("BookId");
                 //if (Id == 0)
                 //AddErrorForProperty("Id","D cannot be empty");
                 //else
@@ -36,14 +39,14 @@ namespace Models
         }
 
 
-        private int? _OldStock;
-        public int? OldStock
+        private int _OldStock;
+        public int OldStock
         {
             get { return _OldStock; }
             set
             {
                 _OldStock = value;
-                RaisePropertyChanged("OldStock");
+              //  RaisePropertyChanged("OldStock");
                 //if (Id == 0)
                 //AddErrorForProperty("Id","D cannot be empty");
                 //else
@@ -59,7 +62,7 @@ namespace Models
             set
             {
                 _NewEntryQty = value;
-                RaisePropertyChanged("NewEntryQty");
+                //RaisePropertyChanged("NewEntryQty");
                 //if (Id == 0)
                 //AddErrorForProperty("Id","D cannot be empty");
                 //else
@@ -67,14 +70,14 @@ namespace Models
             }
         }
 
-        private DateTime? _EntryDate;
-        public DateTime? EntryDate
+        private DateTime _EntryDate;
+        public DateTime EntryDate
         {
             get { return _EntryDate; }
             set
             {
                 _EntryDate = value;
-                RaisePropertyChanged("EntryDate");
+                //RaisePropertyChanged("EntryDate");
                 //if (Id == 0)
                 //AddErrorForProperty("Id","D cannot be empty");
                 //else
@@ -85,5 +88,9 @@ namespace Models
         public string Title { get; set; }
         public string Publisher { get; set; }
         public string Writer { get; set; }
+
+        public DateTime FromDate { get; set; }
+
+        public DateTime ToDate { get; set; }
     }
 }

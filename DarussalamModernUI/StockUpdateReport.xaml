@@ -51,9 +51,11 @@
                     <DatePicker Name="toDateDatepicker"
                                 Grid.Row="0"
                                 Grid.Column="3" />
-                    <Button Grid.Row="1"
+                    <Button Name="bookSearchButton"
+                            Grid.Row="1"
                             Grid.Column="3"
                             Margin="0,0,131,0"
+                            Click="bookSearchButton_Click"
                             Content="Book Search" />
                     <Grid Grid.Row="2"
                           Grid.Column="0"
@@ -80,7 +82,10 @@
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="420"
+                                <DataGridTextColumn Width="100"
+                                                    Binding="{Binding Path=EntryDate}"
+                                                    Header="Entry Date" />
+                                <DataGridTextColumn Width="400"
                                                     Binding="{Binding Path=Title}"
                                                     Header="Title" />
                                 <DataGridTextColumn Width="200"
@@ -89,39 +94,13 @@
                                 <DataGridTextColumn Width="100"
                                                     Binding="{Binding Path=Publisher}"
                                                     Header="Publisher" />
-                                <DataGridTextColumn Width="70"
-                                                    Binding="{Binding Path=Price}"
-                                                    Header="Price" />
-                                <DataGridTextColumn Width="70"
-                                                    Binding="{Binding Path=Qty}"
-                                                    Header="Stock Qty" />
-                                <DataGridTextColumn Width="70"
+                                <DataGridTextColumn Width="150"
+                                                    Binding="{Binding Path=OldStock}"
+                                                    Header="Old Stock" />
+                                <DataGridTextColumn Width="150"
                                                     Binding="{Binding Path=NewEntryQty}"
                                                     Header="New Entry Qty" />
-                                <!--<DataGridTemplateColumn Width="200" Header="New Entry Qty">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Border x:Name="brdBroder"
-                                                    Margin="1"
-                                                    VerticalAlignment="Stretch">
-                                                <TextBox x:Name="textBox"
-                                                         Width="50"
-                                                         Margin="3,1"
-                                                         Text="{Binding Path=NewEntryQty,
-                                                                        Mode=TwoWay,
-                                                                        UpdateSourceTrigger=PropertyChanged}"
-                                                         TextChanged="textBox_TextChanged" />
-                                            </Border>
-                                            <DataTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green" />
-                                                    <Setter TargetName="textBox" Property="Foreground" Value="White" />
-                                                </DataTrigger>
-                                            </DataTemplate.Triggers>
 
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>-->
 
                             </DataGrid.Columns>
                         </DataGrid>
@@ -155,7 +134,9 @@
                     <StackPanel Grid.Row="8"
                                 Grid.Column="3"
                                 Orientation="Horizontal">
-                        <Button Name="saveButton" Content="Save" />
+                        <Button Name="previewButton"
+                                Click="previewButton_Click"
+                                Content="Preview" />
                         <Button Name="closeButton"
                                 Click="closeButton_Click"
                                 Content="Close" />

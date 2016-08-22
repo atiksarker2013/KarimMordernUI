@@ -1,6 +1,9 @@
 ﻿using Data.EM;
 using Models;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 
 namespace Data.DC
 {
@@ -23,6 +26,13 @@ namespace Data.DC
                 // HandleException(ue);
             }
             return _salesModel.Id;
+        }
+
+        public List<NewBookStockUpdate> GetStockUpdateBookListByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_NewEntryQty> result = (from c in _db.tbl_NewEntryQty.Where(t => t.EntryDate > fromDate && t.EntryDate < toDate) select c).ToList();
+            List<NewBookStockUpdate> list = result.Select(n => EM_NewBookStockUpdate.ConverToModel(n)).ToList();
+            return list;
         }
     }
 }
