@@ -172,6 +172,9 @@ namespace DarussalamModernUI.Report.Model
         public decimal Due { get; internal set; }
         public int InvoiceNo { get; internal set; }
 
+        public DateTime FromDate { get; internal set; }
+        public DateTime ToDate { get; internal set; }
+
 
         private string _publisherName;
         public string PublisherName

@@ -107,6 +107,12 @@
     <Compile Include="AddNewBook.xaml.cs">
       <DependentUpon>AddNewBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\Crystal\bookSalesSummaryCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bookSalesSummaryCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\priceQuotationCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,7 +125,16 @@
       <DependentUpon>salesDiscountCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Crystal\salesSummaryCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>salesSummaryCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Model\RDarussalamSalesDiscount.cs" />
+    <Compile Include="StockUpdateReport.xaml.cs">
+      <DependentUpon>StockUpdateReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SalesReturn.xaml.cs">
       <DependentUpon>SalesReturn.xaml</DependentUpon>
     </Compile>
@@ -164,6 +179,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="AddNewBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StockUpdateReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -227,11 +246,16 @@
     <Content Include="Assets\Images\BackGround.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\logo.jpg" />
     <Content Include="Resources\Entypo-license.txt" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bookSalesSummaryCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceQuotationCrystalReport.cs</LastGenOutput>
@@ -243,6 +267,10 @@
     <EmbeddedResource Include="Report\Crystal\salesInvoiceCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesInvoiceCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\salesSummaryCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>salesSummaryCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

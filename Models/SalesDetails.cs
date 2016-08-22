@@ -85,6 +85,7 @@ namespace Models
         public string Publisher { get; set; }
         public string Title { get; set; }
         public int ReturnQty { get; set; }
+        public int InvoiceNo { get; set; }
 
         public bool CheckValidation()
         {

@@ -98,15 +98,11 @@
                                     <ContextMenu.BitmapEffect>
                                         <BitmapEffectGroup />
                                     </ContextMenu.BitmapEffect>
-                                    <MenuItem Name="revertContextMenu"
-                                              Click="revertContextMenu_Click"
-                                              Header="Revert" />
+
                                     <MenuItem Name="printInfoContextMenu"
                                               Click="printInfoContextMenu_Click"
                                               Header="Print Invoice" />
-                                    <MenuItem Name="salesReturnContextMenu"
-                                              Click="salesReturnContextMenu_Click"
-                                              Header="Sales Return" />
+
                                 </ContextMenu>
                             </DataGrid.ContextMenu>
                             <DataGrid.Columns>
@@ -224,6 +220,22 @@
                                  Height="22"
                                  Margin="0,0,79,0"
                                  VerticalAlignment="Top" />
+
+                        <StackPanel Grid.Row="5"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="3"
+                                    Orientation="Horizontal">
+                            <Button Name="bookSummaryReportButton"
+                                    Click="bookSummaryReportButton_Click"
+                                    Content="Book Summary" />
+                            <Button Name="summaryReportButton"
+                                    Click="summaryReportButton_Click"
+                                    Content="Sale Summary" />
+                            <Button Name="generateInvoiceButton"
+                                    Click="generateInvoiceButton_Click"
+                                    Content="Preview All Invoice" />
+
+                        </StackPanel>
 
                         <TextBlock Grid.Row="5"
                                    Grid.Column="2"

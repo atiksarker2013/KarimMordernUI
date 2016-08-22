@@ -31,7 +31,12 @@
                         <MenuItem Click="updateBookPriceButton_Click" Header="Update Book Price" />
 
                         <MenuItem Click="addnewBookButto_Click" Header="Add New Book" />
-                        <MenuItem Header="Reports" />
+                        <MenuItem Header="Reports">
+                            <MenuItem Click="stockUpdate_Click" Header="Stock Update Report" />
+                            <MenuItem Header="Book Price Update Report" />
+                            <MenuItem Header="Add New Book Report" />
+                            <MenuItem Header="Book List Report" />
+                        </MenuItem>
                     </Menu>
                     <!--<TextBox AcceptsReturn="True" />-->
                 </DockPanel>

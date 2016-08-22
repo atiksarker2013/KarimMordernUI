@@ -54,5 +54,12 @@ namespace DarussalamModernUI
             AddNewBook obj = new AddNewBook();
             obj.Show();
         }
+
+        private void stockUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            StockUpdateReport obj = new StockUpdateReport();
+            obj.Show();
+          //  Update Stock Report
+        }
     }
 }

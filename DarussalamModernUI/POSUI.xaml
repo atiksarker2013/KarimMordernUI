@@ -83,7 +83,7 @@
 
                     <Button Grid.Row="0"
                             Grid.Column="3"
-                            Margin="0,0,131,0"
+                            Margin="0,0,178,0"
                             Click="Button_Click"
                             Content="Book Search" />
                 </Grid>
@@ -301,8 +301,8 @@
                 </Grid>
 
                 <StackPanel Grid.Row="8"
-                            Grid.Column="2"
-                            Grid.ColumnSpan="2"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
                             Orientation="Horizontal">
                     <Button Name="quatationButton"
                             Click="quatationButton_Click"

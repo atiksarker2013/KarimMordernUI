@@ -27,6 +27,7 @@ namespace DarussalamModernUI
         public POSUI()
         {
             InitializeComponent();
+            salesDateDatepicker.SelectedDate = DateTime.Now;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -204,6 +205,8 @@ namespace DarussalamModernUI
                 reportObj.InvoiceNo = pk;
                 reportObj.CuriarCharg = salesObj.CuriarCharg;
                 reportObj.OtherDiscount = salesObj.OtherDiscount;
+                reportObj.Publisher = obj.Publisher;
+                reportObj.Writer = obj.Writer;
                 SalesInfoList.Add(reportObj);
             }
 
@@ -212,12 +215,8 @@ namespace DarussalamModernUI
             if (SalesInfoList.Count > 0)
             {
                 salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
-               //salesInvoiceCrystalReport discountReport = new salesInvoiceCrystalReport();
-               // employeeInfoCrystalReport.Subreports["salesInvoiceCrystalReport.rpt"].SetDataSource(SalesDiscountInfoList);
                 ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-
-               
-              //  ReportUtility.Display_report(discountReport, SalesDiscountInfoList, this);
+ 
             }
             else
             {
@@ -335,10 +334,32 @@ namespace DarussalamModernUI
                 salesObj.CuriarCharg = 0;
             }
 
-            salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
-            salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-            salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+            if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
+            {
+                salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
+            }
+            else
+            {
+                salesObj.GrandTotal = 0;
+            }
 
+            if (!string.IsNullOrEmpty(receiveTextBox.Text))
+            {
+                salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+            }
+            else
+            {
+                salesObj.Receive = 0;
+            }
+
+            if (!string.IsNullOrEmpty(dueTextBox.Text))
+            {
+                salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+            }
+            else
+            {
+                salesObj.Due = 0;
+            }
 
 
             //int pk = 0;
@@ -407,7 +428,8 @@ namespace DarussalamModernUI
                 reportObj.GrandTotal = salesObj.GrandTotal;
                 reportObj.Receive = salesObj.Receive;
                 reportObj.Due = salesObj.Due;
-              //  reportObj.InvoiceNo = pk;
+                reportObj.Publisher = obj.Publisher;
+                reportObj.Writer = obj.Writer;
                 reportObj.CuriarCharg = salesObj.CuriarCharg;
                 reportObj.OtherDiscount = salesObj.OtherDiscount;
                 SalesInfoList.Add(reportObj);
