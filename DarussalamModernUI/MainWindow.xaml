@@ -29,6 +29,9 @@
                         <MenuItem Click="salesHistoryButton_Click" Header="Sales History" />
 
                         <MenuItem Header="Reports">
+                            <MenuItem Name="newBookreportButton"
+                                      Click="newBookreportButton_Click"
+                                      Header="New Book Entry Report" />
                             <MenuItem Click="stockUpdate_Click" Header="Stock Update Report" />
                             <MenuItem Name="priceUpdateREport"
                                       Click="priceUpdateREport_Click"

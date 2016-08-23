@@ -67,5 +67,11 @@ namespace DarussalamModernUI
             PriceUpdateReport obj = new PriceUpdateReport();
             obj.Show();
         }
+
+        private void newBookreportButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewBookAddReport obj = new NewBookAddReport();
+            obj.Show();
+        }
     }
 }

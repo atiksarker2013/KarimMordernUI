@@ -1,5 +1,6 @@
 ﻿using Data.EM;
 using Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -64,6 +65,13 @@ namespace Data.DC
         {
             List<tbl_DarusSalamBook> result = (from c in _db.tbl_DarusSalamBook.Where(t => t.Id == id) select c).ToList();
             List<DarusSalamBook> list = result.Select(n => EM_DarusSalamBook.ConverToModel(n)).ToList();
+            return list;
+        }
+
+        public List<DarusSalamBook> GetNewBookAddBookListByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_NewBookEntry> result = (from c in _db.tbl_NewBookEntry.Where(t => t.EntryDate > fromDate && t.EntryDate < toDate) select c).ToList();
+            List<DarusSalamBook> list = result.Select(n => EM_NewBookEntry.ConverToModel(n)).ToList();
             return list;
         }
     }

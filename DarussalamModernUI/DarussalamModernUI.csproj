@@ -113,6 +113,12 @@
       <DependentUpon>bookSalesSummaryCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Crystal\newBookEntryCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>newBookEntryCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\newStockUpdateReportCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +153,9 @@
     <Compile Include="Report\Model\RNewBookStockUpdate.cs" />
     <Compile Include="PriceUpdateReport.xaml.cs">
       <DependentUpon>PriceUpdateReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewBookAddReport.xaml.cs">
+      <DependentUpon>NewBookAddReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="StockUpdateReport.xaml.cs">
       <DependentUpon>StockUpdateReport.xaml</DependentUpon>
@@ -199,6 +208,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="PriceUpdateReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewBookAddReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -275,6 +288,10 @@
     <EmbeddedResource Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookSalesSummaryCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\newBookEntryCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>newBookEntryCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
