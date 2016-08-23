@@ -80,6 +80,7 @@
     <Compile Include="EM\EM_BookPriceUpdate.cs" />
     <Compile Include="EM\EM_DarusSalamBook.cs" />
     <Compile Include="EM\EM_Discount.cs" />
+    <Compile Include="EM\EM_NewBookEntry.cs" />
     <Compile Include="EM\EM_NewBookStockUpdate.cs" />
     <Compile Include="EM\EM_Sales.cs" />
     <Compile Include="EM\EM_SalesDetails.cs" />
@@ -91,6 +92,9 @@
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_Discount.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_NewBookEntry.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_NewEntryQty.cs">

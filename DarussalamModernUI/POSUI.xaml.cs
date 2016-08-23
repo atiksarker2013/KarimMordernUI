@@ -210,8 +210,8 @@ namespace DarussalamModernUI
                 SalesInfoList.Add(reportObj);
             }
 
+            MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
 
-           
             if (SalesInfoList.Count > 0)
             {
                 salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
@@ -233,6 +233,7 @@ namespace DarussalamModernUI
             cashPaytype.IsChecked = true;
             receiveTextBox.Text = "";
             dueTextBox.Text = "";
+            curiarTextBox.Text = "";
             posDatagrid.Items.Clear();
             discountDatagrid.Items.Clear();
 

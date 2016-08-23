@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Data.EM;
+using Models;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -34,6 +35,10 @@ namespace Data.DC
 
         public void Insert(DarusSalamBook darusSalamBook)
         {
+
+            tbl_NewBookEntry _BookModel = EM_NewBookEntry.ConvertToEntity(darusSalamBook);
+            _db.tbl_NewBookEntry.Add(_BookModel);
+            // insert in to main stock
             tbl_DarusSalamBook _darussalamBookModel = EM_DarusSalamBook.ConvertToEntity(darusSalamBook);
             _db.tbl_DarusSalamBook.Add(_darussalamBookModel);
 

@@ -61,6 +61,16 @@ namespace DarussalamModernUI
                     bookContext.Insert(item);
                 }
             }
+
+            MessageBox.Show("New Book Add successfully.", "New Book", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            // Clear UI
+            posDatagrid.Items.Clear();
+            bookTitleTextBox.Text = "";
+            publisherTextBox.Text = "";
+            openingQtyTextBox.Text = "";
+            writerTextBox.Text = "";
+            priceTextBox.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)

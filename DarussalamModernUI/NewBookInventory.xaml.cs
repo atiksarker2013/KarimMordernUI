@@ -70,6 +70,8 @@ namespace DarussalamModernUI
 
             posDatagrid.Items.Clear();
 
+            MessageBox.Show("Stock update successfully.", "Stock Update", MessageBoxButton.OK, MessageBoxImage.Information);
+
         }
 
         private void textBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

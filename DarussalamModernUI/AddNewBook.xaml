@@ -259,7 +259,7 @@
                 <StackPanel Grid.Row="8"
                             Grid.Column="3"
                             Orientation="Horizontal">
-                    <Button Content="Print" />
+
                     <Button Name="saveButton"
                             Click="saveButton_Click"
                             Content="Save" />

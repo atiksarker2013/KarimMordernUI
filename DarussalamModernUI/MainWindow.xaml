@@ -18,19 +18,16 @@
             <StackPanel>
                 <DockPanel>
                     <Menu DockPanel.Dock="Top">
-                        <MenuItem Click="button_Click_1" Header="POS">
-                            <!--<MenuItem Header="_New" />
-                            <MenuItem Header="_Open" />
-                            <MenuItem Header="_Save" />
-                            <Separator />
-                            <MenuItem Header="_Exit" />-->
+                        <MenuItem Click="button_Click_1" Header="POS" />
+                        <MenuItem Header="Inventory">
+                            <MenuItem Click="addnewBookButto_Click" Header="Add New Book" />
+                            <MenuItem Click="receiveBookButton_Click" Header="Update Inventory" />
+                            <MenuItem Click="updateBookButton_Click" Header="Update Book Bacode" />
+                            <MenuItem Click="updateBookPriceButton_Click" Header="Update Book Price" />
                         </MenuItem>
-                        <MenuItem Click="salesHistoryButton_Click" Header="Sales History" />
-                        <MenuItem Click="receiveBookButton_Click" Header="Update Inventory" />
-                        <MenuItem Click="updateBookButton_Click" Header="Update Book Bacode" />
-                        <MenuItem Click="updateBookPriceButton_Click" Header="Update Book Price" />
 
-                        <MenuItem Click="addnewBookButto_Click" Header="Add New Book" />
+                        <MenuItem Click="salesHistoryButton_Click" Header="Sales History" />
+
                         <MenuItem Header="Reports">
                             <MenuItem Click="stockUpdate_Click" Header="Stock Update Report" />
                             <MenuItem Name="priceUpdateREport"
