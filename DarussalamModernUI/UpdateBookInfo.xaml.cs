@@ -3,6 +3,7 @@ using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
 using Models;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DarussalamModernUI
@@ -70,6 +71,9 @@ namespace DarussalamModernUI
             {
                 bookContext.Update(item);
             }
+
+
+            MessageBox.Show("Book Barcode Update Successfully..", "Book Barcode Update", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)

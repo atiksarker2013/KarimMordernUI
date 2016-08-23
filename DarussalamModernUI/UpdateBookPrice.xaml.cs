@@ -4,6 +4,7 @@ using FirstFloor.ModernUI.Windows.Controls;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DarussalamModernUI
@@ -86,6 +87,8 @@ namespace DarussalamModernUI
                 item.Price = item.NewPrice;
                 bookContext.Update(item);
             }
+
+            MessageBox.Show("Book Price Update Successfully..", "Book Price Update", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)
