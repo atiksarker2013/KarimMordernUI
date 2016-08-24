@@ -83,6 +83,11 @@
                               CanUserResizeColumns="True"
                               CanUserResizeRows="False"
                               CanUserSortColumns="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="420"
                                                 Binding="{Binding Path=Title}"

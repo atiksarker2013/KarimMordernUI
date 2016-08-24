@@ -93,6 +93,11 @@
                     <DataGrid Name="posDatagrid"
                               AutoGenerateColumns="False"
                               IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="420"
                                                 Binding="{Binding Path=Title}"
@@ -218,7 +223,8 @@
                     <TextBox Name="totalTextBox"
                              Grid.Row="0"
                              Grid.Column="3"
-                             Margin="0,0,76,0" />
+                             Margin="0,0,76,0"
+                             TextAlignment="Right" />
                     <RadioButton Name="cashPaytype"
                                  Grid.Row="1"
                                  Grid.Column="0"
@@ -232,11 +238,13 @@
                     <TextBox Name="discountTextBox"
                              Grid.Row="1"
                              Grid.Column="3"
-                             Margin="0,0,194,0" />
+                             Margin="0,0,194,0"
+                             TextAlignment="Right" />
                     <TextBox Name="discountAmountTextBox"
                              Grid.Row="1"
                              Grid.Column="3"
                              Margin="83,0,76,0"
+                             TextAlignment="Right"
                              TextChanged="discountAmountTextBox_TextChanged" />
                     <RadioButton Name="bikshPaytype"
                                  Grid.Row="2"
@@ -246,7 +254,8 @@
                     <TextBox Name="bikashNoTextBox"
                              Grid.Row="2"
                              Grid.Column="0"
-                             Margin="74,0,10,0" />
+                             Margin="74,0,10,0"
+                             TextAlignment="Right" />
                     <TextBlock Grid.Row="2"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
@@ -255,7 +264,8 @@
                     <TextBox Name="grandTotalTextBox"
                              Grid.Row="2"
                              Grid.Column="3"
-                             Margin="0,0,76,0" />
+                             Margin="0,0,76,0"
+                             TextAlignment="Right" />
                     <RadioButton Name="chequePaytype"
                                  Grid.Row="3"
                                  Grid.Column="0"
@@ -265,7 +275,8 @@
                     <TextBox Name="chequeNoTextBox"
                              Grid.Row="3"
                              Grid.Column="0"
-                             Margin="74,0,10,0" />
+                             Margin="74,0,10,0"
+                             TextAlignment="Right" />
                     <TextBlock Grid.Row="3"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
@@ -275,6 +286,7 @@
                              Grid.Row="3"
                              Grid.Column="3"
                              Margin="0,0,76,0"
+                             TextAlignment="Right"
                              TextChanged="receiveTextBox_TextChanged" />
 
                     <TextBlock Grid.Row="4"
@@ -286,7 +298,8 @@
                     <TextBox Name="curiarTextBox"
                              Grid.Row="4"
                              Grid.Column="0"
-                             Margin="74,0,10,0" />
+                             Margin="74,0,10,0"
+                             TextAlignment="Right" />
                     <TextBlock Grid.Row="4"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
@@ -295,7 +308,8 @@
                     <TextBox Name="dueTextBox"
                              Grid.Row="4"
                              Grid.Column="3"
-                             Margin="0,0,76,0" />
+                             Margin="0,0,76,0"
+                             TextAlignment="Right" />
 
 
                 </Grid>

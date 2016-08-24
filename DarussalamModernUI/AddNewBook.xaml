@@ -72,7 +72,8 @@
                            TextAlignment="Right" />
                 <TextBox Name="openingQtyTextBox"
                          Grid.Row="2"
-                         Grid.Column="1" />
+                         Grid.Column="1"
+                         TextAlignment="Right" />
                 <TextBlock Grid.Row="2"
                            Grid.Column="2"
                            Style="{StaticResource Heading2}"
@@ -80,7 +81,8 @@
                            TextAlignment="Right" />
                 <TextBox Name="priceTextBox"
                          Grid.Row="2"
-                         Grid.Column="3" />
+                         Grid.Column="3"
+                         TextAlignment="Right" />
 
                 <Grid Grid.Row="3"
                       Grid.Column="0"
@@ -110,6 +112,11 @@
                     <DataGrid Name="posDatagrid"
                               AutoGenerateColumns="False"
                               IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Width="420" Header="Title">
                                 <DataGridTemplateColumn.CellTemplate>
