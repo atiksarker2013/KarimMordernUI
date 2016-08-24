@@ -215,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resources\Style\TextBox\TextBoxDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StockUpdateReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
