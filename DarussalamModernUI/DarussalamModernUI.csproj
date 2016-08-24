@@ -12,6 +12,22 @@
     <AssemblyName>DarussalamModernUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\atik\Desktop\Darussalam\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +45,25 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CB0EC51237A4CF4B4DB610FA6A0E2648CB3EBEC6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DarussalamModernUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AngleSharp, Version=0.9.6.41832, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
@@ -112,42 +147,49 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bookSalesSummaryCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\newBookEntryCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>newBookEntryCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\newStockUpdateReportCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>newStockUpdateReportCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\priceQuotationCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>priceQuotationCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\priceUpdateCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>priceUpdateCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\salesDiscountCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>salesDiscountCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Crystal\salesSummaryCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>salesSummaryCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Model\RDarussalamSalesDiscount.cs" />
     <Compile Include="Report\Model\RNewBookStockUpdate.cs" />
@@ -174,6 +216,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>salesInvoiceCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Report\Model\RDarusSalamBook.cs" />
     <Compile Include="SalesHistory.xaml.cs">
@@ -258,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="DarussalamModernUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Resources\Entypo.ttf" />
   </ItemGroup>
@@ -284,43 +328,63 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Images\logo.jpg" />
+    <Content Include="logo.ico" />
     <Content Include="Resources\Entypo-license.txt" />
     <Content Include="Resources\WindowsIcons-license.txt" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookSalesSummaryCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\newBookEntryCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\newBookEntryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>newBookEntryCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>newStockUpdateReportCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\priceQuotationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceQuotationCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\priceUpdateCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\priceUpdateCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceUpdateCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\salesDiscountCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\salesDiscountCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesDiscountCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\salesInvoiceCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\salesInvoiceCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesInvoiceCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\Crystal\salesSummaryCrystalReport.rpt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Report\Crystal\salesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesSummaryCrystalReport.cs</LastGenOutput>
-    </EmbeddedResource>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
