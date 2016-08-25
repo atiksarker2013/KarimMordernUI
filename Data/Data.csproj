@@ -100,6 +100,9 @@
     <Compile Include="tbl_NewEntryQty.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_ReceiveDue.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_Sales.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>

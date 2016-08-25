@@ -66,6 +66,16 @@
           <Property Name="NewEntryQty" Type="int" />
           <Property Name="EntryDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="tbl_ReceiveDue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaleInvoiceId" Type="int" />
+          <Property Name="CustomerInvoiceId" Type="varchar(max)" />
+          <Property Name="ReceiveAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ReceiveDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_Sales">
           <Key>
             <PropertyRef Name="Id" />
@@ -102,6 +112,7 @@
           <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_NewEntryQty" EntityType="Self.tbl_NewEntryQty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ReceiveDue" EntityType="Self.tbl_ReceiveDue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Sales" EntityType="Self.tbl_Sales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_SalesDetails" EntityType="Self.tbl_SalesDetails" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -117,6 +128,7 @@
           <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
           <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" />
+          <EntitySet Name="tbl_ReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -208,6 +220,16 @@
           <Property Name="InStock" Type="Int32" />
           <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ReceiveDue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleInvoiceId" Type="Int32" />
+          <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -309,6 +331,17 @@
                 <ScalarProperty Name="Publisher" ColumnName="Publisher" />
                 <ScalarProperty Name="Writer" ColumnName="Writer" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ReceiveDue">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue">
+              <MappingFragment StoreEntitySet="tbl_ReceiveDue">
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+                <ScalarProperty Name="CustomerInvoiceId" ColumnName="CustomerInvoiceId" />
+                <ScalarProperty Name="SaleInvoiceId" ColumnName="SaleInvoiceId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
