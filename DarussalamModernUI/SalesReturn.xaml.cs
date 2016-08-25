@@ -87,14 +87,6 @@ namespace DarussalamModernUI
 
             }
 
-            //SalesDetails salesDetails = new SalesDetails();
-            //salesDetails.BookId = obj.Id;
-            //salesDetails.Price = (decimal)obj.Price;
-            //salesDetails.OrderQty = obj.OrderQty;
-            //salesDetails.SalesId = pk;
-            //salesDetailsManagerObj.Insert(salesDetails);
-
-
             // Load Discount Details
 
             List<Discounts> discountList = new List<Discounts>();

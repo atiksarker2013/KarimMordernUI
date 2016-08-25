@@ -259,5 +259,21 @@ namespace DarussalamModernUI
                 MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void receiveDueContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            Sales chalan = new Sales();
+            chalan = posDatagrid.SelectedItem as Sales;
+            if (chalan.Due>0)
+            {
+                SalesReturn obj = new SalesReturn(chalan);
+                obj.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no pending payment.", "Sales History", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+        }
     }
 }

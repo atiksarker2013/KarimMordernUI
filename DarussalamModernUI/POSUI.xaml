@@ -224,6 +224,7 @@
                              Grid.Row="0"
                              Grid.Column="3"
                              Margin="0,0,76,0"
+                             IsEnabled="False"
                              TextAlignment="Right" />
                     <RadioButton Name="cashPaytype"
                                  Grid.Row="1"
@@ -239,6 +240,7 @@
                              Grid.Row="1"
                              Grid.Column="3"
                              Margin="0,0,194,0"
+                             IsEnabled="False"
                              TextAlignment="Right" />
                     <TextBox Name="discountAmountTextBox"
                              Grid.Row="1"
@@ -309,6 +311,7 @@
                              Grid.Row="4"
                              Grid.Column="3"
                              Margin="0,0,76,0"
+                             IsEnabled="False"
                              TextAlignment="Right" />
 
 
