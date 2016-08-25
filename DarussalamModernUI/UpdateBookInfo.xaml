@@ -53,13 +53,13 @@
                              Grid.Row="0"
                              Grid.Column="1"
                              TextChanged="searchTextBox_TextChanged" />
-                    <StackPanel Grid.Row="0"
+                    <!--<StackPanel Grid.Row="0"
                                 Grid.Column="2"
                                 Orientation="Horizontal">
                         <RadioButton Content="All  " GroupName="BookType" />
                         <RadioButton Content="Bangla  " GroupName="BookType" />
                         <RadioButton Content="English" GroupName="BookType" />
-                    </StackPanel>
+                    </StackPanel>-->
                     <StackPanel Grid.Row="0"
                                 Grid.Column="3"
                                 Orientation="Horizontal">

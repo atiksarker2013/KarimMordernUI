@@ -95,6 +95,9 @@
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Center" />
                                 </Style>
+
+
+
                             </DataGrid.Resources>
                             <DataGrid.ContextMenu>
                                 <ContextMenu Name="ZoneIformationList"
@@ -149,6 +152,33 @@
                                 <DataGridTextColumn Width="80"
                                                     Binding="{Binding Path=Due}"
                                                     Header="Due" />
+                                <!--<DataGridTextColumn Width="80"
+                                                    Binding="{Binding Path=Status}"
+                                                    Header="Status" />-->
+                                <DataGridTemplateColumn Width="150" Header="Status">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Border x:Name="brdBroder"
+                                                    Margin="1"
+                                                    VerticalAlignment="Stretch">
+                                                <TextBlock x:Name="txtTextBlock"
+                                                           Margin="3,1"
+                                                           Text="{Binding Status}" />
+                                            </Border>
+                                            <DataTemplate.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="Paid">
+                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                    <Setter TargetName="txtTextBlock" Property="Foreground" Value="White" />
+                                                </DataTrigger>
+
+                                                <DataTrigger Binding="{Binding Status}" Value="Un Paid">
+                                                    <Setter TargetName="brdBroder" Property="Background" Value="Red" />
+                                                    <Setter TargetName="txtTextBlock" Property="Foreground" Value="White" />
+                                                </DataTrigger>
+                                            </DataTemplate.Triggers>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </DataGrid>
 

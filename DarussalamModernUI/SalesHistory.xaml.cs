@@ -51,6 +51,14 @@ namespace DarussalamModernUI
             foreach (Sales item in salesList) 
             {
                 item.SalesDetailsList = _bookContext.GetBookDetailsByInvoiceNo(item.Id);
+                if (item.Due==0)
+                {
+                    item.Status = "Paid";
+                }
+                else
+                {
+                    item.Status = "Un Paid";
+                }
             }
 
             posDatagrid.Items.Clear();

@@ -345,46 +345,46 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
+    <EmbeddedResource Include="Report\Crystal\bookSalesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>bookSalesSummaryCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\newBookEntryCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\newBookEntryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>newBookEntryCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\newStockUpdateReportCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>newStockUpdateReportCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\priceQuotationCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\priceQuotationCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceQuotationCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\priceUpdateCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\priceUpdateCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>priceUpdateCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\salesDiscountCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\salesDiscountCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesDiscountCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\salesInvoiceCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\salesInvoiceCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesInvoiceCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Report\Crystal\salesSummaryCrystalReport.rpt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\salesSummaryCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>salesSummaryCrystalReport.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
