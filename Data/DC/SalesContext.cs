@@ -34,5 +34,35 @@ namespace Data.DC
             return list;
         }
 
+        public void InsertDueReceive(SalesReceiveDue salesObj)
+        {
+            tbl_ReceiveDue _salesModel = EM_SalesReceiveDue.ConvertToEntity(salesObj);
+            _db.tbl_ReceiveDue.Add(_salesModel);
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                // HandleException(ue);
+            }
+           // return _salesModel.Id;
+        }
+        public void UpdateDue(Sales drugupdateoptionsModel)
+        {
+            tbl_Sales drugupdateoptionsEntity = EM_Sales.ConvertToEntity(drugupdateoptionsModel);
+            var originalEntity = _db.tbl_Sales.FirstOrDefault(x => x.Id == drugupdateoptionsEntity.Id);
+            if (originalEntity != null) { _db.Entry(originalEntity).CurrentValues.SetValues(drugupdateoptionsEntity); }
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                //  HandleException(ue);
+            }
+        }
     }
 }

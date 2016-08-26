@@ -178,6 +178,7 @@ namespace DarussalamModernUI
 
 
             // Update Stock
+            SalesInfoList = new List<RDarusSalamBook>();
 
             for (int i = 0; i < posDatagrid.Items.Count; i++)
             {
@@ -405,6 +406,8 @@ namespace DarussalamModernUI
 
 
             // Update Stock
+
+            SalesInfoList = new List<RDarusSalamBook>();
 
             for (int i = 0; i < posDatagrid.Items.Count; i++)
             {

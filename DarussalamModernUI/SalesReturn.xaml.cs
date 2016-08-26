@@ -154,123 +154,19 @@ namespace DarussalamModernUI
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //Sales salesObj = new Sales();
+            SalesReceiveDue salesreceiveObj = new SalesReceiveDue();
+            salesreceiveObj.SalesInvoiceId = Convert.ToInt32(invoiceNoTextBox.Text);
+            salesreceiveObj.CustomerInvoiceId = customerInvoiceNoTextBox.Text;
+            salesreceiveObj.ReceiveAmount = Convert.ToDecimal(receiveTextBox.Text);
+            salesreceiveObj.ReceiveDate = DateTime.Now;
 
-            //salesObj.Name = customerNameTextBox.Text;
-            //salesObj.Mobile = MobileTextBox.Text;
-            //salesObj.Address = addressTextBox.Text;
-            //salesObj.Date = salesDateDatepicker.SelectedDate;
+            salesManagerObj.InsertDueReceive(salesreceiveObj);
 
-            //if (cashPaytype.IsChecked==true)
-            //{
-            //    salesObj.PayType = "Cash";
-            //}
-            //if (bikshPaytype.IsChecked == true)
-            //{
-            //    salesObj.PayType = "Bikas";
-            //    salesObj.PayNo=bikashNoTextBox.Text;
-            //}
-            //if (chequePaytype.IsChecked == true)
-            //{
-            //    salesObj.PayType = "Cheque";
-            //    salesObj.PayNo = chequeNoTextBox.Text;
-            //}
-                     
-            //salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
-            //salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
-            //salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
-            //salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
-            //salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-            //salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
-
-            //int pk = 0;
-            //pk=salesManagerObj.Insert(salesObj);
-
-            //// Insert Book Details
-
-            //for (int i = 0; i < posDatagrid.Items.Count; i++)
-            //{
-            //    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-
-            //    SalesDetails salesDetails = new SalesDetails();
-            //    salesDetails.BookId = obj.Id;
-            //    salesDetails.Price = (decimal)obj.Price;
-            //    salesDetails.OrderQty = obj.OrderQty;
-            //    salesDetails.SalesId = pk;
-            //    salesDetailsManagerObj.Insert(salesDetails);
-            //}
-
-            //// Discount Insert
-
-            //for (int i = 0; i < discountDatagrid.Items.Count; i++)
-            //{
-            //    Discounts obj = discountDatagrid.Items[i] as Discounts;
-
-            //    Discounts discountObj = new Discounts();
-            //    discountObj.InvoiceId = pk;
-            //    discountObj.PublisherName =  obj.PublisherName;
-            //    discountObj.TotalAmount = obj.TotalAmount;
-            //    discountObj.DiscountPercentage = obj.DiscountPercentage;
-            //    discountObj.DiscountAmount = obj.DiscountAmount;
-            //    discountContext.Insert(discountObj);
-            //}
-
-
-            //// Update Stock
-
-            //for (int i = 0; i < posDatagrid.Items.Count; i++)
-            //{
-            //    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-            //    obj.Qty = obj.Qty - obj.OrderQty;
-            //    obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
-            //    bookContext.Update(obj);
-
-            //    RDarusSalamBook reportObj = new RDarusSalamBook();
-            //    reportObj.Id = obj.Id;
-            //    reportObj.Title = obj.Title;
-            //    reportObj.OrderQty = obj.OrderQty;
-            //    reportObj.Price = (decimal)obj.Price;
-            //    reportObj.Name = salesObj.Name;
-            //    reportObj.Mobile = salesObj.Mobile;
-            //    reportObj.Address = salesObj.Address;
-            //    reportObj.Date = (DateTime)salesObj.Date;
-            //    reportObj.PayType = salesObj.PayType;
-            //    reportObj.PayNo = salesObj.PayNo;
-            //    reportObj.Total =salesObj.Total  ;
-            //    reportObj.Discount= salesObj.Discount  ;
-            //    reportObj.GrandTotal = salesObj.GrandTotal  ;
-            //    reportObj.Receive = salesObj.Receive ;
-            //    reportObj.Due = salesObj.Due ;
-            //    reportObj.InvoiceNo = pk;
-            //    SalesInfoList.Add(reportObj);
-            //}
-
-
-           
-            //if (SalesInfoList.Count > 0)
-            //{
-            //    salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
-            //    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
-            //}
-
-            //totalTextBox.Text = "";
-            //grandTotalTextBox.Text = "";
-            //discountTextBox.Text = "";
-            //discountAmountTextBox.Text = "";
-            //customerNameTextBox.Text = "";
-            //MobileTextBox.Text = "";
-            //addressTextBox.Text = "";
-            //cashPaytype.IsChecked = true;
-            //receiveTextBox.Text = "";
-            //dueTextBox.Text = "";
-            //posDatagrid.Items.Clear();
-            //discountDatagrid.Items.Clear();
-
-
+            salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+            salesObj.Due = salesObj.Due- salesObj.Receive;
+            salesManagerObj.UpdateDue(salesObj);
+            MessageBox.Show("Due Receive.", "Due Collection.", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
 
         }
 

@@ -84,6 +84,7 @@
     <Compile Include="EM\EM_NewBookStockUpdate.cs" />
     <Compile Include="EM\EM_Sales.cs" />
     <Compile Include="EM\EM_SalesDetails.cs" />
+    <Compile Include="EM\EM_SalesReceiveDue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tbl_BookPriceUpdate.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>

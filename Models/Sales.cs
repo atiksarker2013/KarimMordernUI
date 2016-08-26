@@ -345,6 +345,7 @@ namespace Models
 
         public decimal CuriarCharg { get; set; }
         public string Status { get; set; }
+       
     }
 }
 
