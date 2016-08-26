@@ -12,5 +12,9 @@ namespace Models
         public string CustomerInvoiceId { get; set; }
         public decimal ReceiveAmount { get; set; }
         public DateTime ReceiveDate { get; set; }
+        public int Id { get; set; }
+        public string CustomerName { get; set; }
+        public string Mobile { get; set; }
+        public DateTime? InvoiceDate { get; set; }
     }
 }

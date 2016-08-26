@@ -64,5 +64,19 @@ namespace Data.DC
                 //  HandleException(ue);
             }
         }
+
+        public List<Sales> GetSalesInfoByBookId(int salesInvoiceId)
+        {
+            List<tbl_Sales> result = (from c in _db.tbl_Sales.Where(t => t.Id == salesInvoiceId) select c).ToList();
+            List<Sales> list = result.Select(n => EM_Sales.ConverToModel(n)).ToList();
+            return list;
+        }
+
+        public List<SalesReceiveDue> GetReceiveDueHistoryByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_ReceiveDue> result = (from c in _db.tbl_ReceiveDue.Where(t => t.ReceiveDate > fromDate && t.ReceiveDate < toDate) select c).ToList();
+            List<SalesReceiveDue> list = result.Select(n => EM_SalesReceiveDue.ConverToModel(n)).ToList();
+            return list;
+        }
     }
 }

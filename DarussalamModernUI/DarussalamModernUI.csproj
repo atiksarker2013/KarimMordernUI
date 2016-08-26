@@ -205,6 +205,9 @@
     <Compile Include="NewBookAddReport.xaml.cs">
       <DependentUpon>NewBookAddReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReceiveDueReport.xaml.cs">
+      <DependentUpon>ReceiveDueReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StockUpdateReport.xaml.cs">
       <DependentUpon>StockUpdateReport.xaml</DependentUpon>
     </Compile>
@@ -265,6 +268,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Style\TextBox\TextBoxDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReceiveDueReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

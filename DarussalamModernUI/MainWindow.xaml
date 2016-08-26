@@ -36,7 +36,9 @@
                             <MenuItem Name="priceUpdateREport"
                                       Click="priceUpdateREport_Click"
                                       Header="Book Price Update Report" />
-
+                            <MenuItem Name="dueReportButton"
+                                      Click="dueReportButton_Click"
+                                      Header="Receive Due Report" />
                             <MenuItem Header="Book List Report" />
                         </MenuItem>
                     </Menu>

@@ -21,5 +21,16 @@ namespace Data.EM
 
             return entity;
         }
+
+        internal static SalesReceiveDue ConverToModel(tbl_ReceiveDue model)
+        {
+            SalesReceiveDue entity = new SalesReceiveDue();
+            entity.Id = model.Id;
+            entity.SalesInvoiceId = (int)model.SaleInvoiceId;
+            entity.CustomerInvoiceId = model.CustomerInvoiceId;
+            entity.ReceiveAmount = (decimal)model.ReceiveAmount;
+            entity.ReceiveDate = (DateTime)model.ReceiveDate;
+            return entity;
+        }
     }
 }
