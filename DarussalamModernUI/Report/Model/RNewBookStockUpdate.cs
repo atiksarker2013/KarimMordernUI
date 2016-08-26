@@ -94,5 +94,13 @@ namespace DarussalamModernUI.Report.Model
         public DateTime ToDate { get; set; }
         public int OldPrice { get; internal set; }
         public decimal NewPrice { get; internal set; }
+
+        public int SalesInvoiceId { get; set; }
+        public string CustomerInvoiceId { get; set; }
+        public decimal ReceiveAmount { get; set; }
+        public DateTime ReceiveDate { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerMobile { get; set; }
+        public DateTime InvoiceDate { get; set; }
     }
 }
