@@ -35,7 +35,7 @@ namespace DarussalamModernUI
         {
             if (!string.IsNullOrEmpty(searchTextBox.Text))
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
+                List<DarusSalamBook> list = objmangaer.GetAllBookListREportLookup(searchTextBox.Text);
 
                 bookGrid.Items.Clear();
                 foreach (DarusSalamBook item in list)
@@ -54,75 +54,28 @@ namespace DarussalamModernUI
             }
         }
 
-        private void bookAddButton_Click(object sender, RoutedEventArgs e)
+        private void allBook_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < bookGrid.Items.Count; i++)
+            List<DarusSalamBook> list = objmangaer.GetAllBookListLookup();
+            bookGrid.Items.Clear();
+            foreach (DarusSalamBook item in list)
             {
-                DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
-
-                var result = GlobalVar.TempOrderBookList.Find(x => x.Id == obj.Id);
-                if (result == null && obj.OrderQty > 0)
-                {
-                    GlobalVar.TempOrderBookList.Add(obj);
-                }
-
+                bookGrid.Items.Add(item);
             }
-            
-
-            GlobalVar.DiscountsList = new List<Discounts>();
-            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList
-            .GroupBy(l => l.Publisher)
-            .Select(cl => new Discounts
-            {
-                PublisherName = cl.First().Publisher,
-       
-                TotalAmount = cl.Sum(c => c.Price)
-            }).ToList();
-
         }
 
-        private void closeButton_Click(object sender, RoutedEventArgs e)
+        private void selectedBook_Click(object sender, RoutedEventArgs e)
         {
-            LoadMainWindow();
+            bookGrid.Items.Clear();
+        }
+
+        private void closeButton_Click_1(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
 
-        private void LoadMainWindow()
+        private void previewButton_Click(object sender, RoutedEventArgs e)
         {
-
-
-            try
-            {
-                POSUI obj;
-                foreach (Window objWindow in Application.Current.Windows)
-                {
-                    string[] splitedNamespace = (objWindow.ToString()).Split('.');
-                    string aClassNameFromCollection = splitedNamespace[splitedNamespace.Length - 1];
-                    if (aClassNameFromCollection == "POSUI")
-                    {
-                        obj = (POSUI)objWindow;
-                        obj.posDatagrid.Items.Clear();
-
-                        foreach (DarusSalamBook item in GlobalVar.TempOrderBookList)
-                        {
-                            item.TotalUnitPrice = (item.Price * item.OrderQty);
-                            obj.posDatagrid.Items.Add(item);
-                        }
-
-                        // Publisher Info
-                        obj.discountDatagrid.Items.Clear();
-                        foreach (Discounts item in GlobalVar.DiscountsList)
-                        {
-                            obj.discountDatagrid.Items.Add(item);
-                        }
-                        break;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Combobox reloading problem", "Client Info", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
 
         }
     }

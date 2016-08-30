@@ -82,7 +82,7 @@ namespace DarussalamModernUI
 
         private void bookListReport_Click(object sender, RoutedEventArgs e)
         {
-            PopupBookList obj = new PopupBookList();
+            PopupBookListReport obj = new PopupBookListReport();
             obj.Show();
         }
     }
