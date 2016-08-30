@@ -39,7 +39,9 @@
                             <MenuItem Name="dueReportButton"
                                       Click="dueReportButton_Click"
                                       Header="Receive Due Report" />
-                            <MenuItem Header="Book List Report" />
+                            <MenuItem Name="bookListReport"
+                                      Click="bookListReport_Click"
+                                      Header="Book List Report" />
                         </MenuItem>
                     </Menu>
                     <!--<TextBox AcceptsReturn="True" />-->

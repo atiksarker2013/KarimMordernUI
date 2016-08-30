@@ -79,5 +79,11 @@ namespace DarussalamModernUI
             ReceiveDueReport obj = new ReceiveDueReport();
             obj.Show();
         }
+
+        private void bookListReport_Click(object sender, RoutedEventArgs e)
+        {
+            PopupBookList obj = new PopupBookList();
+            obj.Show();
+        }
     }
 }
