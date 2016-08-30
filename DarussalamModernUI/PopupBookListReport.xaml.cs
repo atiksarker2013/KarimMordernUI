@@ -1,6 +1,9 @@
-﻿using Data;
+﻿using DarussalamModernUI.Report.Crystal;
+using DarussalamModernUI.Report.Model;
+using Data;
 using FirstFloor.ModernUI.Windows.Controls;
 using Models;
+using ReportApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +18,7 @@ namespace DarussalamModernUI
     public partial class PopupBookListReport : ModernWindow
     {
         BookContext objmangaer = new BookContext();
+        List<RNewBookStockUpdate> SalesInfoList = new List<RNewBookStockUpdate>();
         public PopupBookListReport()
         {
             InitializeComponent();
@@ -76,6 +80,49 @@ namespace DarussalamModernUI
 
         private void previewButton_Click(object sender, RoutedEventArgs e)
         {
+            SalesInfoList = new List<RNewBookStockUpdate>();
+
+            for (int i = 0; i < bookGrid.Items.Count; i++)
+            {
+                DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
+
+                RNewBookStockUpdate reportObj = new RNewBookStockUpdate();
+               
+               reportObj.Title = obj.Title;
+                if (obj.Price!=null)
+                {
+                    reportObj.NewPrice = (decimal)obj.Price;
+                }
+                else
+                {
+                    reportObj.NewPrice = 0;
+                }
+
+
+                if (obj.NewEntryQty != null)
+                {
+                    reportObj.NewEntryQty = Convert.ToInt32(obj.Qty);
+                }
+                else
+                {
+                    reportObj.NewEntryQty = 0;
+                }
+                
+                reportObj.Publisher = obj.Publisher;
+                reportObj.Writer = obj.Writer;
+                SalesInfoList.Add(reportObj);
+            }
+
+            if (SalesInfoList.Count > 0)
+            {
+                bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+
+            }
+            else
+            {
+                MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
 
         }
     }
