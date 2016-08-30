@@ -269,6 +269,9 @@
                                     Grid.Column="1"
                                     Grid.ColumnSpan="3"
                                     Orientation="Horizontal">
+                            <Button Name="allDueReportButton"
+                                    Click="allDueReportButton_Click"
+                                    Content="Due Summary" />
                             <Button Name="bookSummaryReportButton"
                                     Click="bookSummaryReportButton_Click"
                                     Content="Book Summary" />

@@ -63,7 +63,7 @@ namespace DarussalamModernUI
             for (int i = 0; i < bookGrid.Items.Count; i++)
             {
                 DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
-                if (obj.NewPrice!=0)
+                if (obj.NewPrice>0)
                 {
                     GlobalVar.UpdateBookPriceList.Add(obj);
                 }

@@ -6,6 +6,7 @@ using Models;
 using ReportApp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace DarussalamModernUI
@@ -195,6 +196,7 @@ namespace DarussalamModernUI
 
                 foreach (var item in salesObj.SalesDetailsList)
                 {
+
                     RDarusSalamBook reportObj = new RDarusSalamBook();
                     // reportObj.Id = obj.Id;
                     reportObj.Title = item.Title;
@@ -228,11 +230,91 @@ namespace DarussalamModernUI
            
         }
 
+        private void GenerateDueAllInvoiceReport()
+        {
+            SalesInfoList = new List<RDarusSalamBook>();
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                Sales salesObj = posDatagrid.Items[i] as Sales;
+
+                // Print Data
+
+                if (salesObj.Status == "Un Paid")
+                {
+                    RDarusSalamBook reportObj = new RDarusSalamBook();
+                   
+                    reportObj.Name = salesObj.Name;
+                    reportObj.Mobile = salesObj.Mobile;
+                    reportObj.Address = salesObj.Address;
+                    reportObj.Date = (DateTime)salesObj.Date;
+                    reportObj.PayType = salesObj.PayType;
+                    reportObj.PayNo = salesObj.PayNo;
+                    reportObj.Total = salesObj.Total;
+                    reportObj.Discount = salesObj.Discount;
+                    reportObj.GrandTotal = salesObj.GrandTotal;
+                    reportObj.Receive = salesObj.Receive;
+                    reportObj.Due = salesObj.Due;
+                    reportObj.InvoiceNo = salesObj.Id;
+                  
+                    reportObj.CuriarCharg = salesObj.CuriarCharg;
+                    reportObj.OtherDiscount = salesObj.OtherDiscount;
+
+                    reportObj.FromDate = (DateTime)fromDateDatepicker.SelectedDate;
+                    reportObj.ToDate = (DateTime)toDateDatepicker.SelectedDate;
+
+                    SalesInfoList.Add(reportObj);
+                }
+
+            }
+
+
+        }
+
+        private void GenerateAllSummaryInvoiceReport()
+        {
+            SalesInfoList = new List<RDarusSalamBook>();
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                Sales salesObj = posDatagrid.Items[i] as Sales;
+
+                // Print Data
+
+                
+                    RDarusSalamBook reportObj = new RDarusSalamBook();
+
+                    reportObj.Name = salesObj.Name;
+                    reportObj.Mobile = salesObj.Mobile;
+                    reportObj.Address = salesObj.Address;
+                    reportObj.Date = (DateTime)salesObj.Date;
+                    reportObj.PayType = salesObj.PayType;
+                    reportObj.PayNo = salesObj.PayNo;
+                    reportObj.Total = salesObj.Total;
+                    reportObj.Discount = salesObj.Discount;
+                    reportObj.GrandTotal = salesObj.GrandTotal;
+                    reportObj.Receive = salesObj.Receive;
+                    reportObj.Due = salesObj.Due;
+                    reportObj.InvoiceNo = salesObj.Id;
+               // reportObj.Date = (DateTime)salesObj.Date;
+
+                reportObj.CuriarCharg = salesObj.CuriarCharg;
+                    reportObj.OtherDiscount = salesObj.OtherDiscount;
+
+                    reportObj.FromDate = (DateTime)fromDateDatepicker.SelectedDate;
+                    reportObj.ToDate = (DateTime)toDateDatepicker.SelectedDate;
+
+                    SalesInfoList.Add(reportObj);
+               
+
+            }
+
+
+        }
+
         private void summaryReportButton_Click(object sender, RoutedEventArgs e)
         {
             //salesSummaryCrystalReport
 
-            GenerateAllInvoiceReport();
+            GenerateAllSummaryInvoiceReport();
             if (SalesInfoList.Count > 0)
             {
                 salesSummaryCrystalReport employeeInfoCrystalReport = new salesSummaryCrystalReport();
@@ -274,6 +356,22 @@ namespace DarussalamModernUI
                 MessageBox.Show("There is no pending payment.", "Sales History", MessageBoxButton.OK, MessageBoxImage.Information);
             }
 
+        }
+
+        private void allDueReportButton_Click(object sender, RoutedEventArgs e)
+        {
+            GenerateDueAllInvoiceReport();
+            if (SalesInfoList.Count > 0)
+            {
+                List<RDarusSalamBook> dueList = SalesInfoList.Distinct().ToList(); ;
+                salesSummaryCrystalReport employeeInfoCrystalReport = new salesSummaryCrystalReport();
+                ReportUtility.Display_report(employeeInfoCrystalReport, dueList, this);
+
+            }
+            else
+            {
+                MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
