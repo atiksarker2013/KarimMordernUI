@@ -105,7 +105,8 @@
                                                     Binding="{Binding Path=SalesInvoiceId}"
                                                     Header="In.No" />
                                 <DataGridTextColumn Width="200"
-                                                    Binding="{Binding Path=InvoiceDate}"
+                                                    Binding="{Binding Path=InvoiceDate,
+                                                                      StringFormat=d}"
                                                     Header="Invoice Date" />
                                 <DataGridTextColumn Width="350"
                                                     Binding="{Binding Path=CustomerName}"

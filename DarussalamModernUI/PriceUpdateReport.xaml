@@ -88,7 +88,8 @@
                             </DataGrid.Resources>
                             <DataGrid.Columns>
                                 <DataGridTextColumn Width="100"
-                                                    Binding="{Binding Path=UpdateDate}"
+                                                    Binding="{Binding Path=UpdateDate,
+                                                                      StringFormat=d}"
                                                     Header="Update Date" />
                                 <DataGridTextColumn Width="400"
                                                     Binding="{Binding Path=Title}"
