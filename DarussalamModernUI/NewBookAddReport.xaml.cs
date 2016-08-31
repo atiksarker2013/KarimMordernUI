@@ -71,6 +71,7 @@ namespace DarussalamModernUI
                 reportObj.Writer = obj.Writer;
                 reportObj.FromDate = fromdate;
                 reportObj.ToDate = toDate;
+                reportObj.EntryDate = (DateTime)obj.EntryDate;
                 stockReportModel.Add(reportObj);
             }
 
