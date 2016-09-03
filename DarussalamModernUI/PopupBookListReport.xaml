@@ -127,9 +127,34 @@
 
 
                 <StackPanel Grid.Row="8"
+                            Grid.Column="1"
+                            Grid.ColumnSpan="3"
+                            Orientation="Horizontal">
+
+                    <RadioButton Name="showStockBookReport"
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 Content="Show Stock   "
+                                 GroupName="PaymentType" />
+
+                    <RadioButton Name="withoutStockBookReport"
+                                 Grid.Row="2"
+                                 Grid.Column="0"
+                                 Content="Without Stock   "
+                                 GroupName="PaymentType" />
+
+
+
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="8"
                             Grid.Column="3"
                             Grid.ColumnSpan="3"
                             Orientation="Horizontal">
+
+
+
                     <Button Name="previewButton"
                             Click="previewButton_Click"
                             Content="Preview" />

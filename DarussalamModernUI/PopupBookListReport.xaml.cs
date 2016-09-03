@@ -115,8 +115,19 @@ namespace DarussalamModernUI
 
             if (SalesInfoList.Count > 0)
             {
-                bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
-                ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                if (showStockBookReport.IsChecked==true)
+                {
+                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                }
+                if (withoutStockBookReport.IsChecked == true)
+                {
+                    bookListWithoutStockCrystalReport employeeInfoCrystalReport = new bookListWithoutStockCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                }
+                
+
+
 
             }
             else
