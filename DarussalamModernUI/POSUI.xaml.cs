@@ -28,6 +28,7 @@ namespace DarussalamModernUI
         {
             InitializeComponent();
             salesDateDatepicker.SelectedDate = DateTime.Now;
+            cashPaytype.IsChecked = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
