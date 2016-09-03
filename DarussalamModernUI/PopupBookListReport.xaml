@@ -23,7 +23,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="20" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="30" />
                     <RowDefinition Height="20" />
                     <RowDefinition Height="500" />
                     <RowDefinition Height="10" />
@@ -127,21 +127,23 @@
 
 
                 <StackPanel Grid.Row="8"
-                            Grid.Column="1"
+                            Grid.Column="0"
                             Grid.ColumnSpan="3"
                             Orientation="Horizontal">
 
                     <RadioButton Name="showStockBookReport"
-                                 Grid.Row="2"
-                                 Grid.Column="0"
                                  Content="Show Stock   "
                                  GroupName="PaymentType" />
 
                     <RadioButton Name="withoutStockBookReport"
-                                 Grid.Row="2"
-                                 Grid.Column="0"
                                  Content="Without Stock   "
                                  GroupName="PaymentType" />
+
+                    <RadioButton Name="showlessThanQtyBookReport"
+                                 Content="Show Less Stock Than Qty     "
+                                 GroupName="PaymentType" />
+
+                    <TextBox Name="lessThanQtyTextBox" Width="104" />
 
 
 

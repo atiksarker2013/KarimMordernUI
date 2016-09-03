@@ -125,6 +125,24 @@ namespace DarussalamModernUI
                     bookListWithoutStockCrystalReport employeeInfoCrystalReport = new bookListWithoutStockCrystalReport();
                     ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
                 }
+                if (showlessThanQtyBookReport.IsChecked == true)
+                {
+                    int qty = 0;
+                    qty = Convert.ToInt32(lessThanQtyTextBox.Text);
+                    List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
+
+                    foreach (RNewBookStockUpdate item in SalesInfoList)
+                    {
+
+                        if (item.NewEntryQty<= qty)
+                        {
+                          bookList.Add(item);
+                        }
+                       
+                    }
+                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
+                }
                 
 
 
