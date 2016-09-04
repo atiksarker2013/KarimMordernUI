@@ -6,7 +6,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Book Stock List Report"
                   Width="1082.974"
-                  Height="660.117"
+                  Height="681.117"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
                   mc:Ignorable="d">
@@ -91,7 +91,7 @@
                       Grid.Column="0"
                       Grid.ColumnSpan="4">
                     <DataGrid Name="bookGrid"
-                              Margin="0,0,0,38"
+                              Margin="0,0,0,54"
                               CanUserReorderColumns="True"
                               CanUserResizeColumns="True"
                               CanUserResizeRows="False"
@@ -125,39 +125,9 @@
                 </Grid>
 
 
-
-                <StackPanel Grid.Row="8"
-                            Grid.Column="0"
-                            Grid.ColumnSpan="3"
-                            Orientation="Horizontal">
-
-                    <RadioButton Name="showStockBookReport"
-                                 Content="Show Stock   "
-                                 GroupName="PaymentType" />
-
-                    <RadioButton Name="withoutStockBookReport"
-                                 Content="Without Stock   "
-                                 GroupName="PaymentType" />
-
-                    <RadioButton Name="showlessThanQtyBookReport"
-                                 Content="Show Less Than Stock Qty     "
-                                 GroupName="PaymentType" />
-
-                    <TextBox Name="lessThanQtyTextBox" Width="104" />
-
-                    <RadioButton Name="showGreaterThanQtyBookReport"
-                                 Content="Show Greather Than Stock Than Qty "
-                                 GroupName="PaymentType" />
-                    <TextBox Name="greatherThanQtyTextBox" Width="104" />
-
-
-
-                </StackPanel>
-
-
-                <StackPanel Grid.Row="8"
+                <StackPanel Grid.Row="6"
                             Grid.Column="3"
-                            Grid.ColumnSpan="3"
+                            Margin="30,0,0,0"
                             Orientation="Horizontal">
 
 
@@ -169,6 +139,36 @@
                             Width="73"
                             Click="closeButton_Click_1"
                             Content="Close" />
+
+                </StackPanel>
+
+
+
+                <StackPanel Grid.Row="8"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Orientation="Horizontal">
+
+                    <RadioButton Name="showStockBookReport"
+                                 Content="Show Stock   "
+                                 GroupName="Paymentv" />
+
+                    <RadioButton Name="withoutStockBookReport"
+                                 Content="Without Stock   "
+                                 GroupName="Paymentv" />
+
+                    <RadioButton Name="showlessThanQtyBookReport"
+                                 Content="Less Than Stock Qty  "
+                                 GroupName="Paymentv" />
+
+                    <TextBox Name="lessThanQtyTextBox" Width="104" />
+
+                    <RadioButton Name="showGreaterThanQtyBookReport"
+                                 Content="Greather Than Stock Qty "
+                                 GroupName="Paymentv" />
+                    <TextBox Name="greatherThanQtyTextBox" Width="104" />
+
+
 
                 </StackPanel>
             </Grid>
