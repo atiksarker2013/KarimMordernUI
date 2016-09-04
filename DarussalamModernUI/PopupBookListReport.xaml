@@ -140,10 +140,15 @@
                                  GroupName="PaymentType" />
 
                     <RadioButton Name="showlessThanQtyBookReport"
-                                 Content="Show Less Stock Than Qty     "
+                                 Content="Show Less Than Stock Qty     "
                                  GroupName="PaymentType" />
 
                     <TextBox Name="lessThanQtyTextBox" Width="104" />
+
+                    <RadioButton Name="showGreaterThanQtyBookReport"
+                                 Content="Show Greather Than Stock Than Qty "
+                                 GroupName="PaymentType" />
+                    <TextBox Name="greatherThanQtyTextBox" Width="104" />
 
 
 

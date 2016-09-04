@@ -23,6 +23,8 @@ namespace DarussalamModernUI
         {
             InitializeComponent();
             LoadGrid();
+            selectedBook.IsChecked = true;
+            showStockBookReport.IsChecked = true;
         }
 
         private void LoadGrid()
@@ -143,7 +145,29 @@ namespace DarussalamModernUI
                     bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
                     ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
                 }
+
+                if (showGreaterThanQtyBookReport.IsChecked == true)
+                {
+                    int qty = 0;
+                    qty = Convert.ToInt32(greatherThanQtyTextBox.Text);
+                    List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
+
+                    foreach (RNewBookStockUpdate item in SalesInfoList)
+                    {
+
+                        if (item.NewEntryQty >= qty)
+                        {
+                            bookList.Add(item);
+                        }
+
+                    }
+                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
+                }
+
                 
+
+
 
 
 
