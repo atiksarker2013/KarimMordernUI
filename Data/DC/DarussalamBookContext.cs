@@ -54,6 +54,21 @@ namespace Data.DC
 
         }
 
+        public bool DoesExist(DarusSalamBook obj)
+        {
+            List<tbl_DarusSalamBook> result = (from c in _db.tbl_DarusSalamBook.Where(t => t.Title == obj.Title && t.Writer==obj.Writer && t.Publisher==obj.Publisher) select c).ToList();
+
+            if (result.Count>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+          
+        }
+
         public List<SalesDetails> GetBookDetailsByInvoiceNo(int id)
         {
             List<tbl_SalesDetails> result = (from c in _db.tbl_SalesDetails.Where(t => t.SalesId == id) select c).ToList();
