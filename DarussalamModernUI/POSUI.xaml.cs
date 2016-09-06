@@ -133,10 +133,33 @@ namespace DarussalamModernUI
                     salesObj.CuriarCharg = 0;
                 }
 
-                salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
-                salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-                salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+                if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
+                {
+                    salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
+                }
+                else
+                {
+                    salesObj.GrandTotal = 0;
+                }
 
+
+                if (!string.IsNullOrEmpty(receiveTextBox.Text))
+                {
+                    salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Receive = 0;
+                }
+
+                if (!string.IsNullOrEmpty(dueTextBox.Text))
+                {
+                    salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Due = 0;
+                }
 
 
                 int pk = 0;
@@ -285,181 +308,189 @@ namespace DarussalamModernUI
 
         private void quatationButton_Click(object sender, RoutedEventArgs e)
         {
-            Sales salesObj = new Sales();
-
-            salesObj.Name = customerNameTextBox.Text;
-            salesObj.Mobile = MobileTextBox.Text;
-            salesObj.Address = addressTextBox.Text;
-            salesObj.Date = salesDateDatepicker.SelectedDate;
-
-            if (cashPaytype.IsChecked == true)
+            try
             {
-                salesObj.PayType = "Cash";
+                Sales salesObj = new Sales();
+
+                salesObj.Name = customerNameTextBox.Text;
+                salesObj.Mobile = MobileTextBox.Text;
+                salesObj.Address = addressTextBox.Text;
+                salesObj.Date = salesDateDatepicker.SelectedDate;
+
+                if (cashPaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Cash";
+                }
+                if (bikshPaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Bikas";
+                    salesObj.PayNo = bikashNoTextBox.Text;
+                }
+                if (chequePaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Cheque";
+                    salesObj.PayNo = chequeNoTextBox.Text;
+                }
+
+                //salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
+                if (!string.IsNullOrEmpty(totalTextBox.Text))
+                {
+                    salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Total = 0;
+                }
+                //salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+                if (!string.IsNullOrEmpty(discountTextBox.Text))
+                {
+                    salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Discount = 0;
+                }
+                if (!string.IsNullOrEmpty(discountAmountTextBox.Text))
+                {
+                    salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
+                }
+                else
+                {
+                    salesObj.OtherDiscount = 0;
+                }
+                if (!string.IsNullOrEmpty(curiarTextBox.Text))
+                {
+                    salesObj.CuriarCharg = Convert.ToDecimal(curiarTextBox.Text);
+                }
+                else
+                {
+                    salesObj.CuriarCharg = 0;
+                }
+
+                if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
+                {
+                    salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
+                }
+                else
+                {
+                    salesObj.GrandTotal = 0;
+                }
+
+                if (!string.IsNullOrEmpty(receiveTextBox.Text))
+                {
+                    salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Receive = 0;
+                }
+
+                if (!string.IsNullOrEmpty(dueTextBox.Text))
+                {
+                    salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Due = 0;
+                }
+
+
+                //int pk = 0;
+                //pk = salesManagerObj.Insert(salesObj);
+
+                // Insert Book Details
+
+                for (int i = 0; i < posDatagrid.Items.Count; i++)
+                {
+                    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
+
+                    SalesDetails salesDetails = new SalesDetails();
+                    salesDetails.BookId = obj.Id;
+                    salesDetails.Price = (decimal)obj.Price;
+                    salesDetails.OrderQty = obj.OrderQty;
+                    //salesDetails.SalesId = pk;
+                    //salesDetailsManagerObj.Insert(salesDetails);
+                }
+
+                // Discount Insert
+
+                for (int i = 0; i < discountDatagrid.Items.Count; i++)
+                {
+                    Discounts obj = discountDatagrid.Items[i] as Discounts;
+
+                    Discounts discountObj = new Discounts();
+                    // discountObj.InvoiceId = pk;
+                    discountObj.PublisherName = obj.PublisherName;
+                    discountObj.TotalAmount = obj.TotalAmount;
+                    discountObj.DiscountPercentage = obj.DiscountPercentage;
+                    discountObj.DiscountAmount = obj.DiscountAmount;
+                    // discountContext.Insert(discountObj);
+
+                    RDarussalamSalesDiscount discuntobj = new RDarussalamSalesDiscount();
+                    discuntobj.PublisherName = obj.PublisherName;
+                    discuntobj.TotalAmount = obj.TotalAmount;
+                    discuntobj.DiscountPercentage = obj.DiscountPercentage;
+                    discuntobj.DiscountAmount = obj.DiscountAmount;
+                    SalesDiscountInfoList.Add(discuntobj);
+
+                }
+
+
+                // Update Stock
+
+                SalesInfoList = new List<RDarusSalamBook>();
+
+                for (int i = 0; i < posDatagrid.Items.Count; i++)
+                {
+                    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
+                    obj.Qty = obj.Qty - obj.OrderQty;
+                    obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
+                    //  bookContext.Update(obj);
+
+                    RDarusSalamBook reportObj = new RDarusSalamBook();
+                    reportObj.Id = obj.Id;
+                    reportObj.Title = obj.Title;
+                    reportObj.OrderQty = obj.OrderQty;
+                    reportObj.Price = (decimal)obj.Price;
+                    reportObj.Name = salesObj.Name;
+                    reportObj.Mobile = salesObj.Mobile;
+                    reportObj.Address = salesObj.Address;
+                    reportObj.Date = (DateTime)salesObj.Date;
+                    reportObj.PayType = salesObj.PayType;
+                    reportObj.PayNo = salesObj.PayNo;
+                    reportObj.Total = salesObj.Total;
+                    reportObj.Discount = salesObj.Discount;
+                    reportObj.GrandTotal = salesObj.GrandTotal;
+                    reportObj.Receive = salesObj.Receive;
+                    reportObj.Due = salesObj.Due;
+                    reportObj.Publisher = obj.Publisher;
+                    reportObj.Writer = obj.Writer;
+                    reportObj.CuriarCharg = salesObj.CuriarCharg;
+                    reportObj.OtherDiscount = salesObj.OtherDiscount;
+                    SalesInfoList.Add(reportObj);
+                }
+
+
+
+                if (SalesInfoList.Count > 0)
+                {
+                    priceQuotationCrystalReport employeeInfoCrystalReport = new priceQuotationCrystalReport();
+                    //salesInvoiceCrystalReport discountReport = new salesInvoiceCrystalReport();
+                    // employeeInfoCrystalReport.Subreports["salesInvoiceCrystalReport.rpt"].SetDataSource(SalesDiscountInfoList);
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+
+
+                    //  ReportUtility.Display_report(discountReport, SalesDiscountInfoList, this);
+                }
+                else
+                {
+                    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
-            if (bikshPaytype.IsChecked == true)
+            catch (Exception ex)
             {
-                salesObj.PayType = "Bikas";
-                salesObj.PayNo = bikashNoTextBox.Text;
-            }
-            if (chequePaytype.IsChecked == true)
-            {
-                salesObj.PayType = "Cheque";
-                salesObj.PayNo = chequeNoTextBox.Text;
-            }
 
-            //salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
-            if (!string.IsNullOrEmpty(totalTextBox.Text))
-            {
-                salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
-            }
-            else
-            {
-                salesObj.Total = 0;
-            }
-            //salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
-            if (!string.IsNullOrEmpty(discountTextBox.Text))
-            {
-                salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
-            }
-            else
-            {
-                salesObj.Discount = 0;
-            }
-            if (!string.IsNullOrEmpty(discountAmountTextBox.Text))
-            {
-                salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
-            }
-            else
-            {
-                salesObj.OtherDiscount = 0;
-            }
-            if (!string.IsNullOrEmpty(curiarTextBox.Text))
-            {
-                salesObj.CuriarCharg = Convert.ToDecimal(curiarTextBox.Text);
-            }
-            else
-            {
-                salesObj.CuriarCharg = 0;
-            }
-
-            if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
-            {
-                salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
-            }
-            else
-            {
-                salesObj.GrandTotal = 0;
-            }
-
-            if (!string.IsNullOrEmpty(receiveTextBox.Text))
-            {
-                salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-            }
-            else
-            {
-                salesObj.Receive = 0;
-            }
-
-            if (!string.IsNullOrEmpty(dueTextBox.Text))
-            {
-                salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
-            }
-            else
-            {
-                salesObj.Due = 0;
-            }
-
-
-            //int pk = 0;
-            //pk = salesManagerObj.Insert(salesObj);
-
-            // Insert Book Details
-
-            for (int i = 0; i < posDatagrid.Items.Count; i++)
-            {
-                DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-
-                SalesDetails salesDetails = new SalesDetails();
-                salesDetails.BookId = obj.Id;
-                salesDetails.Price = (decimal)obj.Price;
-                salesDetails.OrderQty = obj.OrderQty;
-                //salesDetails.SalesId = pk;
-                //salesDetailsManagerObj.Insert(salesDetails);
-            }
-
-            // Discount Insert
-
-            for (int i = 0; i < discountDatagrid.Items.Count; i++)
-            {
-                Discounts obj = discountDatagrid.Items[i] as Discounts;
-
-                Discounts discountObj = new Discounts();
-               // discountObj.InvoiceId = pk;
-                discountObj.PublisherName = obj.PublisherName;
-                discountObj.TotalAmount = obj.TotalAmount;
-                discountObj.DiscountPercentage = obj.DiscountPercentage;
-                discountObj.DiscountAmount = obj.DiscountAmount;
-               // discountContext.Insert(discountObj);
-
-                RDarussalamSalesDiscount discuntobj = new RDarussalamSalesDiscount();
-                discuntobj.PublisherName = obj.PublisherName;
-                discuntobj.TotalAmount = obj.TotalAmount;
-                discuntobj.DiscountPercentage = obj.DiscountPercentage;
-                discuntobj.DiscountAmount = obj.DiscountAmount;
-                SalesDiscountInfoList.Add(discuntobj);
-
-            }
-
-
-            // Update Stock
-
-            SalesInfoList = new List<RDarusSalamBook>();
-
-            for (int i = 0; i < posDatagrid.Items.Count; i++)
-            {
-                DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-                obj.Qty = obj.Qty - obj.OrderQty;
-                obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
-                bookContext.Update(obj);
-
-                RDarusSalamBook reportObj = new RDarusSalamBook();
-                reportObj.Id = obj.Id;
-                reportObj.Title = obj.Title;
-                reportObj.OrderQty = obj.OrderQty;
-                reportObj.Price = (decimal)obj.Price;
-                reportObj.Name = salesObj.Name;
-                reportObj.Mobile = salesObj.Mobile;
-                reportObj.Address = salesObj.Address;
-                reportObj.Date = (DateTime)salesObj.Date;
-                reportObj.PayType = salesObj.PayType;
-                reportObj.PayNo = salesObj.PayNo;
-                reportObj.Total = salesObj.Total;
-                reportObj.Discount = salesObj.Discount;
-                reportObj.GrandTotal = salesObj.GrandTotal;
-                reportObj.Receive = salesObj.Receive;
-                reportObj.Due = salesObj.Due;
-                reportObj.Publisher = obj.Publisher;
-                reportObj.Writer = obj.Writer;
-                reportObj.CuriarCharg = salesObj.CuriarCharg;
-                reportObj.OtherDiscount = salesObj.OtherDiscount;
-                SalesInfoList.Add(reportObj);
-            }
-
-
-
-            if (SalesInfoList.Count > 0)
-            {
-                 priceQuotationCrystalReport employeeInfoCrystalReport = new priceQuotationCrystalReport();
-                //salesInvoiceCrystalReport discountReport = new salesInvoiceCrystalReport();
-                // employeeInfoCrystalReport.Subreports["salesInvoiceCrystalReport.rpt"].SetDataSource(SalesDiscountInfoList);
-                 ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-
-
-                //  ReportUtility.Display_report(discountReport, SalesDiscountInfoList, this);
-            }
-            else
-            {
-                MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show( ex.ToString());
             }
         }
     }
