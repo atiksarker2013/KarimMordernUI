@@ -209,7 +209,7 @@ namespace DarussalamModernUI
                 for (int i = 0; i < posDatagrid.Items.Count; i++)
                 {
                     DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-                    obj.Qty = obj.Qty - obj.OrderQty;
+                    obj.InStock = obj.InStock - obj.OrderQty;
                     obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
                     bookContext.Update(obj);
 
@@ -263,6 +263,8 @@ namespace DarussalamModernUI
                 curiarTextBox.Text = "";
                 posDatagrid.Items.Clear();
                 discountDatagrid.Items.Clear();
+                GlobalVar.TempOrderBookList = new List<DarusSalamBook>();
+
             }
             catch (ApplicationException ae)
             {

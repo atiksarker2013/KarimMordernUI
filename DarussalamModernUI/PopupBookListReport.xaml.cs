@@ -103,7 +103,7 @@ namespace DarussalamModernUI
 
                 if (obj.NewEntryQty != null)
                 {
-                    reportObj.NewEntryQty = Convert.ToInt32(obj.Qty);
+                    reportObj.NewEntryQty = Convert.ToInt32(obj.InStock);
                 }
                 else
                 {

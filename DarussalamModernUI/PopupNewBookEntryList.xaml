@@ -103,7 +103,7 @@
                                                 Binding="{Binding Path=Price}"
                                                 Header="Price" />
                             <DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=Qty}"
+                                                Binding="{Binding Path=InStock}"
                                                 Header="Stock Qty" />
                             <DataGridTemplateColumn Width="160" Header="New Inventory Qty">
                                 <DataGridTemplateColumn.CellTemplate>

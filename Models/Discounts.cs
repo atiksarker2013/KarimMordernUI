@@ -35,8 +35,8 @@
             }
         }
 
-        private decimal?_totalAmount;
-        public decimal?TotalAmount
+        private decimal? _totalAmount;
+        public decimal? TotalAmount
         {
             get { return _totalAmount; }
             set

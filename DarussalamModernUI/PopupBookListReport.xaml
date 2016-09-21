@@ -116,7 +116,7 @@
                                                 Binding="{Binding Path=Price}"
                                                 Header="Price" />
                             <DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=Qty}"
+                                                Binding="{Binding Path=InStock}"
                                                 Header="Stock Qty" />
 
                         </DataGrid.Columns>

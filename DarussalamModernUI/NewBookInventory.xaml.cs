@@ -64,7 +64,7 @@ namespace DarussalamModernUI
             {
                 DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
                 obj.InStock = obj.InStock + obj.NewEntryQty;
-                obj.Qty = obj.Qty + obj.NewEntryQty;
+              //  obj.Qty = obj.Qty + obj.NewEntryQty;
                 bookContext.Update(obj);
             }
 

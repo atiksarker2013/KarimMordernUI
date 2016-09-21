@@ -70,13 +70,11 @@ namespace DarussalamModernUI
 
 
             GlobalVar.DiscountsList = new List<Discounts>();
-            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList
-            .GroupBy(l => l.Publisher)
+            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList.GroupBy(l => l.Publisher)
             .Select(cl => new Discounts
             {
                 PublisherName = cl.First().Publisher,
-
-                TotalAmount = cl.Sum(c => c.Price)
+                TotalAmount = cl.Sum(c => c.Price*c.OrderQty),
             }).ToList();
 
         }
