@@ -4,6 +4,7 @@ using System.Linq;
 using Models;
 using Data.EM;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 
 namespace Data.DC
 {
@@ -13,18 +14,36 @@ namespace Data.DC
 
         public int Insert(Sales SalesModel)
         {
-            tbl_Sales _salesModel = EM_Sales.ConvertToEntity(SalesModel);
-            _db.tbl_Sales.Add(_salesModel);
-
             try
             {
-                _db.SaveChanges();
+                tbl_Sales _salesModel = EM_Sales.ConvertToEntity(SalesModel);
+                _db.tbl_Sales.Add(_salesModel);
+
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (DbUpdateException ue)
+                {
+                    // HandleException(ue);
+                }
+                return _salesModel.Id;
             }
-            catch (DbUpdateException ue)
+            catch (DbEntityValidationException e)
             {
-               // HandleException(ue);
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
+                throw;
             }
-            return _salesModel.Id;
+           
         }
 
         public List<Sales> GetSalesHistoryByDateRange(DateTime fromDate, DateTime toDate)
