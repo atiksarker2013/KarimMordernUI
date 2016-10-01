@@ -37,6 +37,36 @@ namespace Data
 
         }
 
+        public List<DarusSalamBook> GetDarusSalamBookLookupList(string startsWith = "")
+        {
+            List<USP_GetBookList_Result> drugNameLookUpList = _db.USP_GetBookList(startsWith).ToList();
+            List<DarusSalamBook> bodrugNameLookUpList = drugNameLookUpList.Select(n => EM_DarusSalamBook.ConvertToModel(n)).ToList();
+            return bodrugNameLookUpList;
+           
+        }
+
+        public List<DarusSalamBook> GetAllBookListForUpdateLookup(string title)
+        {
+            return (from c in _db.tbl_DarusSalamBook
+                    where c.Title.StartsWith(title)
+                    orderby c.Title
+
+                    select new DarusSalamBook
+                    {
+                        Id = c.Id,
+                        Title = c.Title,
+                        Writer = c.Writer,
+                        Publisher = c.Publisher,
+                        Qty = (int)c.Qty,
+                        Price = (decimal)c.Price,
+                        OutOfStock = (int)c.OutOfStock,
+                        InStock = (int)c.InStock,
+                        Barcode = c.Barcode
+
+                    }).Take(15).ToList();
+
+        }
+
         public List<DarusSalamBook> GetAllBookListREportLookup(string title)
         {
             return (from c in _db.tbl_DarusSalamBook

@@ -110,6 +110,9 @@
     <Compile Include="tbl_SalesDetails.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="USP_GetBookList_Result.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="DarussalamModel.edmx">
@@ -118,7 +121,9 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DarussalamModel.edmx.diagram">
       <DependentUpon>DarussalamModel.edmx</DependentUpon>
     </None>

@@ -12,6 +12,8 @@ namespace Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class KARIM_INT_HOUSTONEEntities : DbContext
     {
@@ -33,5 +35,14 @@ namespace Data
         public virtual DbSet<tbl_NewBookEntry> tbl_NewBookEntry { get; set; }
         public virtual DbSet<tbl_ReceiveDue> tbl_ReceiveDue { get; set; }
         public virtual DbSet<tbl_Sales> tbl_Sales { get; set; }
+    
+        public virtual ObjectResult<USP_GetBookList_Result> USP_GetBookList(string searchStr)
+        {
+            var searchStrParameter = searchStr != null ?
+                new ObjectParameter("SearchStr", searchStr) :
+                new ObjectParameter("SearchStr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetBookList_Result>("USP_GetBookList", searchStrParameter);
+        }
     }
 }

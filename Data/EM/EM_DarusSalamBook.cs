@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System;
+using Models;
 using Shared;
 namespace Data
 {
@@ -6,6 +7,24 @@ namespace Data
     {
 
         public static DarusSalamBook ConverToModel(tbl_DarusSalamBook entity)
+        {
+            DarusSalamBook model = new DarusSalamBook();
+
+            model.Id = entity.Id;
+            model.Title = entity.Title.TrimWithNull();
+            model.Writer = entity.Writer.TrimWithNull();
+            model.Publisher = entity.Publisher.TrimWithNull();
+            model.Barcode = entity.Barcode.TrimWithNull();
+            model.Qty = entity.Qty ?? 0;
+            model.Price = entity.Price ?? 0;
+            model.OutOfStock = entity.OutOfStock ?? 0;
+            model.InStock = entity.InStock ?? 0;
+            model.EntryDate = entity.EntryDate;
+
+            return model;
+        }
+
+        internal static DarusSalamBook ConvertToModel(USP_GetBookList_Result entity)
         {
             DarusSalamBook model = new DarusSalamBook();
 

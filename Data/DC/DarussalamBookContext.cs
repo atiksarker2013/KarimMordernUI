@@ -11,12 +11,7 @@ namespace Data.DC
     {
         KARIM_INT_HOUSTONEEntities _db = new KARIM_INT_HOUSTONEEntities();
 
-        public List<DarusSalamBook> GetDarusSalamBookLookupList(string startsWith = "")
-        {
-            List<tbl_DarusSalamBook> result = (from c in _db.tbl_DarusSalamBook orderby c.Title where c.Title.StartsWith(startsWith) select c).Take(20).ToList();
-            List<DarusSalamBook> list = result.Select(n => EM_DarusSalamBook.ConverToModel(n)).ToList();
-            return list;
-        }
+       
 
         public void Update(DarusSalamBook drugupdateoptionsModel)
         {

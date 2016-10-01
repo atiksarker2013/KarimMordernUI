@@ -90,9 +90,32 @@
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="420"
+                            <!--<DataGridTextColumn Width="420"
                                                 Binding="{Binding Path=Title}"
-                                                Header="Title" />
+                                                Header="Title" />-->
+                            <DataGridTemplateColumn Width="420" Header="Title">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder1"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox1"
+                                                     Width="420"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Title,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder1" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox1" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Writer}"
                                                 Header="Writer" />

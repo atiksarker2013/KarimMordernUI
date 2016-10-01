@@ -23,7 +23,7 @@ namespace DarussalamModernUI
 
         private void LoadGrid()
         {
-            List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
+            List<DarusSalamBook> list = objmangaer.GetAllBookListForUpdateLookup("");
 
             foreach (DarusSalamBook item in list)
             {
@@ -35,7 +35,7 @@ namespace DarussalamModernUI
         {
             if (!string.IsNullOrEmpty(searchTextBox.Text))
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
+                List<DarusSalamBook> list = objmangaer.GetAllBookListForUpdateLookup(searchTextBox.Text);
 
                 bookGrid.Items.Clear();
                 foreach (DarusSalamBook item in list)
@@ -45,7 +45,7 @@ namespace DarussalamModernUI
             }
             else
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
+                List<DarusSalamBook> list = objmangaer.GetAllBookListForUpdateLookup("");
 
                 foreach (DarusSalamBook item in list)
                 {
@@ -61,10 +61,10 @@ namespace DarussalamModernUI
             {
                 DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
 
-                if (!string.IsNullOrEmpty(obj.Barcode))
-                {
+                //if (!string.IsNullOrEmpty(obj.Barcode))
+                //{
                     GlobalVar.UpdateBookList.Add(obj);
-                }
+               // }
             }
 
             foreach (DarusSalamBook item in GlobalVar.UpdateBookList)

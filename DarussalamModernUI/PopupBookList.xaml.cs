@@ -35,8 +35,10 @@ namespace DarussalamModernUI
         {
             if (!string.IsNullOrEmpty(searchTextBox.Text))
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
-
+               // List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
+                List<DarusSalamBook> list = objmangaer.GetDarusSalamBookLookupList(searchTextBox.Text);
+                
+                
                 bookGrid.Items.Clear();
                 foreach (DarusSalamBook item in list)
                 {

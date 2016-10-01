@@ -7,6 +7,7 @@ using Models;
 using ReportApp;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -53,6 +54,22 @@ namespace DarussalamModernUI
             totalTextBox.Text = TGBP.ToString("F");
 
             grandTotalTextBox.Text = TGBP.ToString("F");
+
+            // Discount Calculation
+
+            GlobalVar.DiscountsList = new List<Discounts>();
+            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList.GroupBy(l => l.Publisher)
+            .Select(cl => new Discounts
+            {
+                PublisherName = cl.First().Publisher,
+                TotalAmount = cl.Sum(c => c.Price * c.OrderQty),
+            }).ToList();
+
+            discountDatagrid.Items.Clear();
+            foreach (Discounts item in GlobalVar.DiscountsList)
+            {
+                discountDatagrid.Items.Add(item);
+            }
         }
 
        
