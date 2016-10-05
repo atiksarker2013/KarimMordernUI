@@ -32,39 +32,55 @@ namespace DarussalamModernUI
 
         private void searchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(searchTextBox.Text))
+            try
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
-
-                bookGrid.Items.Clear();
-                foreach (DarusSalamBook item in list)
+                if (!string.IsNullOrEmpty(searchTextBox.Text))
                 {
-                    bookGrid.Items.Add(item);
+                    List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
+
+                    bookGrid.Items.Clear();
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
+
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
 
-                foreach (DarusSalamBook item in list)
-                {
-                    bookGrid.Items.Add(item);
-                }
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
         private void bookAddButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < bookGrid.Items.Count; i++)
+            try
             {
-                DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
-
-                var result = GlobalVar.TempNewBookEntryList.Find(x => x.Id == obj.Id);
-                if (result == null && obj.NewEntryQty > 0)
+                for (int i = 0; i < bookGrid.Items.Count; i++)
                 {
-                    GlobalVar.TempNewBookEntryList.Add(obj);
-                }
+                    DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
 
+                    var result = GlobalVar.TempNewBookEntryList.Find(x => x.Id == obj.Id);
+                    if (result == null && obj.NewEntryQty > 0)
+                    {
+                        GlobalVar.TempNewBookEntryList.Add(obj);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                throw;
             }
             
         }

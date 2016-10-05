@@ -39,24 +39,32 @@ namespace DarussalamModernUI
 
         private void searchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(searchTextBox.Text))
+            try
             {
-                List<DarusSalamBook> list = objmangaer.GetDarusSalamBookLookupList(searchTextBox.Text);
-
-                bookGrid.Items.Clear();
-                foreach (DarusSalamBook item in list)
+                if (!string.IsNullOrEmpty(searchTextBox.Text))
                 {
-                    bookGrid.Items.Add(item);
+                    List<DarusSalamBook> list = objmangaer.GetDarusSalamBookLookupList(searchTextBox.Text);
+
+                    bookGrid.Items.Clear();
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
+
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
 
-                foreach (DarusSalamBook item in list)
-                {
-                    bookGrid.Items.Add(item);
-                }
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -82,99 +90,107 @@ namespace DarussalamModernUI
 
         private void previewButton_Click(object sender, RoutedEventArgs e)
         {
-            SalesInfoList = new List<RNewBookStockUpdate>();
-
-            for (int i = 0; i < bookGrid.Items.Count; i++)
+            try
             {
-                DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
+                SalesInfoList = new List<RNewBookStockUpdate>();
 
-                RNewBookStockUpdate reportObj = new RNewBookStockUpdate();
-               
-               reportObj.Title = obj.Title;
-                if (obj.Price!=null)
+                for (int i = 0; i < bookGrid.Items.Count; i++)
                 {
-                    reportObj.NewPrice = (decimal)obj.Price;
+                    DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
+
+                    RNewBookStockUpdate reportObj = new RNewBookStockUpdate();
+
+                    reportObj.Title = obj.Title;
+                    if (obj.Price != null)
+                    {
+                        reportObj.NewPrice = (decimal)obj.Price;
+                    }
+                    else
+                    {
+                        reportObj.NewPrice = 0;
+                    }
+
+
+                    if (obj.NewEntryQty != null)
+                    {
+                        reportObj.NewEntryQty = Convert.ToInt32(obj.InStock);
+                    }
+                    else
+                    {
+                        reportObj.NewEntryQty = 0;
+                    }
+
+                    reportObj.Publisher = obj.Publisher;
+                    reportObj.Writer = obj.Writer;
+                    SalesInfoList.Add(reportObj);
+                }
+
+                if (SalesInfoList.Count > 0)
+                {
+                    if (showStockBookReport.IsChecked == true)
+                    {
+                        bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                        ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                    }
+                    if (withoutStockBookReport.IsChecked == true)
+                    {
+                        bookListWithoutStockCrystalReport employeeInfoCrystalReport = new bookListWithoutStockCrystalReport();
+                        ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                    }
+                    if (showlessThanQtyBookReport.IsChecked == true)
+                    {
+                        int qty = 0;
+                        qty = Convert.ToInt32(lessThanQtyTextBox.Text);
+                        List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
+
+                        foreach (RNewBookStockUpdate item in SalesInfoList)
+                        {
+
+                            if (item.NewEntryQty <= qty)
+                            {
+                                bookList.Add(item);
+                            }
+
+                        }
+                        bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                        ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
+                    }
+
+                    if (showGreaterThanQtyBookReport.IsChecked == true)
+                    {
+                        int qty = 0;
+                        qty = Convert.ToInt32(greatherThanQtyTextBox.Text);
+                        List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
+
+                        foreach (RNewBookStockUpdate item in SalesInfoList)
+                        {
+
+                            if (item.NewEntryQty >= qty)
+                            {
+                                bookList.Add(item);
+                            }
+
+                        }
+                        bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
+                        ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
+                    }
+
+
+
+
+
+
+
                 }
                 else
                 {
-                    reportObj.NewPrice = 0;
+                    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-
-
-                if (obj.NewEntryQty != null)
-                {
-                    reportObj.NewEntryQty = Convert.ToInt32(obj.InStock);
-                }
-                else
-                {
-                    reportObj.NewEntryQty = 0;
-                }
-                
-                reportObj.Publisher = obj.Publisher;
-                reportObj.Writer = obj.Writer;
-                SalesInfoList.Add(reportObj);
             }
-
-            if (SalesInfoList.Count > 0)
+            catch (Exception ex)
             {
-                if (showStockBookReport.IsChecked==true)
-                {
-                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-                }
-                if (withoutStockBookReport.IsChecked == true)
-                {
-                    bookListWithoutStockCrystalReport employeeInfoCrystalReport = new bookListWithoutStockCrystalReport();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-                }
-                if (showlessThanQtyBookReport.IsChecked == true)
-                {
-                    int qty = 0;
-                    qty = Convert.ToInt32(lessThanQtyTextBox.Text);
-                    List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
 
-                    foreach (RNewBookStockUpdate item in SalesInfoList)
-                    {
-
-                        if (item.NewEntryQty<= qty)
-                        {
-                          bookList.Add(item);
-                        }
-                       
-                    }
-                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
-                }
-
-                if (showGreaterThanQtyBookReport.IsChecked == true)
-                {
-                    int qty = 0;
-                    qty = Convert.ToInt32(greatherThanQtyTextBox.Text);
-                    List<RNewBookStockUpdate> bookList = new List<RNewBookStockUpdate>();
-
-                    foreach (RNewBookStockUpdate item in SalesInfoList)
-                    {
-
-                        if (item.NewEntryQty >= qty)
-                        {
-                            bookList.Add(item);
-                        }
-
-                    }
-                    bookListReportCrystalReport employeeInfoCrystalReport = new bookListReportCrystalReport();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, bookList, this);
-                }
-
-                
-
-
-
-
-
-            }
-            else
-            {
-                MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(ex.Message.ToString());
             }
 
         }

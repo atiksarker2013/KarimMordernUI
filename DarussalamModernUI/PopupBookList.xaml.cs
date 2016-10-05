@@ -33,51 +33,67 @@ namespace DarussalamModernUI
 
         private void searchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(searchTextBox.Text))
+            try
             {
-               // List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
-                List<DarusSalamBook> list = objmangaer.GetDarusSalamBookLookupList(searchTextBox.Text);
-                
-                
-                bookGrid.Items.Clear();
-                foreach (DarusSalamBook item in list)
+                if (!string.IsNullOrEmpty(searchTextBox.Text))
                 {
-                    bookGrid.Items.Add(item);
+                    // List<DarusSalamBook> list = objmangaer.GetAllBookListLookup(searchTextBox.Text);
+                    List<DarusSalamBook> list = objmangaer.GetDarusSalamBookLookupList(searchTextBox.Text);
+
+
+                    bookGrid.Items.Clear();
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
+
+                    foreach (DarusSalamBook item in list)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                List<DarusSalamBook> list = objmangaer.GetAllBookListLookup("");
 
-                foreach (DarusSalamBook item in list)
-                {
-                    bookGrid.Items.Add(item);
-                }
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void bookAddButton_Click(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < bookGrid.Items.Count; i++)
+            try
             {
-                DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
-
-                var result = GlobalVar.TempOrderBookList.Find(x => x.Id == obj.Id);
-                if (result == null && obj.OrderQty > 0)
+                for (int i = 0; i < bookGrid.Items.Count; i++)
                 {
-                    GlobalVar.TempOrderBookList.Add(obj);
+                    DarusSalamBook obj = bookGrid.Items[i] as DarusSalamBook;
+
+                    var result = GlobalVar.TempOrderBookList.Find(x => x.Id == obj.Id);
+                    if (result == null && obj.OrderQty > 0)
+                    {
+                        GlobalVar.TempOrderBookList.Add(obj);
+                    }
+
                 }
 
+
+                GlobalVar.DiscountsList = new List<Discounts>();
+                GlobalVar.DiscountsList = GlobalVar.TempOrderBookList.GroupBy(l => l.Publisher)
+                .Select(cl => new Discounts
+                {
+                    PublisherName = cl.First().Publisher,
+                    TotalAmount = cl.Sum(c => c.Price * c.OrderQty),
+                }).ToList();
             }
-
-
-            GlobalVar.DiscountsList = new List<Discounts>();
-            GlobalVar.DiscountsList = GlobalVar.TempOrderBookList.GroupBy(l => l.Publisher)
-            .Select(cl => new Discounts
+            catch (Exception ex)
             {
-                PublisherName = cl.First().Publisher,
-                TotalAmount = cl.Sum(c => c.Price*c.OrderQty),
-            }).ToList();
+
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
