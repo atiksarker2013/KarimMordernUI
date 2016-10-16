@@ -38,6 +38,7 @@ namespace DarussalamModernUI
             obj.Title = bookTitleTextBox.Text;
             obj.Writer = writerTextBox.Text;
             obj.Publisher = publisherTextBox.Text;
+            obj.Barcode = bookBarCodeTextBox.Text;
 
             if (!string.IsNullOrEmpty(priceTextBox.Text))
             {
@@ -48,19 +49,21 @@ namespace DarussalamModernUI
                 obj.Price = 0;
             }
 
+            ///
+            //string
 
-            if (!string.IsNullOrEmpty(priceTextBox.Text))
+            if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
             {
-                obj.Qty = Convert.ToInt32(openingQtyTextBox.Text);
+                obj.Qty = Convert.ToInt32(bookOpeningQtyTextBox.Text);
             }
             else
             {
                 obj.Qty = 0;
             }
 
-            if (!string.IsNullOrEmpty(priceTextBox.Text))
+            if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
             {
-                obj.InStock = Convert.ToInt32(openingQtyTextBox.Text);
+                obj.InStock = Convert.ToInt32(bookOpeningQtyTextBox.Text);
             }
             else
             {
@@ -104,7 +107,7 @@ namespace DarussalamModernUI
             posDatagrid.Items.Clear();
             bookTitleTextBox.Text = "";
             publisherTextBox.Text = "";
-            openingQtyTextBox.Text = "";
+            bookOpeningQtyTextBox.Text = "";
             writerTextBox.Text = "";
             priceTextBox.Text = "";
         }

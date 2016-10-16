@@ -302,7 +302,7 @@
                                Grid.Column="0"
                                Margin="0,0,140,0"
                                Style="{StaticResource Heading2}"
-                               Text="Curiar"
+                               Text="Courier"
                                TextAlignment="Left" />
                     <TextBox Name="curiarTextBox"
                              Grid.Row="4"
