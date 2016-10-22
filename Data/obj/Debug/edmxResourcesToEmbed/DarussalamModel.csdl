@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KARIM_INT_HOUSTONEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="KARIM_INT_HOUSTONEEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Discount" EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" />
+    <EntitySet Name="tbl_BookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" />
+    <EntitySet Name="tbl_NewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" />
+    <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
+    <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
+    <EntitySet Name="tbl_NewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" />
+    <EntitySet Name="tbl_ReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" />
+    <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
+    <FunctionImport Name="USP_GetBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetBookList_Result)">
+      <Parameter Name="SearchStr" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="tbl_Discount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="PublisherName" Type="String" MaxLength="5200" FixedLength="false" Unicode="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountPercentage" Type="Int32" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_BookPriceUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_NewEntryQty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OldStock" Type="Int32" />
+    <Property Name="NewEntryQty" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_DarusSalamBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="Int32" />
+    <Property Name="InStock" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_SalesDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesId" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OrderQty" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReturnQty" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_NewBookEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="Int32" />
+    <Property Name="InStock" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_ReceiveDue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleInvoiceId" Type="Int32" />
+    <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <ComplexType Name="USP_GetBookList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" />
+    <Property Type="String" Name="Writer" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="OutOfStock" Nullable="true" />
+    <Property Type="Int32" Name="InStock" Nullable="true" />
+    <Property Type="String" Name="Barcode" Nullable="true" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

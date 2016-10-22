@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KARIM_INT_HOUSTONEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_BookPriceUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="OldPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UpdateDate" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_DarusSalamBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Writer" Type="varchar(max)" />
+    <Property Name="Publisher" Type="varchar(max)" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="int" />
+    <Property Name="InStock" Type="int" />
+    <Property Name="Barcode" Type="varchar(max)" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Discount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="PublisherName" Type="varchar" MaxLength="5200" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountPercentage" Type="int" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_NewBookEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Writer" Type="varchar(max)" />
+    <Property Name="Publisher" Type="varchar(max)" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="int" />
+    <Property Name="InStock" Type="int" />
+    <Property Name="Barcode" Type="varchar(max)" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_NewEntryQty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="OldStock" Type="int" />
+    <Property Name="NewEntryQty" Type="int" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_ReceiveDue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleInvoiceId" Type="int" />
+    <Property Name="CustomerInvoiceId" Type="varchar(max)" />
+    <Property Name="ReceiveAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReceiveDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Date" Type="date" />
+    <Property Name="PayType" Type="varchar" MaxLength="50" />
+    <Property Name="PayNo" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Receive" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Due" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CuriarCharg" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_SalesDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesId" Type="int" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="OrderQty" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReturnQty" Type="int" />
+  </EntityType>
+  <Function Name="USP_GetBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
+    <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_NewEntryQty" EntityType="Self.tbl_NewEntryQty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ReceiveDue" EntityType="Self.tbl_ReceiveDue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Sales" EntityType="Self.tbl_Sales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SalesDetails" EntityType="Self.tbl_SalesDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

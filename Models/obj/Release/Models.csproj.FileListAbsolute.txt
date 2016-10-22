@@ -1,0 +1,10 @@
+C:\Users\atik\OneDrive\KarinIntModernUINavigationApp\Models\bin\Release\Models.dll
+C:\Users\atik\OneDrive\KarinIntModernUINavigationApp\Models\bin\Release\Models.pdb
+C:\Users\atik\OneDrive\KarinIntModernUINavigationApp\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+C:\Users\atik\OneDrive\KarinIntModernUINavigationApp\Models\obj\Release\Models.dll
+C:\Users\atik\OneDrive\KarinIntModernUINavigationApp\Models\obj\Release\Models.pdb
+C:\Karim\KarinIntModernUINavigationApp\Models\bin\Release\Models.dll
+C:\Karim\KarinIntModernUINavigationApp\Models\bin\Release\Models.pdb
+C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.dll
+C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.pdb

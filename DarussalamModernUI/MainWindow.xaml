@@ -22,7 +22,7 @@
                         <MenuItem Header="Inventory">
                             <MenuItem Click="addnewBookButto_Click" Header="Add New Book" />
                             <MenuItem Click="receiveBookButton_Click" Header="Update Inventory" />
-                            <MenuItem Click="updateBookButton_Click" Header="Update Book Bacode" />
+                            <MenuItem Click="updateBookButton_Click" Header="Update Book Information" />
                             <MenuItem Click="updateBookPriceButton_Click" Header="Update Book Price" />
                         </MenuItem>
 
