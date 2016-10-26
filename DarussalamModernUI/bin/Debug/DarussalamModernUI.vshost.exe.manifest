@@ -503,7 +503,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fNE5Zll9PvnuHhTfSdAqTvIJfDH0ODiEhucaXtSxA5o=</dsig:DigestValue>
+      <dsig:DigestValue>yAc5b20KHZ7w4ol4qbfFLXNHygaiihwgvikrSBWBjrg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo.ico" size="49958">

@@ -43,6 +43,7 @@
     <Compile Include="BookPriceUpdate.cs" />
     <Compile Include="DarusSalamBook.cs" />
     <Compile Include="Discounts.cs" />
+    <Compile Include="KarimBook.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="NewBookStockUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

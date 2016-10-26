@@ -264,14 +264,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DarussalamModernUI.exe" size="2874840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DarussalamModernUI.exe" size="2893784">
       <assemblyIdentity name="DarussalamModernUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1GWVyoBpyruuqGaqs2UWMslEn0lxmTqJwXx9QVfKY5E=</dsig:DigestValue>
+        <dsig:DigestValue>Ns3xs3C5WhR2x7Ros+UwwsKN/CVTr5tHfuqB5jShOyk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -503,7 +503,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fNE5Zll9PvnuHhTfSdAqTvIJfDH0ODiEhucaXtSxA5o=</dsig:DigestValue>
+      <dsig:DigestValue>yAc5b20KHZ7w4ol4qbfFLXNHygaiihwgvikrSBWBjrg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo.ico" size="49958">

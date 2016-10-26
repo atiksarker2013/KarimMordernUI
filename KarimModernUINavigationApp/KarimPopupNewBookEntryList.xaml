@@ -1,0 +1,140 @@
+﻿<mui:ModernWindow x:Class="KarimModernUINavigationApp.KarimPopupNewBookEntryList"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="Book Stock List"
+                  Width="1082.974"
+                  Height="566.117"
+                  Style="{StaticResource BlankWindow}"
+                  WindowStartupLocation="CenterScreen"
+                  mc:Ignorable="d">
+    <ScrollViewer>
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="400" />
+
+
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Row="2"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="4">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Style="{StaticResource Heading2}"
+                               Text="Book Search  "
+                               TextAlignment="Right" />
+                    <TextBox Name="searchTextBox"
+                             Grid.Row="0"
+                             Grid.Column="1"
+                            TextChanged="searchTextBox_TextChanged_1"/>
+                    <!--<StackPanel Grid.Row="0"
+                                Grid.Column="2"
+                                Orientation="Horizontal">
+                        <RadioButton Content="All  " GroupName="BookType" />
+                        <RadioButton Content="Bangla  " GroupName="BookType" />
+                        <RadioButton Content="English" GroupName="BookType" />
+                    </StackPanel>-->
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="3"
+                                Orientation="Horizontal">
+                        <Button Name="bookAddButton"
+                                Click="bookAddButton_Click"
+                                Content="ADD  " />
+                        <Button Name="closeButton"
+                               Click="closeButton_Click"
+                                Content="CLOSE" />
+
+                    </StackPanel>
+
+                </Grid>
+
+                <Grid Grid.Row="4"
+                      Grid.RowSpan="10"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="4">
+                    <DataGrid Name="bookGrid"
+                              CanUserReorderColumns="True"
+                              CanUserResizeColumns="True"
+                              CanUserResizeRows="False"
+                              CanUserSortColumns="True"
+                              IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="420"
+                                                Binding="{Binding Path=Title}"
+                                                Header="Title" />
+                            <DataGridTextColumn Width="200"
+                                                Binding="{Binding Path=Writer}"
+                                                Header="Writer" />
+                            <DataGridTextColumn Width="100"
+                                                Binding="{Binding Path=Publisher}"
+                                                Header="Publisher" />
+                            <DataGridTextColumn Width="70"
+                                                Binding="{Binding Path=Price}"
+                                                Header="Price" />
+                            <DataGridTextColumn Width="70"
+                                                Binding="{Binding Path=InStock}"
+                                                Header="Stock Qty" />
+                            <DataGridTemplateColumn Width="160" Header="New Inventory Qty">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox"
+                                                     Width="50"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=NewEntryQty,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+
+
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</mui:ModernWindow>

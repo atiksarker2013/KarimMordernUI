@@ -36,6 +36,25 @@
     <Property Name="DiscountPercentage" Type="int" />
     <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
+  <EntityType Name="tbl_KarimBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Writer" Type="varchar(max)" />
+    <Property Name="Publisher" Type="varchar(max)" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="PublisherPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="int" />
+    <Property Name="InStock" Type="int" />
+    <Property Name="Barcode" Type="varchar(max)" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="PublishYear" Type="int" />
+    <Property Name="PublisherUnit" Type="varchar(max)" />
+    <Property Name="BookType" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="tbl_NewBookEntry">
     <Key>
       <PropertyRef Name="Id" />
@@ -108,6 +127,7 @@
     <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_KarimBook" EntityType="Self.tbl_KarimBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewEntryQty" EntityType="Self.tbl_NewEntryQty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_ReceiveDue" EntityType="Self.tbl_ReceiveDue" Schema="dbo" store:Type="Tables" />
