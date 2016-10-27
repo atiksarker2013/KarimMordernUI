@@ -35,8 +35,8 @@ namespace Data.DC
         public void Insert(KarimBook darusSalamBook)
         {
 
-            tbl_KarimBook _BookModel = EM_KarimBook.ConvertToEntity(darusSalamBook);
-            _db.tbl_KarimBook.Add(_BookModel);
+            tbl_KarimNewBookEntry _BookModel = EM_KarimNewBookEntry.ConvertToEntity(darusSalamBook);
+            _db.tbl_KarimNewBookEntry.Add(_BookModel);
             // insert in to main stock
             tbl_KarimBook _darussalamBookModel = EM_KarimBook.ConvertToEntity(darusSalamBook);
             _db.tbl_KarimBook.Add(_darussalamBookModel);

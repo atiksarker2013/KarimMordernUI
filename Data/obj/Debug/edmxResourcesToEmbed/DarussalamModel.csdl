@@ -13,6 +13,8 @@
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="tbl_KarimBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" />
+    <EntitySet Name="tbl_KarimNewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty" />
+    <EntitySet Name="tbl_KarimNewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry" />
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -128,6 +130,35 @@
     <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
   </ComplexType>
   <EntityType Name="tbl_KarimBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="PublisherPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OutOfStock" Type="Int32" />
+    <Property Name="InStock" Type="Int32" />
+    <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="PublishYear" Type="Int32" />
+    <Property Name="PublisherUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BookType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_KarimNewEntryQty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OldStock" Type="Int32" />
+    <Property Name="NewEntryQty" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_KarimNewBookEntry">
     <Key>
       <PropertyRef Name="Id" />
     </Key>

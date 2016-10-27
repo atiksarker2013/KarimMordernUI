@@ -146,5 +146,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimNewEntryQty">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty">
+        <MappingFragment StoreEntitySet="tbl_KarimNewEntryQty">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="NewEntryQty" ColumnName="NewEntryQty" />
+          <ScalarProperty Name="OldStock" ColumnName="OldStock" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimNewBookEntry">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry">
+        <MappingFragment StoreEntitySet="tbl_KarimNewBookEntry">
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
