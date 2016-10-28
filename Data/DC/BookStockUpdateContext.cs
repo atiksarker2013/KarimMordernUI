@@ -34,5 +34,21 @@ namespace Data.DC
             List<NewBookStockUpdate> list = result.Select(n => EM_NewBookStockUpdate.ConverToModel(n)).ToList();
             return list;
         }
+
+        public int Insert(KarimNewBookStockUpdate SalesModel)
+        {
+            tbl_KarimNewEntryQty _salesModel = EM_KarimNewbookStockUpdate.ConvertToEntity(SalesModel);
+            _db.tbl_KarimNewEntryQty.Add(_salesModel);
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                // HandleException(ue);
+            }
+            return _salesModel.Id;
+        }
     }
 }

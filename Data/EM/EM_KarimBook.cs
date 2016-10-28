@@ -32,23 +32,7 @@ namespace Data.EM
             return model;
         }
 
-        //internal static DarusSalamBook ConvertToModel(USP_GetBookList_Result entity)
-        //{
-        //    DarusSalamBook model = new DarusSalamBook();
-
-        //    model.Id = entity.Id;
-        //    model.Title = entity.Title.TrimWithNull();
-        //    model.Writer = entity.Writer.TrimWithNull();
-        //    model.Publisher = entity.Publisher.TrimWithNull();
-        //    model.Barcode = entity.Barcode.TrimWithNull();
-        //    model.Qty = entity.Qty ?? 0;
-        //    model.Price = entity.Price ?? 0;
-        //    model.OutOfStock = entity.OutOfStock ?? 0;
-        //    model.InStock = entity.InStock ?? 0;
-        //    model.EntryDate = entity.EntryDate;
-
-        //    return model;
-        //}
+       
 
         public static tbl_KarimBook ConvertToEntity(KarimBook model)
         {
@@ -74,6 +58,28 @@ namespace Data.EM
 
 
             return entity;
+        }
+
+        internal static KarimBook ConvertToModel(USP_GetKarimBookList_Result entity)
+        {
+            KarimBook model = new KarimBook();
+
+            model.Id = entity.Id;
+            model.Title = entity.Title.TrimWithNull();
+            model.Writer = entity.Writer.TrimWithNull();
+            model.Publisher = entity.Publisher.TrimWithNull();
+            model.Barcode = entity.Barcode.TrimWithNull();
+            model.Qty = entity.Qty ?? 0;
+            model.Price = entity.Price ?? 0;
+            model.PublisherPrice = entity.PublisherPrice ?? 0;
+            model.PublisherUnit = entity.PublisherUnit.TrimWithNull();
+            model.PublishYear = entity.PublishYear;
+            model.BookType = entity.BookType.TrimWithNull();
+            model.OutOfStock = entity.OutOfStock ?? 0;
+            model.InStock = entity.InStock ?? 0;
+            model.EntryDate = entity.EntryDate;
+
+            return model;
         }
     }
 }

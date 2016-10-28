@@ -47,5 +47,14 @@ namespace Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetBookList_Result>("USP_GetBookList", searchStrParameter);
         }
+    
+        public virtual ObjectResult<USP_GetKarimBookList_Result> USP_GetKarimBookList(string searchStr)
+        {
+            var searchStrParameter = searchStr != null ?
+                new ObjectParameter("SearchStr", searchStr) :
+                new ObjectParameter("SearchStr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookList_Result>("USP_GetKarimBookList", searchStrParameter);
+        }
     }
 }

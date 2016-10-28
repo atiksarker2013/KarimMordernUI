@@ -127,6 +127,9 @@
     <Compile Include="USP_GetBookList_Result.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="USP_GetKarimBookList_Result.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="DarussalamModel.edmx">

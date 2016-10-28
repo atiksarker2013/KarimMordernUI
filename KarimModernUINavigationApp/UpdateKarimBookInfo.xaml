@@ -5,10 +5,11 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Update Book Information"
-                  Width="1332.974"
+                  Width="1721.474"
                   Height="732.117"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
+                  WindowState="Maximized"
                   mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel>
@@ -140,14 +141,14 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Width="200" Header="Publisher">
+                            <DataGridTemplateColumn Width="150" Header="Publisher">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder3"
                                                 Margin="1"
                                                 VerticalAlignment="Stretch">
                                             <TextBox x:Name="textBox3"
-                                                     Width="190"
+                                                     Width="150"
                                                      Margin="3,1"
                                                      Text="{Binding Path=Publisher,
                                                                     Mode=TwoWay,
@@ -164,14 +165,111 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Width="100" Header="Price">
+                            <DataGridTemplateColumn Width="100" Header="Year">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder6"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox6"
+                                                     Width="90"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=PublishYear,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Publisher}" Value="0">
+                                                <Setter TargetName="brdBroder6" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox6" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="150" Header="Book Type">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder8"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox8"
+                                                     Width="140"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=BookType,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Publisher}" Value="0">
+                                                <Setter TargetName="brdBroder8" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox8" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+                            <DataGridTemplateColumn Width="70" Header="Unit">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder7"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox7"
+                                                     Width="65"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=PublisherUnit,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Publisher}" Value="0">
+                                                <Setter TargetName="brdBroder7" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox7" Property="Foreground" Value="White" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="100" Header="Publisher Price">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder9"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox9"
+                                                     Width="90"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=PublisherPrice,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Price}" Value="0">
+                                                <Setter TargetName="brdBroder9" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox9" Property="Foreground" Value="Red" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="150" Header="Price (Taka)">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder4"
                                                 Margin="1"
                                                 VerticalAlignment="Stretch">
                                             <TextBox x:Name="textBox4"
-                                                     Width="90"
+                                                     Width="140"
                                                      Margin="3,1"
                                                      Text="{Binding Path=Price,
                                                                     Mode=TwoWay,
@@ -212,18 +310,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <!--<DataGridTextColumn Width="200"
-                                                Binding="{Binding Path=Writer}"
-                                                Header="Writer" />-->
-                            <!--<DataGridTextColumn Width="100"
-                                                Binding="{Binding Path=Publisher}"
-                                                Header="Publisher" />-->
-                            <!--<DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=Price}"
-                                                Header="Price" />-->
-                            <!--<DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=InStock}"
-                                                Header="Stock Qty" />-->
+                           
                             <DataGridTemplateColumn Width="120" Header="Barcode">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

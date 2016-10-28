@@ -59,7 +59,6 @@ C:\Karim\KarinIntModernUINavigationApp\ReportApp\bin\Release\FlashControlV71.dll
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\bin\Release\stdole.dll
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\bin\Release\ShockwaveFlashObjects.dll
-C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Release\ReportApp.csprojResolveAssemblyReference.cache
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Release\MainWindow.g.cs
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Release\App.g.cs
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Release\ReportApp_MarkupCompile.cache

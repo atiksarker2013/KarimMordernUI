@@ -15,6 +15,9 @@
     <EntitySet Name="tbl_KarimBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" />
     <EntitySet Name="tbl_KarimNewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty" />
     <EntitySet Name="tbl_KarimNewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry" />
+    <FunctionImport Name="USP_GetKarimBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookList_Result)">
+      <Parameter Name="SearchStr" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -177,4 +180,20 @@
     <Property Name="PublisherUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="BookType" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
+  <ComplexType Name="USP_GetKarimBookList_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Title" Nullable="true" />
+    <Property Type="String" Name="Writer" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="PublisherPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="OutOfStock" Nullable="true" />
+    <Property Type="Int32" Name="InStock" Nullable="true" />
+    <Property Type="String" Name="Barcode" Nullable="true" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PublishYear" Nullable="true" />
+    <Property Type="String" Name="PublisherUnit" Nullable="true" />
+    <Property Type="String" Name="BookType" Nullable="true" />
+  </ComplexType>
 </Schema>

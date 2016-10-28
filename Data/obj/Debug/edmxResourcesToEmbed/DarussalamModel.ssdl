@@ -152,6 +152,9 @@
   <Function Name="USP_GetBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SearchStr" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="USP_GetKarimBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
     <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
