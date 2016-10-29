@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\App.xaml
-11-268159839
+131726748266
 
-15-1332952164
+17-806976170
 22-1363748045
-KarimNewBookInventory.xaml;KarimPopupBookList.xaml;KarimPopupNewBookEntryList.xaml;MainWindow.xaml;NewKarimBookInventory.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;PopupKarimNewBookEntryList.xaml;UpdateKarimBookInfo.xaml;
+KarimAddNewBook.xaml;KarimNewBookInventory.xaml;KarimPopupBookList.xaml;KarimPopupNewBookEntryList.xaml;MainWindow.xaml;NewKarimBookInventory.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;PopupKarimNewBookEntryList.xaml;UpdateKarimBookInfo.xaml;UpdateKarimBookPrice.xaml;
 
 False
 

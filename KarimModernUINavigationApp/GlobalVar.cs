@@ -12,6 +12,11 @@ namespace KarimModernUINavigationApp
         public static List<KarimBook> UpdateKarimBookList = new List<KarimBook>();
         public static List<KarimBook> TempNewKarimBookEntryList = new List<KarimBook>();
 
-        
+        //public static List<KarimBook> UpdateBookPriceList { get; internal set; }
+        //public static List<KarimBook> BookPriceUpdateList { get; internal set; }
+
+
+        public static List<KarimBook> UpdateBookPriceList = new List<KarimBook>();
+        public static List<KarimBook> BookPriceUpdateList = new List<KarimBook>();
     }
 }

@@ -60,6 +60,16 @@
           <Property Name="PublisherUnit" Type="varchar(max)" />
           <Property Name="BookType" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="tbl_KarimBookPriceUpdate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookId" Type="int" />
+          <Property Name="OldPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NewPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UpdateDate" Type="date" />
+        </EntityType>
         <EntityType Name="tbl_KarimNewBookEntry">
           <Key>
             <PropertyRef Name="Id" />
@@ -165,6 +175,7 @@
           <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimBook" EntityType="Self.tbl_KarimBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="Self.tbl_KarimBookPriceUpdate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimNewBookEntry" EntityType="Self.tbl_KarimNewBookEntry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
@@ -193,8 +204,9 @@
           <EntitySet Name="tbl_KarimNewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty" />
           <EntitySet Name="tbl_KarimNewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry" />
           <FunctionImport Name="USP_GetKarimBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookList_Result)">
-            <Parameter Name="SearchStr" Mode="In" Type="String" />
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -373,6 +385,16 @@
           <Property Type="String" Name="PublisherUnit" Nullable="true" />
           <Property Type="String" Name="BookType" Nullable="true" />
         </ComplexType>
+        <EntityType Name="tbl_KarimBookPriceUpdate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -575,6 +597,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_KarimBookPriceUpdate">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate">
+              <MappingFragment StoreEntitySet="tbl_KarimBookPriceUpdate">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
+                <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -609,6 +642,7 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty" Width="2.5" PointX="3.375" PointY="7.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry" Width="1.5" PointX="6.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </Diagrams>
   </Designer>

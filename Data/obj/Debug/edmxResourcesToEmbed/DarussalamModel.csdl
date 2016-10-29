@@ -18,6 +18,7 @@
     <FunctionImport Name="USP_GetKarimBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookList_Result)">
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" />
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -196,4 +197,14 @@
     <Property Type="String" Name="PublisherUnit" Nullable="true" />
     <Property Type="String" Name="BookType" Nullable="true" />
   </ComplexType>
+  <EntityType Name="tbl_KarimBookPriceUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>

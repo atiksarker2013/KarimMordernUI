@@ -33,3 +33,4 @@ C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Debug\ReportApp.Properties.
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Debug\ReportApp.csproj.GenerateResource.Cache
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Debug\ReportApp.exe
 C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Debug\ReportApp.pdb
+C:\Karim\KarinIntModernUINavigationApp\ReportApp\obj\Debug\ReportApp.csprojResolveAssemblyReference.cache

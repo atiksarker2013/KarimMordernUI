@@ -76,6 +76,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GlobalVar.cs" />
+    <Compile Include="KarimAddNewBook.xaml.cs">
+      <DependentUpon>KarimAddNewBook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KarimNewBookInventory.xaml.cs">
       <DependentUpon>KarimNewBookInventory.xaml</DependentUpon>
     </Compile>
@@ -94,6 +97,13 @@
     <Compile Include="UpdateKarimBookInfo.xaml.cs">
       <DependentUpon>UpdateKarimBookInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateKarimBookPrice.xaml.cs">
+      <DependentUpon>UpdateKarimBookPrice.xaml</DependentUpon>
+    </Compile>
+    <Page Include="KarimAddNewBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="KarimNewBookInventory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateKarimBookInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateKarimBookPrice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

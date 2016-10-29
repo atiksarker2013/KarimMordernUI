@@ -20,10 +20,10 @@
                     <Menu DockPanel.Dock="Top">
                         <MenuItem   Header="POS" Height="42" />
                         <MenuItem Header="Inventory">
-                            <MenuItem   Header="Add New Book" />
+                            <MenuItem   Header="Add New Book" Click="MenuItem_Click_3"/>
                             <MenuItem   Header="Update Inventory" Click="MenuItem_Click_1"/>
                             <MenuItem   Header="Update Book Information" Click="MenuItem_Click" />
-                            <MenuItem   Header="Update Book Price" />
+                            <MenuItem   Header="Update Book Price" Click="MenuItem_Click_2"/>
                         </MenuItem>
 
                         <MenuItem  Header="Sales History" />
