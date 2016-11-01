@@ -18,7 +18,7 @@
             <StackPanel>
                 <DockPanel>
                     <Menu DockPanel.Dock="Top">
-                        <MenuItem   Header="POS" Height="42" />
+                        <MenuItem   Header="POS" Height="42" Click="MenuItem_Click_5" />
                         <MenuItem Header="Inventory">
                             <MenuItem   Header="Add New Book" Click="MenuItem_Click_3"/>
                             <MenuItem   Header="Update Inventory" Click="MenuItem_Click_1"/>
@@ -27,6 +27,7 @@
                         </MenuItem>
 
                         <MenuItem  Header="Sales History" />
+                        <MenuItem  Header="Update Currency" Click="MenuItem_Click_4" />
 
                         <MenuItem Header="Reports">
                             <MenuItem Name="newBookreportButton"

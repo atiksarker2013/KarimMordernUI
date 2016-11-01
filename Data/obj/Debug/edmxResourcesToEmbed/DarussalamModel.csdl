@@ -8,7 +8,6 @@
     <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
     <EntitySet Name="tbl_NewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" />
     <EntitySet Name="tbl_ReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" />
-    <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
     <FunctionImport Name="USP_GetBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetBookList_Result)">
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
@@ -19,6 +18,8 @@
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" />
+    <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
+    <EntitySet Name="tbl_KarimCurrency" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency" />
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -101,25 +102,6 @@
     <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="tbl_Sales">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
   <ComplexType Name="USP_GetBookList_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -206,5 +188,33 @@
     <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_Sales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_KarimCurrency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CurrencyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CurrencySymbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TakaInAmount" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
 </Schema>

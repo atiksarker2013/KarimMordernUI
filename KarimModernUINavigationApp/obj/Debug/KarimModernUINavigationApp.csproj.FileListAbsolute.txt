@@ -71,3 +71,7 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Upda
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimBookPrice.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimAddNewBook.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimAddNewBook.g.cs
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimCurrency.baml
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimCurrency.g.cs
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimPOSUI.baml
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimPOSUI.g.cs

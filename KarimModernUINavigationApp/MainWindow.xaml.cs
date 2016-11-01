@@ -36,5 +36,17 @@ namespace KarimModernUINavigationApp
             KarimAddNewBook obj = new KarimAddNewBook();
             obj.Show();
         }
+
+        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        {
+            UpdateKarimCurrency obj = new UpdateKarimCurrency();
+            obj.Show();
+        }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            KarimPOSUI obj = new KarimModernUINavigationApp.KarimPOSUI();
+            obj.Show();
+        }
     }
 }

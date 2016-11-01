@@ -34,11 +34,12 @@ namespace Data
         public virtual DbSet<tbl_SalesDetails> tbl_SalesDetails { get; set; }
         public virtual DbSet<tbl_NewBookEntry> tbl_NewBookEntry { get; set; }
         public virtual DbSet<tbl_ReceiveDue> tbl_ReceiveDue { get; set; }
-        public virtual DbSet<tbl_Sales> tbl_Sales { get; set; }
         public virtual DbSet<tbl_KarimBook> tbl_KarimBook { get; set; }
         public virtual DbSet<tbl_KarimNewEntryQty> tbl_KarimNewEntryQty { get; set; }
         public virtual DbSet<tbl_KarimNewBookEntry> tbl_KarimNewBookEntry { get; set; }
         public virtual DbSet<tbl_KarimBookPriceUpdate> tbl_KarimBookPriceUpdate { get; set; }
+        public virtual DbSet<tbl_Sales> tbl_Sales { get; set; }
+        public virtual DbSet<tbl_KarimCurrency> tbl_KarimCurrency { get; set; }
     
         public virtual ObjectResult<USP_GetBookList_Result> USP_GetBookList(string searchStr)
         {

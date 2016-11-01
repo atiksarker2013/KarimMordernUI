@@ -90,26 +90,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_Sales">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_Sales">
-        <MappingFragment StoreEntitySet="tbl_Sales">
-          <ScalarProperty Name="CuriarCharg" ColumnName="CuriarCharg" />
-          <ScalarProperty Name="Due" ColumnName="Due" />
-          <ScalarProperty Name="Receive" ColumnName="Receive" />
-          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
-          <ScalarProperty Name="OtherDiscount" ColumnName="OtherDiscount" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="PayNo" ColumnName="PayNo" />
-          <ScalarProperty Name="PayType" ColumnName="PayType" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="USP_GetBookList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetBookList">
       <ResultMapping>
         <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetBookList_Result">
@@ -204,6 +184,36 @@
           <ScalarProperty Name="NewPrice" ColumnName="NewPrice" />
           <ScalarProperty Name="OldPrice" ColumnName="OldPrice" />
           <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Sales">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_Sales">
+        <MappingFragment StoreEntitySet="tbl_Sales">
+          <ScalarProperty Name="CuriarCharg" ColumnName="CuriarCharg" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+          <ScalarProperty Name="Receive" ColumnName="Receive" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="OtherDiscount" ColumnName="OtherDiscount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PayNo" ColumnName="PayNo" />
+          <ScalarProperty Name="PayType" ColumnName="PayType" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimCurrency">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency">
+        <MappingFragment StoreEntitySet="tbl_KarimCurrency">
+          <ScalarProperty Name="TakaInAmount" ColumnName="TakaInAmount" />
+          <ScalarProperty Name="CurrencySymbol" ColumnName="CurrencySymbol" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

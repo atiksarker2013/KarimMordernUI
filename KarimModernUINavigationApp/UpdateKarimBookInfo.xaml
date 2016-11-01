@@ -9,7 +9,7 @@
                   Height="732.117"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
-                  WindowState="Maximized"
+                 
                   mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel>
@@ -84,7 +84,7 @@
                               CanUserResizeColumns="True"
                               CanUserResizeRows="False"
                               CanUserSortColumns="True"
-                              IsReadOnly="True" Margin="0,0,0,-228" Height="628" VerticalAlignment="Top">
+                              IsReadOnly="True" Margin="0,0,0,-228">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />

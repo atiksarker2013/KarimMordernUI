@@ -55,6 +55,16 @@
     <Property Name="PublisherUnit" Type="varchar(max)" />
     <Property Name="BookType" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="tbl_KarimBookPriceUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="OldPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NewPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="UpdateDate" Type="date" />
+  </EntityType>
   <EntityType Name="tbl_KarimNewBookEntry">
     <Key>
       <PropertyRef Name="Id" />
@@ -123,7 +133,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Mobile" Type="varchar" MaxLength="50" />
     <Property Name="Address" Type="varchar(max)" />
@@ -152,11 +162,15 @@
   <Function Name="USP_GetBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SearchStr" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="USP_GetKarimBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
     <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimBook" EntityType="Self.tbl_KarimBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="Self.tbl_KarimBookPriceUpdate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimNewBookEntry" EntityType="Self.tbl_KarimNewBookEntry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />

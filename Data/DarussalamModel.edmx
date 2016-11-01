@@ -70,6 +70,15 @@
           <Property Name="NewPrice" Type="decimal" Precision="18" Scale="2" />
           <Property Name="UpdateDate" Type="date" />
         </EntityType>
+        <EntityType Name="tbl_KarimCurrency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CurrencyName" Type="varchar(max)" />
+          <Property Name="CurrencySymbol" Type="varchar" MaxLength="50" />
+          <Property Name="TakaInAmount" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <EntityType Name="tbl_KarimNewBookEntry">
           <Key>
             <PropertyRef Name="Id" />
@@ -138,7 +147,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Mobile" Type="varchar" MaxLength="50" />
           <Property Name="Address" Type="varchar(max)" />
@@ -176,6 +185,7 @@
           <EntitySet Name="tbl_Discount" EntityType="Self.tbl_Discount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimBook" EntityType="Self.tbl_KarimBook" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="Self.tbl_KarimBookPriceUpdate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_KarimCurrency" EntityType="Self.tbl_KarimCurrency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimNewBookEntry" EntityType="Self.tbl_KarimNewBookEntry" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
@@ -196,7 +206,6 @@
           <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" />
           <EntitySet Name="tbl_ReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" />
-          <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <FunctionImport Name="USP_GetBookList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetBookList_Result)">
           <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
@@ -207,6 +216,8 @@
           <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" />
+          <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
+          <EntitySet Name="tbl_KarimCurrency" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -289,25 +300,6 @@
           <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_Sales">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
-          <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <ComplexType Name="USP_GetBookList_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -394,6 +386,34 @@
           <Property Name="OldPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="NewPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tbl_Sales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_KarimCurrency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CurrencySymbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TakaInAmount" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -486,26 +506,6 @@
                 <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
                 <ScalarProperty Name="CustomerInvoiceId" ColumnName="CustomerInvoiceId" />
                 <ScalarProperty Name="SaleInvoiceId" ColumnName="SaleInvoiceId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_Sales">
-            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_Sales">
-              <MappingFragment StoreEntitySet="tbl_Sales">
-                <ScalarProperty Name="CuriarCharg" ColumnName="CuriarCharg" />
-                <ScalarProperty Name="Due" ColumnName="Due" />
-                <ScalarProperty Name="Receive" ColumnName="Receive" />
-                <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
-                <ScalarProperty Name="OtherDiscount" ColumnName="OtherDiscount" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="PayNo" ColumnName="PayNo" />
-                <ScalarProperty Name="PayType" ColumnName="PayType" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -608,6 +608,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Sales">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_Sales">
+              <MappingFragment StoreEntitySet="tbl_Sales">
+                <ScalarProperty Name="CuriarCharg" ColumnName="CuriarCharg" />
+                <ScalarProperty Name="Due" ColumnName="Due" />
+                <ScalarProperty Name="Receive" ColumnName="Receive" />
+                <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+                <ScalarProperty Name="OtherDiscount" ColumnName="OtherDiscount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="PayNo" ColumnName="PayNo" />
+                <ScalarProperty Name="PayType" ColumnName="PayType" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_KarimCurrency">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency">
+              <MappingFragment StoreEntitySet="tbl_KarimCurrency">
+                <ScalarProperty Name="TakaInAmount" ColumnName="TakaInAmount" />
+                <ScalarProperty Name="CurrencySymbol" ColumnName="CurrencySymbol" />
+                <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -638,11 +668,12 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty" Width="2.5" PointX="3.375" PointY="7.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimNewBookEntry" Width="1.5" PointX="6.375" PointY="8.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </Diagrams>
   </Designer>

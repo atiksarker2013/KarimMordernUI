@@ -88,6 +88,9 @@
     <Compile Include="KarimPopupNewBookEntryList.xaml.cs">
       <DependentUpon>KarimPopupNewBookEntryList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KarimPOSUI.xaml.cs">
+      <DependentUpon>KarimPOSUI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewKarimBookInventory.xaml.cs">
       <DependentUpon>NewKarimBookInventory.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,9 @@
     </Compile>
     <Compile Include="UpdateKarimBookPrice.xaml.cs">
       <DependentUpon>UpdateKarimBookPrice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateKarimCurrency.xaml.cs">
+      <DependentUpon>UpdateKarimCurrency.xaml</DependentUpon>
     </Compile>
     <Page Include="KarimAddNewBook.xaml">
       <SubType>Designer</SubType>
@@ -113,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KarimPopupNewBookEntryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KarimPOSUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -167,6 +177,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UpdateKarimBookPrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateKarimCurrency.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

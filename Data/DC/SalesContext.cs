@@ -16,6 +16,8 @@ namespace Data.DC
         {
             try
             {
+                int maxAge = _db.tbl_Sales.Max(p => p.Id);
+                SalesModel.Id = maxAge + 1;
                 tbl_Sales _salesModel = EM_Sales.ConvertToEntity(SalesModel);
                 _db.tbl_Sales.Add(_salesModel);
 
