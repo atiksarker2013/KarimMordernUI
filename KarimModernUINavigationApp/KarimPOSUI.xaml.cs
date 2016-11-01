@@ -66,5 +66,16 @@ namespace KarimModernUINavigationApp
         {
 
         }
+
+     
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
