@@ -179,6 +179,9 @@
         <Function Name="USP_GetKarimBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SearchStr" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="USP_GetKarimBookWithBdPriceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_DarusSalamBook" EntityType="Self.tbl_DarusSalamBook" Schema="dbo" store:Type="Tables" />
@@ -218,6 +221,9 @@
           <EntitySet Name="tbl_KarimBookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate" />
           <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <EntitySet Name="tbl_KarimCurrency" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency" />
+          <FunctionImport Name="USP_GetKarimBookWithBdPriceList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result)">
+            <Parameter Name="SearchStr" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -415,6 +421,22 @@
           <Property Name="CurrencySymbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="TakaInAmount" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
+        <ComplexType Name="USP_GetKarimBookWithBdPriceList_Result">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="String" Name="Title" Nullable="true" />
+          <Property Type="String" Name="Writer" Nullable="true" />
+          <Property Type="String" Name="Publisher" Nullable="true" />
+          <Property Type="Int32" Name="Qty" Nullable="true" />
+          <Property Type="Decimal" Name="PublisherPrice" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="OutOfStock" Nullable="true" />
+          <Property Type="Int32" Name="InStock" Nullable="true" />
+          <Property Type="String" Name="Barcode" Nullable="true" />
+          <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="PublishYear" Nullable="true" />
+          <Property Type="String" Name="PublisherUnit" Nullable="true" />
+          <Property Type="String" Name="BookType" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -638,6 +660,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetKarimBookWithBdPriceList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookWithBdPriceList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+                <ScalarProperty Name="InStock" ColumnName="InStock" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+                <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+                <ScalarProperty Name="BookType" ColumnName="BookType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

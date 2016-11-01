@@ -4,12 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.DC
 {
-   public class KarimBookStockUpdateContext
+    public class KarimBookStockUpdateContext
     {
         KARIM_INT_HOUSTONEEntities _db = new KARIM_INT_HOUSTONEEntities();
 

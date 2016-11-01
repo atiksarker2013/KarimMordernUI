@@ -214,12 +214,61 @@ namespace Models
         }
 
 
+        private int _discountPercentage;
+        public int DiscountPercentage
+        {
+            get { return _discountPercentage; }
+            set
+            {
+                _discountPercentage = value;
+                RaisePropertyChanged("DiscountPercentage");
+                //if (Id == 0)
+                //AddErrorForProperty("Id","D cannot be empty");
+                //else
+                //RemoveError("Id");
+            }
+        }
+
+        private decimal _unitWiseNetTaka;
+        public decimal UnitWiseNetTaka
+        {
+            get { return _unitWiseNetTaka; }
+            set
+            {
+                _unitWiseNetTaka = value;
+                RaisePropertyChanged("UnitWiseNetTaka");
+                //if (Id == 0)
+                //AddErrorForProperty("Id","D cannot be empty");
+                //else
+                //RemoveError("Id");
+            }
+        }
+
+
+        private decimal _unitWiseDiscountAmount;
+        public decimal UnitWiseDiscountAmount
+        {
+            get { return _unitWiseDiscountAmount; }
+            set
+            {
+                _unitWiseDiscountAmount = value;
+                RaisePropertyChanged("UnitWiseDiscountAmount");
+                //if (Id == 0)
+                //AddErrorForProperty("Id","D cannot be empty");
+                //else
+                //RemoveError("Id");
+            }
+        }
+
+        
+
 
         public string Barcode { get; set; }
         public decimal PublisherPrice { get; set; }
         public string PublisherUnit { get; set; }
         public int? PublishYear { get; set; }
         public string BookType { get; set; }
+      //  public decimal DiscountPercentage { get; set; }
 
         public bool CheckValidation()
         {

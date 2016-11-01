@@ -167,5 +167,14 @@ namespace Data
                     }).ToList();
 
         }
+
+
+        public List<KarimBook> GetKarimBookWithTakaLookupList(string startsWith = "")
+        {
+            List<USP_GetKarimBookWithBdPriceList_Result> drugNameLookUpList = _db.USP_GetKarimBookWithBdPriceList(startsWith).ToList();
+            List<KarimBook> bodrugNameLookUpList = drugNameLookUpList.Select(n => EM_KarimBook.ConvertToModel(n)).ToList();
+            return bodrugNameLookUpList;
+
+        }
     }
 }

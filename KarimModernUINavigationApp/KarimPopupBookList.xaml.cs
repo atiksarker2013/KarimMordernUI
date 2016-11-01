@@ -22,7 +22,7 @@ namespace KarimModernUINavigationApp
 
         private void LoadGrid()
         {
-            List<KarimBook> list = objmangaer.GetAllKarimBookListLookup("");
+            List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupList("");
 
             foreach (KarimBook item in list)
             {
@@ -116,7 +116,7 @@ namespace KarimModernUINavigationApp
             {
                 if (!string.IsNullOrEmpty(searchTextBox.Text))
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookLookupList(searchTextBox.Text);
+                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupList(searchTextBox.Text);
                     bookGrid.Items.Clear();
                     foreach (KarimBook item in list)
                     {
@@ -125,7 +125,7 @@ namespace KarimModernUINavigationApp
                 }
                 else
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookLookupList("");
+                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupList("");
                     foreach (KarimBook item in list)
                     {
                         bookGrid.Items.Add(item);

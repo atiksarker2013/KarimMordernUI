@@ -103,6 +103,10 @@
                             <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=Barcode}"
                                                 Header="ISBN" />
+
+                            <DataGridTextColumn Width="150"
+                                                Binding="{Binding Path=BookType}"
+                                                Header="BookType" />
                             <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=PublisherPrice}"
                                                 Header="Publisher Price" />
