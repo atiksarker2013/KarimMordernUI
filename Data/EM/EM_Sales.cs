@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using System;
+using Models;
 namespace Data.EM
 {
     public static class EM_Sales
@@ -45,6 +46,18 @@ namespace Data.EM
             entity.CuriarCharg = model.CuriarCharg;
 
             return entity;
+        }
+
+        internal static Sales ConvertToModel(USP_GetCustomerInfoByMobile_Result entity)
+        {
+            Sales model = new Sales();
+
+            model.Name = entity.Name;
+        
+            model.Address = entity.Address;
+         
+
+            return model;
         }
     }
 }

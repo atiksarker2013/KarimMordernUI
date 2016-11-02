@@ -264,26 +264,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DarussalamModernUI.exe" size="3121112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DarussalamModernUI.exe" size="3121624">
       <assemblyIdentity name="DarussalamModernUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lJBoU17IxVehvP4wn1lS8PAp5JWto0uP53Beom1bhGc=</dsig:DigestValue>
+        <dsig:DigestValue>6bAoTFpEqaMzyznFysQlsQNDgSi2Gnr783fwxi6AfrA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="88576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="99840">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LbzgdDxGKq9mf2qipgz4Qlb5g7CXfB6KYEEqxEnu7vY=</dsig:DigestValue>
+        <dsig:DigestValue>87Igzj5gnVL8YVVa6Jc2G6voby2fM81MfmAtEuQQBqo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -348,14 +348,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Models.dll" size="26624">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Models.dll" size="27648">
       <assemblyIdentity name="Models" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mhzkd3V8Olf7JQcNjOs//g1W0On4QUB8VEwGnnrdxKo=</dsig:DigestValue>
+        <dsig:DigestValue>Qz976PGyTvRfPKvBSoB2Ml9/HMudLcqdHt5qtdalO8U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

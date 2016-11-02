@@ -58,7 +58,8 @@
                            TextAlignment="Right" />
                 <TextBox Name="MobileTextBox"
                          Grid.Row="1"
-                         Grid.Column="1" />
+                         Grid.Column="1"
+                         KeyUp="MobileTextBox_KeyUp"/>
                 <TextBlock Grid.Row="1"
                            Grid.Column="2"
                            Style="{StaticResource Heading2}"

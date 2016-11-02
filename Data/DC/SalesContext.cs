@@ -99,5 +99,19 @@ namespace Data.DC
             List<SalesReceiveDue> list = result.Select(n => EM_SalesReceiveDue.ConverToModel(n)).ToList();
             return list;
         }
+
+        public Sales GetCustomerInfo(string startsWith)
+        {
+            List<USP_GetCustomerInfoByMobile_Result> drugNameLookUpList = _db.USP_GetCustomerInfoByMobile(startsWith).ToList();
+            List<Sales> bodrugNameLookUpList = drugNameLookUpList.Select(n => EM_Sales.ConvertToModel(n)).ToList();
+            Sales obj = new Sales();
+
+            foreach (Sales item in bodrugNameLookUpList)
+            {
+                obj.Name= item.Name;
+                obj.Address = item.Address;
+            }
+            return obj;
+        }
     }
 }

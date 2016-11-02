@@ -7,4 +7,3 @@ C:\Karim\KarinIntModernUINavigationApp\Models\bin\Release\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\Models\bin\Release\Models.pdb
 C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.pdb
-C:\Karim\KarinIntModernUINavigationApp\Models\obj\Release\Models.csprojResolveAssemblyReference.cache

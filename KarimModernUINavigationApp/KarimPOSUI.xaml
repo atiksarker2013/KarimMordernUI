@@ -102,6 +102,33 @@
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
+                            <!--<DataGridTextColumn Width="100"
+                                                Binding="{Binding Path=CustomerSlNo}"
+                                                Header="Your Sl. No" />-->
+                            <DataGridTemplateColumn Width="100" Header="Cus. Sl.No">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder5"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox5"
+                                                     Width="50"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=CustomerSlNo,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}"
+                                                    TextChanged="textBox_TextChanged" />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
+                                                <Setter TargetName="brdBroder5" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox5" Property="Foreground" Value="Red" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Title}"
                                                 Header="Title" />
@@ -147,7 +174,7 @@
                                         <DataTemplate.Triggers>
                                             <DataTrigger Binding="{Binding RemainLeave}" Value="0">
                                                 <Setter TargetName="brdBroder" Property="Background" Value="Green" />
-                                                <Setter TargetName="textBox" Property="Foreground" Value="White" />
+                                                <Setter TargetName="textBox" Property="Foreground" Value="Red" />
                                             </DataTrigger>
                                         </DataTemplate.Triggers>
 
@@ -175,7 +202,7 @@
                                         <DataTemplate.Triggers>
                                             <DataTrigger Binding="{Binding DiscountPercentage}" Value="0">
                                                 <Setter TargetName="brdBroder1" Property="Background" Value="Green" />
-                                                <Setter TargetName="textBox1" Property="Foreground" Value="White" />
+                                                <Setter TargetName="textBox1" Property="Foreground" Value="Red" />
                                             </DataTrigger>
                                         </DataTemplate.Triggers>
 

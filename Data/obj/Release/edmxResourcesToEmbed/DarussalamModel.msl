@@ -208,5 +208,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimCurrency">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency">
+        <MappingFragment StoreEntitySet="tbl_KarimCurrency">
+          <ScalarProperty Name="TakaInAmount" ColumnName="TakaInAmount" />
+          <ScalarProperty Name="CurrencySymbol" ColumnName="CurrencySymbol" />
+          <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetKarimBookWithBdPriceList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookWithBdPriceList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetCustomerInfoByMobile" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetCustomerInfoByMobile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

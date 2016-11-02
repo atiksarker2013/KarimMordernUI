@@ -171,6 +171,9 @@
   <Function Name="USP_GetBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SearchStr" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="USP_GetCustomerInfoByMobile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="USP_GetKarimBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="SearchStr" Type="varchar" Mode="In" />
   </Function>

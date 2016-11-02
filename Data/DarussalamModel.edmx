@@ -176,6 +176,9 @@
         <Function Name="USP_GetBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SearchStr" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="USP_GetCustomerInfoByMobile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="USP_GetKarimBookList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SearchStr" Type="varchar" Mode="In" />
         </Function>
@@ -222,6 +225,9 @@
           <EntitySet Name="tbl_Sales" EntityType="KARIM_INT_HOUSTONEModel.tbl_Sales" />
           <EntitySet Name="tbl_KarimCurrency" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimCurrency" />
           <FunctionImport Name="USP_GetKarimBookWithBdPriceList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result)">
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="USP_GetCustomerInfoByMobile" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result)">
             <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -436,6 +442,10 @@
           <Property Type="Int32" Name="PublishYear" Nullable="true" />
           <Property Type="String" Name="PublisherUnit" Nullable="true" />
           <Property Type="String" Name="BookType" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="USP_GetCustomerInfoByMobile_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -677,6 +687,14 @@
                 <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
                 <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
                 <ScalarProperty Name="BookType" ColumnName="BookType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_GetCustomerInfoByMobile" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetCustomerInfoByMobile">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

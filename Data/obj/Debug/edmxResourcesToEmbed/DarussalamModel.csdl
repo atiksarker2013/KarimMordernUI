@@ -23,6 +23,9 @@
     <FunctionImport Name="USP_GetKarimBookWithBdPriceList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result)">
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="USP_GetCustomerInfoByMobile" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result)">
+      <Parameter Name="SearchStr" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -235,5 +238,9 @@
     <Property Type="Int32" Name="PublishYear" Nullable="true" />
     <Property Type="String" Name="PublisherUnit" Nullable="true" />
     <Property Type="String" Name="BookType" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_GetCustomerInfoByMobile_Result">
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" />
   </ComplexType>
 </Schema>

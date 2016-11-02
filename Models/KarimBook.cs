@@ -260,9 +260,22 @@ namespace Models
             }
         }
 
+        private decimal _customerSlNo;
+        public decimal CustomerSlNo
+        {
+            get { return _customerSlNo; }
+            set
+            {
+                _customerSlNo = value;
+                RaisePropertyChanged("CustomerSlNo");
+                //if (Id == 0)
+                //AddErrorForProperty("Id","D cannot be empty");
+                //else
+                //RemoveError("Id");
+            }
+        }
+
         
-
-
         public string Barcode { get; set; }
         public decimal PublisherPrice { get; set; }
         public string PublisherUnit { get; set; }

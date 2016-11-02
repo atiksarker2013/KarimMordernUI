@@ -46,11 +46,29 @@ namespace KarimModernUINavigationApp
         private void discountAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+            if (!string.IsNullOrEmpty(discountAmountTextBox.Text))
+            {
+                decimal finalDiscount = 0;
+                decimal orginalPrice = Convert.ToDecimal(totalTextBox.Text);
+                decimal discount = Convert.ToDecimal(discountTextBox.Text);
+                decimal otherdiscount = Convert.ToDecimal(discountAmountTextBox.Text);
+                var calculateGrandTotal = Convert.ToDecimal(orginalPrice - (otherdiscount + discount));
+
+                grandTotalTextBox.Text = calculateGrandTotal.ToString("F");
+            }
         }
 
         private void receiveTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (!string.IsNullOrEmpty(receiveTextBox.Text))
+            {
+                decimal finalDiscount = 0;
+                decimal orginalPrice = Convert.ToDecimal(grandTotalTextBox.Text);
+                decimal discount = Convert.ToDecimal(receiveTextBox.Text);
+                var calculateDue = Convert.ToDecimal(orginalPrice - discount);
 
+                dueTextBox.Text = calculateDue.ToString("F");
+            }
         }
 
         private void quatationButton_Click(object sender, RoutedEventArgs e)
