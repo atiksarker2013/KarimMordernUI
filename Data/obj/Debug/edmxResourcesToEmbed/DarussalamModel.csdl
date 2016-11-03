@@ -26,6 +26,8 @@
     <FunctionImport Name="USP_GetCustomerInfoByMobile" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result)">
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="tbl_KarimSales" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSales" />
+    <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -243,4 +245,40 @@
     <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="Address" Nullable="true" />
   </ComplexType>
+  <EntityType Name="tbl_KarimSales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="CustomerRefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KarimRefNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PayType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PayNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDiscount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GrandTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Receive" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Due" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CuriarCharg" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_KarimSalesDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalesId" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="OrderQty" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReturnQty" Type="Int32" />
+    <Property Name="CustomerSlNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitDiscountPercent" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountTaka" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NetTaka" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
 </Schema>

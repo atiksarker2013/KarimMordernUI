@@ -1,3 +1,3 @@
 ﻿Generated model file: DarussalamModel.edmx.
-Loading metadata from the database took 00:00:02.5056730.
-Generating the model took 00:00:14.5639286.
+Loading metadata from the database took 00:00:02.7529180.
+Generating the model took 00:00:20.8525488.

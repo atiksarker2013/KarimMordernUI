@@ -260,8 +260,8 @@ namespace Models
             }
         }
 
-        private decimal _customerSlNo;
-        public decimal CustomerSlNo
+        private string _customerSlNo;
+        public string CustomerSlNo
         {
             get { return _customerSlNo; }
             set

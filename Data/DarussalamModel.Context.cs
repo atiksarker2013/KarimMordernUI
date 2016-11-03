@@ -40,6 +40,8 @@ namespace Data
         public virtual DbSet<tbl_KarimBookPriceUpdate> tbl_KarimBookPriceUpdate { get; set; }
         public virtual DbSet<tbl_Sales> tbl_Sales { get; set; }
         public virtual DbSet<tbl_KarimCurrency> tbl_KarimCurrency { get; set; }
+        public virtual DbSet<tbl_KarimSales> tbl_KarimSales { get; set; }
+        public virtual DbSet<tbl_KarimSalesDetails> tbl_KarimSalesDetails { get; set; }
     
         public virtual ObjectResult<USP_GetBookList_Result> USP_GetBookList(string searchStr)
         {

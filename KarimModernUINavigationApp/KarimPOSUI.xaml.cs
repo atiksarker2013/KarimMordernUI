@@ -1,19 +1,11 @@
-﻿using FirstFloor.ModernUI.Windows.Controls;
+﻿using Data;
+using Data.DC;
+using FirstFloor.ModernUI.Windows.Controls;
 using Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KarimModernUINavigationApp
 {
@@ -22,6 +14,9 @@ namespace KarimModernUINavigationApp
     /// </summary>
     public partial class KarimPOSUI : ModernWindow
     {
+        KarimSalesContext salesManagerObj = new KarimSalesContext();
+        KarimSalesDetailsContext salesDetailsManagerObj = new KarimSalesDetailsContext();
+        KarimBookContext bookContext = new KarimBookContext();
         public KarimPOSUI()
         {
             InitializeComponent();
@@ -78,7 +73,216 @@ namespace KarimModernUINavigationApp
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+            using (var context = new KARIM_INT_HOUSTONEEntities())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
 
+
+                        KarimSales salesObj = new KarimSales();
+
+                        salesObj.Name = customerNameTextBox.Text;
+                        salesObj.Mobile = MobileTextBox.Text;
+                        salesObj.Address = addressTextBox.Text;
+                        salesObj.Date = salesDateDatepicker.SelectedDate;
+
+                        salesObj.CustomerRefNo = customerRefNoTextBox.Text;
+                        salesObj.KarimRefNo = karimRefNoTextBox.Text;
+                        
+                            
+                        if (cashPaytype.IsChecked == true)
+                        {
+                            salesObj.PayType = "Cash";
+                        }
+                        if (bikshPaytype.IsChecked == true)
+                        {
+                            salesObj.PayType = "Bikas";
+                            salesObj.PayNo = bikashNoTextBox.Text;
+                        }
+                        if (chequePaytype.IsChecked == true)
+                        {
+                            salesObj.PayType = "Cheque";
+                            salesObj.PayNo = chequeNoTextBox.Text;
+                        }
+
+                        salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
+                        salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+                        if (!string.IsNullOrEmpty(discountAmountTextBox.Text))
+                        {
+                            salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
+                        }
+                        else
+                        {
+                            salesObj.OtherDiscount = 0;
+                        }
+                        if (!string.IsNullOrEmpty(curiarTextBox.Text))
+                        {
+                            salesObj.CuriarCharg = Convert.ToDecimal(curiarTextBox.Text);
+                        }
+                        else
+                        {
+                            salesObj.CuriarCharg = 0;
+                        }
+
+                        if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
+                        {
+                            salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
+                        }
+                        else
+                        {
+                            salesObj.GrandTotal = 0;
+                        }
+
+
+                        if (!string.IsNullOrEmpty(receiveTextBox.Text))
+                        {
+                            salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+                        }
+                        else
+                        {
+                            salesObj.Receive = 0;
+                        }
+
+                        if (!string.IsNullOrEmpty(dueTextBox.Text))
+                        {
+                            salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+                        }
+                        else
+                        {
+                            salesObj.Due = 0;
+                        }
+
+
+                        int pk = 0;
+                        pk = salesManagerObj.Insert(salesObj);
+
+                        // Insert Book Details
+
+                        for (int i = 0; i < posDatagrid.Items.Count; i++)
+                        {
+                            KarimBook obj = posDatagrid.Items[i] as KarimBook;
+                            if (obj.OrderQty > 0)
+                            {
+                                KarimSalesDetails salesDetails = new KarimSalesDetails();
+                                salesDetails.BookId = obj.Id;
+                                salesDetails.Price = (decimal)obj.Price;
+                                salesDetails.OrderQty = obj.OrderQty;
+                                salesDetails.SalesId = pk;
+
+                                salesDetails.CustomerSlNo = obj.CustomerSlNo;
+                                salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
+                                salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
+                                salesDetails.NetTaka = obj.UnitWiseNetTaka;
+                                    
+                                salesDetailsManagerObj.Insert(salesDetails);
+                            }
+
+                        }
+
+                        // Discount Insert
+
+                        //for (int i = 0; i < discountDatagrid.Items.Count; i++)
+                        //{
+                        //    Discounts obj = discountDatagrid.Items[i] as Discounts;
+
+                        //    Discounts discountObj = new Discounts();
+                        //    discountObj.InvoiceId = pk;
+                        //    discountObj.PublisherName = obj.PublisherName;
+                        //    discountObj.TotalAmount = obj.TotalAmount;
+                        //    discountObj.DiscountPercentage = obj.DiscountPercentage;
+                        //    discountObj.DiscountAmount = obj.DiscountAmount;
+                        //    discountContext.Insert(discountObj);
+
+                        //    RDarussalamSalesDiscount discuntobj = new RDarussalamSalesDiscount();
+                        //    discuntobj.PublisherName = obj.PublisherName;
+                        //    discuntobj.TotalAmount = obj.TotalAmount;
+                        //    discuntobj.DiscountPercentage = obj.DiscountPercentage;
+                        //    discuntobj.DiscountAmount = obj.DiscountAmount;
+                        //    SalesDiscountInfoList.Add(discuntobj);
+
+                        //}
+
+
+                        // Update Stock
+                        //SalesInfoList = new List<RDarusSalamBook>();
+
+                        for (int i = 0; i < posDatagrid.Items.Count; i++)
+                        {
+
+                            KarimBook obj = posDatagrid.Items[i] as KarimBook;
+
+                            if (obj.OrderQty > 0)
+                            {
+                                obj.InStock = obj.InStock - obj.OrderQty;
+                                obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
+                                bookContext.Update(obj);
+
+                                //RDarusSalamBook reportObj = new RDarusSalamBook();
+                                //reportObj.Id = obj.Id;
+                                //reportObj.Title = obj.Title;
+                                //reportObj.OrderQty = obj.OrderQty;
+                                //reportObj.Price = (decimal)obj.Price;
+                                //reportObj.Name = salesObj.Name;
+                                //reportObj.Mobile = salesObj.Mobile;
+                                //reportObj.Address = salesObj.Address;
+                                //reportObj.Date = (DateTime)salesObj.Date;
+                                //reportObj.PayType = salesObj.PayType;
+                                //reportObj.PayNo = salesObj.PayNo;
+                                //reportObj.Total = salesObj.Total;
+                                //reportObj.Discount = salesObj.Discount;
+                                //reportObj.GrandTotal = salesObj.GrandTotal;
+                                //reportObj.Receive = salesObj.Receive;
+                                //reportObj.Due = salesObj.Due;
+                                //reportObj.InvoiceNo = pk;
+                                //reportObj.CuriarCharg = salesObj.CuriarCharg;
+                                //reportObj.OtherDiscount = salesObj.OtherDiscount;
+                                //reportObj.Publisher = obj.Publisher;
+                                //reportObj.Writer = obj.Writer;
+                                //SalesInfoList.Add(reportObj);
+                            }
+
+                        }
+
+                        MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        //if (SalesInfoList.Count > 0)
+                        //{
+                        //    salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
+                        //    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                        //}
+
+                        totalTextBox.Text = "";
+                        grandTotalTextBox.Text = "";
+                        discountTextBox.Text = "";
+                        discountAmountTextBox.Text = "";
+                        customerNameTextBox.Text = "";
+                        MobileTextBox.Text = "";
+                        addressTextBox.Text = "";
+                        cashPaytype.IsChecked = true;
+                        receiveTextBox.Text = "";
+                        dueTextBox.Text = "";
+                        curiarTextBox.Text = "";
+                        posDatagrid.Items.Clear();
+                       // discountDatagrid.Items.Clear();
+                        GlobalVar.TempOrderBookList = new List<KarimBook>();
+
+
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        dbContextTransaction.Rollback(); //Required according to MSDN article 
+                        MessageBox.Show(ex.Message.ToString());
+                    }
+                }
+            }
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)

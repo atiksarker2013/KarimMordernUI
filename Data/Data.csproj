@@ -79,6 +79,8 @@
     <Compile Include="DC\KarimBookPriceUpdateContext.cs" />
     <Compile Include="DC\KarimBookStockUpdateContext.cs" />
     <Compile Include="DC\KarimCurrencyContext.cs" />
+    <Compile Include="DC\KarimSalesContext.cs" />
+    <Compile Include="DC\KarimSalesDetailsContext.cs" />
     <Compile Include="DC\SalesContext.cs" />
     <Compile Include="DC\SalesDetailsContext.cs" />
     <Compile Include="EM\EM_BookPriceUpdate.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="EM\EM_KarimCurrency.cs" />
     <Compile Include="EM\EM_KarimNewBookEntry.cs" />
     <Compile Include="EM\EM_KarimNewbookStockUpdate.cs" />
+    <Compile Include="EM\EM_KarimSales.cs" />
+    <Compile Include="EM\EM_KarinSalesDetails.cs" />
     <Compile Include="EM\EM_NewBookEntry.cs" />
     <Compile Include="EM\EM_NewBookStockUpdate.cs" />
     <Compile Include="EM\EM_Sales.cs" />
@@ -117,6 +121,12 @@
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_KarimNewEntryQty.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_KarimSales.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_KarimSalesDetails.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_NewBookEntry.cs">

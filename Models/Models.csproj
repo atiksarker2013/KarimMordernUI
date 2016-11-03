@@ -47,6 +47,8 @@
     <Compile Include="KarimBookPriceUpdate.cs" />
     <Compile Include="KarimCurrency.cs" />
     <Compile Include="KarimNewBookStockUpdate.cs" />
+    <Compile Include="KarimSales.cs" />
+    <Compile Include="KarimSalesDetails.cs" />
     <Compile Include="ModelBase.cs" />
     <Compile Include="NewBookStockUpdate.cs" />
     <Compile Include="NewKarimBookStockUpdate.cs" />

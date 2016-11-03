@@ -103,6 +103,42 @@
     <Property Name="NewEntryQty" Type="int" />
     <Property Name="EntryDate" Type="datetime" />
   </EntityType>
+  <EntityType Name="tbl_KarimSales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Date" Type="date" />
+    <Property Name="CustomerRefNo" Type="varchar(max)" />
+    <Property Name="KarimRefNo" Type="varchar(max)" />
+    <Property Name="PayType" Type="varchar" MaxLength="50" />
+    <Property Name="PayNo" Type="varchar" MaxLength="50" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OtherDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GrandTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Receive" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Due" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CuriarCharg" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_KarimSalesDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SalesId" Type="int" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="OrderQty" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReturnQty" Type="int" />
+    <Property Name="CustomerSlNo" Type="varchar" MaxLength="50" />
+    <Property Name="UnitDiscountPercent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountTaka" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTaka" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
   <EntityType Name="tbl_NewBookEntry">
     <Key>
       <PropertyRef Name="Id" />
@@ -189,6 +225,8 @@
     <EntitySet Name="tbl_KarimCurrency" EntityType="Self.tbl_KarimCurrency" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimNewBookEntry" EntityType="Self.tbl_KarimNewBookEntry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_KarimSales" EntityType="Self.tbl_KarimSales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_KarimSalesDetails" EntityType="Self.tbl_KarimSalesDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewEntryQty" EntityType="Self.tbl_NewEntryQty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_ReceiveDue" EntityType="Self.tbl_ReceiveDue" Schema="dbo" store:Type="Tables" />
