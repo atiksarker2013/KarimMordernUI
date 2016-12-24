@@ -15,20 +15,28 @@ namespace Data
 using System;
     using System.Collections.Generic;
     
-public partial class tbl_Discount
+public partial class tbl_KarimQuotationDetails
 {
 
     public int Id { get; set; }
 
-    public Nullable<int> InvoiceId { get; set; }
+    public Nullable<int> SalesId { get; set; }
 
-    public string PublisherName { get; set; }
+    public Nullable<int> BookId { get; set; }
 
-    public Nullable<decimal> TotalAmount { get; set; }
+    public Nullable<int> OrderQty { get; set; }
 
-    public Nullable<int> DiscountPercentage { get; set; }
+    public Nullable<decimal> Price { get; set; }
 
-    public Nullable<decimal> DiscountAmount { get; set; }
+    public Nullable<int> ReturnQty { get; set; }
+
+    public string CustomerSlNo { get; set; }
+
+    public Nullable<decimal> UnitDiscountPercent { get; set; }
+
+    public Nullable<decimal> DiscountTaka { get; set; }
+
+    public Nullable<decimal> NetTaka { get; set; }
 
 }
 

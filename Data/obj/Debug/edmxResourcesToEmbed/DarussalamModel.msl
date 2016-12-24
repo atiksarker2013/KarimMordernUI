@@ -284,5 +284,43 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimQuotation">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotation">
+        <MappingFragment StoreEntitySet="tbl_KarimQuotation">
+          <ScalarProperty Name="CuriarCharg" ColumnName="CuriarCharg" />
+          <ScalarProperty Name="Due" ColumnName="Due" />
+          <ScalarProperty Name="Receive" ColumnName="Receive" />
+          <ScalarProperty Name="GrandTotal" ColumnName="GrandTotal" />
+          <ScalarProperty Name="OtherDiscount" ColumnName="OtherDiscount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="PayNo" ColumnName="PayNo" />
+          <ScalarProperty Name="PayType" ColumnName="PayType" />
+          <ScalarProperty Name="KarimRefNo" ColumnName="KarimRefNo" />
+          <ScalarProperty Name="CustomerRefNo" ColumnName="CustomerRefNo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimQuotationDetails">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails">
+        <MappingFragment StoreEntitySet="tbl_KarimQuotationDetails">
+          <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
+          <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
+          <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />
+          <ScalarProperty Name="CustomerSlNo" ColumnName="CustomerSlNo" />
+          <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

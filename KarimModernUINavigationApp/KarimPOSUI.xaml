@@ -122,9 +122,7 @@
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
-                            <!--<DataGridTextColumn Width="100"
-                                                Binding="{Binding Path=CustomerSlNo}"
-                                                Header="Your Sl. No" />-->
+                          
                             <DataGridTemplateColumn Width="100" Header="Cus. Sl.No">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -132,8 +130,8 @@
                                                 Margin="1"
                                                 VerticalAlignment="Stretch">
                                             <TextBox x:Name="textBox5"
-                                                     Width="50"
-                                                     Margin="3,1"
+                                                     Width="100"
+                                                    
                                                      Text="{Binding Path=CustomerSlNo,
                                                                     Mode=TwoWay,
                                                                     UpdateSourceTrigger=PropertyChanged}"
@@ -155,25 +153,49 @@
                             <DataGridTextColumn Width="200"
                                                 Binding="{Binding Path=Writer}"
                                                 Header="Writer" />
-                            <DataGridTextColumn Width="100"
+                            <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=Publisher}"
                                                 Header="Publisher" />
 
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=Barcode}"
                                                 Header="ISBN" />
-                            <DataGridTextColumn Width="100"
+                            <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=BookType}"
                                                 Header="Book Type" />
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=PublisherPrice}"
                                                 Header="Publisher Price" />
+                      
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=PublisherUnit}"
                                                 Header="Publisher Unit" />
-                            <DataGridTextColumn Width="70"
-                                                Binding="{Binding Path=Price}"
-                                                Header="Price" />
+                         
+                            <DataGridTemplateColumn Width="100" Header="Price">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder6"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox6"
+                                                     Width="100"
+                                                     
+                                                     Text="{Binding Path=Price,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}"
+                                                      TextAlignment="Right"
+                                                    />
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Price}" Value="0">
+                                                <Setter TargetName="brdBroder6" Property="Background" Value="Green" />
+                                                <Setter TargetName="textBox6" Property="Foreground" Value="Red" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Width="70"
                                                 Binding="{Binding Path=InStock}"
                                                 Header="Stock Qty" />

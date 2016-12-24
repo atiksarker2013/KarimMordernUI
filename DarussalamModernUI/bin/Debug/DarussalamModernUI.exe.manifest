@@ -266,19 +266,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>n47LIXEeWFQIE/pUi2d+a5h4VsTXmH8hElZTrHiDEEg=</dsig:DigestValue>
+        <dsig:DigestValue>szhXL0kizTBVJgz6is+ARhoMbKCA9ka700dKjd0JjKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="112640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="124416">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8togwJgfLxdijSll9+aGnOXDiuPbFGw9l+waHp8UouM=</dsig:DigestValue>
+        <dsig:DigestValue>SO8k7h9JN34dtBXIgQELo+aKsVuQlgZfx7SB1RDvyNM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -492,13 +492,13 @@
       <dsig:DigestValue>HeoPCbUVgHOxtZkktbkfNGDxZ3SfM7uA0ebub7bO0Rk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DarussalamModernUI.exe.config" size="2264">
+  <file name="DarussalamModernUI.exe.config" size="2262">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cWkK2kAnj937Kov2AkYuGACRM1tEjkTROYb9ZaWeV94=</dsig:DigestValue>
+      <dsig:DigestValue>D3tDTO+pRuoVPKz5euObPVlLUP/MGMoyDU0fhALGoGI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo.ico" size="49958">

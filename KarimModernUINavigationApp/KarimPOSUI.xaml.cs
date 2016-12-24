@@ -14,6 +14,8 @@ namespace KarimModernUINavigationApp
     /// </summary>
     public partial class KarimPOSUI : ModernWindow
     {
+
+        KarimQuotationContext quotationManagerObj = new KarimQuotationContext();
         KarimSalesContext salesManagerObj = new KarimSalesContext();
         KarimSalesDetailsContext salesDetailsManagerObj = new KarimSalesDetailsContext();
         KarimBookContext bookContext = new KarimBookContext();
@@ -68,6 +70,135 @@ namespace KarimModernUINavigationApp
 
         private void quatationButton_Click(object sender, RoutedEventArgs e)
         {
+            //
+
+            try
+            {
+                KarimSales salesObj = new KarimSales();
+                salesObj.Name = customerNameTextBox.Text;
+                salesObj.Mobile = MobileTextBox.Text;
+                salesObj.Address = addressTextBox.Text;
+                salesObj.Date = salesDateDatepicker.SelectedDate;
+                salesObj.CustomerRefNo = customerRefNoTextBox.Text;
+                salesObj.KarimRefNo = karimRefNoTextBox.Text;
+
+                if (cashPaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Cash";
+                }
+                if (bikshPaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Bikas";
+                    salesObj.PayNo = bikashNoTextBox.Text;
+                }
+                if (chequePaytype.IsChecked == true)
+                {
+                    salesObj.PayType = "Cheque";
+                    salesObj.PayNo = chequeNoTextBox.Text;
+                }
+
+                salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
+                salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+                if (!string.IsNullOrEmpty(discountAmountTextBox.Text))
+                {
+                    salesObj.OtherDiscount = Convert.ToDecimal(discountAmountTextBox.Text);
+                }
+                else
+                {
+                    salesObj.OtherDiscount = 0;
+                }
+                if (!string.IsNullOrEmpty(curiarTextBox.Text))
+                {
+                    salesObj.CuriarCharg = Convert.ToDecimal(curiarTextBox.Text);
+                }
+                else
+                {
+                    salesObj.CuriarCharg = 0;
+                }
+
+                if (!string.IsNullOrEmpty(grandTotalTextBox.Text))
+                {
+                    salesObj.GrandTotal = Convert.ToDecimal(grandTotalTextBox.Text);
+                }
+                else
+                {
+                    salesObj.GrandTotal = 0;
+                }
+
+
+                if (!string.IsNullOrEmpty(receiveTextBox.Text))
+                {
+                    salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Receive = 0;
+                }
+
+                if (!string.IsNullOrEmpty(dueTextBox.Text))
+                {
+                    salesObj.Due = Convert.ToDecimal(dueTextBox.Text);
+                }
+                else
+                {
+                    salesObj.Due = 0;
+                }
+
+
+                int pk = 0;
+                pk = quotationManagerObj.Insert(salesObj);
+
+                // Insert Book Details
+
+                for (int i = 0; i < posDatagrid.Items.Count; i++)
+                {
+                    KarimBook obj = posDatagrid.Items[i] as KarimBook;
+                    if (obj.OrderQty > 0)
+                    {
+                        KarimSalesDetails salesDetails = new KarimSalesDetails();
+                        salesDetails.BookId = obj.Id;
+                        salesDetails.Price = (decimal)obj.Price;
+                        salesDetails.OrderQty = obj.OrderQty;
+                        salesDetails.SalesId = pk;
+                        salesDetails.CustomerSlNo = obj.CustomerSlNo;
+                        salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
+                        salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
+                        salesDetails.NetTaka = obj.UnitWiseNetTaka;
+                        salesDetailsManagerObj.Insert(salesDetails);
+                    }
+
+                }
+
+               
+
+                MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                totalTextBox.Text = "";
+                grandTotalTextBox.Text = "";
+                discountTextBox.Text = "";
+                discountAmountTextBox.Text = "";
+                customerNameTextBox.Text = "";
+                MobileTextBox.Text = "";
+                addressTextBox.Text = "";
+                cashPaytype.IsChecked = true;
+                receiveTextBox.Text = "";
+                dueTextBox.Text = "";
+                curiarTextBox.Text = "";
+                posDatagrid.Items.Clear();
+                // discountDatagrid.Items.Clear();
+                GlobalVar.TempOrderBookList = new List<KarimBook>();
+
+
+                //dbContextTransaction.Commit();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+
 
         }
 

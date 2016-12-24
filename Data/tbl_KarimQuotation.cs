@@ -15,7 +15,7 @@ namespace Data
 using System;
     using System.Collections.Generic;
     
-public partial class tbl_Sales
+public partial class tbl_KarimQuotation
 {
 
     public int Id { get; set; }
@@ -27,6 +27,10 @@ public partial class tbl_Sales
     public string Address { get; set; }
 
     public Nullable<System.DateTime> Date { get; set; }
+
+    public string CustomerRefNo { get; set; }
+
+    public string KarimRefNo { get; set; }
 
     public string PayType { get; set; }
 
