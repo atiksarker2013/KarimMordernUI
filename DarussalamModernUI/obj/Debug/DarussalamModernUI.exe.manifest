@@ -43,11 +43,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="log4net" version="1.2.10.0" publicKeyToken="692FBEA5521E1304" language="neutral" processorArchitecture="amd64" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AngleSharp.dll" size="1214464">
       <assemblyIdentity name="AngleSharp" version="0.9.8.1" publicKeyToken="E83494DCDC6D31EA" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -271,7 +266,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i8U8gJgjCtSAXRs400TQMtLXPP83t2BEsFQ6PeegKig=</dsig:DigestValue>
+        <dsig:DigestValue>n47LIXEeWFQIE/pUi2d+a5h4VsTXmH8hElZTrHiDEEg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -283,7 +278,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GWXC1MP6zWlX3K0zoQvUxgdhjEeMti67SLmWr/JEPtI=</dsig:DigestValue>
+        <dsig:DigestValue>8togwJgfLxdijSll9+aGnOXDiuPbFGw9l+waHp8UouM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -497,13 +492,13 @@
       <dsig:DigestValue>HeoPCbUVgHOxtZkktbkfNGDxZ3SfM7uA0ebub7bO0Rk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="DarussalamModernUI.exe.config" size="2298">
+  <file name="DarussalamModernUI.exe.config" size="2264">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FuakoNT13JOEclqzI5AkifRVfFmG7ynb/KJu6GLnuzc=</dsig:DigestValue>
+      <dsig:DigestValue>cWkK2kAnj937Kov2AkYuGACRM1tEjkTROYb9ZaWeV94=</dsig:DigestValue>
     </hash>
   </file>
   <file name="logo.ico" size="49958">
@@ -515,31 +510,31 @@
       <dsig:DigestValue>lh7tAFucto+TiTXxn3VuMr9IemZzviOmIAzlMnFdUi4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="NLog.config" size="1409">
+  <file name="NLog.config" size="1368">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HZXtZEu31wbluOvcuHWyP4shxixTxwHrizOF93CAjX4=</dsig:DigestValue>
+      <dsig:DigestValue>bLBO3BObxyoHk7mOSKHTKSvTVEtBdbLlIa1hLyFWPWE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\Entypo-license.txt" size="182">
+  <file name="Resources\Entypo-license.txt" size="180">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>23BWwu/2D5VwhIKRoDJQY4kO0JouVr2qaNJMU1e/u1A=</dsig:DigestValue>
+      <dsig:DigestValue>oPOqBp3sZ+O7yyGF9kZcjJgQRW3uTadRehjXo76XN00=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\WindowsIcons-license.txt" size="2006">
+  <file name="Resources\WindowsIcons-license.txt" size="1944">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4xVDzEkI48mKzBdEIp8+WMPdbk75lbJ5bXWHfyaXAdo=</dsig:DigestValue>
+      <dsig:DigestValue>tC03uOf3mqzl4EcpphTqnyiWCOGur8b8Oq9fLq5UkPI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

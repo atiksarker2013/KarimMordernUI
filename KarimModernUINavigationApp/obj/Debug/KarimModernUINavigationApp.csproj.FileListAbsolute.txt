@@ -5,7 +5,6 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\Data
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\EntityFramework.dll
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\EntityFramework.SqlServerCompact.dll
-C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\FirstFloor.ModernUI.dll
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\ReportApp.exe
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\bin\Debug\Shared.dll

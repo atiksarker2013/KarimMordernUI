@@ -22,20 +22,13 @@ C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamMo
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.exe
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.pdb
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\AngleSharp.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.Shared.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Data.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.SqlServer.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\FirstFloor.ModernUI.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\MahApps.Metro.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\NLog.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\ReportApp.exe
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\sapbusinessobjects.wpf.viewer.dll
-C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Shared.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\System.Windows.Interactivity.dll
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Typed.Xaml.dll
@@ -110,3 +103,108 @@ C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamMo
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.application
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.exe
 C:\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.csprojResolveAssemblyReference.cache
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\MainWindow.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\NewBookInventory.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupBookListReport.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupNewBookEntryList.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\AddNewBook.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PriceUpdateReport.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\NewBookAddReport.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\Resources\Style\TextBox\TextBoxDictionary.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\ReceiveDueReport.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\StockUpdateReport.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\SalesReturn.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\UpdateBookPrice.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\UpdateBookInfo.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupBookList.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\POSUI.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\Resources\Icons.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\Resources\IconsNonShared.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\SalesHistory.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\App.baml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\MainWindow.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\NewBookInventory.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupBookListReport.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupNewBookEntryList.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\AddNewBook.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PriceUpdateReport.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\NewBookAddReport.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\ReceiveDueReport.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\StockUpdateReport.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\SalesReturn.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\UpdateBookPrice.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\UpdateBookInfo.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\PopupBookList.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\POSUI.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\SalesHistory.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\App.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI_Content.g.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI_MarkupCompile.cache
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.g.resources
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.exe
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.exe.config
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\bookSalesSummaryCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\newBookEntryCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\newStockUpdateReportCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\priceQuotationCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\priceUpdateCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesDiscountCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesInvoiceCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesSummaryCrystalReport.rpt
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\bookSalesSummaryCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\newBookEntryCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\newStockUpdateReportCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\priceQuotationCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\priceUpdateCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesDiscountCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesSummaryCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Report\Crystal\salesInvoiceCrystalReport.cs
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\NLog.config
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Assets\Images\BackGround.jpg
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.exe.manifest
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.application
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.exe
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\DarussalamModernUI.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\AngleSharp.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Data.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\MahApps.Metro.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Models.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\NLog.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\ReportApp.exe
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Shared.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\System.Windows.Interactivity.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Typed.Xaml.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\XamlCSS.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.Web.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\FlashControlV71.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\stdole.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\ShockwaveFlashObjects.dll
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Data.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Models.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\ReportApp.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\Shared.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\AngleSharp.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\FirstFloor.ModernUI.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\MahApps.Metro.pdb
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\MahApps.Metro.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\bin\Debug\NLog.xml
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.exe.manifest
+D:\VS Application\Karim\KarinIntModernUINavigationApp\DarussalamModernUI\obj\Debug\DarussalamModernUI.application
