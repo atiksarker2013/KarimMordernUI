@@ -18,8 +18,8 @@ namespace Data.DC
         {
             try
             {
-                int maxAge = _db.tbl_KarimSales.Max(p => p.Id);
-                SalesModel.Id = maxAge + 1;
+                //int maxAge = _db.tbl_KarimSales.Max(p => p.Id);
+                //SalesModel.Id = maxAge + 1;
                 tbl_KarimQuotation _salesModel = EM_KarimQuotation.ConvertToEntity(SalesModel);
                 _db.tbl_KarimQuotation.Add(_salesModel);
 

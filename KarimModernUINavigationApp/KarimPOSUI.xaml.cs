@@ -18,6 +18,9 @@ namespace KarimModernUINavigationApp
         KarimQuotationContext quotationManagerObj = new KarimQuotationContext();
         KarimSalesContext salesManagerObj = new KarimSalesContext();
         KarimSalesDetailsContext salesDetailsManagerObj = new KarimSalesDetailsContext();
+        KarimQuotationDetailsContext quotationDetailsManagerObj = new KarimQuotationDetailsContext();
+
+        
         KarimBookContext bookContext = new KarimBookContext();
         public KarimPOSUI()
         {
@@ -164,7 +167,7 @@ namespace KarimModernUINavigationApp
                         salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
                         salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
                         salesDetails.NetTaka = obj.UnitWiseNetTaka;
-                        salesDetailsManagerObj.Insert(salesDetails);
+                        quotationDetailsManagerObj.Insert(salesDetails);
                     }
 
                 }
