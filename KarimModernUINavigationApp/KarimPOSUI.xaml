@@ -292,8 +292,37 @@
                                TextAlignment="Center" />
                     <Grid Grid.Row="0"
                           Grid.RowSpan="5"
-                          Grid.Column="1"/>
-                    <TextBlock Grid.Row="0"
+                          Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                         
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="0">
+                           <CheckBox Name="cusNoChkBox" Content="Customer SlNo "/>
+                            <CheckBox Name="titleChkBox" Content="Title "/>
+                            <CheckBox Name="writerChkBox" Content="Writer "/>
+                            <CheckBox Name="publisherChkBox" Content="Publisher "/>
+                            <CheckBox Name="isbnChkBox" Content="ISBN "/>
+                            <CheckBox Name="bookTypeChkBox" Content="Book Type "/>
+                            <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
+                            <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1">
+                            <CheckBox Name="priceChkBox" Content="Price "/>
+                            <CheckBox Name="stockQtyChkBox" Content="Stock Qty "/>
+                            <CheckBox Name="orderQtyChkBox" Content="Order Qty "/>
+                            <CheckBox Name="totalUnitPriceChkBox" Content="Total Unit Price "/>
+                            <CheckBox Name="discountChkBox" Content="Discount "/>
+                            <CheckBox Name="discountTakaChkBox" Content="Discount(Taka) "/>
+
+                        </StackPanel>
+
+ 
+
+        </Grid>
+        <TextBlock Grid.Row="0"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
                                Text="Total  "
