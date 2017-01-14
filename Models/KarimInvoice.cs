@@ -60,6 +60,6 @@ namespace Models
         //public string BookType { get; set; }
         public string Edition { get; set; }
         public string BookBinding { get; set; }
-        public DateTime DeliveryDate { get; set; }
+        public DateTime? DeliveryDate { get; set; }
     }
 }

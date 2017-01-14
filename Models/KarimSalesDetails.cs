@@ -87,6 +87,21 @@ namespace Models
             }
         }
 
+        private DateTime deliveryDate;
+        public DateTime DeliveryDate
+        {
+            get { return deliveryDate; }
+            set
+            {
+                deliveryDate = value;
+                RaisePropertyChanged("DeliveryDate");
+                //if (Price == 0)
+                //AddErrorForProperty("Price","Rice cannot be empty");
+                //else
+                //RemoveError("Price");
+            }
+        }
+
         public string Writer { get; set; }
         public string Publisher { get; set; }
         public string Title { get; set; }

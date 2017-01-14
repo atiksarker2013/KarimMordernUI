@@ -130,8 +130,11 @@ namespace Data
                         OutOfStock = (int)c.OutOfStock,
                         InStock = (int)c.InStock,
                         Barcode = c.Barcode,
-                       // PublishYear=(int)c.PublishYear,
-                        PublisherUnit=c.PublisherUnit,
+                        PublishYear = c.PublishYear,
+                        Edition = c.Edition,
+                        BookBinding = c.BookBinding,
+
+                        PublisherUnit =c.PublisherUnit,
                         BookType=c.BookType
 
                     }).Take(15).ToList();

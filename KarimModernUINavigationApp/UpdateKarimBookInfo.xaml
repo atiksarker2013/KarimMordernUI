@@ -5,7 +5,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Update Book Information"
-                  Width="1721.474"
+                  Width="1929.974"
                   Height="732.117"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
@@ -188,6 +188,46 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+
+
+                            <DataGridTemplateColumn Width="100" Header="Edition">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder12"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox12"
+                                                     Width="90"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=Edition,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+                                         
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Width="100" Header="Book Binding">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border x:Name="brdBroder12"
+                                                Margin="1"
+                                                VerticalAlignment="Stretch">
+                                            <TextBox x:Name="textBox12"
+                                                     Width="90"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=BookBinding,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                        </Border>
+
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
 
                             <DataGridTemplateColumn Width="150" Header="Book Type">
                                 <DataGridTemplateColumn.CellTemplate>

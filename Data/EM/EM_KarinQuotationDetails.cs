@@ -25,6 +25,8 @@ namespace Data.EM
             entity.DiscountTaka = model.DiscountTaka;
             entity.NetTaka = model.NetTaka;
 
+            entity.DeliveryDate = model.DeliveryDate;
+
             return entity;
         }
     }

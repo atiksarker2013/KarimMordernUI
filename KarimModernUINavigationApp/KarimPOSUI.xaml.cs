@@ -176,6 +176,7 @@ namespace KarimModernUINavigationApp
                         salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
                         salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
                         salesDetails.NetTaka = obj.UnitWiseNetTaka;
+                        salesDetails.DeliveryDate = obj.DeliveryDate;
                         quotationDetailsManagerObj.Insert(salesDetails);
                     }
 
@@ -295,6 +296,12 @@ namespace KarimModernUINavigationApp
                     inv.Barcode = item.Barcode;
                     //inv.EntryDate = item.EntryDate;
                     inv.PublishYear = item.PublishYear.ToString();
+
+                    inv.DeliveryDate = (DateTime)item.DeliveryDate;
+                    inv.Edition = item.Edition;
+                    inv.BookBinding = item.BookBinding;
+
+
                     inv.PublisherUnit = item.PublisherUnit;
                     inv.BookType = item.BookType;
 
@@ -620,6 +627,18 @@ namespace KarimModernUINavigationApp
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void salesDateDatepicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            KarimBook obj = new KarimBook();
+            obj = posDatagrid.SelectedItem as KarimBook;// get selected item  
+            if (obj != null)
+            {
+                obj.DeliveryDate = Convert.ToDateTime(sender.ToString());
+               
+            }
 
         }
     }

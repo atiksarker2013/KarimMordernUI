@@ -90,6 +90,7 @@ namespace KarimModernUINavigationApp
                         foreach (KarimBook item in GlobalVar.TempOrderBookList)
                         {
                             item.TotalUnitPrice = (item.Price * item.OrderQty);
+                            item.DeliveryDate = DateTime.Now;
                             obj.posDatagrid.Items.Add(item);
                         }
 

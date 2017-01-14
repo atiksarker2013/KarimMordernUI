@@ -311,7 +311,7 @@
                                         <Border x:Name="brdBroder"
                                                 Margin="1"
                                                 VerticalAlignment="Stretch">
-                                            <DatePicker Name="salesDateDatepicker" Text="{Binding Path=DeliveryDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  />
+                                            <DatePicker Name="salesDateDatepicker" SelectedDate="{Binding DeliveryDate}" SelectedDateChanged="salesDateDatepicker_SelectedDateChanged" />
 
                                         </Border>
                                          

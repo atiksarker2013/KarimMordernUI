@@ -85,6 +85,7 @@ namespace Data.DC
                             UnitDiscountPercent = det.UnitDiscountPercent,
                             DiscountTaka = det.DiscountTaka,
                             NetTaka = det.NetTaka,
+                            DeliveryDate = det.DeliveryDate,
                             // Id
                             Title = book.Title,
                             Writer = book.Writer,
@@ -98,6 +99,10 @@ namespace Data.DC
                             EntryDate = book.EntryDate,
                             PublishYear = book.PublishYear,
                             PublisherUnit = book.PublisherUnit,
+
+                            Edition = book.Edition,
+                            BookBinding = book.BookBinding,
+
                             BookType = book.BookType
                         };
 
@@ -142,7 +147,13 @@ namespace Data.DC
                 //inv.EntryDate = item.EntryDate;
                 inv.PublishYear = item.PublishYear.ToString();
                 inv.PublisherUnit = item.PublisherUnit;
+
+                inv.Edition = item.Edition;
+                inv.BookBinding = item.BookBinding;
+
                 inv.BookType = item.BookType;
+
+                inv.DeliveryDate = item.DeliveryDate;
 
                 inv.IsCustomerSlNo = false;
                 inv.IsTitle = false;
