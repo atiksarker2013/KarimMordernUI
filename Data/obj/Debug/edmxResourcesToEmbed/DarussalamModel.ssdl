@@ -54,6 +54,8 @@
     <Property Name="PublishYear" Type="int" />
     <Property Name="PublisherUnit" Type="varchar(max)" />
     <Property Name="BookType" Type="varchar(max)" />
+    <Property Name="Edition" Type="varchar" MaxLength="50" />
+    <Property Name="BookBinding" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbl_KarimBookPriceUpdate">
     <Key>
@@ -138,6 +140,7 @@
     <Property Name="UnitDiscountPercent" Type="decimal" Precision="18" Scale="2" />
     <Property Name="DiscountTaka" Type="decimal" Precision="18" Scale="2" />
     <Property Name="NetTaka" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DeliveryDate" Type="date" />
   </EntityType>
   <EntityType Name="tbl_KarimSales">
     <Key>
@@ -174,6 +177,7 @@
     <Property Name="UnitDiscountPercent" Type="decimal" Precision="18" Scale="2" />
     <Property Name="DiscountTaka" Type="decimal" Precision="18" Scale="2" />
     <Property Name="NetTaka" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DeliveryDate" Type="date" />
   </EntityType>
   <EntityType Name="tbl_NewBookEntry">
     <Key>

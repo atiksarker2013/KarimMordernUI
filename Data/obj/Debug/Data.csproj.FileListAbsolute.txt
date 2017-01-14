@@ -1,17 +1,3 @@
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll.config
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.pdb
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.SqlServer.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Models.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Shared.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Models.pdb
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Shared.pdb
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.xml
-C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.dll
-C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.pdb
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll.config
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.pdb
@@ -26,3 +12,17 @@ D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFrame
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.dll
 D:\VS Application\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.pdb
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll.config
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Data.pdb
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Models.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Shared.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Models.pdb
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\Shared.pdb
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.xml
+C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.dll
+C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.pdb

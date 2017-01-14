@@ -45,6 +45,10 @@ public partial class USP_GetKarimBookWithBdPriceList_Result
 
     public string BookType { get; set; }
 
+    public string Edition { get; set; }
+
+    public string BookBinding { get; set; }
+
 }
 
 }

@@ -281,7 +281,10 @@ namespace Models
         public string PublisherUnit { get; set; }
         public int? PublishYear { get; set; }
         public string BookType { get; set; }
-      //  public decimal DiscountPercentage { get; set; }
+
+        public string Edition { get; set; }
+        public string BookBinding { get; set; }
+        //  public decimal DiscountPercentage { get; set; }
 
         public bool CheckValidation()
         {

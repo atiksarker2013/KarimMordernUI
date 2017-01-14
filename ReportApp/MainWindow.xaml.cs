@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ReportApp
 {
@@ -35,6 +26,13 @@ namespace ReportApp
         public void setReportSource(CrystalDecisions.CrystalReports.Engine.ReportDocument aReport)
         {
             this.crystalReportsViewer.ViewerCore.ReportSource = aReport;
+        }
+
+
+        public void setDataTableReportSource(ReportClass rc, ParameterFields paramFields)
+        {
+            this.crystalReportsViewer.ViewerCore.ReportSource = rc;
+            this.crystalReportsViewer.ViewerCore.ParameterFieldInfo = paramFields;
         }
     }
 }

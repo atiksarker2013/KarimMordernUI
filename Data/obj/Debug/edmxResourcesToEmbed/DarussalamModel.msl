@@ -106,26 +106,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="tbl_KarimBook">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimBook">
-        <MappingFragment StoreEntitySet="tbl_KarimBook">
-          <ScalarProperty Name="BookType" ColumnName="BookType" />
-          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
-          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
-          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-          <ScalarProperty Name="InStock" ColumnName="InStock" />
-          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
-          <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-          <ScalarProperty Name="Writer" ColumnName="Writer" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_KarimNewEntryQty">
       <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimNewEntryQty">
         <MappingFragment StoreEntitySet="tbl_KarimNewEntryQty">
@@ -157,26 +137,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="USP_GetKarimBookList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookList_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Writer" ColumnName="Writer" />
-          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-          <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-          <ScalarProperty Name="InStock" ColumnName="InStock" />
-          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
-          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
-          <ScalarProperty Name="BookType" ColumnName="BookType" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="tbl_KarimBookPriceUpdate">
       <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimBookPriceUpdate">
         <MappingFragment StoreEntitySet="tbl_KarimBookPriceUpdate">
@@ -218,26 +178,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="USP_GetKarimBookWithBdPriceList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookWithBdPriceList">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Writer" ColumnName="Writer" />
-          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-          <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-          <ScalarProperty Name="InStock" ColumnName="InStock" />
-          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
-          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
-          <ScalarProperty Name="BookType" ColumnName="BookType" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="USP_GetCustomerInfoByMobile" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetCustomerInfoByMobile">
       <ResultMapping>
         <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetCustomerInfoByMobile_Result">
@@ -268,22 +208,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_KarimSalesDetails">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
-        <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
-          <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
-          <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
-          <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />
-          <ScalarProperty Name="CustomerSlNo" ColumnName="CustomerSlNo" />
-          <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
-          <ScalarProperty Name="BookId" ColumnName="BookId" />
-          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_KarimQuotation">
       <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotation">
         <MappingFragment StoreEntitySet="tbl_KarimQuotation">
@@ -306,9 +230,93 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimBook">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimBook">
+        <MappingFragment StoreEntitySet="tbl_KarimBook">
+          <ScalarProperty Name="BookBinding" ColumnName="BookBinding" />
+          <ScalarProperty Name="Edition" ColumnName="Edition" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetKarimBookList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="Edition" ColumnName="Edition" />
+          <ScalarProperty Name="BookBinding" ColumnName="BookBinding" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetKarimBookWithBdPriceList" FunctionName="KARIM_INT_HOUSTONEModel.Store.USP_GetKarimBookWithBdPriceList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="PublisherPrice" ColumnName="PublisherPrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="PublishYear" ColumnName="PublishYear" />
+          <ScalarProperty Name="PublisherUnit" ColumnName="PublisherUnit" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="Edition" ColumnName="Edition" />
+          <ScalarProperty Name="BookBinding" ColumnName="BookBinding" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="tbl_KarimQuotationDetails">
       <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails">
         <MappingFragment StoreEntitySet="tbl_KarimQuotationDetails">
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
+          <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
+          <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />
+          <ScalarProperty Name="CustomerSlNo" ColumnName="CustomerSlNo" />
+          <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimSalesDetails">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
+        <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
           <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
           <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
           <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />

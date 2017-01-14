@@ -38,6 +38,8 @@ public partial class tbl_KarimSalesDetails
 
     public Nullable<decimal> NetTaka { get; set; }
 
+    public Nullable<System.DateTime> DeliveryDate { get; set; }
+
 }
 
 }

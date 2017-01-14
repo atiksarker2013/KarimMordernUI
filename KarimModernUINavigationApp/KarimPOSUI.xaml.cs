@@ -1,9 +1,18 @@
-﻿using Data;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using Data;
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
+using KarimModernUINavigationApp.Report.Crystal;
+using KarimModernUINavigationApp.Report.Model;
 using Models;
+using ReportApp;
+using Shared;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -172,9 +181,154 @@ namespace KarimModernUINavigationApp
 
                 }
 
-               
+                List<KarimInvoice> _karimInvoiceList = new List<KarimInvoice>();
+                _karimInvoiceList = quotationManagerObj.GetQuotationInvoiceDetailsById(pk);
+                 
+
+                if (cusNoChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsCustomerSlNo == true);
+                }
+                if (titleChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsTitle == true);
+                }
+
+                if (writerChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsWriter == true);
+                }
+
+                if (publisherChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisher == true);
+                }
+
+                if (isbnChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsBarcode == true);
+                }
+
+                if (bookTypeChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsBookType == true);
+                }
+
+                if (publisherPriceChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherPrice == true);
+                }
+
+                if (publisherUnitChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherUnit== true);
+                }
+
+                if (priceChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPrice == true);
+                }
+
+                if (stockQtyChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsInStock == true);
+                }
+
+                if (orderQtyChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsOrderQty == true);
+                }
+
+                if (totalUnitPriceChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsTotalUnitPrice == true);
+                }
+
+                if (discountChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsUnitDiscountPercent == true);
+                }
+
+                if (discountTakaChkBox.IsChecked == true)
+                {
+                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsDiscountTaka == true);
+                }
+
+                List<RKarimInvoice> _karimInvoiceReportList = new List<RKarimInvoice>();
+                foreach (KarimInvoice item in _karimInvoiceList)
+                {
+                    RKarimInvoice inv = new  RKarimInvoice();
+                    inv.Id = item.Id;
+                    inv.Name = item.Name;
+                    inv.Mobile = item.Mobile;
+                    inv.Address = item.Address;
+                    // inv.Date = (DateTime)item.Date;
+                    // inv.CustomerRefNo = item.CustomerRefNo;
+                    inv.KarimRefNo = item.KarimRefNo;
+                    inv.PayType = item.PayType;
+                    inv.PayNo = item.PayNo;
+                    inv.Total =  item.Total;
+                    inv.Discount = (decimal)item.Discount;
+                    inv.OtherDiscount = (decimal)item.OtherDiscount;
+                    inv.GrandTotal = (decimal)item.GrandTotal;
+                    inv.Receive = (decimal)item.Receive;
+                    inv.Due = (decimal)item.Due;
+                    // inv.CuriarCharg = item.CuriarCharg;
+                  //  inv.BookId = item.BookId;
+                    inv.OrderQty = (int)item.OrderQty;
+                    inv.Price = (decimal)item.Price;
+                    inv.TotalUnitPrice = (decimal)(item.OrderQty * item.Price);
+                    //inv.ReturnQty = item.ReturnQty;
+                    inv.CustomerSlNo = item.CustomerSlNo;
+                    inv.UnitDiscountPercent = (decimal)item.UnitDiscountPercent;
+                    inv.DiscountTaka = (decimal)item.DiscountTaka;
+                    inv.NetTaka = (decimal)item.NetTaka;
+
+                    inv.Title = item.Title;
+                    inv.Writer = item.Writer;
+                    inv.Publisher = item.Publisher;
+                    inv.Qty = (int)item.Qty;
+                    inv.PublisherPrice = (decimal)item.PublisherPrice;
+                   // inv.BookPrice = (decimal)item.BookPrice;
+                    inv.OutOfStock = (int)item.OutOfStock;
+                    inv.InStock = (int)item.InStock;
+                    inv.Barcode = item.Barcode;
+                    //inv.EntryDate = item.EntryDate;
+                    inv.PublishYear = item.PublishYear.ToString();
+                    inv.PublisherUnit = item.PublisherUnit;
+                    inv.BookType = item.BookType;
+
+                    inv.IsCustomerSlNo = item.IsCustomerSlNo;
+                    inv.IsTitle = item.IsTitle;
+                    inv.IsWriter = item.IsWriter;
+                    inv.IsPublisher = item.IsPublisher;
+                    inv.IsBarcode = item.IsBarcode;
+                    inv.IsBookType = item.IsBookType;
+                    inv.IsPublisherPrice = item.IsPublisherPrice;
+                    inv.IsPublisherUnit = item.IsPublisherUnit;
+                    inv.IsPrice = item.IsPrice;
+                    inv.IsInStock = item.IsInStock;
+                    inv.IsOrderQty = item.IsOrderQty;
+                    inv.IsTotalUnitPrice = item.IsTotalUnitPrice;
+                    inv.IsUnitDiscountPercent = item.IsUnitDiscountPercent;
+                    inv.IsDiscountTaka = item.IsDiscountTaka;
+                    _karimInvoiceReportList.Add(inv);
+                }
+
 
                 MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+                if (_karimInvoiceReportList.Count > 0)
+                {
+                    QuotationCrystalReport employeeInfoCrystalReport = new QuotationCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, _karimInvoiceReportList, this);
+
+                }
+                else
+                {
+                    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
 
                 totalTextBox.Text = "";
                 grandTotalTextBox.Text = "";
@@ -197,7 +351,7 @@ namespace KarimModernUINavigationApp
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show( ex.Message.ToString());
             }
 
 

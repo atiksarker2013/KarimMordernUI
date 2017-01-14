@@ -46,6 +46,10 @@ public partial class tbl_KarimBook
 
     public string BookType { get; set; }
 
+    public string Edition { get; set; }
+
+    public string BookBinding { get; set; }
+
 }
 
 }

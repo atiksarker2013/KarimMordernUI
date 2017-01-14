@@ -5,7 +5,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Book Stock List"
-                  Width="1522.524"
+                  Width="2056.524"
                   Height="566.117"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
@@ -99,10 +99,21 @@
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=Publisher}"
                                                 Header="Publisher" />
+                            <DataGridTextColumn Width="100"
+                                                Binding="{Binding Path=PublishYear}"
+                                                Header="Publisher Year" />
 
                             <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=Barcode}"
                                                 Header="ISBN" />
+
+                            <DataGridTextColumn Width="150"
+                                                Binding="{Binding Path=Edition}"
+                                                Header="Edition" />
+
+                            <DataGridTextColumn Width="150"
+                                                Binding="{Binding Path=BookBinding}"
+                                                Header="BookBinding" />
 
                             <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=BookType}"

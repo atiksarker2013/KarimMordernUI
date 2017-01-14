@@ -1,4 +1,5 @@
 C:\Karim\KarinIntModernUINavigationApp\Shared\bin\Debug\Shared.dll
 C:\Karim\KarinIntModernUINavigationApp\Shared\bin\Debug\Shared.pdb
+C:\Karim\KarinIntModernUINavigationApp\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache
 C:\Karim\KarinIntModernUINavigationApp\Shared\obj\Debug\Shared.dll
 C:\Karim\KarinIntModernUINavigationApp\Shared\obj\Debug\Shared.pdb

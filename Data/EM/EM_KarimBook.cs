@@ -28,6 +28,8 @@ namespace Data.EM
             model.OutOfStock = entity.OutOfStock ?? 0;
             model.InStock = entity.InStock ?? 0;
             model.EntryDate = entity.EntryDate;
+            model.Edition = entity.Edition.TrimWithNull();
+            model.BookBinding = entity.BookBinding.TrimWithNull();
 
             return model;
         }
@@ -57,6 +59,10 @@ namespace Data.EM
             entity.EntryDate = model.EntryDate;
 
 
+            entity.Edition = model.Edition;
+            entity.BookBinding = model.BookBinding;
+
+
             return entity;
         }
 
@@ -78,6 +84,8 @@ namespace Data.EM
             model.OutOfStock = entity.OutOfStock ?? 0;
             model.InStock = entity.InStock ?? 0;
             model.EntryDate = entity.EntryDate;
+            model.Edition = entity.Edition.TrimWithNull();
+            model.BookBinding = entity.BookBinding.TrimWithNull();
 
             return model;
         }
@@ -100,6 +108,8 @@ namespace Data.EM
             model.OutOfStock = entity.OutOfStock ?? 0;
             model.InStock = entity.InStock ?? 0;
             model.EntryDate = entity.EntryDate;
+            model.Edition = entity.Edition.TrimWithNull();
+            model.BookBinding = entity.BookBinding.TrimWithNull();
 
             return model;
         }

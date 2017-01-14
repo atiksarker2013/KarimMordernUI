@@ -49,8 +49,6 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
 
     public virtual DbSet<tbl_ReceiveDue> tbl_ReceiveDue { get; set; }
 
-    public virtual DbSet<tbl_KarimBook> tbl_KarimBook { get; set; }
-
     public virtual DbSet<tbl_KarimNewEntryQty> tbl_KarimNewEntryQty { get; set; }
 
     public virtual DbSet<tbl_KarimNewBookEntry> tbl_KarimNewBookEntry { get; set; }
@@ -63,11 +61,13 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
 
     public virtual DbSet<tbl_KarimSales> tbl_KarimSales { get; set; }
 
-    public virtual DbSet<tbl_KarimSalesDetails> tbl_KarimSalesDetails { get; set; }
-
     public virtual DbSet<tbl_KarimQuotation> tbl_KarimQuotation { get; set; }
 
+    public virtual DbSet<tbl_KarimBook> tbl_KarimBook { get; set; }
+
     public virtual DbSet<tbl_KarimQuotationDetails> tbl_KarimQuotationDetails { get; set; }
+
+    public virtual DbSet<tbl_KarimSalesDetails> tbl_KarimSalesDetails { get; set; }
 
 
     public virtual ObjectResult<USP_GetBookList_Result> USP_GetBookList(string searchStr)
@@ -79,6 +79,18 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetBookList_Result>("USP_GetBookList", searchStrParameter);
+    }
+
+
+    public virtual ObjectResult<USP_GetCustomerInfoByMobile_Result> USP_GetCustomerInfoByMobile(string searchStr)
+    {
+
+        var searchStrParameter = searchStr != null ?
+            new ObjectParameter("SearchStr", searchStr) :
+            new ObjectParameter("SearchStr", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetCustomerInfoByMobile_Result>("USP_GetCustomerInfoByMobile", searchStrParameter);
     }
 
 
@@ -103,18 +115,6 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
 
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceList_Result>("USP_GetKarimBookWithBdPriceList", searchStrParameter);
-    }
-
-
-    public virtual ObjectResult<USP_GetCustomerInfoByMobile_Result> USP_GetCustomerInfoByMobile(string searchStr)
-    {
-
-        var searchStrParameter = searchStr != null ?
-            new ObjectParameter("SearchStr", searchStr) :
-            new ObjectParameter("SearchStr", typeof(string));
-
-
-        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetCustomerInfoByMobile_Result>("USP_GetCustomerInfoByMobile", searchStrParameter);
     }
 
 }
