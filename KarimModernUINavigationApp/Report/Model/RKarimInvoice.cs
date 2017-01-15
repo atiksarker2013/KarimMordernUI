@@ -61,5 +61,6 @@ namespace KarimModernUINavigationApp.Report.Model
 
 
         public DateTime DeliveryDate { get; set; }
+        public string DeliveryTime { get; internal set; }
     }
 }

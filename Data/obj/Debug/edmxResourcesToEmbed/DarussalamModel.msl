@@ -296,9 +296,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="tbl_KarimQuotationDetails">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails">
-        <MappingFragment StoreEntitySet="tbl_KarimQuotationDetails">
+    <EntitySetMapping Name="tbl_KarimSalesDetails">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
+        <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
           <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
           <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
           <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
@@ -313,9 +313,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_KarimSalesDetails">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
-        <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
+    <EntitySetMapping Name="tbl_KarimQuotationDetails">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails">
+        <MappingFragment StoreEntitySet="tbl_KarimQuotationDetails">
+          <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
           <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
           <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
           <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />

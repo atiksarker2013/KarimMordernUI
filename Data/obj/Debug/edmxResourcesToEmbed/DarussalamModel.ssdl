@@ -141,6 +141,7 @@
     <Property Name="DiscountTaka" Type="decimal" Precision="18" Scale="2" />
     <Property Name="NetTaka" Type="decimal" Precision="18" Scale="2" />
     <Property Name="DeliveryDate" Type="date" />
+    <Property Name="DeliveryTime" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="tbl_KarimSales">
     <Key>

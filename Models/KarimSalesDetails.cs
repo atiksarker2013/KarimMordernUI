@@ -111,7 +111,7 @@ namespace Models
         public decimal UnitDiscountPercent { get; set; }
         public decimal DiscountTaka { get; set; }
         public decimal NetTaka { get; set; }
-
+        public string DeliveryTime { get; set; }
 
         public bool CheckValidation()
         {

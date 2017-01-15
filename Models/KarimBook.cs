@@ -299,6 +299,8 @@ namespace Models
 
         public string Edition { get; set; }
         public string BookBinding { get; set; }
+        public string DeliveryTime { get; set; }
+
         //  public decimal DiscountPercentage { get; set; }
 
         public bool CheckValidation()

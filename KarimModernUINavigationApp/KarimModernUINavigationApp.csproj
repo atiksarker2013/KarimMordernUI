@@ -229,6 +229,7 @@
     <Resource Include="Assets\Images\BackGround.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\klogo.jpg" />
     <Content Include="Assets\Images\logo-karim-int.png" />
     <Content Include="Assets\Images\logo.jpg" />
   </ItemGroup>

@@ -64,7 +64,6 @@ namespace Data.DC
                             Mobile = qut.Mobile,
                             Address = qut.Address,
                             Date = qut.Date,
-                           // CustomerRefNo = qut.CustomerRefNo,
                             KarimRefNo = qut.KarimRefNo,
                             PayType = qut.PayType,
                             PayNo = qut.PayNo,
@@ -74,9 +73,7 @@ namespace Data.DC
                             GrandTotal = qut.GrandTotal,
                             Receive = qut.Receive,
                             Due = qut.Due,
-                            CuriarCharg = qut.CustomerRefNo,
-                            //  Id
-                            // SalesId = det.SalesId,
+                            CustomerRefNo = qut.CustomerRefNo,
                             BookId = det.BookId,
                             OrderQty = det.OrderQty,
                             Price = det.Price,
@@ -86,7 +83,7 @@ namespace Data.DC
                             DiscountTaka = det.DiscountTaka,
                             NetTaka = det.NetTaka,
                             DeliveryDate = det.DeliveryDate,
-                            // Id
+                            DeliveryTime = det.DeliveryTime,
                             Title = book.Title,
                             Writer = book.Writer,
                             Publisher = book.Publisher,
@@ -99,10 +96,8 @@ namespace Data.DC
                             EntryDate = book.EntryDate,
                             PublishYear = book.PublishYear,
                             PublisherUnit = book.PublisherUnit,
-
                             Edition = book.Edition,
                             BookBinding = book.BookBinding,
-
                             BookType = book.BookType
                         };
 
@@ -113,8 +108,6 @@ namespace Data.DC
                 inv.Name = item.Name;
                 inv.Mobile = item.Mobile;
                 inv.Address = item.Address;
-               // inv.Date = (DateTime)item.Date;
-               // inv.CustomerRefNo = item.CustomerRefNo;
                 inv.KarimRefNo = item.KarimRefNo;
                 inv.PayType = item.PayType;
                 inv.PayNo = item.PayNo;
@@ -124,7 +117,7 @@ namespace Data.DC
                 inv.GrandTotal = (decimal)item.GrandTotal;
                 inv.Receive = (decimal)item.Receive;
                 inv.Due = (decimal)item.Due;
-               // inv.CuriarCharg = item.CuriarCharg;
+                inv.CustomerRefNo = item.CustomerRefNo;
                 inv.BookId = item.BookId;
                 inv.OrderQty = (int)item.OrderQty;
                 inv.Price = (decimal)item.Price;
@@ -134,7 +127,6 @@ namespace Data.DC
                 inv.UnitDiscountPercent = item.UnitDiscountPercent;
                 inv.DiscountTaka = (decimal)item.DiscountTaka;
                 inv.NetTaka = (decimal)item.NetTaka;
-
                 inv.Title = item.Title;
                 inv.Writer = item.Writer;
                 inv.Publisher = item.Publisher;
@@ -144,23 +136,18 @@ namespace Data.DC
                 inv.OutOfStock = item.OutOfStock;
                 inv.InStock = item.InStock;
                 inv.Barcode = item.Barcode;
-                //inv.EntryDate = item.EntryDate;
                 inv.PublishYear = item.PublishYear.ToString();
                 inv.PublisherUnit = item.PublisherUnit;
-
                 inv.Edition = item.Edition;
                 inv.BookBinding = item.BookBinding;
-
                 inv.BookType = item.BookType;
-
                 inv.DeliveryDate = item.DeliveryDate;
-
+                inv.DeliveryTime = item.DeliveryTime;
                 inv.IsCustomerSlNo = false;
                 inv.IsTitle = false;
                 inv.IsWriter = false;
                 inv.IsPublisher = false;
                 inv.IsBarcode = false;
-
                 inv.IsBookType = false;
                 inv.IsPublisherPrice = false;
                 inv.IsPublisherUnit = false;

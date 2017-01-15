@@ -6,7 +6,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Update Book Information"
                   Width="1929.974"
-                  Height="732.117"
+                  Height="544.617"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
                  
@@ -84,7 +84,9 @@
                               CanUserResizeColumns="True"
                               CanUserResizeRows="False"
                               CanUserSortColumns="True"
-                              IsReadOnly="True" Margin="0,0,0,-228">
+                              HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Auto"
+                              IsReadOnly="True" Margin="0,0,0,-58">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />

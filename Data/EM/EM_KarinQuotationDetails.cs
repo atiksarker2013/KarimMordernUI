@@ -26,7 +26,8 @@ namespace Data.EM
             entity.NetTaka = model.NetTaka;
 
             entity.DeliveryDate = model.DeliveryDate;
-
+            entity.DeliveryTime = model.DeliveryTime;
+            
             return entity;
         }
     }

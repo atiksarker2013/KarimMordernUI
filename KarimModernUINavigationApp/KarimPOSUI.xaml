@@ -116,6 +116,14 @@
                     <DataGrid Name="posDatagrid"
                               AutoGenerateColumns="False"
                               IsReadOnly="True">
+
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Header="Delete Item" Click="MenuItem_Click"   />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -305,13 +313,20 @@
                                                 Binding="{Binding Path=UnitWiseNetTaka}"
                                                 Header="Net (Taka)" />
 
-                            <DataGridTemplateColumn Width="120" Header="Delivery Date">
+                            <DataGridTemplateColumn Width="120" Header="Delivery Time">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Border x:Name="brdBroder"
+                                        <Border x:Name="brdBroder30"
                                                 Margin="1"
                                                 VerticalAlignment="Stretch">
-                                            <DatePicker Name="salesDateDatepicker" SelectedDate="{Binding DeliveryDate}" SelectedDateChanged="salesDateDatepicker_SelectedDateChanged" />
+                                            <TextBox x:Name="textBox30"
+                                                     Width="110"
+                                                     Margin="3,1"
+                                                     Text="{Binding Path=DeliveryTime,
+                                                                    Mode=TwoWay,
+                                                                    UpdateSourceTrigger=PropertyChanged}"
+                                                      TextAlignment="Left"
+                                                    />
 
                                         </Border>
                                          
@@ -320,18 +335,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <!--<DataGridTemplateColumn Header="Delivery Date" Width="100">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Path=DeliveryDate, Mode=TwoWay,StringFormat={}{0:MM/dd/yyyy}}" />
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                                <DataGridTemplateColumn.CellEditingTemplate>
-                                    <DataTemplate>
-                                        <DatePicker Text="{Binding Path=DeliveryDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellEditingTemplate>
-                            </DataGridTemplateColumn>-->
+                           
 
                         </DataGrid.Columns>
                     </DataGrid>

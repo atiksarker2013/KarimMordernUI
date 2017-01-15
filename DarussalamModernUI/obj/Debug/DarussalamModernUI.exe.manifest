@@ -271,19 +271,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sVvIdxM5sr4WTsQed+0QosOC05nMtiew8UNk197ycrY=</dsig:DigestValue>
+        <dsig:DigestValue>dyjQdIKlizrX1Ant1p7NnWl1tgWflqw2FKedNVS/veM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="150528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="151040">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>398CZWmmYLbDDg2Ym6B0iGcYljgulAc1c94oCnUck+M=</dsig:DigestValue>
+        <dsig:DigestValue>ce7upuPwX2zBoFH28Vg7A+ajbIqAzTgkcwNjuAIR5GM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -355,7 +355,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3N2kjEgTqSJ3hdGRX7Ln6lJXQ3unQeGfUz/bITFQYhE=</dsig:DigestValue>
+        <dsig:DigestValue>iR+YgIcdc4e1d2sKOIdGoAApa9sS4yQK9yTxcJLz6LU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -379,7 +379,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PmH52iTDPTNwv0Yyl0idowHkAAdi7IQWlQZgf6J2PZY=</dsig:DigestValue>
+        <dsig:DigestValue>L1gvHCruJb7RZ6FDvZKqm+gSjOxf9H1iZz8LuDZQuKY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -415,7 +415,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yf3D7UX0YMURggDFAr6cJcjd9rEXvdTQn/hVdDjQdmU=</dsig:DigestValue>
+        <dsig:DigestValue>m7bBmnjTmWmm+CtztnL//opri9v4Sd+kExX8X8Cc7gA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

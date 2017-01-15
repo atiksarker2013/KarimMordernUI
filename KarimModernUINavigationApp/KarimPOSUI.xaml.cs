@@ -44,6 +44,36 @@ namespace KarimModernUINavigationApp
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            KarimBook chalan = new KarimBook();
+            chalan = posDatagrid.SelectedItem as KarimBook;// get selected item  
+            //                                                       // Other i am summarizing grid cell value in a combobox  
+           // decimal TGBP = 0;
+            for (int i = 0; i < posDatagrid.Items.Count; i++)
+            {
+                KarimBook obj = posDatagrid.Items[i] as KarimBook;
+                obj.TotalUnitPrice = obj.Price * obj.OrderQty;
+               // TGBP += Convert.ToDecimal(obj.TotalUnitPrice); // getting cell value   
+            }
+
+
+            if (posDatagrid.Items.Count > 0)
+            {
+                decimal TTGBP = 0;
+                decimal TGBP = 0;
+                decimal GT = 0;
+                for (int i = 0; i < posDatagrid.Items.Count; i++)
+                {
+                    KarimBook discountobj = posDatagrid.Items[i] as KarimBook;
+                    //obj.TotalDiscountAmount = obj.Price * obj.OrderQty;
+                    TGBP += Convert.ToDecimal(discountobj.UnitWiseDiscountAmount); // getting cell value  
+                    GT += Convert.ToDecimal(discountobj.UnitWiseNetTaka);
+                    TTGBP += Convert.ToDecimal(discountobj.TotalUnitPrice);
+                }
+                //totalTextBox.Text=
+                discountTextBox.Text = TGBP.ToString("F");
+                grandTotalTextBox.Text = GT.ToString("F");
+                totalTextBox.Text = TTGBP.ToString("F");
+            }
 
         }
 
@@ -176,7 +206,8 @@ namespace KarimModernUINavigationApp
                         salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
                         salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
                         salesDetails.NetTaka = obj.UnitWiseNetTaka;
-                        salesDetails.DeliveryDate = obj.DeliveryDate;
+                        salesDetails.DeliveryTime = obj.DeliveryTime;
+
                         quotationDetailsManagerObj.Insert(salesDetails);
                     }
 
@@ -255,6 +286,8 @@ namespace KarimModernUINavigationApp
                     var dog = _karimInvoiceList.FirstOrDefault(d => d.IsDiscountTaka == true);
                 }
 
+                //int total = _karimInvoiceList.Sum(x => Convert.ToInt32(x.Qty));
+
                 List<RKarimInvoice> _karimInvoiceReportList = new List<RKarimInvoice>();
                 foreach (KarimInvoice item in _karimInvoiceList)
                 {
@@ -263,8 +296,7 @@ namespace KarimModernUINavigationApp
                     inv.Name = item.Name;
                     inv.Mobile = item.Mobile;
                     inv.Address = item.Address;
-                    // inv.Date = (DateTime)item.Date;
-                    // inv.CustomerRefNo = item.CustomerRefNo;
+                    inv.CustomerRefNo = item.CustomerRefNo;
                     inv.KarimRefNo = item.KarimRefNo;
                     inv.PayType = item.PayType;
                     inv.PayNo = item.PayNo;
@@ -274,12 +306,9 @@ namespace KarimModernUINavigationApp
                     inv.GrandTotal = (decimal)item.GrandTotal;
                     inv.Receive = (decimal)item.Receive;
                     inv.Due = (decimal)item.Due;
-                    // inv.CuriarCharg = item.CuriarCharg;
-                  //  inv.BookId = item.BookId;
                     inv.OrderQty = (int)item.OrderQty;
                     inv.Price = (decimal)item.Price;
                     inv.TotalUnitPrice = (decimal)(item.OrderQty * item.Price);
-                    //inv.ReturnQty = item.ReturnQty;
                     inv.CustomerSlNo = item.CustomerSlNo;
                     inv.UnitDiscountPercent = (decimal)item.UnitDiscountPercent;
                     inv.DiscountTaka = (decimal)item.DiscountTaka;
@@ -290,21 +319,15 @@ namespace KarimModernUINavigationApp
                     inv.Publisher = item.Publisher;
                     inv.Qty = (int)item.Qty;
                     inv.PublisherPrice = (decimal)item.PublisherPrice;
-                   // inv.BookPrice = (decimal)item.BookPrice;
                     inv.OutOfStock = (int)item.OutOfStock;
                     inv.InStock = (int)item.InStock;
                     inv.Barcode = item.Barcode;
-                    //inv.EntryDate = item.EntryDate;
                     inv.PublishYear = item.PublishYear.ToString();
-
-                    inv.DeliveryDate = (DateTime)item.DeliveryDate;
+                    inv.PayNo = item.DeliveryTime;  // Temp Solution
                     inv.Edition = item.Edition;
                     inv.BookBinding = item.BookBinding;
-
-
                     inv.PublisherUnit = item.PublisherUnit;
                     inv.BookType = item.BookType;
-
                     inv.IsCustomerSlNo = item.IsCustomerSlNo;
                     inv.IsTitle = item.IsTitle;
                     inv.IsWriter = item.IsWriter;
@@ -640,6 +663,47 @@ namespace KarimModernUINavigationApp
                
             }
 
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            KarimBook obj = new KarimBook();
+            obj = posDatagrid.SelectedItem as KarimBook;// get selected item  
+            if (obj != null)
+            {
+                posDatagrid.Items.RemoveAt(posDatagrid.Items.IndexOf(posDatagrid.SelectedItem));
+
+
+                var itemToRemove = GlobalVar.TempOrderBookList.Single(r => r.Id == obj.Id);
+                GlobalVar.TempOrderBookList.Remove(itemToRemove);
+
+                //GlobalVar.TempOrderBookList.RemoveAt(obj.Id);
+
+                if (posDatagrid.Items.Count > 0)
+                {
+                    decimal TTGBP = 0;
+                    decimal TGBP = 0;
+                    decimal GT = 0;
+                    for (int i = 0; i < posDatagrid.Items.Count; i++)
+                    {
+                        KarimBook discountobj = posDatagrid.Items[i] as KarimBook;
+                        //obj.TotalDiscountAmount = obj.Price * obj.OrderQty;
+                        TGBP += Convert.ToDecimal(discountobj.UnitWiseDiscountAmount); // getting cell value  
+                        GT += Convert.ToDecimal(discountobj.UnitWiseNetTaka);
+                        TTGBP += Convert.ToDecimal(discountobj.TotalUnitPrice);
+                    }
+                    //totalTextBox.Text=
+                    discountTextBox.Text = TGBP.ToString("F");
+                    grandTotalTextBox.Text = GT.ToString("F");
+                    totalTextBox.Text = TTGBP.ToString("F");
+                }
+
+            }
+
+
+
+
+            
         }
     }
 }
