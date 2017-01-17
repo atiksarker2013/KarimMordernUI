@@ -23,10 +23,11 @@
                             <MenuItem   Header="Add New Book" Click="MenuItem_Click_3"/>
                             <MenuItem   Header="Update Inventory" Click="MenuItem_Click_1"/>
                             <MenuItem   Header="Update Book Information" Click="MenuItem_Click" />
-                            <MenuItem   Header="Update Book Price" Click="MenuItem_Click_2"/>
                         </MenuItem>
 
+                        <MenuItem  Header="Quotation History" Click="MenuItem_Click_6"/>
                         <MenuItem  Header="Sales History" />
+                        
                         <MenuItem  Header="Update Currency" Click="MenuItem_Click_4" />
 
                         <MenuItem Header="Reports">
@@ -42,7 +43,7 @@
                                       Header="Receive Due Report" />
                             <MenuItem Name="bookListReport"
                                        
-                                      Header="Book List Report" />
+                                      Header="Book List Report"  Click="bookListReport_Click"/>
                         </MenuItem>
                     </Menu>
                     <!--<TextBox AcceptsReturn="True" />-->

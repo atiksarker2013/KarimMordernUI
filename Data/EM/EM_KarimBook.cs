@@ -114,6 +114,28 @@ namespace Data.EM
             return model;
         }
 
-    
+        internal static KarimBook ConvertToModel(USP_GetKarimBookWithBdPriceListALL_Result entity)
+        {
+            KarimBook model = new KarimBook();
+
+            model.Id = (int)entity.Id;
+            model.Title = entity.Title.TrimWithNull();
+            model.Writer = entity.Writer.TrimWithNull();
+            model.Publisher = entity.Publisher.TrimWithNull();
+            model.Barcode = entity.Barcode.TrimWithNull();
+            model.Qty = entity.Qty ?? 0;
+            model.Price = entity.Price ?? 0;
+            model.PublisherPrice = entity.PublisherPrice ?? 0;
+            model.PublisherUnit = entity.PublisherUnit.TrimWithNull();
+            model.PublishYear = entity.PublishYear;
+            model.BookType = entity.BookType.TrimWithNull();
+            model.OutOfStock = entity.OutOfStock ?? 0;
+            model.InStock = entity.InStock ?? 0;
+            model.EntryDate = entity.EntryDate;
+            model.Edition = entity.Edition.TrimWithNull();
+            model.BookBinding = entity.BookBinding.TrimWithNull();
+
+            return model;
+        }
     }
 }

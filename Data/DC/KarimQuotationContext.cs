@@ -143,6 +143,9 @@ namespace Data.DC
                 inv.BookType = item.BookType;
                 inv.DeliveryDate = item.DeliveryDate;
                 inv.DeliveryTime = item.DeliveryTime;
+                inv.Date = (DateTime)item.Date;
+
+                
                 inv.IsCustomerSlNo = false;
                 inv.IsTitle = false;
                 inv.IsWriter = false;
@@ -163,6 +166,13 @@ namespace Data.DC
 
 
 
+            return list;
+        }
+
+        public List<KarimInvoice> GetQuatationHistoryByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_KarimQuotation> result = (from c in _db.tbl_KarimQuotation.Where(t => t.Date > fromDate && t.Date < toDate) select c).OrderByDescending(m => m.Date).ToList();
+            List<KarimInvoice> list = result.Select(n => EM_KarimQuotation.ConverToModel(n)).ToList();
             return list;
         }
     }

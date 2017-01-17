@@ -271,19 +271,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dyjQdIKlizrX1Ant1p7NnWl1tgWflqw2FKedNVS/veM=</dsig:DigestValue>
+        <dsig:DigestValue>au9NFppfm4aDIjxgNz/gVRLuCxXA5NJJnRDm0M1pVnc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="151040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="158208">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ce7upuPwX2zBoFH28Vg7A+ajbIqAzTgkcwNjuAIR5GM=</dsig:DigestValue>
+        <dsig:DigestValue>VqZvI077cAz2WkpnTpi+xuP/4n2lgJlL3lHAELP2LWY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -355,7 +355,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iR+YgIcdc4e1d2sKOIdGoAApa9sS4yQK9yTxcJLz6LU=</dsig:DigestValue>
+        <dsig:DigestValue>heRCRqRhG5Xk44YFi80uRiKPq2u0AZvR0r2kSLNjME0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -379,7 +379,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L1gvHCruJb7RZ6FDvZKqm+gSjOxf9H1iZz8LuDZQuKY=</dsig:DigestValue>
+        <dsig:DigestValue>s7j9oiqv3EKdhZqBeGlHdlOpVfXpZd7r0H9MsWKP7BE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -415,7 +415,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>m7bBmnjTmWmm+CtztnL//opri9v4Sd+kExX8X8Cc7gA=</dsig:DigestValue>
+        <dsig:DigestValue>YZaqwtwlPRp4uQGOdbQldh7qB0HvDijACwFyv+tj+Ok=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

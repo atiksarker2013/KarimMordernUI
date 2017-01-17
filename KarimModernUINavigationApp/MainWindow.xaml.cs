@@ -48,5 +48,17 @@ namespace KarimModernUINavigationApp
             KarimPOSUI obj = new KarimModernUINavigationApp.KarimPOSUI();
             obj.Show();
         }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            QuotationHistory obj = new KarimModernUINavigationApp.QuotationHistory();
+            obj.Show();
+        }
+
+        private void bookListReport_Click(object sender, RoutedEventArgs e)
+        {
+            PopupKarimBookListReport obj = new KarimModernUINavigationApp.PopupKarimBookListReport();
+            obj.Show();
+        }
     }
 }

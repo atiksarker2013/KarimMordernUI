@@ -1,17 +1,12 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using Data;
+﻿using Data;
 using Data.DC;
 using FirstFloor.ModernUI.Windows.Controls;
 using KarimModernUINavigationApp.Report.Crystal;
 using KarimModernUINavigationApp.Report.Model;
 using Models;
 using ReportApp;
-using Shared;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,6 +29,7 @@ namespace KarimModernUINavigationApp
         public KarimPOSUI()
         {
             InitializeComponent();
+            salesDateDatepicker.SelectedDate = DateTime.Now;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -313,6 +309,7 @@ namespace KarimModernUINavigationApp
                     inv.UnitDiscountPercent = (decimal)item.UnitDiscountPercent;
                     inv.DiscountTaka = (decimal)item.DiscountTaka;
                     inv.NetTaka = (decimal)item.NetTaka;
+                    inv.Date = (DateTime)item.Date;
 
                     inv.Title = item.Title;
                     inv.Writer = item.Writer;

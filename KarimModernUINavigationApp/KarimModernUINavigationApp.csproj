@@ -105,8 +105,14 @@
     <Compile Include="NewKarimBookInventory.xaml.cs">
       <DependentUpon>NewKarimBookInventory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PopupKarimBookListReport.xaml.cs">
+      <DependentUpon>PopupKarimBookListReport.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PopupKarimNewBookEntryList.xaml.cs">
       <DependentUpon>PopupKarimNewBookEntryList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationHistory.xaml.cs">
+      <DependentUpon>QuotationHistory.xaml</DependentUpon>
     </Compile>
     <Compile Include="Report\Crystal\QuotationCrystalReport.cs">
       <AutoGen>True</AutoGen>
@@ -114,6 +120,7 @@
       <DependentUpon>QuotationCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Model\RKarimBook.cs" />
     <Compile Include="Report\Model\RKarimInvoice.cs" />
     <Compile Include="UpdateKarimBookInfo.xaml.cs">
       <DependentUpon>UpdateKarimBookInfo.xaml</DependentUpon>
@@ -186,7 +193,15 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="PopupKarimBookListReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PopupKarimNewBookEntryList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuotationHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,6 +244,7 @@
     <Resource Include="Assets\Images\BackGround.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\karimint.PNG" />
     <Content Include="Assets\Images\klogo.jpg" />
     <Content Include="Assets\Images\logo-karim-int.png" />
     <Content Include="Assets\Images\logo.jpg" />

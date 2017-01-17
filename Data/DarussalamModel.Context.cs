@@ -117,6 +117,18 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceList_Result>("USP_GetKarimBookWithBdPriceList", searchStrParameter);
     }
 
+
+    public virtual ObjectResult<USP_GetKarimBookWithBdPriceListALL_Result> USP_GetKarimBookWithBdPriceListALL(string searchStr)
+    {
+
+        var searchStrParameter = searchStr != null ?
+            new ObjectParameter("SearchStr", searchStr) :
+            new ObjectParameter("SearchStr", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceListALL_Result>("USP_GetKarimBookWithBdPriceListALL", searchStrParameter);
+    }
+
 }
 
 }
