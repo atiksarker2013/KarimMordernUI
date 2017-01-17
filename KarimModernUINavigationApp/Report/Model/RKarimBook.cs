@@ -288,7 +288,7 @@ namespace KarimModernUINavigationApp.Report.Model
         public string Barcode { get; set; }
         public decimal PublisherPrice { get; set; }
         public string PublisherUnit { get; set; }
-        public int? PublishYear { get; set; }
+        public int PublishYear { get; set; }
         public string BookType { get; set; }
 
         public string Edition { get; set; }

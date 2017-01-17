@@ -1,7 +1,9 @@
 ﻿using Data;
 using Data.DC;
+using KarimModernUINavigationApp.Report.Crystal;
 using KarimModernUINavigationApp.Report.Model;
 using Models;
+using ReportApp;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -76,7 +78,15 @@ namespace KarimModernUINavigationApp
                 model.Price = entity.Price ?? 0;
                 model.PublisherPrice = entity.PublisherPrice;
                 model.PublisherUnit = entity.PublisherUnit;
-                model.PublishYear = entity.PublishYear;
+                if (entity.PublishYear ==null)
+                {
+                    model.PublishYear = 0;
+                }
+                else
+                {
+                    model.PublishYear = (int)entity.PublishYear;
+                }
+               
                 model.BookType = entity.BookType;
                 model.OutOfStock = entity.OutOfStock ?? 0;
                 model.InStock = entity.InStock ?? 0;
@@ -86,7 +96,27 @@ namespace KarimModernUINavigationApp
 
                 SalesInfoList.Add(model);
             }
+
+            if (SalesInfoList.Count>0)
+            {
+                if (allBook.IsChecked==true)
+                {
+                    karimBookListCrystalReport employeeInfoCrystalReport = new karimBookListCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                }
+                else
+                {
+                    subjectWiseKarimBookBookListCrystalReport employeeInfoCrystalReport = new subjectWiseKarimBookBookListCrystalReport();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                }
+                //subjectWiseKarimBookBookListCrystalReport
+
+              
+            }
         }
+
+            //karimBookListCrystalReport
+        
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
