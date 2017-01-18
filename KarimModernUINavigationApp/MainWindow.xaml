@@ -26,12 +26,12 @@
                         </MenuItem>
 
                         <MenuItem  Header="Quotation History" Click="MenuItem_Click_6"/>
-                        <MenuItem  Header="Sales History" />
+                        <!--<MenuItem  Header="Sales History" />-->
                         
                         <MenuItem  Header="Update Currency" Click="MenuItem_Click_4" />
 
                         <MenuItem Header="Reports">
-                            <MenuItem Name="newBookreportButton"
+                            <!--<MenuItem Name="newBookreportButton"
                                        
                                       Header="New Book Entry Report" />
                             <MenuItem  Header="Stock Update Report" />
@@ -40,7 +40,7 @@
                                       Header="Book Price Update Report" />
                             <MenuItem Name="dueReportButton"
                                        
-                                      Header="Receive Due Report" />
+                                      Header="Receive Due Report" />-->
                             <MenuItem Name="bookListReport"
                                        
                                       Header="Book List Report"  Click="bookListReport_Click"/>
