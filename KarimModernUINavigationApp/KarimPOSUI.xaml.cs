@@ -244,7 +244,9 @@ namespace KarimModernUINavigationApp
 
                 if (publisherPriceChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherPrice == true);
+                  
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherPrice == false);
+                    if (obj != null) obj.IsPublisherPrice = true;
                 }
 
                 if (publisherUnitChkBox.IsChecked == true)
