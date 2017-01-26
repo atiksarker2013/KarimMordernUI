@@ -215,31 +215,37 @@ namespace KarimModernUINavigationApp
 
                 if (cusNoChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsCustomerSlNo == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsCustomerSlNo == false);
+                    if (obj != null) obj.IsCustomerSlNo = true;
                 }
                 if (titleChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsTitle == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsTitle == false);
+                    if (obj != null) obj.IsTitle = true;
                 }
 
                 if (writerChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsWriter == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsWriter == false);
+                    if (obj != null) obj.IsWriter = true;
                 }
 
                 if (publisherChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisher == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisher == false);
+                    if (obj != null) obj.IsPublisher = true;
                 }
 
                 if (isbnChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsBarcode == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsBarcode == false);
+                    if (obj != null) obj.IsBarcode = true;
                 }
 
                 if (bookTypeChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsBookType == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsBookType == false);
+                    if (obj != null) obj.IsBookType = true;
                 }
 
                 if (publisherPriceChkBox.IsChecked == true)
@@ -251,40 +257,45 @@ namespace KarimModernUINavigationApp
 
                 if (publisherUnitChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherUnit== true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherUnit== false);
+                    if (obj != null) obj.IsPublisherUnit = true;
                 }
 
                 if (priceChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsPrice == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPrice == false);
+                    if (obj != null) obj.IsPrice = true;
                 }
 
                 if (stockQtyChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsInStock == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsInStock == false);
+                    if (obj != null) obj.IsInStock = true;
                 }
 
                 if (orderQtyChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsOrderQty == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsOrderQty == false);
+                    if (obj != null) obj.IsOrderQty = true;
                 }
 
                 if (totalUnitPriceChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsTotalUnitPrice == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsTotalUnitPrice == false);
+                    if (obj != null) obj.IsTotalUnitPrice = true;
                 }
 
                 if (discountChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsUnitDiscountPercent == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsUnitDiscountPercent == false);
+                    if (obj != null) obj.IsUnitDiscountPercent = true;
                 }
 
                 if (discountTakaChkBox.IsChecked == true)
                 {
-                    var dog = _karimInvoiceList.FirstOrDefault(d => d.IsDiscountTaka == true);
+                    var obj = _karimInvoiceList.FirstOrDefault(d => d.IsDiscountTaka == false);
+                    if (obj != null) obj.IsDiscountTaka = true;
                 }
-
-                //int total = _karimInvoiceList.Sum(x => Convert.ToInt32(x.Qty));
 
                 List<RKarimInvoice> _karimInvoiceReportList = new List<RKarimInvoice>();
                 foreach (KarimInvoice item in _karimInvoiceList)

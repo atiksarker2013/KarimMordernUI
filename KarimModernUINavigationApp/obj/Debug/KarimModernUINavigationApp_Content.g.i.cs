@@ -8,9 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/karimint.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/karimint.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/klogo.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/logo-karim-int.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/images/logo.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("karimint.ico")]
 
 
