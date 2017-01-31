@@ -6,7 +6,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Book Stock List Report"
                   Width="2010.042"
-                  Height="681.117"
+                  Height="700"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
                   mc:Ignorable="d">
@@ -28,6 +28,8 @@
                     <RowDefinition Height="500" />
                     <RowDefinition Height="10" />
 
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
                     <RowDefinition Height="30" />
 
 
@@ -166,18 +168,10 @@
 
 
 
-                <StackPanel Grid.Row="8"
+                <StackPanel Grid.Row="6"
                             Grid.Column="0"
                             Grid.ColumnSpan="3"
                             Orientation="Horizontal">
-
-                    <RadioButton Name="showStockBookReport"
-                                 Content="Show Stock   "
-                                 GroupName="Paymentv" />
-
-                    <RadioButton Name="withoutStockBookReport"
-                                 Content="Without Stock   "
-                                 GroupName="Paymentv" />
 
                     <RadioButton Name="showlessThanQtyBookReport"
                                  Content="Less Than Stock Qty  "
@@ -192,6 +186,30 @@
 
 <Label Content="    Total number Of Book : "/>
 <Label Name="itemCountLabel" Content="0" />
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="7"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3">
+                    <CheckBox Name="cusNoChkBox" Content="Customer SlNo "/>
+                    <CheckBox Name="titleChkBox" Content="Title "/>
+                    <CheckBox Name="writerChkBox" Content="Writer "/>
+                    <CheckBox Name="publisherChkBox" Content="Publisher "/>
+                    <CheckBox Name="isbnChkBox" Content="ISBN "/>
+                    <CheckBox Name="bookTypeChkBox" Content="Book Type "/>
+                    <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
+                    <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Grid.Row="10"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3">
+                    <CheckBox Name="priceChkBox" Content="Price "/>
+                    <CheckBox Name="stockQtyChkBox" Content="Stock Qty "/>
+                    <CheckBox Name="orderQtyChkBox" Content="Order Qty "/>
+                    <CheckBox Name="totalUnitPriceChkBox" Content="Total Unit Price "/>
+                    <CheckBox Name="discountChkBox" Content="Discount "/>
+                    <CheckBox Name="discountTakaChkBox" Content="Discount(Taka) "/>
+
                 </StackPanel>
             </Grid>
         </StackPanel>

@@ -21,7 +21,7 @@ namespace KarimModernUINavigationApp
         {
             InitializeComponent();
             selectedBook.IsChecked = true;
-            showStockBookReport.IsChecked = true;
+         //   showStockBookReport.IsChecked = true;
             LoadGrid();
         }
 
@@ -47,28 +47,7 @@ namespace KarimModernUINavigationApp
 
                 RKarimBook model = new RKarimBook();
 
-                //reportObj.Title = obj.Title;
-                //if (obj.Price != null)
-                //{
-                //    reportObj.NewPrice = (decimal)obj.Price;
-                //}
-                //else
-                //{
-                //    reportObj.NewPrice = 0;
-                //}
-
-
-                //if (obj.NewEntryQty != null)
-                //{
-                //    reportObj.NewEntryQty = Convert.ToInt32(obj.InStock);
-                //}
-                //else
-                //{
-                //    reportObj.NewEntryQty = 0;
-                //}
-
-                //reportObj.Publisher = obj.Publisher;
-                //reportObj.Writer = obj.Writer;
+                 
 
                 model.Title = entity.Title;
                 model.Writer = entity.Writer;
@@ -96,6 +75,91 @@ namespace KarimModernUINavigationApp
 
                 SalesInfoList.Add(model);
             }
+
+           
+            if (titleChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsTitle = true;
+                }
+
+            }
+
+            if (writerChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsWriter = true;
+                }
+
+            }
+
+            if (publisherChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisher = true;
+                }
+
+            }
+
+            if (isbnChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsBarcode = true;
+                }
+
+            }
+
+            if (bookTypeChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsBookType = true;
+                }
+
+            }
+
+            if (publisherPriceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherPrice = true;
+                }
+
+            }
+
+            if (publisherUnitChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherUnit = true;
+                }
+
+            }
+
+            if (priceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPrice = true;
+                }
+
+
+            }
+
+            if (stockQtyChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsInStock = true;
+                }
+
+            }
+
+           
 
             if (SalesInfoList.Count>0)
             {

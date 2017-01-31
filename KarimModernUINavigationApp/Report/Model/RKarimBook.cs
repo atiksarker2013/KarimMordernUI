@@ -1,13 +1,9 @@
 ﻿using Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KarimModernUINavigationApp.Report.Model
 {
-  public  class RKarimBook : ModelBase
+    public  class RKarimBook : ModelBase
     {
         private int _Id;
         public int Id
@@ -294,5 +290,14 @@ namespace KarimModernUINavigationApp.Report.Model
         public string Edition { get; set; }
         public string BookBinding { get; set; }
         public string DeliveryTime { get; set; }
+        public bool IsTitle { get; internal set; }
+        public bool IsWriter { get; internal set; }
+        public bool IsPublisher { get; internal set; }
+        public bool IsBarcode { get; internal set; }
+        public bool IsBookType { get; internal set; }
+        public bool IsPublisherPrice { get; internal set; }
+        public bool IsPublisherUnit { get; internal set; }
+        public bool IsPrice { get; internal set; }
+        public bool IsInStock { get; internal set; }
     }
 }

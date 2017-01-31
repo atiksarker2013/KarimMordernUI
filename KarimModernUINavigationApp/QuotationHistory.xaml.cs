@@ -55,86 +55,128 @@ namespace KarimModernUINavigationApp
 
             if (cusNoChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsCustomerSlNo == false);
-                if (obj != null) obj.IsCustomerSlNo = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsCustomerSlNo = true;
+                }
+ 
             }
             if (titleChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsTitle == false);
-                if (obj != null) obj.IsTitle = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsTitle = true;
+                }
+                 
             }
 
             if (writerChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsWriter == false);
-                if (obj != null) obj.IsWriter = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsWriter = true;
+                }
+               
             }
 
             if (publisherChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisher == false);
-                if (obj != null) obj.IsPublisher = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsPublisher = true;
+                }
+                
             }
 
             if (isbnChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsBarcode == false);
-                if (obj != null) obj.IsBarcode = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsBarcode = true;
+                }
+                 
             }
 
             if (bookTypeChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsBookType == false);
-                if (obj != null) obj.IsBookType = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsBookType = true;
+                }
+                
             }
 
             if (publisherPriceChkBox.IsChecked == true)
             {
-
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherPrice == false);
-                if (obj != null) obj.IsPublisherPrice = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsPublisherPrice = true;
+                }
+               
             }
 
             if (publisherUnitChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPublisherUnit == false);
-                if (obj != null) obj.IsPublisherUnit = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsPublisherUnit = true;
+                }
+                 
             }
 
             if (priceChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsPrice == false);
-                if (obj != null) obj.IsPrice = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsPrice = true;
+                }
+
+                
             }
 
             if (stockQtyChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsInStock == false);
-                if (obj != null) obj.IsInStock = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsInStock = true;
+                }
+                
             }
 
             if (orderQtyChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsOrderQty == false);
-                if (obj != null) obj.IsOrderQty = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsOrderQty = true;
+                }
+               
             }
 
             if (totalUnitPriceChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsTotalUnitPrice == false);
-                if (obj != null) obj.IsTotalUnitPrice = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsTotalUnitPrice = true;
+                }
+               
             }
 
             if (discountChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsUnitDiscountPercent == false);
-                if (obj != null) obj.IsUnitDiscountPercent = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsUnitDiscountPercent = true;
+                }
+                
             }
 
             if (discountTakaChkBox.IsChecked == true)
             {
-                var obj = _karimInvoiceList.FirstOrDefault(d => d.IsDiscountTaka == false);
-                if (obj != null) obj.IsDiscountTaka = true;
+                foreach (var obj in _karimInvoiceList)
+                {
+                    obj.IsDiscountTaka = true;
+                }
+                
             }
 
 
