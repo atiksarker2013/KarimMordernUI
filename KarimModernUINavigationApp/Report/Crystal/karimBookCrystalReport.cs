@@ -16,14 +16,14 @@ namespace KarimModernUINavigationApp.Report.Crystal {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class karimBookListCrystalReport : ReportClass {
+    public class karimBookCrystalReport : ReportClass {
         
-        public karimBookListCrystalReport() {
+        public karimBookCrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "karimBookListCrystalReport.rpt";
+                return "karimBookCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace KarimModernUINavigationApp.Report.Crystal {
         
         public override string FullResourceName {
             get {
-                return "KarimModernUINavigationApp.Report.Crystal.karimBookListCrystalReport.rpt";
+                return "KarimModernUINavigationApp.Report.Crystal.karimBookCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace KarimModernUINavigationApp.Report.Crystal {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedkarimBookListCrystalReport : Component, ICachedReport {
+    public class CachedkarimBookCrystalReport : Component, ICachedReport {
         
-        public CachedkarimBookListCrystalReport() {
+        public CachedkarimBookCrystalReport() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace KarimModernUINavigationApp.Report.Crystal {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            karimBookListCrystalReport rpt = new karimBookListCrystalReport();
+            karimBookCrystalReport rpt = new karimBookCrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }

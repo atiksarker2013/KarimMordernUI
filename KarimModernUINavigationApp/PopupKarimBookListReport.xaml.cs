@@ -104,6 +104,13 @@ namespace KarimModernUINavigationApp
 
             }
 
+
+
+
+
+
+
+
             if (isbnChkBox.IsChecked == true)
             {
                 foreach (var obj in SalesInfoList)
@@ -163,17 +170,17 @@ namespace KarimModernUINavigationApp
 
             if (SalesInfoList.Count>0)
             {
-                if (allBook.IsChecked==true)
-                {
-                    karimBookListCrystalReport employeeInfoCrystalReport = new karimBookListCrystalReport();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-                }
-                else
+            //    if (allBook.IsChecked==true)
+            //    {
+            //        karimBookListCrystalReport employeeInfoCrystalReport = new karimBookListCrystalReport();
+            //        ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+            //    }
+            //    else
 
-                {
-                    subjectWiseKarimBookBookListCrystalReport employeeInfoCrystalReport = new subjectWiseKarimBookBookListCrystalReport();
+            //    {
+                    karimBookCrystalReport employeeInfoCrystalReport = new karimBookCrystalReport();
                     ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-                }
+               // }
                 //subjectWiseKarimBookBookListCrystalReport
 
               

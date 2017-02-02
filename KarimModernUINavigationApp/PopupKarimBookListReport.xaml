@@ -6,7 +6,7 @@
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Book Stock List Report"
                   Width="2010.042"
-                  Height="700"
+                  Height="727"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
                   mc:Ignorable="d">
@@ -93,12 +93,11 @@
                       Grid.Column="0"
                       Grid.ColumnSpan="4">
                     <DataGrid Name="bookGrid"
-                              Margin="0,0,0,54"
                               CanUserReorderColumns="True"
                               CanUserResizeColumns="True"
                               CanUserResizeRows="False"
                               CanUserSortColumns="True"
-                              IsReadOnly="True">
+                              IsReadOnly="True" Height="500" VerticalAlignment="Top">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -173,7 +172,7 @@
                             Grid.ColumnSpan="3"
                             Orientation="Horizontal">
 
-                    <RadioButton Name="showlessThanQtyBookReport"
+                    <!--<RadioButton Name="showlessThanQtyBookReport"
                                  Content="Less Than Stock Qty  "
                                  GroupName="Paymentv" />
 
@@ -182,16 +181,16 @@
                     <RadioButton Name="showGreaterThanQtyBookReport"
                                  Content="Greather Than Stock Qty "
                                  GroupName="Paymentv" />
-                    <TextBox Name="greatherThanQtyTextBox" Width="104" />
+                    <TextBox Name="greatherThanQtyTextBox" Width="104" />-->
 
-<Label Content="    Total number Of Book : "/>
-<Label Name="itemCountLabel" Content="0" />
-                    
+                    <Label Content="    Total number Of Book : "/>
+                    <Label Name="itemCountLabel" Content="0" />
+
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Grid.Row="7"
                             Grid.Column="0"
                             Grid.ColumnSpan="3">
-                    <CheckBox Name="cusNoChkBox" Content="Customer SlNo "/>
+                    <!--<CheckBox Name="cusNoChkBox" Content="Customer SlNo "/>-->
                     <CheckBox Name="titleChkBox" Content="Title "/>
                     <CheckBox Name="writerChkBox" Content="Writer "/>
                     <CheckBox Name="publisherChkBox" Content="Publisher "/>
@@ -199,19 +198,21 @@
                     <CheckBox Name="bookTypeChkBox" Content="Book Type "/>
                     <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
                     <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
+                    <CheckBox Name="priceChkBox" Content="Price "/>
+                    <CheckBox Name="stockQtyChkBox" Content="Stock Qty "/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Grid.Row="10"
                             Grid.Column="0"
                             Grid.ColumnSpan="3">
-                    <CheckBox Name="priceChkBox" Content="Price "/>
-                    <CheckBox Name="stockQtyChkBox" Content="Stock Qty "/>
-                    <CheckBox Name="orderQtyChkBox" Content="Order Qty "/>
+                    <!--<CheckBox Name="priceChkBox" Content="Price "/>
+                    <CheckBox Name="stockQtyChkBox" Content="Stock Qty "/>-->
+                    <!--<CheckBox Name="orderQtyChkBox" Content="Order Qty "/>
                     <CheckBox Name="totalUnitPriceChkBox" Content="Total Unit Price "/>
                     <CheckBox Name="discountChkBox" Content="Discount "/>
-                    <CheckBox Name="discountTakaChkBox" Content="Discount(Taka) "/>
+                    <CheckBox Name="discountTakaChkBox" Content="Discount(Taka) "/>-->
 
                 </StackPanel>
             </Grid>
         </StackPanel>
     </ScrollViewer>
-    </mui:ModernWindow>
+</mui:ModernWindow>
