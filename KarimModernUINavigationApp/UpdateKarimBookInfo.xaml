@@ -4,12 +4,13 @@
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                   Title="Update Book Information"
-                  Width="1929.974"
+                  Width="1778.474"
                   Height="544.617"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
-                 
+                 WindowState="Maximized"
                   mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel>
@@ -80,16 +81,12 @@
                       Grid.Column="0"
                       Grid.ColumnSpan="4">
                     <DataGrid Name="bookGrid"
-                              CanUserReorderColumns="True"
-                              CanUserResizeColumns="True"
-                              CanUserResizeRows="False"
-                              CanUserSortColumns="True"
-                              HorizontalScrollBarVisibility="Auto"
-                              VerticalScrollBarVisibility="Auto"
-                              IsReadOnly="True" Margin="0,0,0,-58">
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="ContentStringFormat" Value="{Binding Resolution, StringFormat=N{0}}" />
                             </Style>
                         </DataGrid.Resources>
                         <DataGrid.Columns>
@@ -291,7 +288,15 @@
                                                      Margin="3,1"
                                                      Text="{Binding Path=PublisherPrice,
                                                                     Mode=TwoWay,
-                                                                    UpdateSourceTrigger=PropertyChanged}" />
+                                                                    UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"  >
+
+
+
+                                                <!--<i:Interaction.Behaviors>
+                                                    <TextBoxInputBehavior InputMode="DecimalInput"/>
+                                                </i:Interaction.Behaviors>-->
+                                            </TextBox>
+                                            
                                         </Border>
                                         <DataTemplate.Triggers>
                                             <DataTrigger Binding="{Binding Price}" Value="0">
@@ -304,7 +309,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            <DataGridTemplateColumn Width="150" Header="Price (Taka)">
+                            <!--<DataGridTemplateColumn Width="150" Header="Price (Taka)">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder4"
@@ -326,7 +331,7 @@
 
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            </DataGridTemplateColumn>-->
 
                             <DataGridTemplateColumn Width="100" Header="InStock">
                                 <DataGridTemplateColumn.CellTemplate>
