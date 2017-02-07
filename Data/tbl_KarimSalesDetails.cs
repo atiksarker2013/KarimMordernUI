@@ -40,6 +40,8 @@ public partial class tbl_KarimSalesDetails
 
     public Nullable<System.DateTime> DeliveryDate { get; set; }
 
+    public string DeliveryTime { get; set; }
+
 }
 
 }

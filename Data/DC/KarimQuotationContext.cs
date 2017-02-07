@@ -169,6 +169,125 @@ namespace Data.DC
             return list;
         }
 
+        public List<KarimInvoice> GetSalesInvoiceDetailsById(int pk)
+        {
+            List<KarimInvoice> list = new List<KarimInvoice>();
+            var query = from qut in _db.tbl_KarimSales
+                        join det in _db.tbl_KarimSalesDetails on qut.Id equals det.SalesId
+                        join book in _db.tbl_KarimBook on det.BookId equals book.Id
+                        where qut.Id == pk
+                        select new
+                        {
+                            Id = qut.Id,
+                            Name = qut.Name,
+                            Mobile = qut.Mobile,
+                            Address = qut.Address,
+                            Date = qut.Date,
+                            KarimRefNo = qut.KarimRefNo,
+                            PayType = qut.PayType,
+                            PayNo = qut.PayNo,
+                            Total = qut.Total,
+                            Discount = qut.Discount,
+                            OtherDiscount = qut.OtherDiscount,
+                            GrandTotal = qut.GrandTotal,
+                            Receive = qut.Receive,
+                            Due = qut.Due,
+                            CustomerRefNo = qut.CustomerRefNo,
+                            BookId = det.BookId,
+                            OrderQty = det.OrderQty,
+                            Price = det.Price,
+                            ReturnQty = det.ReturnQty,
+                            CustomerSlNo = det.CustomerSlNo,
+                            UnitDiscountPercent = det.UnitDiscountPercent,
+                            DiscountTaka = det.DiscountTaka,
+                            NetTaka = det.NetTaka,
+                            DeliveryDate = det.DeliveryDate,
+                            DeliveryTime = det.DeliveryTime,
+                            Title = book.Title,
+                            Writer = book.Writer,
+                            Publisher = book.Publisher,
+                            Qty = book.Qty,
+                            PublisherPrice = book.PublisherPrice,
+                            BookPrice = book.Price,
+                            OutOfStock = book.OutOfStock,
+                            InStock = book.InStock,
+                            Barcode = book.Barcode,
+                            EntryDate = book.EntryDate,
+                            PublishYear = book.PublishYear,
+                            PublisherUnit = book.PublisherUnit,
+                            Edition = book.Edition,
+                            BookBinding = book.BookBinding,
+                            BookType = book.BookType
+                        };
+
+            foreach (var item in query)
+            {
+                KarimInvoice inv = new KarimInvoice();
+                inv.Id = item.Id;
+                inv.Name = item.Name;
+                inv.Mobile = item.Mobile;
+                inv.Address = item.Address;
+                inv.KarimRefNo = item.KarimRefNo;
+                inv.PayType = item.PayType;
+                inv.PayNo = item.PayNo;
+                inv.Total = (decimal)item.Total;
+                inv.Discount = (decimal)item.Discount;
+                inv.OtherDiscount = (decimal)item.OtherDiscount;
+                inv.GrandTotal = (decimal)item.GrandTotal;
+                inv.Receive = (decimal)item.Receive;
+                inv.Due = (decimal)item.Due;
+                inv.CustomerRefNo = item.CustomerRefNo;
+                inv.BookId = item.BookId;
+                inv.OrderQty = (int)item.OrderQty;
+                inv.Price = (decimal)item.Price;
+                inv.TotalUnitPrice = (decimal)(item.OrderQty * item.Price);
+                inv.ReturnQty = item.ReturnQty;
+                inv.CustomerSlNo = item.CustomerSlNo;
+                inv.UnitDiscountPercent = item.UnitDiscountPercent;
+                inv.DiscountTaka = (decimal)item.DiscountTaka;
+                inv.NetTaka = (decimal)item.NetTaka;
+                inv.Title = item.Title;
+                inv.Writer = item.Writer;
+                inv.Publisher = item.Publisher;
+                inv.Qty = (int)item.Qty;
+                inv.PublisherPrice = (decimal)item.PublisherPrice;
+                inv.BookPrice = item.BookPrice;
+                inv.OutOfStock = item.OutOfStock;
+                inv.InStock = item.InStock;
+                inv.Barcode = item.Barcode;
+                inv.PublishYear = item.PublishYear.ToString();
+                inv.PublisherUnit = item.PublisherUnit;
+                inv.Edition = item.Edition;
+                inv.BookBinding = item.BookBinding;
+                inv.BookType = item.BookType;
+                inv.DeliveryDate = item.DeliveryDate;
+                inv.DeliveryTime = item.DeliveryTime;
+                inv.Date = (DateTime)item.Date;
+
+
+                inv.IsCustomerSlNo = false;
+                inv.IsTitle = false;
+                inv.IsWriter = false;
+                inv.IsPublisher = false;
+                inv.IsBarcode = false;
+                inv.IsBookType = false;
+                inv.IsPublisherPrice = false;
+                inv.IsPublisherUnit = false;
+                inv.IsPrice = false;
+                inv.IsInStock = false;
+                inv.IsOrderQty = false;
+                inv.IsTotalUnitPrice = false;
+                inv.IsUnitDiscountPercent = false;
+                inv.IsDiscountTaka = false;
+
+                list.Add(inv);
+            }
+
+
+
+            return list;
+        }
+
         public List<KarimInvoice> GetQuatationHistoryByDateRange(DateTime fromDate, DateTime toDate)
         {
             List<tbl_KarimQuotation> result = (from c in _db.tbl_KarimQuotation.Where(t => t.Date > fromDate && t.Date < toDate) select c).OrderByDescending(m => m.Date).ToList();

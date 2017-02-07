@@ -398,7 +398,7 @@ namespace KarimModernUINavigationApp
                 }
 
 
-                MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Quotation generate successfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
                 if (_karimInvoiceReportList.Count > 0)
@@ -452,16 +452,13 @@ namespace KarimModernUINavigationApp
 
 
                         KarimSales salesObj = new KarimSales();
-
                         salesObj.Name = customerNameTextBox.Text;
                         salesObj.Mobile = MobileTextBox.Text;
                         salesObj.Address = addressTextBox.Text;
                         salesObj.Date = salesDateDatepicker.SelectedDate;
-
                         salesObj.CustomerRefNo = customerRefNoTextBox.Text;
                         salesObj.KarimRefNo = karimRefNoTextBox.Text;
-                        
-                            
+
                         if (cashPaytype.IsChecked == true)
                         {
                             salesObj.PayType = "Cash";
@@ -524,7 +521,6 @@ namespace KarimModernUINavigationApp
                             salesObj.Due = 0;
                         }
 
-
                         int pk = 0;
                         pk = salesManagerObj.Insert(salesObj);
 
@@ -540,39 +536,18 @@ namespace KarimModernUINavigationApp
                                 salesDetails.Price = (decimal)obj.Price;
                                 salesDetails.OrderQty = obj.OrderQty;
                                 salesDetails.SalesId = pk;
-
                                 salesDetails.CustomerSlNo = obj.CustomerSlNo;
                                 salesDetails.UnitDiscountPercent = obj.DiscountPercentage;
                                 salesDetails.DiscountTaka = obj.UnitWiseDiscountAmount;
                                 salesDetails.NetTaka = obj.UnitWiseNetTaka;
-                                    
+                                salesDetails.DeliveryTime = obj.DeliveryTime;
+
                                 salesDetailsManagerObj.Insert(salesDetails);
                             }
 
                         }
 
-                        // Discount Insert
-
-                        //for (int i = 0; i < discountDatagrid.Items.Count; i++)
-                        //{
-                        //    Discounts obj = discountDatagrid.Items[i] as Discounts;
-
-                        //    Discounts discountObj = new Discounts();
-                        //    discountObj.InvoiceId = pk;
-                        //    discountObj.PublisherName = obj.PublisherName;
-                        //    discountObj.TotalAmount = obj.TotalAmount;
-                        //    discountObj.DiscountPercentage = obj.DiscountPercentage;
-                        //    discountObj.DiscountAmount = obj.DiscountAmount;
-                        //    discountContext.Insert(discountObj);
-
-                        //    RDarussalamSalesDiscount discuntobj = new RDarussalamSalesDiscount();
-                        //    discuntobj.PublisherName = obj.PublisherName;
-                        //    discuntobj.TotalAmount = obj.TotalAmount;
-                        //    discuntobj.DiscountPercentage = obj.DiscountPercentage;
-                        //    discuntobj.DiscountAmount = obj.DiscountAmount;
-                        //    SalesDiscountInfoList.Add(discuntobj);
-
-                        //}
+                       
 
 
                         // Update Stock
@@ -589,44 +564,202 @@ namespace KarimModernUINavigationApp
                                 obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
                                 bookContext.Update(obj);
 
-                                //RDarusSalamBook reportObj = new RDarusSalamBook();
-                                //reportObj.Id = obj.Id;
-                                //reportObj.Title = obj.Title;
-                                //reportObj.OrderQty = obj.OrderQty;
-                                //reportObj.Price = (decimal)obj.Price;
-                                //reportObj.Name = salesObj.Name;
-                                //reportObj.Mobile = salesObj.Mobile;
-                                //reportObj.Address = salesObj.Address;
-                                //reportObj.Date = (DateTime)salesObj.Date;
-                                //reportObj.PayType = salesObj.PayType;
-                                //reportObj.PayNo = salesObj.PayNo;
-                                //reportObj.Total = salesObj.Total;
-                                //reportObj.Discount = salesObj.Discount;
-                                //reportObj.GrandTotal = salesObj.GrandTotal;
-                                //reportObj.Receive = salesObj.Receive;
-                                //reportObj.Due = salesObj.Due;
-                                //reportObj.InvoiceNo = pk;
-                                //reportObj.CuriarCharg = salesObj.CuriarCharg;
-                                //reportObj.OtherDiscount = salesObj.OtherDiscount;
-                                //reportObj.Publisher = obj.Publisher;
-                                //reportObj.Writer = obj.Writer;
-                                //SalesInfoList.Add(reportObj);
                             }
 
                         }
 
+                        List<KarimInvoice> _karimInvoiceList = new List<KarimInvoice>();
+                        _karimInvoiceList = quotationManagerObj.GetQuotationInvoiceDetailsById(pk);
+
+
+                        if (cusNoChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsCustomerSlNo = true;
+                            }
+
+                        }
+                        if (titleChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsTitle = true;
+                            }
+
+                        }
+
+                        if (writerChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsWriter = true;
+                            }
+
+                        }
+
+                        if (publisherChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsPublisher = true;
+                            }
+
+                        }
+
+                        if (isbnChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsBarcode = true;
+                            }
+
+                        }
+
+                        if (bookTypeChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsBookType = true;
+                            }
+
+                        }
+
+                        if (publisherPriceChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsPublisherPrice = true;
+                            }
+
+                        }
+
+                        if (publisherUnitChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsPublisherUnit = true;
+                            }
+
+                        }
+
+                        if (priceChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsPrice = true;
+                            }
+
+
+                        }
+
+                        if (stockQtyChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsInStock = true;
+                            }
+
+                        }
+
+                        if (orderQtyChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsOrderQty = true;
+                            }
+
+                        }
+
+                        if (totalUnitPriceChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsTotalUnitPrice = true;
+                            }
+
+                        }
+
+                        if (discountChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsUnitDiscountPercent = true;
+                            }
+
+                        }
+
+                        if (discountTakaChkBox.IsChecked == true)
+                        {
+                            foreach (var obj in _karimInvoiceList)
+                            {
+                                obj.IsDiscountTaka = true;
+                            }
+
+                        }
+
+                        List<RKarimInvoice> _karimInvoiceReportList = new List<RKarimInvoice>();
+                        foreach (KarimInvoice item in _karimInvoiceList)
+                        {
+                            RKarimInvoice inv = new RKarimInvoice();
+                            inv.Id = item.Id;
+                            inv.Name = item.Name;
+                            inv.Mobile = item.Mobile;
+                            inv.Address = item.Address;
+                            inv.CustomerRefNo = item.CustomerRefNo;
+                            inv.KarimRefNo = item.KarimRefNo;
+                            inv.PayType = item.PayType;
+                            inv.PayNo = item.PayNo;
+                            inv.Total = item.Total;
+                            inv.Discount = (decimal)item.Discount;
+                            inv.OtherDiscount = (decimal)item.OtherDiscount;
+                            inv.GrandTotal = (decimal)item.GrandTotal;
+                            inv.Receive = (decimal)item.Receive;
+                            inv.Due = (decimal)item.Due;
+                            inv.OrderQty = (int)item.OrderQty;
+                            inv.Price = (decimal)item.Price;
+                            inv.TotalUnitPrice = (decimal)(item.OrderQty * item.Price);
+                            inv.CustomerSlNo = item.CustomerSlNo;
+                            inv.UnitDiscountPercent = (decimal)item.UnitDiscountPercent;
+                            inv.DiscountTaka = (decimal)item.DiscountTaka;
+                            inv.NetTaka = (decimal)item.NetTaka;
+                            inv.Date = (DateTime)item.Date;
+
+                            inv.Title = item.Title;
+                            inv.Writer = item.Writer;
+                            inv.Publisher = item.Publisher;
+                            inv.Qty = (int)item.Qty;
+                            inv.PublisherPrice = (decimal)item.PublisherPrice;
+                            inv.OutOfStock = (int)item.OutOfStock;
+                            inv.InStock = (int)item.InStock;
+                            inv.Barcode = item.Barcode;
+                            inv.PublishYear = item.PublishYear.ToString();
+                            inv.PayNo = item.DeliveryTime;  // Temp Solution
+                            inv.Edition = item.Edition;
+                            inv.BookBinding = item.BookBinding;
+                            inv.PublisherUnit = item.PublisherUnit;
+                            inv.BookType = item.BookType;
+                            inv.IsCustomerSlNo = item.IsCustomerSlNo;
+                            inv.IsTitle = item.IsTitle;
+                            inv.IsWriter = item.IsWriter;
+                            inv.IsPublisher = item.IsPublisher;
+                            inv.IsBarcode = item.IsBarcode;
+                            inv.IsBookType = item.IsBookType;
+                            inv.IsPublisherPrice = item.IsPublisherPrice;
+                            inv.IsPublisherUnit = item.IsPublisherUnit;
+                            inv.IsPrice = item.IsPrice;
+                            inv.IsInStock = item.IsInStock;
+                            inv.IsOrderQty = item.IsOrderQty;
+                            inv.IsTotalUnitPrice = item.IsTotalUnitPrice;
+                            inv.IsUnitDiscountPercent = item.IsUnitDiscountPercent;
+                            inv.IsDiscountTaka = item.IsDiscountTaka;
+                            _karimInvoiceReportList.Add(inv);
+                        }
+
+
                         MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        //if (SalesInfoList.Count > 0)
-                        //{
-                        //    salesInvoiceCrystalReport employeeInfoCrystalReport = new salesInvoiceCrystalReport();
-                        //    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
-                        //}
+                       
 
                         totalTextBox.Text = "";
                         grandTotalTextBox.Text = "";

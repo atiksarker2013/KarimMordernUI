@@ -184,6 +184,7 @@
           <Property Name="DiscountTaka" Type="decimal" Precision="18" Scale="2" />
           <Property Name="NetTaka" Type="decimal" Precision="18" Scale="2" />
           <Property Name="DeliveryDate" Type="date" />
+          <Property Name="DeliveryTime" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="tbl_NewBookEntry">
           <Key>
@@ -316,11 +317,11 @@
           <FunctionImport Name="USP_GetKarimBookWithBdPriceList" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceList_Result)">
           <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
-          <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
           <EntitySet Name="tbl_KarimQuotationDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails" />
           <FunctionImport Name="USP_GetKarimBookWithBdPriceListALL" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceListALL_Result)">
-            <Parameter Name="SearchStr" Mode="In" Type="String" />
+          <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -586,22 +587,6 @@
           <Property Type="String" Name="Edition" Nullable="true" />
           <Property Type="String" Name="BookBinding" Nullable="true" />
         </ComplexType>
-        <EntityType Name="tbl_KarimSalesDetails">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SalesId" Type="Int32" />
-          <Property Name="BookId" Type="Int32" />
-          <Property Name="OrderQty" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="ReturnQty" Type="Int32" />
-          <Property Name="CustomerSlNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UnitDiscountPercent" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="DiscountTaka" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="NetTaka" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="tbl_KarimQuotationDetails">
           <Key>
             <PropertyRef Name="Id" />
@@ -637,6 +622,23 @@
           <Property Type="String" Name="Edition" Nullable="true" />
           <Property Type="String" Name="BookBinding" Nullable="true" />
         </ComplexType>
+        <EntityType Name="tbl_KarimSalesDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalesId" Type="Int32" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="OrderQty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ReturnQty" Type="Int32" />
+          <Property Name="CustomerSlNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitDiscountPercent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DiscountTaka" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetTaka" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="DeliveryTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -938,23 +940,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="tbl_KarimSalesDetails">
-            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
-              <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
-                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
-                <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
-                <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
-                <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />
-                <ScalarProperty Name="CustomerSlNo" ColumnName="CustomerSlNo" />
-                <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
-                <ScalarProperty Name="BookId" ColumnName="BookId" />
-                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tbl_KarimQuotationDetails">
             <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails">
               <MappingFragment StoreEntitySet="tbl_KarimQuotationDetails">
@@ -995,6 +980,24 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_KarimSalesDetails">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails">
+              <MappingFragment StoreEntitySet="tbl_KarimSalesDetails">
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="NetTaka" ColumnName="NetTaka" />
+                <ScalarProperty Name="DiscountTaka" ColumnName="DiscountTaka" />
+                <ScalarProperty Name="UnitDiscountPercent" ColumnName="UnitDiscountPercent" />
+                <ScalarProperty Name="CustomerSlNo" ColumnName="CustomerSlNo" />
+                <ScalarProperty Name="ReturnQty" ColumnName="ReturnQty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="OrderQty" ColumnName="OrderQty" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1033,8 +1036,8 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSales" Width="2.125" PointX="9.375" PointY="3.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotation" Width="1.5" PointX="10.375" PointY="8.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" Width="1.5" PointX="12.375" PointY="0.75" />
       </Diagram>
     </Diagrams>
   </Designer>
