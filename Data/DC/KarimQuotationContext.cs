@@ -294,5 +294,12 @@ namespace Data.DC
             List<KarimInvoice> list = result.Select(n => EM_KarimQuotation.ConverToModel(n)).ToList();
             return list;
         }
+
+        public List<KarimSales> GetInvoiceHistoryByDateRange(DateTime fromDate, DateTime toDate)
+        {
+            List<tbl_KarimSales> result = (from c in _db.tbl_KarimSales.Where(t => t.Date > fromDate && t.Date < toDate) select c).OrderByDescending(m => m.Date).ToList();
+            List<KarimSales> list = result.Select(n => EM_KarimSales.ConverToModel(n)).ToList();
+            return list;
+        }
     }
 }

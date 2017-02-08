@@ -13,11 +13,11 @@ namespace KarimModernUINavigationApp
     /// <summary>
     /// Interaction logic for QuotationHistory.xaml
     /// </summary>
-    public partial class QuotationHistory  
+    public partial class InvoiceHistory
     {
         KarimQuotationContext quatationObj = new KarimQuotationContext();
         KarimQuotationContext quotationManagerObj = new KarimQuotationContext();
-        public QuotationHistory()
+        public InvoiceHistory()
         {
             InitializeComponent();
             fromDateDatepicker.SelectedDate = DateTime.Today;
@@ -44,13 +44,13 @@ namespace KarimModernUINavigationApp
         {
             DateTime fromDate = Convert.ToDateTime(fromDateDatepicker.SelectedDate);
             DateTime toDate = Convert.ToDateTime(toDateDatepicker.SelectedDate);
-            List<KarimInvoice> karimInvoiceList = new List<KarimInvoice>();
-            karimInvoiceList = quatationObj.GetQuatationHistoryByDateRange(fromDate, toDate);
+            List<KarimSales> karimInvoiceList = new List<KarimSales>();
+            karimInvoiceList = quatationObj.GetInvoiceHistoryByDateRange(fromDate, toDate);
 
 
             posDatagrid.Items.Clear();
 
-            foreach (KarimInvoice item in karimInvoiceList)
+            foreach (KarimSales item in karimInvoiceList)
             {
                 posDatagrid.Items.Add(item);
             }
@@ -63,11 +63,11 @@ namespace KarimModernUINavigationApp
 
         private void printInfoContextMenu_Click(object sender, RoutedEventArgs e)
         {
-            KarimInvoice chalan = new KarimInvoice();
-            chalan = posDatagrid.SelectedItem as KarimInvoice;
+            KarimSales chalan = new KarimSales();
+            chalan = posDatagrid.SelectedItem as KarimSales;
 
             List<KarimInvoice> _karimInvoiceList = new List<KarimInvoice>();
-            _karimInvoiceList = quotationManagerObj.GetQuotationInvoiceDetailsById(chalan.Id);
+            _karimInvoiceList = quotationManagerObj.GetSalesInvoiceDetailsById(chalan.Id);
 
             if (cusNoChkBox.IsChecked == true)
             {
@@ -254,21 +254,16 @@ namespace KarimModernUINavigationApp
                 _karimInvoiceReportList.Add(inv);
             }
 
-
-           // MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
-
-
             if (_karimInvoiceReportList.Count > 0)
             {
-                QuotationCrystalReport employeeInfoCrystalReport = new QuotationCrystalReport();
+                InvoiceCrystalReport employeeInfoCrystalReport = new InvoiceCrystalReport();
                 ReportUtility.Display_report(employeeInfoCrystalReport, _karimInvoiceReportList, this);
 
             }
             else
             {
-                MessageBox.Show("Don't have any records.", "Karim Quotation", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            // LoadInvoiceDetails(chalan);
         }
     }
 }

@@ -60,5 +60,11 @@ namespace KarimModernUINavigationApp
             PopupKarimBookListReport obj = new KarimModernUINavigationApp.PopupKarimBookListReport();
             obj.Show();
         }
+
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+            InvoiceHistory obj = new InvoiceHistory();
+            obj.Show();
+        }
     }
 }

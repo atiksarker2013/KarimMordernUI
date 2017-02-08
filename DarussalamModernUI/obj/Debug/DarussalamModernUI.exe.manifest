@@ -271,19 +271,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YRcx2xwxikmHoUVdmCeChtEg0SC4SUZzGegwYWbmZ6U=</dsig:DigestValue>
+        <dsig:DigestValue>4burZY+LZI9Mj+U3tCLKgysP0EAh11xgkdw9ZarVkyg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="165888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data.dll" size="166400">
       <assemblyIdentity name="Data" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>IGeBl4r1IvXyxZJZbc6bSiSFquztrd3Yb/kOyTORqCE=</dsig:DigestValue>
+        <dsig:DigestValue>aJ1CxUozsqIrHEE1oU6SXkbTmYjIWQju2u9bLDmpllk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -30,6 +30,29 @@ namespace KarimModernUINavigationApp
         {
             InitializeComponent();
             salesDateDatepicker.SelectedDate = DateTime.Now;
+            effectOnStock.IsChecked = true;
+            cusNoChkBox.IsChecked = true;
+
+            titleChkBox.IsChecked = true;
+            writerChkBox.IsChecked = true;
+            publisherChkBox.IsChecked = true;
+            isbnChkBox.IsChecked = true;
+            bookTypeChkBox.IsChecked = true;
+
+
+            publisherPriceChkBox.IsChecked = true;
+            publisherUnitChkBox.IsChecked = true;
+            priceChkBox.IsChecked = true;
+            stockQtyChkBox.IsChecked = true;
+            orderQtyChkBox.IsChecked = true;
+
+            totalUnitPriceChkBox.IsChecked = true;
+            discountChkBox.IsChecked = true;
+            discountTakaChkBox.IsChecked = true;
+
+            cashPaytype.IsChecked = true;
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -547,26 +570,30 @@ namespace KarimModernUINavigationApp
 
                         }
 
-                       
+
 
 
                         // Update Stock
                         //SalesInfoList = new List<RDarusSalamBook>();
 
-                        for (int i = 0; i < posDatagrid.Items.Count; i++)
+                        if (effectOnStock.IsChecked==true)
                         {
-
-                            KarimBook obj = posDatagrid.Items[i] as KarimBook;
-
-                            if (obj.OrderQty > 0)
+                            for (int i = 0; i < posDatagrid.Items.Count; i++)
                             {
-                                obj.InStock = obj.InStock - obj.OrderQty;
-                                obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
-                                bookContext.Update(obj);
 
+                                KarimBook obj = posDatagrid.Items[i] as KarimBook;
+
+                                if (obj.OrderQty > 0)
+                                {
+                                    obj.InStock = obj.InStock - obj.OrderQty;
+                                    obj.OutOfStock = obj.OutOfStock + obj.OrderQty;
+                                    bookContext.Update(obj);
+
+                                }
                             }
-
                         }
+
+                       
 
                         List<KarimInvoice> _karimInvoiceList = new List<KarimInvoice>();
                         _karimInvoiceList = quotationManagerObj.GetSalesInvoiceDetailsById(pk);
@@ -905,6 +932,34 @@ namespace KarimModernUINavigationApp
 
 
             
+        }
+
+        private void discountAmountTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            bool approvedDecimalPoint = false;
+
+            if (e.Text == ".")
+            {
+                if (!((TextBox)sender).Text.Contains("."))
+                    approvedDecimalPoint = true;
+            }
+
+            if (!(char.IsDigit(e.Text, e.Text.Length - 1) || approvedDecimalPoint))
+                e.Handled = true;
+        }
+
+        private void receiveTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            bool approvedDecimalPoint = false;
+
+            if (e.Text == ".")
+            {
+                if (!((TextBox)sender).Text.Contains("."))
+                    approvedDecimalPoint = true;
+            }
+
+            if (!(char.IsDigit(e.Text, e.Text.Length - 1) || approvedDecimalPoint))
+                e.Handled = true;
         }
     }
 }

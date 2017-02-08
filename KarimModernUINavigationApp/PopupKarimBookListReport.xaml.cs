@@ -21,7 +21,18 @@ namespace KarimModernUINavigationApp
         {
             InitializeComponent();
             selectedBook.IsChecked = true;
-         //   showStockBookReport.IsChecked = true;
+          
+
+            titleChkBox.IsChecked = true;
+            writerChkBox.IsChecked = true;
+            publisherChkBox.IsChecked = true;
+            isbnChkBox.IsChecked = true;
+            bookTypeChkBox.IsChecked = true;
+            publisherPriceChkBox.IsChecked = true;
+            publisherUnitChkBox.IsChecked = true;
+            priceChkBox.IsChecked = true;
+            stockQtyChkBox.IsChecked = true;
+ 
             LoadGrid();
         }
 

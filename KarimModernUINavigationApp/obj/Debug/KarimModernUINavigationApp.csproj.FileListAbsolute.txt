@@ -100,3 +100,5 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Kari
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.g.resources
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.exe
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.pdb
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.baml
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.g.cs

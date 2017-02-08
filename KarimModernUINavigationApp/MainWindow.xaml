@@ -26,7 +26,7 @@
                         </MenuItem>
 
                         <MenuItem  Header="Quotation History" Click="MenuItem_Click_6"/>
-                        <!--<MenuItem  Header="Sales History" />-->
+                        <MenuItem  Header="Sales History" Click="MenuItem_Click_7"/>
                         
                         <MenuItem  Header="Update Currency" Click="MenuItem_Click_4" />
 
