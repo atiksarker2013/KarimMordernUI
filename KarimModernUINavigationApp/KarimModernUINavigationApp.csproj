@@ -119,6 +119,12 @@
     <Compile Include="QuotationHistory.xaml.cs">
       <DependentUpon>QuotationHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report\Crystal\InvoiceCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoiceCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\Crystal\karimBookCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -265,6 +271,10 @@
     <Content Include="karimint.ico" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Report\Crystal\InvoiceCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoiceCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\karimBookCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>karimBookCrystalReport.cs</LastGenOutput>

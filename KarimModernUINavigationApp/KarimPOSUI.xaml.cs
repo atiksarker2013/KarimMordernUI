@@ -569,7 +569,9 @@ namespace KarimModernUINavigationApp
                         }
 
                         List<KarimInvoice> _karimInvoiceList = new List<KarimInvoice>();
-                        _karimInvoiceList = quotationManagerObj.GetQuotationInvoiceDetailsById(pk);
+                        _karimInvoiceList = quotationManagerObj.GetSalesInvoiceDetailsById(pk);
+
+                        MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
                         if (cusNoChkBox.IsChecked == true)
@@ -697,6 +699,7 @@ namespace KarimModernUINavigationApp
                             }
 
                         }
+                      
 
                         List<RKarimInvoice> _karimInvoiceReportList = new List<RKarimInvoice>();
                         foreach (KarimInvoice item in _karimInvoiceList)
@@ -757,7 +760,20 @@ namespace KarimModernUINavigationApp
                         }
 
 
-                        MessageBox.Show("Invoice generatesuccessfully.", "POS", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        if (_karimInvoiceReportList.Count > 0)
+                        {
+                            InvoiceCrystalReport employeeInfoCrystalReport = new InvoiceCrystalReport();
+                            ReportUtility.Display_report(employeeInfoCrystalReport, _karimInvoiceReportList, this);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+
+
+                       
 
                        
 

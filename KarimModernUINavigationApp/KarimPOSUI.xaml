@@ -213,7 +213,7 @@
 
                             <DataGridTextColumn Width="150"
                                                 Binding="{Binding Path=BookType}"
-                                                Header="Book Type" />
+                                                Header="Subject" />
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=PublisherPrice}"
                                                 Header="Publisher Price" />
@@ -380,7 +380,7 @@
                             <CheckBox Name="writerChkBox" Content="Writer "/>
                             <CheckBox Name="publisherChkBox" Content="Publisher "/>
                             <CheckBox Name="isbnChkBox" Content="ISBN "/>
-                            <CheckBox Name="bookTypeChkBox" Content="Book Type "/>
+                            <CheckBox Name="bookTypeChkBox" Content="Subject "/>
                             <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
                             <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
                         </StackPanel>

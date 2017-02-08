@@ -228,7 +228,7 @@
                             </DataGridTemplateColumn>
 
 
-                            <DataGridTemplateColumn Width="150" Header="Book Type">
+                            <DataGridTemplateColumn Width="150" Header="Subject">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder8"
