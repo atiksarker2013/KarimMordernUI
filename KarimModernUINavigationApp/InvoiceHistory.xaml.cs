@@ -47,11 +47,21 @@ namespace KarimModernUINavigationApp
             List<KarimSales> karimInvoiceList = new List<KarimSales>();
             karimInvoiceList = quatationObj.GetInvoiceHistoryByDateRange(fromDate, toDate);
 
+          
 
             posDatagrid.Items.Clear();
 
             foreach (KarimSales item in karimInvoiceList)
             {
+                if (item.Due == 0)
+                {
+                    item.Status = "Paid";
+                }
+                else
+                {
+                    item.Status = "Un Paid";
+                }
+
                 posDatagrid.Items.Add(item);
             }
         }
