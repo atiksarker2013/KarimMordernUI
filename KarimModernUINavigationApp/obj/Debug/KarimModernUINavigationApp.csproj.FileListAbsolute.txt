@@ -72,7 +72,9 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Page
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Pages\SettingsPage.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\PopupKarimBookListReport.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\PopupKarimNewBookEntryList.baml
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\QuotationHistory.baml
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\SalesReturn.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimBookInfo.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimBookPrice.baml
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimCurrency.baml
@@ -90,7 +92,9 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Page
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Pages\SettingsPage.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\PopupKarimBookListReport.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\PopupKarimNewBookEntryList.g.cs
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\QuotationHistory.g.cs
+C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\SalesReturn.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimBookInfo.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimBookPrice.g.cs
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\UpdateKarimCurrency.g.cs
@@ -100,5 +104,3 @@ C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\Kari
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.g.resources
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.exe
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\KarimModernUINavigationApp.pdb
-C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.baml
-C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\InvoiceHistory.g.cs

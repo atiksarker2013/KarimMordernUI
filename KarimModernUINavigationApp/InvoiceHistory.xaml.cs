@@ -275,5 +275,21 @@ namespace KarimModernUINavigationApp
                 MessageBox.Show("Don't have any records.", "Employee Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void receiveDueContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            KarimSales chalan = new KarimSales();
+            chalan = posDatagrid.SelectedItem as KarimSales;
+            if (chalan.Due > 0)
+            {
+                SalesReturn obj = new SalesReturn(chalan);
+                obj.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no pending payment.", "Sales History", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+        }
     }
 }

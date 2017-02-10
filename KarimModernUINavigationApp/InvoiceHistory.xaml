@@ -114,7 +114,9 @@
                                     <MenuItem Name="printInfoContextMenu"
                                               Click="printInfoContextMenu_Click"
                                               Header="Print Invoice" />
-
+                                    <MenuItem Name="receiveDueContextMenu"
+                                              Click="receiveDueContextMenu_Click"
+                                              Header="Receive Due" />
 
 
                                 </ContextMenu>

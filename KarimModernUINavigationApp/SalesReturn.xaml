@@ -1,4 +1,4 @@
-﻿<mui:ModernWindow x:Class="DarussalamModernUI.SalesReturn"
+﻿<mui:ModernWindow x:Class="KarimModernUINavigationApp.SalesReturn"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
@@ -128,30 +128,7 @@
                             <DataGridTextColumn Width="70"
                                                 Binding="{Binding Path=OrderQty}"
                                                 Header="Order Qty" />
-                            <DataGridTemplateColumn Width="150" Header="Return Qty">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Border x:Name="brdBroder"
-                                                Margin="1"
-                                                VerticalAlignment="Stretch">
-                                            <TextBox x:Name="textBox"
-                                                     Width="50"
-                                                     Margin="3,1"
-                                                     Text="{Binding Path=ReturnQty,
-                                                                    Mode=TwoWay,
-                                                                    UpdateSourceTrigger=PropertyChanged}"
-                                                     TextChanged="textBox_TextChanged" />
-                                        </Border>
-                                        <DataTemplate.Triggers>
-                                            <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                <Setter TargetName="brdBroder" Property="Background" Value="Green" />
-                                                <Setter TargetName="textBox" Property="Foreground" Value="White" />
-                                            </DataTrigger>
-                                        </DataTemplate.Triggers>
-
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                          
 
                         </DataGrid.Columns>
                     </DataGrid>
@@ -183,50 +160,7 @@
                                TextAlignment="Center" />
                     <Grid Grid.Row="0"
                           Grid.RowSpan="5"
-                          Grid.Column="1">
-                        <DataGrid Name="discountDatagrid"
-                                  Margin="0,0,10,0"
-                                  AutoGenerateColumns="False"
-                                  IsReadOnly="True">
-                            <DataGrid.Columns>
-
-                                <DataGridTextColumn Width="150"
-                                                    Binding="{Binding Path=PublisherName}"
-                                                    Header="Publisher" />
-                                <DataGridTextColumn Width="150"
-                                                    Binding="{Binding Path=TotalAmount}"
-                                                    Header="Total" />
-                                <!--<DataGridTextColumn Header="Discount %" Binding="{Binding Path=DiscountPercentage}" Width="110"/>-->
-                                <DataGridTemplateColumn Width="110" Header="Discount %">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Border x:Name="brdBroder"
-                                                    Margin="1"
-                                                    VerticalAlignment="Stretch">
-                                                <TextBox x:Name="discountTextBox"
-                                                         Width="50"
-                                                         Margin="3,1"
-                                                         Text="{Binding Path=DiscountPercentage,
-                                                                        Mode=TwoWay,
-                                                                        UpdateSourceTrigger=PropertyChanged}"
-                                                         TextChanged="discountTextBox_TextChanged_1" />
-                                            </Border>
-                                            <DataTemplate.Triggers>
-                                                <DataTrigger Binding="{Binding RemainLeave}" Value="0">
-                                                    <Setter TargetName="brdBroder" Property="Background" Value="Green" />
-                                                    <Setter TargetName="discountTextBox" Property="Foreground" Value="White" />
-                                                </DataTrigger>
-                                            </DataTemplate.Triggers>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                                <DataGridTextColumn Width="150"
-                                                    Binding="{Binding Path=DiscountAmount}"
-                                                    Header="Discount Amount" />
-                            </DataGrid.Columns>
-                        </DataGrid>
-
-                    </Grid>
+                          Grid.Column="1"/>
                     <TextBlock Grid.Row="0"
                                Grid.Column="2"
                                Style="{StaticResource Heading2}"
@@ -315,6 +249,7 @@
                 <StackPanel Grid.Row="8"
                             Grid.Column="3"
                             Orientation="Horizontal">
+                    <Button Content="Print" />
                     <Button Name="saveButton"
                             Click="saveButton_Click"
                             Content="Save" />

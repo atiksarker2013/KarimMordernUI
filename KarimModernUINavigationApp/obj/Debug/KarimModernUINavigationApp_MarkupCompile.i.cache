@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\App.xaml
-181061281621
+19-1083674288
 6-278425056
-31783652668
+32832015914
 291566186606
-KarimAddNewBook.xaml;KarimNewBookInventory.xaml;KarimPopupBookList.xaml;KarimPopupNewBookEntryList.xaml;KarimPOSUI.xaml;MainWindow.xaml;NewKarimBookInventory.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;PopupKarimBookListReport.xaml;PopupKarimNewBookEntryList.xaml;InvoiceHistory.xaml;QuotationHistory.xaml;UpdateKarimBookInfo.xaml;UpdateKarimBookPrice.xaml;UpdateKarimCurrency.xaml;
+KarimAddNewBook.xaml;KarimNewBookInventory.xaml;KarimPopupBookList.xaml;KarimPopupNewBookEntryList.xaml;KarimPOSUI.xaml;MainWindow.xaml;NewKarimBookInventory.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;PopupKarimBookListReport.xaml;PopupKarimNewBookEntryList.xaml;InvoiceHistory.xaml;QuotationHistory.xaml;SalesReturn.xaml;UpdateKarimBookInfo.xaml;UpdateKarimBookPrice.xaml;UpdateKarimCurrency.xaml;
 
 False
 

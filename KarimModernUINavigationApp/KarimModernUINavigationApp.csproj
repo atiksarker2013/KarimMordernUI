@@ -142,6 +142,9 @@
     </Compile>
     <Compile Include="Report\Model\RKarimBook.cs" />
     <Compile Include="Report\Model\RKarimInvoice.cs" />
+    <Compile Include="SalesReturn.xaml.cs">
+      <DependentUpon>SalesReturn.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateKarimBookInfo.xaml.cs">
       <DependentUpon>UpdateKarimBookInfo.xaml</DependentUpon>
     </Compile>
@@ -228,6 +231,10 @@
     <Page Include="QuotationHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SalesReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UpdateKarimBookInfo.xaml">
       <SubType>Designer</SubType>
