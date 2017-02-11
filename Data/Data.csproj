@@ -133,6 +133,9 @@
     <Compile Include="tbl_KarimQuotationDetails.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="tbl_KarimReceiveDue.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="tbl_KarimSales.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>

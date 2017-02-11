@@ -22,6 +22,19 @@ namespace Data.EM
             return entity;
         }
 
+        public static tbl_KarimReceiveDue ConvertToEntityKarim(SalesReceiveDue model)
+        {
+            tbl_KarimReceiveDue entity = new tbl_KarimReceiveDue();
+
+            //  entity.Id = model.Id;
+            entity.SaleInvoiceId = model.SalesInvoiceId;
+            entity.CustomerInvoiceId = model.CustomerInvoiceId;
+            entity.ReceiveAmount = model.ReceiveAmount;
+            entity.ReceiveDate = model.ReceiveDate;
+
+            return entity;
+        }
+
         internal static SalesReceiveDue ConverToModel(tbl_ReceiveDue model)
         {
             SalesReceiveDue entity = new SalesReceiveDue();

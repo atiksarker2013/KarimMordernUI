@@ -69,6 +69,8 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
 
     public virtual DbSet<tbl_KarimSalesDetails> tbl_KarimSalesDetails { get; set; }
 
+    public virtual DbSet<tbl_KarimReceiveDue> tbl_KarimReceiveDue { get; set; }
+
 
     public virtual ObjectResult<USP_GetBookList_Result> USP_GetBookList(string searchStr)
     {

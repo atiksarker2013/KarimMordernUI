@@ -337,8 +337,8 @@ namespace Models
             return _result;
         }
 
-        private List<SalesDetails> _salesDetailsList = new List<SalesDetails>();
-        public List<SalesDetails> SalesDetailsList
+        private List<KarimSalesDetails> _salesDetailsList = new List<KarimSalesDetails>();
+        public List<KarimSalesDetails> SalesDetailsList
         {
             get { return _salesDetailsList; }
             set { _salesDetailsList = value; }

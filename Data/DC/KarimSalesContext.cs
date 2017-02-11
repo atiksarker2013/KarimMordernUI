@@ -46,5 +46,36 @@ namespace Data.DC
             }
 
         }
+
+        public void InsertDueReceive(SalesReceiveDue salesreceiveObj)
+        {
+            tbl_KarimReceiveDue _salesModel = EM_SalesReceiveDue.ConvertToEntityKarim(salesreceiveObj);
+            _db.tbl_KarimReceiveDue.Add(_salesModel);
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                // HandleException(ue);
+            }
+        }
+
+        public void UpdateDue(KarimSales salesObj)
+        {
+            tbl_KarimSales drugupdateoptionsEntity = EM_KarimSales.ConvertToEntity(salesObj);
+            var originalEntity = _db.tbl_KarimSales.FirstOrDefault(x => x.Id == drugupdateoptionsEntity.Id);
+            if (originalEntity != null) { _db.Entry(originalEntity).CurrentValues.SetValues(drugupdateoptionsEntity); }
+
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (DbUpdateException ue)
+            {
+                //  HandleException(ue);
+            }
+        }
     }
 }

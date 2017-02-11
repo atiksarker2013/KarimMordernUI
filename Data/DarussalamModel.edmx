@@ -148,6 +148,16 @@
           <Property Name="DeliveryDate" Type="date" />
           <Property Name="DeliveryTime" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="tbl_KarimReceiveDue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaleInvoiceId" Type="int" />
+          <Property Name="CustomerInvoiceId" Type="varchar(max)" />
+          <Property Name="ReceiveAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ReceiveDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_KarimSales">
           <Key>
             <PropertyRef Name="Id" />
@@ -277,6 +287,7 @@
           <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimQuotation" EntityType="Self.tbl_KarimQuotation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimQuotationDetails" EntityType="Self.tbl_KarimQuotationDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_KarimReceiveDue" EntityType="Self.tbl_KarimReceiveDue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimSales" EntityType="Self.tbl_KarimSales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_KarimSalesDetails" EntityType="Self.tbl_KarimSalesDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />
@@ -322,6 +333,7 @@
           <Parameter Name="SearchStr" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
+          <EntitySet Name="tbl_KarimReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -638,6 +650,16 @@
           <Property Name="NetTaka" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
           <Property Name="DeliveryTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_KarimReceiveDue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleInvoiceId" Type="Int32" />
+          <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -998,6 +1020,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tbl_KarimReceiveDue">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue">
+              <MappingFragment StoreEntitySet="tbl_KarimReceiveDue">
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+                <ScalarProperty Name="CustomerInvoiceId" ColumnName="CustomerInvoiceId" />
+                <ScalarProperty Name="SaleInvoiceId" ColumnName="SaleInvoiceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1038,6 +1071,7 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimBook" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails" Width="1.5" PointX="3.375" PointY="10.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue" Width="1.5" PointX="0.75" PointY="12.75" />
       </Diagram>
     </Diagrams>
   </Designer>

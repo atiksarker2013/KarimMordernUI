@@ -143,6 +143,16 @@
     <Property Name="DeliveryDate" Type="date" />
     <Property Name="DeliveryTime" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="tbl_KarimReceiveDue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SaleInvoiceId" Type="int" />
+    <Property Name="CustomerInvoiceId" Type="varchar(max)" />
+    <Property Name="ReceiveAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ReceiveDate" Type="datetime" />
+  </EntityType>
   <EntityType Name="tbl_KarimSales">
     <Key>
       <PropertyRef Name="Id" />
@@ -272,6 +282,7 @@
     <EntitySet Name="tbl_KarimNewEntryQty" EntityType="Self.tbl_KarimNewEntryQty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimQuotation" EntityType="Self.tbl_KarimQuotation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimQuotationDetails" EntityType="Self.tbl_KarimQuotationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_KarimReceiveDue" EntityType="Self.tbl_KarimReceiveDue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimSales" EntityType="Self.tbl_KarimSales" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_KarimSalesDetails" EntityType="Self.tbl_KarimSalesDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_NewBookEntry" EntityType="Self.tbl_NewBookEntry" Schema="dbo" store:Type="Tables" />

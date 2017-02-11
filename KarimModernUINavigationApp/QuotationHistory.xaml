@@ -175,7 +175,7 @@
                     <CheckBox Name="isbnChkBox" Content="ISBN "/>
                     <CheckBox Name="bookTypeChkBox" Content="Subject "/>
                     <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
-                    <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
+                    <CheckBox Name="publisherUnitChkBox" Content="Publisher Currency "/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  >
                     <CheckBox Name="priceChkBox" Content="Price "/>

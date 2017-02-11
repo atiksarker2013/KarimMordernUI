@@ -253,7 +253,7 @@
                             </DataGridTemplateColumn>
 
 
-                            <DataGridTemplateColumn Width="70" Header="Unit">
+                            <DataGridTemplateColumn Width="70" Header="Currency">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Border x:Name="brdBroder7"

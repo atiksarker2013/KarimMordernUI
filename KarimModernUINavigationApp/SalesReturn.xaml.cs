@@ -15,12 +15,18 @@ namespace KarimModernUINavigationApp
     /// </summary>
     public partial class SalesReturn : ModernWindow
     {
-        SalesContext salesManagerObj = new SalesContext();
-        SalesDetailsContext salesDetailsManagerObj = new SalesDetailsContext();
-        DarussalamBookContext bookContext = new DarussalamBookContext();
-        DiscountContext discountContext = new DiscountContext();
+        //SalesContext salesManagerObj = new SalesContext();
+        //SalesDetailsContext salesDetailsManagerObj = new SalesDetailsContext();
+        //DarussalamBookContext bookContext = new DarussalamBookContext();
+        //DiscountContext discountContext = new DiscountContext();
 
-       // List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
+        // List<RDarusSalamBook> SalesInfoList = new List<RDarusSalamBook>();
+
+        KarimBookContext bookContext = new KarimBookContext();
+
+        KarimSalesContext samesMager = new KarimSalesContext();
+
+
         private int id;
         private KarimSales salesObj;
 
@@ -69,50 +75,29 @@ namespace KarimModernUINavigationApp
 
             // Load Book Details
 
-            //foreach (SalesDetails item in salesObj.SalesDetailsList)
-            //{
-            //    List<DarusSalamBook> bookInfo = new List<DarusSalamBook>();
-            //    bookInfo = bookContext.GetBookInfoByBookId(item.BookId);
+            foreach (KarimSalesDetails item in salesObj.SalesDetailsList)
+            {
+                //List<KarimSalesDetails> bookInfo = new List<KarimSalesDetails>();
+                //bookInfo = bookContext.GetBookInfoByBookId(item.BookId);
 
-            //    foreach (DarusSalamBook _bbok in bookInfo)
-            //    {
-            //        item.Title = _bbok.Title;
-            //        item.Publisher = _bbok.Publisher;
-            //        item.Writer = _bbok.Writer;
-            //    }
-            //    // SalesDetails obj = new SalesDetails();
-            //    posDatagrid.Items.Add(item);
+                //foreach (KarimSalesDetails _bbok in bookInfo)
+                //{
+                //    item.Title = _bbok.Title;
+                //    item.Publisher = _bbok.Publisher;
+                //    item.Writer = _bbok.Writer;
+                //}
+                //// SalesDetails obj = new SalesDetails();
+                //posDatagrid.Items.Add(item);
 
 
-            //}
+            }
 
             // Load Discount Details
 
-           
+
 
 
         }
-
-      
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //DarusSalamBook chalan = new DarusSalamBook();
-            //chalan = posDatagrid.SelectedItem as DarusSalamBook;// get selected item  
-            ////                                                       // Other i am summarizing grid cell value in a combobox  
-            //decimal TGBP = 0;
-            //for (int i = 0; i < posDatagrid.Items.Count; i++)
-            //{
-            //    DarusSalamBook obj = posDatagrid.Items[i] as DarusSalamBook;
-            //    obj.TotalUnitPrice = obj.Price * obj.OrderQty;
-            //    TGBP += Convert.ToDecimal(obj.TotalUnitPrice); // getting cell value   
-            //}
-            //totalTextBox.Text = TGBP.ToString("F");
-
-            //grandTotalTextBox.Text = TGBP.ToString("F");
-        }
-
-     
 
         private void discountAmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -148,19 +133,19 @@ namespace KarimModernUINavigationApp
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //SalesReceiveDue salesreceiveObj = new SalesReceiveDue();
-            //salesreceiveObj.SalesInvoiceId = Convert.ToInt32(invoiceNoTextBox.Text);
-            //salesreceiveObj.CustomerInvoiceId = customerInvoiceNoTextBox.Text;
-            //salesreceiveObj.ReceiveAmount = Convert.ToDecimal(receiveTextBox.Text);
-            //salesreceiveObj.ReceiveDate = DateTime.Now;
+            SalesReceiveDue salesreceiveObj = new SalesReceiveDue();
+            salesreceiveObj.SalesInvoiceId = Convert.ToInt32(invoiceNoTextBox.Text);
+            salesreceiveObj.CustomerInvoiceId = customerInvoiceNoTextBox.Text;
+            salesreceiveObj.ReceiveAmount = Convert.ToDecimal(receiveTextBox.Text);
+            salesreceiveObj.ReceiveDate = DateTime.Now;
 
-            //salesManagerObj.InsertDueReceive(salesreceiveObj);
+            samesMager.InsertDueReceive(salesreceiveObj);
 
-            //salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
-            //salesObj.Due = salesObj.Due- salesObj.Receive;
-            //salesManagerObj.UpdateDue(salesObj);
-            //MessageBox.Show("Due Receive.", "Due Collection.", MessageBoxButton.OK, MessageBoxImage.Information);
-            //this.Close();
+            salesObj.Receive = Convert.ToDecimal(receiveTextBox.Text);
+            salesObj.Due = salesObj.Due - salesObj.Receive;
+            samesMager.UpdateDue(salesObj);
+            MessageBox.Show("Due Receive.", "Due Collection.", MessageBoxButton.OK, MessageBoxImage.Information);
+            this.Close();
 
         }
 

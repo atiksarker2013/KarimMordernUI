@@ -354,5 +354,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KarimReceiveDue">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue">
+        <MappingFragment StoreEntitySet="tbl_KarimReceiveDue">
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="ReceiveAmount" ColumnName="ReceiveAmount" />
+          <ScalarProperty Name="CustomerInvoiceId" ColumnName="CustomerInvoiceId" />
+          <ScalarProperty Name="SaleInvoiceId" ColumnName="SaleInvoiceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -220,7 +220,7 @@
 
                             <DataGridTextColumn Width="100"
                                                 Binding="{Binding Path=PublisherUnit}"
-                                                Header="Publisher Unit" />
+                                                Header="Publisher Currency" />
 
                             <DataGridTemplateColumn Width="100" Header="Price">
                                 <DataGridTemplateColumn.CellTemplate>
@@ -382,7 +382,7 @@
                             <CheckBox Name="isbnChkBox" Content="ISBN "/>
                             <CheckBox Name="bookTypeChkBox" Content="Subject "/>
                             <CheckBox Name="publisherPriceChkBox" Content="Publisher Price "/>
-                            <CheckBox Name="publisherUnitChkBox" Content="Publisher Unit "/>
+                            <CheckBox Name="publisherUnitChkBox" Content="Publisher Currency "/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Grid.Row="1">
                             <CheckBox Name="priceChkBox" Content="Price "/>

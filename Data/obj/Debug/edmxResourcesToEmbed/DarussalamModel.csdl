@@ -33,6 +33,7 @@
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
+    <EntitySet Name="tbl_KarimReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue" />
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -349,5 +350,15 @@
     <Property Name="NetTaka" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
     <Property Name="DeliveryTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_KarimReceiveDue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleInvoiceId" Type="Int32" />
+    <Property Name="CustomerInvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>
