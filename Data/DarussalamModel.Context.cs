@@ -120,7 +120,7 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
     }
 
 
-    public virtual ObjectResult<USP_GetKarimBookWithBdPriceListALL_Result> USP_GetKarimBookWithBdPriceListALL(string searchStr)
+    public virtual ObjectResult<USP_GetKarimBookWithBdPriceListALL_Result> USP_GetKarimBookWithBdPriceListALL(string searchStr, string subject)
     {
 
         var searchStrParameter = searchStr != null ?
@@ -128,7 +128,24 @@ public partial class KARIM_INT_HOUSTONEEntities : DbContext
             new ObjectParameter("SearchStr", typeof(string));
 
 
-        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceListALL_Result>("USP_GetKarimBookWithBdPriceListALL", searchStrParameter);
+        var subjectParameter = subject != null ?
+            new ObjectParameter("subject", subject) :
+            new ObjectParameter("subject", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceListALL_Result>("USP_GetKarimBookWithBdPriceListALL", searchStrParameter, subjectParameter);
+    }
+
+
+    public virtual ObjectResult<USP_GetKarimBookWithBdPriceListALLSubjectWise_Result> USP_GetKarimBookWithBdPriceListALLSubjectWise(string subject)
+    {
+
+        var subjectParameter = subject != null ?
+            new ObjectParameter("subject", subject) :
+            new ObjectParameter("subject", typeof(string));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_GetKarimBookWithBdPriceListALLSubjectWise_Result>("USP_GetKarimBookWithBdPriceListALLSubjectWise", subjectParameter);
     }
 
 }

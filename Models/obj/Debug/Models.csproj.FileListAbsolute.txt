@@ -2,3 +2,8 @@ C:\Karim\KarinIntModernUINavigationApp\Models\bin\Debug\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\Models\bin\Debug\Models.pdb
 C:\Karim\KarinIntModernUINavigationApp\Models\obj\Debug\Models.dll
 C:\Karim\KarinIntModernUINavigationApp\Models\obj\Debug\Models.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\sm\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.pdb

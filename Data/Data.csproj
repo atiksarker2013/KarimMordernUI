@@ -166,6 +166,9 @@
     <Compile Include="USP_GetKarimBookList_Result.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="USP_GetKarimBookWithBdPriceListALLSubjectWise_Result.cs">
+      <DependentUpon>DarussalamModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="USP_GetKarimBookWithBdPriceListALL_Result.cs">
       <DependentUpon>DarussalamModel.tt</DependentUpon>
     </Compile>

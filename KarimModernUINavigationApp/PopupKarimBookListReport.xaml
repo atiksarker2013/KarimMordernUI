@@ -67,24 +67,18 @@
                                  Click="allBook_Click"
                                  Content="All Book"
                                  GroupName="PaymentType" />
-                    <!--<StackPanel Grid.Row="0"
-                                Grid.Column="2"
-                                Orientation="Horizontal">
-                        <RadioButton Content="All  " GroupName="BookType" />
-                        <RadioButton Content="Bangla  " GroupName="BookType" />
-                        <RadioButton Content="English" GroupName="BookType" />
-                    </StackPanel>-->
-                    <!--<StackPanel Grid.Row="0"
-                                Grid.Column="3"
-                                Orientation="Horizontal">
-                        <Button Name="bookAddButton"
-                                Click="bookAddButton_Click"
-                                Content="SEARCH  " />
-                        <Button Name="closeButton"
-                                Click="closeButton_Click"
-                                Content="CLOSE" />
+                    <Label Grid.Row="0" Grid.Column="3" Content="Subject" HorizontalAlignment="Left"></Label>
 
-                    </StackPanel>-->
+                    <ComboBox Height="23" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="4" Name="ZoneBranchIDcomboBox" VerticalAlignment="Top" Width="210" SelectionChanged="ZoneBranchIDcomboBox_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding SubjectName}" Width="200"/>
+                                    
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
 
                 </Grid>
 
@@ -98,6 +92,16 @@
                               CanUserResizeRows="False"
                               CanUserSortColumns="True"
                               IsReadOnly="True" Height="500" VerticalAlignment="Top">
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu Name="ZoneIformationList" StaysOpen="true" Background="WhiteSmoke">
+                                <ContextMenu.BitmapEffect>
+                                    <BitmapEffectGroup/>
+                                </ContextMenu.BitmapEffect>
+                                
+                                <MenuItem Header="Remove" Name="RemoveZoneInfoContextMenu" Click="RemoveZoneInfoContextMenu_Click" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />

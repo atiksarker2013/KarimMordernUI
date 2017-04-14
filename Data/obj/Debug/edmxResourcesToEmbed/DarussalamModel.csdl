@@ -29,11 +29,15 @@
       <Parameter Name="SearchStr" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="tbl_KarimQuotationDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails" />
-    <FunctionImport Name="USP_GetKarimBookWithBdPriceListALL" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceListALL_Result)">
-      <Parameter Name="SearchStr" Mode="In" Type="String" />
-    </FunctionImport>
     <EntitySet Name="tbl_KarimSalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" />
     <EntitySet Name="tbl_KarimReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue" />
+    <FunctionImport Name="USP_GetKarimBookWithBdPriceListALL" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceListALL_Result)">
+      <Parameter Name="SearchStr" Mode="In" Type="String" />
+      <Parameter Name="subject" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="USP_GetKarimBookWithBdPriceListALLSubjectWise" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceListALLSubjectWise_Result)">
+      <Parameter Name="subject" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -80,6 +84,8 @@
     <Property Name="InStock" Type="Int32" />
     <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tbl_SalesDetails">
     <Key>
@@ -316,24 +322,6 @@
     <Property Name="DeliveryDate" Type="DateTime" Precision="0" />
     <Property Name="DeliveryTime" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
-  <ComplexType Name="USP_GetKarimBookWithBdPriceListALL_Result">
-    <Property Type="Int32" Name="Id" Nullable="true" />
-    <Property Type="String" Name="Title" Nullable="true" />
-    <Property Type="String" Name="Writer" Nullable="true" />
-    <Property Type="String" Name="Publisher" Nullable="true" />
-    <Property Type="Int32" Name="Qty" Nullable="true" />
-    <Property Type="Decimal" Name="PublisherPrice" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
-    <Property Type="Int32" Name="OutOfStock" Nullable="true" />
-    <Property Type="Int32" Name="InStock" Nullable="true" />
-    <Property Type="String" Name="Barcode" Nullable="true" />
-    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
-    <Property Type="Int32" Name="PublishYear" Nullable="true" />
-    <Property Type="String" Name="PublisherUnit" Nullable="true" />
-    <Property Type="String" Name="BookType" Nullable="true" />
-    <Property Type="String" Name="Edition" Nullable="true" />
-    <Property Type="String" Name="BookBinding" Nullable="true" />
-  </ComplexType>
   <EntityType Name="tbl_KarimSalesDetails">
     <Key>
       <PropertyRef Name="Id" />
@@ -361,4 +349,40 @@
     <Property Name="ReceiveAmount" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
   </EntityType>
+  <ComplexType Name="USP_GetKarimBookWithBdPriceListALL_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" />
+    <Property Type="String" Name="Writer" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="PublisherPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="OutOfStock" Nullable="true" />
+    <Property Type="Int32" Name="InStock" Nullable="true" />
+    <Property Type="String" Name="Barcode" Nullable="true" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PublishYear" Nullable="true" />
+    <Property Type="String" Name="PublisherUnit" Nullable="true" />
+    <Property Type="String" Name="BookType" Nullable="true" />
+    <Property Type="String" Name="Edition" Nullable="true" />
+    <Property Type="String" Name="BookBinding" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="USP_GetKarimBookWithBdPriceListALLSubjectWise_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Title" Nullable="true" />
+    <Property Type="String" Name="Writer" Nullable="true" />
+    <Property Type="String" Name="Publisher" Nullable="true" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Decimal" Name="PublisherPrice" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="OutOfStock" Nullable="true" />
+    <Property Type="Int32" Name="InStock" Nullable="true" />
+    <Property Type="String" Name="Barcode" Nullable="true" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PublishYear" Nullable="true" />
+    <Property Type="String" Name="PublisherUnit" Nullable="true" />
+    <Property Type="String" Name="BookType" Nullable="true" />
+    <Property Type="String" Name="Edition" Nullable="true" />
+    <Property Type="String" Name="BookBinding" Nullable="true" />
+  </ComplexType>
 </Schema>

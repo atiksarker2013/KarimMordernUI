@@ -13,12 +13,11 @@ namespace Data
 {
 
 using System;
-    using System.Collections.Generic;
     
-public partial class tbl_DarusSalamBook
+public partial class USP_GetKarimBookWithBdPriceListALLSubjectWise_Result
 {
 
-    public int Id { get; set; }
+    public Nullable<int> Id { get; set; }
 
     public string Title { get; set; }
 
@@ -27,6 +26,8 @@ public partial class tbl_DarusSalamBook
     public string Publisher { get; set; }
 
     public Nullable<int> Qty { get; set; }
+
+    public Nullable<decimal> PublisherPrice { get; set; }
 
     public Nullable<decimal> Price { get; set; }
 
@@ -38,9 +39,15 @@ public partial class tbl_DarusSalamBook
 
     public Nullable<System.DateTime> EntryDate { get; set; }
 
-    public string ImagePath { get; set; }
+    public Nullable<int> PublishYear { get; set; }
 
-    public string Description { get; set; }
+    public string PublisherUnit { get; set; }
+
+    public string BookType { get; set; }
+
+    public string Edition { get; set; }
+
+    public string BookBinding { get; set; }
 
 }
 

@@ -16,6 +16,20 @@ namespace Data
         {
             _db = new KARIM_INT_HOUSTONEEntities();
         }
+
+
+        public List<KarimBookSubject> GetAllSubject()
+        {
+            return (from c in _db.tbl_KarimBook
+                    orderby c.Title
+
+                    select new KarimBookSubject
+                    {
+                        SubjectName = c.BookType
+                    }).Distinct().ToList();
+        }
+
+
         public List<DarusSalamBook> GetAllBookListLookup(string title)
         {
             return (from c in _db.tbl_DarusSalamBook
@@ -180,9 +194,17 @@ namespace Data
 
         }
 
-        public List<KarimBook> GetKarimBookWithTakaLookupListAll(string startsWith = "")
+        public List<KarimBook> GetKarimBookWithTakaLookupListAll(string startsWith = "", string subject = "")
         {
-            List<USP_GetKarimBookWithBdPriceListALL_Result> drugNameLookUpList = _db.USP_GetKarimBookWithBdPriceListALL(startsWith).ToList();
+            List<USP_GetKarimBookWithBdPriceListALL_Result> drugNameLookUpList = _db.USP_GetKarimBookWithBdPriceListALL(startsWith, subject).ToList();
+            List<KarimBook> bodrugNameLookUpList = drugNameLookUpList.Select(n => EM_KarimBook.ConvertToModel(n)).ToList();
+            return bodrugNameLookUpList;
+
+        }
+
+        public List<KarimBook> GetKarimBookWithTakaLookupListAllSubjectWise(string subject = "")
+        {
+            List<USP_GetKarimBookWithBdPriceListALLSubjectWise_Result> drugNameLookUpList = _db.USP_GetKarimBookWithBdPriceListALLSubjectWise(subject).ToList();
             List<KarimBook> bodrugNameLookUpList = drugNameLookUpList.Select(n => EM_KarimBook.ConvertToModel(n)).ToList();
             return bodrugNameLookUpList;
 

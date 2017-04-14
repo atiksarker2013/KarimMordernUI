@@ -26,3 +26,17 @@ C:\Karim\KarinIntModernUINavigationApp\Data\bin\Debug\EntityFramework.SqlServer.
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.dll
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Debug\Data.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.dll.config
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Models.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Shared.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Models.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\Shared.pdb
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.xml
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.dll
+C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.pdb

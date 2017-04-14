@@ -24,6 +24,8 @@
     <Property Name="InStock" Type="int" />
     <Property Name="Barcode" Type="varchar(max)" />
     <Property Name="EntryDate" Type="datetime" />
+    <Property Name="ImagePath" Type="varchar(max)" />
+    <Property Name="Description" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="tbl_Discount">
     <Key>
@@ -269,7 +271,11 @@
     <Parameter Name="SearchStr" Type="varchar" Mode="In" />
   </Function>
   <Function Name="USP_GetKarimBookWithBdPriceListALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="SearchStr" Type="varchar" Mode="In" />
+    <Parameter Name="SearchStr" Type="varchar(max)" Mode="In" />
+    <Parameter Name="subject" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="USP_GetKarimBookWithBdPriceListALLSubjectWise" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="subject" Type="varchar(max)" Mode="In" />
   </Function>
   <EntityContainer Name="KARIM_INT_HOUSTONEModelStoreContainer">
     <EntitySet Name="tbl_BookPriceUpdate" EntityType="Self.tbl_BookPriceUpdate" Schema="dbo" store:Type="Tables" />

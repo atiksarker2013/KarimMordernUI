@@ -16,7 +16,7 @@ namespace KarimModernUINavigationApp
     public partial class PopupKarimBookListReport  
     {
         BookContext objmangaer = new BookContext();
-       // List<RNewBookStockUpdate> SalesInfoList = new List<RNewBookStockUpdate>();
+       List<KarimBookSubject> _subjectList = new List<KarimBookSubject>();
         public PopupKarimBookListReport()
         {
             InitializeComponent();
@@ -34,6 +34,18 @@ namespace KarimModernUINavigationApp
             stockQtyChkBox.IsChecked = true;
  
             LoadGrid();
+            LoadSubject();
+
+        }
+
+        private void LoadSubject()
+        {
+            ZoneBranchIDcomboBox.Items.Clear();
+            ZoneBranchIDcomboBox.ItemsSource = objmangaer.GetAllSubject();
+            //foreach (KarimBookSubject floorSetupObj in _subjectList)
+            //{
+            //    ZoneBranchIDcomboBox.ItemsSource = _subjectList;
+            //}
         }
 
         private void LoadGrid()
@@ -210,9 +222,11 @@ namespace KarimModernUINavigationApp
         {
             try
             {
+                string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
+
                 if (!string.IsNullOrEmpty(searchTextBox.Text))
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text);
+                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text, suject);
 
                     bookGrid.Items.Clear();
                     foreach (KarimBook item in list)
@@ -224,8 +238,9 @@ namespace KarimModernUINavigationApp
                 }
                 else
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll("");
+                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
 
+                    bookGrid.Items.Clear();
                     foreach (KarimBook item in list)
                     {
                         bookGrid.Items.Add(item);
@@ -257,6 +272,35 @@ namespace KarimModernUINavigationApp
             }
             int cont = list.Count;
             itemCountLabel.Content = cont.ToString();
+        }
+
+        private void ZoneBranchIDcomboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
+            List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+
+            bookGrid.Items.Clear();
+
+            foreach (KarimBook item in list)
+            {
+                bookGrid.Items.Add(item);
+            }
+            int cont = list.Count;
+            itemCountLabel.Content = cont.ToString();
+        }
+
+        private void RemoveZoneInfoContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (bookGrid.SelectedIndex > -1)
+            {
+                //KarimBook bookObj = new KarimBook();
+                //bookObj = (KarimBook)bookGrid.SelectedItem;
+
+                bookGrid.Items.Remove(bookGrid.SelectedItem);
+
+            
+          
+            }
         }
     }
 }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\obj\Debug\
+C:\Users\sm\Source\Repos\KarimMordernUI\KarimModernUINavigationApp\obj\Debug\
 KarimModernUINavigationApp
 none
 false
 DEBUG;TRACE
-C:\Karim\KarinIntModernUINavigationApp\KarimModernUINavigationApp\App.xaml
+C:\Users\sm\Source\Repos\KarimMordernUI\KarimModernUINavigationApp\App.xaml
 19-1083674288
 6-278425056
-32832015914
-291566186606
+32-1806649709
+29-1091265510
 KarimAddNewBook.xaml;KarimNewBookInventory.xaml;KarimPopupBookList.xaml;KarimPopupNewBookEntryList.xaml;KarimPOSUI.xaml;MainWindow.xaml;NewKarimBookInventory.xaml;Pages\Settings\About.xaml;Pages\Settings\Appearance.xaml;Pages\Home.xaml;Pages\SettingsPage.xaml;PopupKarimBookListReport.xaml;PopupKarimNewBookEntryList.xaml;InvoiceHistory.xaml;QuotationHistory.xaml;SalesReturn.xaml;UpdateKarimBookInfo.xaml;UpdateKarimBookPrice.xaml;UpdateKarimCurrency.xaml;
 
 False
