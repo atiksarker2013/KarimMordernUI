@@ -40,3 +40,17 @@ C:\Users\sm\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.SqlServer
 C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.dll
 C:\Users\sm\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.pdb
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.dll.config
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Data.pdb
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Models.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Shared.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Models.pdb
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\Shared.pdb
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.xml
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.dll
+C:\Users\atik_\Source\Repos\KarimMordernUI\Data\obj\Debug\Data.pdb
