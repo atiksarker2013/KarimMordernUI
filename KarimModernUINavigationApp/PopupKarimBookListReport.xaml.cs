@@ -276,17 +276,45 @@ namespace KarimModernUINavigationApp
 
         private void ZoneBranchIDcomboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
-            List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+            int stockQty = 0;
 
-            bookGrid.Items.Clear();
-
-            foreach (KarimBook item in list)
+            if (!string.IsNullOrEmpty(stockQtyGreatherThanTextBox.Text))
             {
-                bookGrid.Items.Add(item);
+                stockQty = Convert.ToInt32(stockQtyGreatherThanTextBox.Text);
+
+                string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
+                List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+
+                bookGrid.Items.Clear();
+
+                foreach (KarimBook item in list)
+                {
+                    if (item.InStock>=stockQty)
+                    {
+                        bookGrid.Items.Add(item);
+                    }
+                    
+                }
+                int cont = list.Count;
+                itemCountLabel.Content = cont.ToString();
             }
-            int cont = list.Count;
-            itemCountLabel.Content = cont.ToString();
+            else
+            {
+                string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
+                List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+
+                bookGrid.Items.Clear();
+
+                foreach (KarimBook item in list)
+                {
+                    bookGrid.Items.Add(item);
+                }
+                int cont = list.Count;
+                itemCountLabel.Content = cont.ToString();
+            }
+
+           
+          
         }
 
         private void RemoveZoneInfoContextMenu_Click(object sender, RoutedEventArgs e)

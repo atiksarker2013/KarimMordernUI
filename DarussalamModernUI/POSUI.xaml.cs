@@ -384,7 +384,6 @@ namespace DarussalamModernUI
                     salesObj.PayNo = chequeNoTextBox.Text;
                 }
 
-                //salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
                 if (!string.IsNullOrEmpty(totalTextBox.Text))
                 {
                     salesObj.Total = Convert.ToDecimal(totalTextBox.Text);
@@ -393,7 +392,7 @@ namespace DarussalamModernUI
                 {
                     salesObj.Total = 0;
                 }
-                //salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
+            
                 if (!string.IsNullOrEmpty(discountTextBox.Text))
                 {
                     salesObj.Discount = Convert.ToDecimal(discountTextBox.Text);
@@ -531,12 +530,8 @@ namespace DarussalamModernUI
                 if (SalesInfoList.Count > 0)
                 {
                     priceQuotationCrystalReport employeeInfoCrystalReport = new priceQuotationCrystalReport();
-                    //salesInvoiceCrystalReport discountReport = new salesInvoiceCrystalReport();
-                    // employeeInfoCrystalReport.Subreports["salesInvoiceCrystalReport.rpt"].SetDataSource(SalesDiscountInfoList);
                     ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-
-
-                    //  ReportUtility.Display_report(discountReport, SalesDiscountInfoList, this);
+                    
                 }
                 else
                 {

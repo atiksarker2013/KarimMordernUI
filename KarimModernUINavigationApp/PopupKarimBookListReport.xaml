@@ -5,7 +5,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:mui="http://firstfloorsoftware.com/ModernUI"
                   Title="Book Stock List Report"
-                  Width="2010.042"
+                  Width="2007.309"
                   Height="727"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
@@ -31,6 +31,7 @@
                     <RowDefinition Height="30" />
                     <RowDefinition Height="30" />
                     <RowDefinition Height="30" />
+ 
 
 
                 </Grid.RowDefinitions>
@@ -41,6 +42,7 @@
                       Grid.ColumnSpan="4">
 
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -67,18 +69,29 @@
                                  Click="allBook_Click"
                                  Content="All Book"
                                  GroupName="PaymentType" />
-                    <Label Grid.Row="0" Grid.Column="3" Content="Subject" HorizontalAlignment="Left"></Label>
 
-                    <ComboBox Height="23" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="4" Name="ZoneBranchIDcomboBox" VerticalAlignment="Top" Width="210" SelectionChanged="ZoneBranchIDcomboBox_SelectionChanged">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding SubjectName}" Width="200"/>
-                                    
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                    <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal">
+                        <Label  Content="Stock Qty Greater Than " HorizontalAlignment="Left"></Label>
+                        <TextBox Name="stockQtyGreatherThanTextBox" Width="60" TextAlignment="Right"></TextBox>
+                        
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="0" Grid.Column="5" Orientation="Horizontal">
+                        <Label  Content="     Subject" HorizontalAlignment="Left"></Label>
+
+                        <ComboBox Height="23" HorizontalAlignment="Right"  Name="ZoneBranchIDcomboBox" VerticalAlignment="Top" Width="210" SelectionChanged="ZoneBranchIDcomboBox_SelectionChanged">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding SubjectName}" Width="200"/>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                    </StackPanel>
+                    
 
                 </Grid>
 
