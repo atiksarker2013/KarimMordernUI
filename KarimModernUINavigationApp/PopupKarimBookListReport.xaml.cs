@@ -27,7 +27,7 @@ namespace KarimModernUINavigationApp
             writerChkBox.IsChecked = true;
             publisherChkBox.IsChecked = true;
             isbnChkBox.IsChecked = true;
-            bookTypeChkBox.IsChecked = true;
+           // bookTypeChkBox.IsChecked = true;
             publisherPriceChkBox.IsChecked = true;
             publisherUnitChkBox.IsChecked = true;
             priceChkBox.IsChecked = true;
@@ -143,14 +143,14 @@ namespace KarimModernUINavigationApp
 
             }
 
-            if (bookTypeChkBox.IsChecked == true)
-            {
-                foreach (var obj in SalesInfoList)
-                {
-                    obj.IsBookType = true;
-                }
+            //if (bookTypeChkBox.IsChecked == true)
+            //{
+            //    foreach (var obj in SalesInfoList)
+            //    {
+            //        obj.IsBookType = true;
+            //    }
 
-            }
+            //}
 
             if (publisherPriceChkBox.IsChecked == true)
             {
