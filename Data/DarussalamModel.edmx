@@ -29,8 +29,6 @@
           <Property Name="InStock" Type="int" />
           <Property Name="Barcode" Type="varchar(max)" />
           <Property Name="EntryDate" Type="datetime" />
-          <Property Name="ImagePath" Type="varchar(max)" />
-          <Property Name="Description" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -310,7 +308,6 @@
           <EntitySet Name="tbl_Discount" EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" />
           <EntitySet Name="tbl_BookPriceUpdate" EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" />
           <EntitySet Name="tbl_NewEntryQty" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" />
-          <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
           <EntitySet Name="tbl_SalesDetails" EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" />
           <EntitySet Name="tbl_NewBookEntry" EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" />
           <EntitySet Name="tbl_ReceiveDue" EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" />
@@ -342,8 +339,9 @@
             <Parameter Name="subject" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_GetKarimBookWithBdPriceListALLSubjectWise" ReturnType="Collection(KARIM_INT_HOUSTONEModel.USP_GetKarimBookWithBdPriceListALLSubjectWise_Result)">
-            <Parameter Name="subject" Mode="In" Type="String" />
+          <Parameter Name="subject" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="tbl_DarusSalamBook" EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" />
         </EntityContainer>
         <EntityType Name="tbl_Discount">
           <Key>
@@ -375,23 +373,6 @@
           <Property Name="OldStock" Type="Int32" />
           <Property Name="NewEntryQty" Type="Int32" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="tbl_DarusSalamBook">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Qty" Type="Int32" />
-          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="OutOfStock" Type="Int32" />
-          <Property Name="InStock" Type="Int32" />
-          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="EntryDate" Type="DateTime" Precision="3" />
-          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tbl_SalesDetails">
           <Key>
@@ -691,6 +672,21 @@
           <Property Type="String" Name="Edition" Nullable="true" />
           <Property Type="String" Name="BookBinding" Nullable="true" />
         </ComplexType>
+        <EntityType Name="tbl_DarusSalamBook">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Writer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OutOfStock" Type="Int32" />
+          <Property Name="InStock" Type="Int32" />
+          <Property Name="Barcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -727,24 +723,6 @@
                 <ScalarProperty Name="NewEntryQty" ColumnName="NewEntryQty" />
                 <ScalarProperty Name="OldStock" ColumnName="OldStock" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_DarusSalamBook">
-            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
-              <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-                <ScalarProperty Name="InStock" ColumnName="InStock" />
-                <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Qty" ColumnName="Qty" />
-                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-                <ScalarProperty Name="Writer" ColumnName="Writer" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1085,6 +1063,22 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tbl_DarusSalamBook">
+            <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
+              <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="InStock" ColumnName="InStock" />
+                <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Writer" ColumnName="Writer" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1111,7 +1105,6 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_Discount" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_BookPriceUpdate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_NewEntryQty" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_SalesDetails" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_NewBookEntry" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_ReceiveDue" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
@@ -1126,6 +1119,7 @@
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimQuotationDetails" Width="1.5" PointX="3.375" PointY="10.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimSalesDetails" Width="1.5" PointX="12.375" PointY="0.75" />
         <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_KarimReceiveDue" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook" Width="1.5" PointX="12.375" PointY="5.75" />
       </Diagram>
     </Diagrams>
   </Designer>

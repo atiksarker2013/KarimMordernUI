@@ -56,8 +56,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FirstFloor.ModernUI, Version=1.0.9.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Users\Atik\Documents\Visual Studio 2015\Projects\ModernUINavigationApp1\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+      <HintPath>..\packages\ModernUI.WPF.1.0.9\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -69,6 +69,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="NewKarimBookInventory.xaml.cs">
       <DependentUpon>NewKarimBookInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupKarimBookListSelectedReport.xaml.cs">
+      <DependentUpon>PopupKarimBookListSelectedReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="PopupKarimBookListReport.xaml.cs">
       <DependentUpon>PopupKarimBookListReport.xaml</DependentUpon>
@@ -216,6 +220,10 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="PopupKarimBookListSelectedReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="PopupKarimBookListReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

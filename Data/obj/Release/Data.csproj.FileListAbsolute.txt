@@ -26,3 +26,17 @@ C:\Karim\KarinIntModernUINavigationApp\Data\bin\Release\EntityFramework.SqlServe
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Release\Data.dll
 C:\Karim\KarinIntModernUINavigationApp\Data\obj\Release\Data.pdb
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Data.dll.config
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Data.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Data.pdb
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\EntityFramework.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Models.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Shared.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Models.pdb
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\Shared.pdb
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\EntityFramework.xml
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\obj\Release\Data.dll
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Data\obj\Release\Data.pdb

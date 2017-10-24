@@ -35,24 +35,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tbl_DarusSalamBook">
-      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
-        <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
-          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-          <ScalarProperty Name="InStock" ColumnName="InStock" />
-          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
-          <ScalarProperty Name="Price" ColumnName="Price" />
-          <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
-          <ScalarProperty Name="Writer" ColumnName="Writer" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tbl_SalesDetails">
       <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_SalesDetails">
         <MappingFragment StoreEntitySet="tbl_SalesDetails">
@@ -389,5 +371,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_DarusSalamBook">
+      <EntityTypeMapping TypeName="KARIM_INT_HOUSTONEModel.tbl_DarusSalamBook">
+        <MappingFragment StoreEntitySet="tbl_DarusSalamBook">
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="InStock" ColumnName="InStock" />
+          <ScalarProperty Name="OutOfStock" ColumnName="OutOfStock" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="Writer" ColumnName="Writer" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

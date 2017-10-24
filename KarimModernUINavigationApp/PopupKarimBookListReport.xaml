@@ -9,6 +9,7 @@
                   Height="727"
                   Style="{StaticResource BlankWindow}"
                   WindowStartupLocation="CenterScreen"
+                  WindowState="Maximized"
                   mc:Ignorable="d">
     <ScrollViewer>
         <StackPanel>
