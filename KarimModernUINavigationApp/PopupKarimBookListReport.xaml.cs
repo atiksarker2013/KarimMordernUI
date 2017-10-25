@@ -35,6 +35,7 @@ namespace KarimModernUINavigationApp
  
             LoadGrid();
             LoadSubject();
+            ZoneBranchIDcomboBox.SelectedIndex = 5;
 
         }
 
