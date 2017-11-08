@@ -94,7 +94,6 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\bin\Release\FlashContr
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\bin\Release\stdole.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\bin\Release\ShockwaveFlashObjects.dll
-C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.csprojResolveAssemblyReference.cache
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\MainWindow.g.cs
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\App.g.cs
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp_MarkupCompile.cache
