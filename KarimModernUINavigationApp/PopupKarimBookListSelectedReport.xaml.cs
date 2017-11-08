@@ -233,11 +233,9 @@ namespace KarimModernUINavigationApp
         {
             try
             {
-                string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
-
-                if (!string.IsNullOrEmpty(searchTextBox.Text))
+                if (IsAllBook == true)
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text, suject);
+                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupList(searchTextBox.Text);
 
                     bookGridFrom.Items.Clear();
                     foreach (KarimBook item in list)
@@ -249,28 +247,71 @@ namespace KarimModernUINavigationApp
                 }
                 else
                 {
-                    List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+                    string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
 
-                    bookGridFrom.Items.Clear();
-                    foreach (KarimBook item in list)
+                    if (!string.IsNullOrEmpty(searchTextBox.Text))
                     {
-                        bookGridFrom.Items.Add(item);
+                        List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text, suject);
+
+                        bookGridFrom.Items.Clear();
+                        foreach (KarimBook item in list)
+                        {
+                            bookGridFrom.Items.Add(item);
+                        }
+                        int cont = list.Count;
+                        itemCountLabel.Content = cont.ToString();
                     }
-                    int cont = list.Count;
-                    itemCountLabel.Content = cont.ToString();
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message.ToString());
             }
+           
+
+            //try
+            //{
+            //    string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
+
+            //    if (!string.IsNullOrEmpty(searchTextBox.Text))
+            //    {
+            //        List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text, suject);
+
+            //        bookGridFrom.Items.Clear();
+            //        foreach (KarimBook item in list)
+            //        {
+            //            bookGridFrom.Items.Add(item);
+            //        }
+            //        int cont = list.Count;
+            //        itemCountLabel.Content = cont.ToString();
+            //    }
+            //    else
+            //    {
+            //        List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
+
+            //        bookGridFrom.Items.Clear();
+            //        foreach (KarimBook item in list)
+            //        {
+            //            bookGridFrom.Items.Add(item);
+            //        }
+            //        int cont = list.Count;
+            //        itemCountLabel.Content = cont.ToString();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message.ToString());
+            //}
 
         }
 
+        private bool IsAllBook = false;
         private void selectedBook_Click(object sender, RoutedEventArgs e)
         {
             bookGridFrom.Items.Clear();
+
+            IsAllBook = false;
         }
 
         private void allBook_Click(object sender, RoutedEventArgs e)
@@ -283,6 +324,8 @@ namespace KarimModernUINavigationApp
             }
             int cont = list.Count;
             itemCountLabel.Content = cont.ToString();
+
+            IsAllBook = true;
         }
 
         private void ZoneBranchIDcomboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)

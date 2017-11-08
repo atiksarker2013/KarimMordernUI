@@ -58,15 +58,36 @@
                              Grid.ColumnSpan="2"
                              Margin="118,0,0,0"
                              TextChanged="searchTextBox_TextChanged" />
-                    <RadioButton Name="selectedBook"
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+
+                        <RadioButton Name="selectedBook"
+                                 Grid.Column="2"  
+                                 
+                               Click="selectedBook_Click"
+                                 Content="Selected Subject     "
+                                 GroupName="PaymentType" Height="26" />
+                      
+
+
+                            <ComboBox Height="23" HorizontalAlignment="Right"  Name="ZoneBranchIDcomboBox" VerticalAlignment="Top" Width="203" SelectionChanged="ZoneBranchIDcomboBox_SelectionChanged">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding SubjectName}" Width="200"/>
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                        
+
+
+                    </StackPanel>
+
+                    <RadioButton Name="allBook"
                                  Grid.Column="0"
                                  Margin="10,0,151,0"
-                               Click="selectedBook_Click"
-                                 Content="Book Search"
-                                 GroupName="PaymentType" />
-                    <RadioButton Name="allBook"
-                                 Grid.Column="2"
-                                 Margin="10,0,154,0"
                                  Click="allBook_Click"
                                  Content="All Book"
                                  GroupName="PaymentType" />
@@ -77,21 +98,7 @@
 
                     </StackPanel>
 
-                    <StackPanel Grid.Row="0" Grid.Column="5" Orientation="Horizontal">
-                        <Label  Content="     Subject" HorizontalAlignment="Left"></Label>
 
-                        <ComboBox Height="23" HorizontalAlignment="Right"  Name="ZoneBranchIDcomboBox" VerticalAlignment="Top" Width="210" SelectionChanged="ZoneBranchIDcomboBox_SelectionChanged">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding SubjectName}" Width="200"/>
-
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-
-                    </StackPanel>
 
 
                 </Grid>
