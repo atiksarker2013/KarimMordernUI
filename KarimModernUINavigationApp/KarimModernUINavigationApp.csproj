@@ -132,6 +132,12 @@
       <DependentUpon>InvoiceCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\Crystal\karimBookCrystalReportWithoutGroup.cs">
+      <DependentUpon>karimBookCrystalReportWithoutGroup.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\Crystal\karimBookCrystalReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +302,10 @@
     <EmbeddedResource Include="Report\Crystal\InvoiceCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InvoiceCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Crystal\karimBookCrystalReportWithoutGroup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>karimBookCrystalReportWithoutGroup.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Crystal\karimBookCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

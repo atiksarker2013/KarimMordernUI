@@ -204,19 +204,17 @@ namespace KarimModernUINavigationApp
 
             if (SalesInfoList.Count>0)
             {
-            //    if (allBook.IsChecked==true)
-            //    {
-            //        karimBookListCrystalReport employeeInfoCrystalReport = new karimBookListCrystalReport();
-            //        ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-            //    }
-            //    else
+                if (allBook.IsChecked == true)
+                {
+                    karimBookCrystalReportWithoutGroup employeeInfoCrystalReport = new karimBookCrystalReportWithoutGroup();
+                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+                }
+                else
 
-            //    {
+                {
                     karimBookCrystalReport employeeInfoCrystalReport = new karimBookCrystalReport();
                     ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-               // }
-                //subjectWiseKarimBookBookListCrystalReport
-
+               }
               
             }
         }
@@ -267,43 +265,7 @@ namespace KarimModernUINavigationApp
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-           
-
-            //try
-            //{
-            //    string suject = ((KarimBookSubject)ZoneBranchIDcomboBox.SelectedItem).SubjectName;
-
-            //    if (!string.IsNullOrEmpty(searchTextBox.Text))
-            //    {
-            //        List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAll(searchTextBox.Text, suject);
-
-            //        bookGridFrom.Items.Clear();
-            //        foreach (KarimBook item in list)
-            //        {
-            //            bookGridFrom.Items.Add(item);
-            //        }
-            //        int cont = list.Count;
-            //        itemCountLabel.Content = cont.ToString();
-            //    }
-            //    else
-            //    {
-            //        List<KarimBook> list = objmangaer.GetKarimBookWithTakaLookupListAllSubjectWise(suject);
-
-            //        bookGridFrom.Items.Clear();
-            //        foreach (KarimBook item in list)
-            //        {
-            //            bookGridFrom.Items.Add(item);
-            //        }
-            //        int cont = list.Count;
-            //        itemCountLabel.Content = cont.ToString();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message.ToString());
-            //}
-
+            
         }
 
         private bool IsAllBook = false;
