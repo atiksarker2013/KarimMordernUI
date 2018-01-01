@@ -32,7 +32,7 @@
                     <RowDefinition Height="*" />
 
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0"
+                <!--<TextBlock Grid.Row="0"
                            Grid.Column="0"
                            Style="{StaticResource Heading2}"
                            Text="Book Title  "
@@ -60,12 +60,13 @@
                            Grid.Column="2"
                            Style="{StaticResource Heading2}"
                            Text="Entry Date  "
-                           TextAlignment="Right" />
+                           TextAlignment="Right" />-->
 
                 <DatePicker Name="entryDateDatepicker"
                             Grid.Row="1"
                             Grid.Column="3" />
-                <TextBlock Grid.Row="2"
+                
+                <!--<TextBlock Grid.Row="2"
                            Grid.Column="0"
                            Style="{StaticResource Heading2}"
                            Text="Opening Qty  "
@@ -87,7 +88,7 @@
                            Grid.Column="0"
                            Style="{StaticResource Heading2}"
                            Text="Barcode   "
-                           TextAlignment="Right" />
+                           TextAlignment="Right" />-->
 
                 <Grid Grid.Row="3"
                       Grid.Column="0"
@@ -111,10 +112,10 @@
                            Click="addButton_Click"
                             Content="Add" />
                 </Grid>
-                <TextBox Name="bookBarCodeTextBox"
+                <!--<TextBox Name="bookBarCodeTextBox"
                          Grid.Row="3"
                          Grid.Column="1"
-                         TextAlignment="Right" />
+                         TextAlignment="Right" />-->
                 <Grid Grid.Row="4"
                       Grid.Column="0"
                       Grid.ColumnSpan="4">

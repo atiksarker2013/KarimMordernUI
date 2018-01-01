@@ -18,46 +18,46 @@ namespace KarimModernUINavigationApp
         public KarimAddNewBook()
         {
             InitializeComponent();
-            //entryDateDatepicker = DateTime.Now;
+            entryDateDatepicker.SelectedDate = DateTime.Now;
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             KarimBook obj = new KarimBook();
-            obj.Title = bookTitleTextBox.Text;
-            obj.Writer = writerTextBox.Text;
-            obj.Publisher = publisherTextBox.Text;
-            obj.Barcode = bookBarCodeTextBox.Text;
+            //obj.Title = bookTitleTextBox.Text;
+            //obj.Writer = writerTextBox.Text;
+            //obj.Publisher = publisherTextBox.Text;
+            //obj.Barcode = bookBarCodeTextBox.Text;
 
-            if (!string.IsNullOrEmpty(priceTextBox.Text))
-            {
-                obj.PublisherPrice = Convert.ToDecimal(priceTextBox.Text);
-            }
-            else
-            {
-                obj.PublisherPrice = 0;
-            }
+            //if (!string.IsNullOrEmpty(priceTextBox.Text))
+            //{
+            //    obj.PublisherPrice = Convert.ToDecimal(priceTextBox.Text);
+            //}
+            //else
+            //{
+            //    obj.PublisherPrice = 0;
+            //}
 
-            ///
-            //string
+            /////
+            ////string
 
-            if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
-            {
-                obj.Qty = Convert.ToInt32(bookOpeningQtyTextBox.Text);
-            }
-            else
-            {
-                obj.Qty = 0;
-            }
+            //if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
+            //{
+            //    obj.Qty = Convert.ToInt32(bookOpeningQtyTextBox.Text);
+            //}
+            //else
+            //{
+            //    obj.Qty = 0;
+            //}
 
-            if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
-            {
-                obj.InStock = Convert.ToInt32(bookOpeningQtyTextBox.Text);
-            }
-            else
-            {
-                obj.InStock = 0;
-            }
+            //if (!string.IsNullOrEmpty(bookOpeningQtyTextBox.Text))
+            //{
+            //    obj.InStock = Convert.ToInt32(bookOpeningQtyTextBox.Text);
+            //}
+            //else
+            //{
+            //    obj.InStock = 0;
+            //}
 
 
             obj.EntryDate = entryDateDatepicker.SelectedDate;
@@ -92,11 +92,11 @@ namespace KarimModernUINavigationApp
 
             // Clear UI
             posDatagrid.Items.Clear();
-            bookTitleTextBox.Text = "";
-            publisherTextBox.Text = "";
-            bookOpeningQtyTextBox.Text = "";
-            writerTextBox.Text = "";
-            priceTextBox.Text = "";
+            //bookTitleTextBox.Text = "";
+            //publisherTextBox.Text = "";
+            //bookOpeningQtyTextBox.Text = "";
+            //writerTextBox.Text = "";
+            //priceTextBox.Text = "";
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)

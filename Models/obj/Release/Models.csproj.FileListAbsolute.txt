@@ -11,3 +11,4 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\bin\Release\Models.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\bin\Release\Models.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\obj\Release\Models.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\obj\Release\Models.pdb
+C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
