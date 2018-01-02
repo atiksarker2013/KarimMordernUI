@@ -104,4 +104,3 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.csproj.GenerateResource.Cache
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.exe
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.pdb
-C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Release\ReportApp.csprojResolveAssemblyReference.cache

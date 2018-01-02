@@ -260,11 +260,15 @@
                             Margin="30,0,0,0"
                             Orientation="Horizontal">
 
-
-
+                    <Button Name="previewButton3"
+                          Click="previewButton3_Click"
+                            Content="Export List" />
+                    <Button Name="previewButton2"
+                          Click="previewButton2_Click"
+                            Content="Preview List" />
                     <Button Name="previewButton"
                           Click="previewButton_Click"
-                            Content="Preview" />
+                            Content="Preview Subjectwise" />
                     <Button Name="closeButton"
                             Width="73"
                              Click="closeButton_Click"

@@ -11,4 +11,3 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\bin\Release\Shared.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\bin\Release\Shared.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Release\Shared.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Release\Shared.pdb
-C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Release\Shared.csprojResolveAssemblyReference.cache

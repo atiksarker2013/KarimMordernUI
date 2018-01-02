@@ -2,10 +2,13 @@
 using Data.DC;
 using KarimModernUINavigationApp.Report.Crystal;
 using KarimModernUINavigationApp.Report.Model;
+using Microsoft.Office.Interop.Excel;
 using Models;
 using ReportApp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -138,13 +141,6 @@ namespace KarimModernUINavigationApp
 
             }
 
-
-
-
-
-
-
-
             if (isbnChkBox.IsChecked == true)
             {
                 foreach (var obj in SalesInfoList)
@@ -153,16 +149,7 @@ namespace KarimModernUINavigationApp
                 }
 
             }
-
-            //if (bookTypeChkBox.IsChecked == true)
-            //{
-            //    foreach (var obj in SalesInfoList)
-            //    {
-            //        obj.IsBookType = true;
-            //    }
-
-            //}
-
+             
             if (publisherPriceChkBox.IsChecked == true)
             {
                 foreach (var obj in SalesInfoList)
@@ -204,22 +191,14 @@ namespace KarimModernUINavigationApp
 
             if (SalesInfoList.Count>0)
             {
-                if (allBook.IsChecked == true)
-                {
-                    karimBookCrystalReportWithoutGroup employeeInfoCrystalReport = new karimBookCrystalReportWithoutGroup();
-                    ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-                }
-                else
-
-                {
+                 
                     karimBookCrystalReport employeeInfoCrystalReport = new karimBookCrystalReport();
                     ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
-               }
-              
+               
             }
         }
 
-            //karimBookListCrystalReport
+           
         
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
@@ -420,6 +399,257 @@ namespace KarimModernUINavigationApp
             }
         }
 
-        
+        private void previewButton2_Click(object sender, RoutedEventArgs e)
+        {
+            List<RKarimBook> SalesInfoList = new List<RKarimBook>();
+
+            for (int i = 0; i < bookGridTo.Items.Count; i++)
+            {
+                KarimBook entity = bookGridTo.Items[i] as KarimBook;
+
+                RKarimBook model = new RKarimBook();
+
+
+
+                model.Title = entity.Title;
+                model.Writer = entity.Writer;
+                model.Publisher = entity.Publisher;
+                model.Barcode = entity.Barcode;
+                model.Qty = entity.Qty ?? 0;
+                model.Price = entity.Price ?? 0;
+                model.PublisherPrice = entity.PublisherPrice;
+                model.PublisherUnit = entity.PublisherUnit;
+                if (entity.PublishYear == null)
+                {
+                    model.PublishYear = 0;
+                }
+                else
+                {
+                    model.PublishYear = (int)entity.PublishYear;
+                }
+
+                model.BookType = entity.BookType;
+                model.OutOfStock = entity.OutOfStock ?? 0;
+                model.InStock = entity.InStock ?? 0;
+                //model.EntryDate = entity.EntryDate;
+                model.Edition = entity.Edition;
+                model.BookBinding = entity.BookBinding;
+
+                SalesInfoList.Add(model);
+            }
+
+
+            if (titleChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsTitle = true;
+                }
+
+            }
+
+            if (writerChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsWriter = true;
+                }
+
+            }
+
+            if (publisherChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisher = true;
+                }
+
+            }
+
+            if (isbnChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsBarcode = true;
+                }
+
+            }
+
+            if (publisherPriceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherPrice = true;
+                }
+
+            }
+
+            if (publisherUnitChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherUnit = true;
+                }
+
+            }
+
+            if (priceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPrice = true;
+                }
+
+
+            }
+
+            if (stockQtyChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsInStock = true;
+                }
+
+            }
+
+            if (SalesInfoList.Count > 0)
+            {
+                karimBookCrystalReportWithoutGroup employeeInfoCrystalReport = new karimBookCrystalReportWithoutGroup();
+                ReportUtility.Display_report(employeeInfoCrystalReport, SalesInfoList, this);
+            }
+        }
+
+        private void previewButton3_Click(object sender, RoutedEventArgs e)
+        {
+            List<RKarimBook> SalesInfoList = new List<RKarimBook>();
+
+            for (int i = 0; i < bookGridTo.Items.Count; i++)
+            {
+                KarimBook entity = bookGridTo.Items[i] as KarimBook;
+
+                RKarimBook model = new RKarimBook();
+                model.Title = entity.Title;
+                model.Writer = entity.Writer;
+                model.Publisher = entity.Publisher;
+                model.Barcode = entity.Barcode;
+                model.Qty = entity.Qty ?? 0;
+                model.Price = entity.Price ?? 0;
+                model.PublisherPrice = entity.PublisherPrice;
+                model.PublisherUnit = entity.PublisherUnit;
+                if (entity.PublishYear == null)
+                {
+                    model.PublishYear = 0;
+                }
+                else
+                {
+                    model.PublishYear = (int)entity.PublishYear;
+                }
+
+                model.BookType = entity.BookType;
+                model.OutOfStock = entity.OutOfStock ?? 0;
+                model.InStock = entity.InStock ?? 0;
+                //model.EntryDate = entity.EntryDate;
+                model.Edition = entity.Edition;
+                model.BookBinding = entity.BookBinding;
+
+                SalesInfoList.Add(model);
+            }
+
+
+            if (titleChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsTitle = true;
+                }
+
+            }
+
+            if (writerChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsWriter = true;
+                }
+
+            }
+
+            if (publisherChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisher = true;
+                }
+
+            }
+
+            if (isbnChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsBarcode = true;
+                }
+
+            }
+
+            if (publisherPriceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherPrice = true;
+                }
+
+            }
+
+            if (publisherUnitChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPublisherUnit = true;
+                }
+
+            }
+
+            if (priceChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsPrice = true;
+                }
+
+
+            }
+
+            if (stockQtyChkBox.IsChecked == true)
+            {
+                foreach (var obj in SalesInfoList)
+                {
+                    obj.IsInStock = true;
+                }
+
+            }
+
+            ExcelUtlity objjj = new ExcelUtlity();
+            System.Data.DataTable dtttt = ConvertToDataTable(SalesInfoList);
+
+            objjj.WriteDataTableToExcel(dtttt, "Book Details", "D:\\BookList.xlsx", "Details");
+        }
+        public System.Data.DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+               TypeDescriptor.GetProperties(typeof(T));
+            System.Data.DataTable table = new System.Data.DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
+
+        }
     }
 }
