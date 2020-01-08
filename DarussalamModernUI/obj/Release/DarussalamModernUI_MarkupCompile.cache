@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\All-in-One\Source\Repos\KarimMordernUI\DarussalamModernUI\obj\Release\
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\DarussalamModernUI\obj\Release\
 DarussalamModernUI
 none
 false
 TRACE
-C:\Users\All-in-One\Source\Repos\KarimMordernUI\DarussalamModernUI\App.xaml
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\DarussalamModernUI\App.xaml
 18-950714454
 6-1707556782
 33-1261490037
-88-210022565
+881139671928
 MainWindow.xaml;NewBookInventory.xaml;PopupBookListReport.xaml;PopupNewBookEntryList.xaml;AddNewBook.xaml;PriceUpdateReport.xaml;NewBookAddReport.xaml;Resources\Style\TextBox\TextBoxDictionary.xaml;ReceiveDueReport.xaml;StockUpdateReport.xaml;SalesReturn.xaml;UpdateBookPrice.xaml;UpdateBookInfo.xaml;PopupBookList.xaml;POSUI.xaml;Resources\Icons.xaml;Resources\IconsNonShared.xaml;SalesHistory.xaml;
 
 False

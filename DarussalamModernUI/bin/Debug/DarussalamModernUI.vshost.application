@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="DarussalamModernUI.exe.manifest" size="30837">
+    <dependentAssembly dependencyType="install" codebase="DarussalamModernUI.exe.manifest" size="22573">
       <assemblyIdentity name="DarussalamModernUI.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wUQz7vzjmEPcgwFS7U8h/AI+F3YQ+Lh5sbFlkwAdIp0=</dsig:DigestValue>
+        <dsig:DigestValue>F00KQN0CsIIvTia9JVvjD/wXglGA5SpUMaX/4Y/7Z2M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

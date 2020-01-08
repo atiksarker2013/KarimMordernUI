@@ -141,3 +141,17 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.cs
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.exe
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.csprojResolveAssemblyReference.cache
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\bin\Debug\ReportApp.exe.config
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\bin\Debug\ReportApp.exe
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\bin\Debug\ReportApp.pdb
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\bin\Debug\stdole.dll
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\MainWindow.g.cs
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\App.g.cs
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp_MarkupCompile.cache
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp_MarkupCompile.lref
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\MainWindow.baml
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.g.resources
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.Properties.Resources.resources
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.csproj.GenerateResource.Cache
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.exe
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\ReportApp\obj\Debug\ReportApp.pdb

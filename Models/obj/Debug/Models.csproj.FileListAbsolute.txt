@@ -16,3 +16,7 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.pdb
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.dll
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Models\bin\Debug\Models.pdb
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.dll
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Models\obj\Debug\Models.pdb

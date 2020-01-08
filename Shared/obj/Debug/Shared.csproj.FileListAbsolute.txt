@@ -17,3 +17,7 @@ C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\bin\Debug\Shared.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Debug\Shared.dll
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Debug\Shared.pdb
 C:\Users\All-in-One\Source\Repos\KarimMordernUI\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Shared\bin\Debug\Shared.dll
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Shared\bin\Debug\Shared.pdb
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Shared\obj\Debug\Shared.dll
+C:\Users\Tanvir\Source\Repos\KarimMordernUI\Shared\obj\Debug\Shared.pdb

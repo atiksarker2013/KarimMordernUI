@@ -57,8 +57,17 @@ namespace KarimModernUINavigationApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            KarimPopupBookList obj = new KarimPopupBookList();
-            obj.Show();
+            try
+            {
+                KarimPopupBookList obj = new KarimPopupBookList();
+                obj.Show();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message.ToString());
+            }
+           
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
